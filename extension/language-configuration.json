@@ -1,0 +1,74 @@
+{
+    "$schema": "vscode://schemas/language-configuration",
+    "comments": {
+        "lineComment": {
+            "comment": "#"
+        },
+        "blockComment": [
+            "/*",
+            "*/"
+        ]
+    },
+    "brackets": [
+        [
+            "{",
+            "}"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "(",
+            ")"
+        ]
+    ],
+    "autoClosingPairs": [
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "(",
+            "close": ")"
+        },
+        {
+            "open": "\"",
+            "close": "\""
+        },
+        {
+            "open": "'",
+            "close": "'"
+        }
+    ],
+    "surroundingPairs": [
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "(",
+            "close": ")"
+        },
+        {
+            "open": "\"",
+            "close": "\""
+        },
+        {
+            "open": "'",
+            "close": "'"
+        }
+    ],
+    "indentationRules": {
+        "increaseIndentPattern": "^\\s*(si|sino|mientras|desde|para|funcion|clase|intentar|atrapar|constructor|elegir|caso|otro)\\b",
+        "decreaseIndentPattern": "^\\s*(fin|sino|atrapar|caso|otro)\\b"
+    }
+}

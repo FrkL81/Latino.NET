@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hilos.esperarTodos(${1:lista_ids})
+]]></content>
+	<tabTrigger>hilos.esperarTodos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Espera a que todos los hilos en la lista terminen. Retorna lista con resultad...</description>
+</snippet>

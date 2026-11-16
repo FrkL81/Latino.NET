@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.agregar(${1:conjunto}, ${2:elemento})
+]]></content>
+	<tabTrigger>conjunto.agregar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Agregar elemento único</description>
+</snippet>
+

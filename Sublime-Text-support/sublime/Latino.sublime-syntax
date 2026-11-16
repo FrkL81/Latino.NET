@@ -1,0 +1,339 @@
+%YAML 1.2
+---
+# Gramática generada automáticamente desde latino.tmLanguage.json
+# NO EDITAR MANUALMENTE - Ejecutar: cd tools && dotnet script ConvertToSublime.csx
+
+name: Latino.NET
+file_extensions: [lat]
+scope: source.latino
+
+contexts:
+  main:
+    - include: comments
+    - include: compositor
+    - include: evaluator
+    - include: strings
+    - include: numbers
+    - include: modifiers
+    - include: blocks
+    - include: keywords
+    - include: operators
+    - include: constants
+    - include: functions
+
+  compositor:
+    - match: '\b(ç)\s*\('
+      captures:
+        1: support.function.builtin.latino
+      push:
+        - match: '\)'
+          pop: true
+        - match: '"'
+          push: compositor_string_double
+        - match: ''''
+          push: compositor_string_single
+        - include: numbers
+        - include: operators
+        - include: constants
+        - include: functions
+
+  compositor_string_double:
+    - meta_scope: string.quoted.double.latino
+    - match: '"'
+      pop: true
+    - match: '\|'
+      scope: punctuation.definition.template-expression.begin.latino
+      push: compositor_interpolation_content
+    - match: '\\.'
+      scope: constant.character.escape.latino
+
+  compositor_string_single:
+    - meta_scope: string.quoted.single.latino
+    - match: ''''
+      pop: true
+    - match: '\|'
+      scope: punctuation.definition.template-expression.begin.latino
+      push: compositor_interpolation_content
+    - match: '\\.'
+      scope: constant.character.escape.latino
+
+  compositor_interpolation_content:
+    - clear_scopes: 1
+    - match: '\|'
+      scope: punctuation.definition.template-expression.end.latino
+      pop: true
+    - match: ''''
+      push:
+        - meta_scope: string.quoted.single.latino
+        - match: '\\.'
+          scope: constant.character.escape.latino
+        - match: ''''
+          pop: true
+    - match: '"'
+      push:
+        - meta_scope: string.quoted.double.latino
+        - match: '\\.'
+          scope: constant.character.escape.latino
+        - match: '"'
+          pop: true
+    - match: '\['
+      scope: punctuation.section.brackets.begin.latino
+    - match: '\]'
+      scope: punctuation.section.brackets.end.latino
+    - match: '\.'
+      scope: punctuation.accessor.latino
+    - match: '\b\d+\b'
+      scope: constant.numeric.latino
+    - match: '[a-zA-Z_\u00A0-\uFFFF][a-zA-Z0-9_\u00A0-\uFFFF]*'
+      scope: variable.other.readwrite.latino
+
+  evaluator:
+    - match: '\b(evaluar|eval)\s*\('
+      captures:
+        1: support.function.builtin.latino
+      push:
+        - match: '\)'
+          pop: true
+        - match: '"'
+          push: evaluator_string_double
+        - match: ''''
+          push: evaluator_string_single
+        - include: numbers
+        - include: operators
+        - include: constants
+        - include: functions
+
+  evaluator_string_double:
+    - meta_scope: string.quoted.double.latino
+    - match: '"'
+      pop: true
+    - include: evaluator_syntax
+    - match: '\\.'
+      scope: constant.character.escape.latino
+
+  evaluator_string_single:
+    - meta_scope: string.quoted.single.latino
+    - match: ''''
+      pop: true
+    - include: evaluator_syntax
+    - match: '\\.'
+      scope: constant.character.escape.latino
+
+  evaluator_syntax:
+    - match: '(#|//).*(?="|'')'
+      scope: comment.line.latino
+    - match: '\b(mate|cadena|sis|archivo|lista|dic|tupla|conjunto|pila|cola|lapsos|validar|web|hilos|mutex|canal|sqlite|formulas|cinematica|dinamica|electricidad|fluidos|termodinamica|quimica|economia|astronomia|aerodinamica|ondas|optica|estadistica|finanzas|electromagnetismo|senales|estructuras|hidraulica|matematicas|computacion|fisicaCuantica|geometria|zip|cripto|env|log|proceso|texto|raices|interpolacion|calculo|algebraLineal|edo|optimizacion|tabla)\b'
+      scope: support.class.latino
+    - match: '\b(?<!\.)(escribir|imprimir|tipo|acadena|anumero|alogico|clonar|leer|limpiar|trocar)\b'
+      scope: support.function.builtin.latino
+    - match: '\b(si)\b'
+      scope: keyword.control.conditional.if.latino
+    - match: '\b(sino|osi)\b'
+      scope: keyword.control.conditional.else.latino
+    - match: '\b(mientras)\b'
+      scope: keyword.control.loop.while.latino
+    - match: '\b(para|desde)\b'
+      scope: keyword.control.loop.for.latino
+    - match: '\b(repetir)\b'
+      scope: keyword.control.loop.repeat.latino
+    - match: '\b(hasta)\b'
+      scope: keyword.control.loop.until.latino
+    - match: '\b(fin)\b'
+      scope: keyword.control.end.latino
+    - match: '\b(funcion|fun)\b'
+      scope: storage.type.function.latino
+    - match: '\b(clase)\b'
+      scope: storage.type.class.latino
+    - match: '\b(en|rango|romper|continuar|retornar|retorno|ret)\b'
+      scope: keyword.control.latino
+    - match: '\b(lanzar)\b'
+      scope: keyword.control.exception.throw.latino
+    - match: '\b(verdadero|cierto)\b'
+      scope: constant.language.boolean.true.latino
+    - match: '\b(falso|espurio)\b'
+      scope: constant.language.boolean.false.latino
+    - match: '\b(nulo)\b'
+      scope: constant.language.null.latino
+    - match: '\b(ý|ó|no)\b'
+      scope: keyword.operator.logical.latino
+    - match: '='
+      scope: keyword.operator.assignment.latino
+    - match: '\.\.'
+      scope: keyword.operator.concatenation.latino
+    - match: '\?\?=|\?\?|\|>|==|!=|<=|>=|&&|\|\||\+|-|\*|/|%|\^|<|>|\(|\)|\[|\]|\{|\}|~'
+      scope: keyword.operator.symbol.latino
+    - match: '\b\d+(\.\d+)?([eE][+-]?\d+)?\b'
+      scope: constant.numeric.latino
+    - match: '\.'
+      scope: punctuation.accessor.latino
+    - match: ','
+      scope: punctuation.separator.latino
+    - match: '\b[a-zA-Z_][a-zA-Z0-9_]*\b'
+      scope: variable.other.readwrite.latino
+
+  comments:
+    - match: '(#|//).*$'
+      scope: comment.line.latino
+    - match: '/\*'
+      scope: comment.block.latino
+      push:
+        - match: '\*/'
+          pop: true
+
+  modifiers:
+    - match: '\b(local|global|estatico)\b'
+      scope: storage.modifier.latino
+
+  blocks:
+    - match: '\b(si)\b'
+      captures:
+        1: keyword.control.conditional.if.latino
+      push:
+        - include: blocks_internal
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+    - match: '\b(mientras)\b'
+      captures:
+        1: keyword.control.loop.while.latino
+      push:
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+    - match: '\b(repetir)\b'
+      captures:
+        1: keyword.control.loop.repeat.latino
+      push:
+        - include: main
+        - match: '\b(hasta)\b'
+          captures:
+            0: keyword.control.loop.until.latino
+          pop: true
+    - match: '\b(para|desde)\b'
+      captures:
+        1: keyword.control.loop.for.latino
+      push:
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+    - match: '\b(funcion|fun)\b'
+      captures:
+        1: storage.type.function.latino
+      push:
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+    - match: '\b(clase)\b'
+      captures:
+        1: storage.type.class.latino
+      push:
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+    - match: '\b(elegir)\b'
+      captures:
+        1: keyword.control.switch.latino
+      push:
+        - include: blocks_internal
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+    - match: '\b(intentar)\b'
+      captures:
+        1: keyword.control.exception.try.latino
+      push:
+        - include: blocks_internal
+        - include: main
+        - match: '\b(fin)\b'
+          captures:
+            0: keyword.control.end.latino
+          pop: true
+
+  blocks_internal:
+    - match: '\b(sino|osi)\b'
+      captures:
+        1: keyword.control.conditional.else.latino
+      push:
+        - include: main
+        - match: '(?=\b(fin|sino|osi)\b)'
+          pop: true
+    - match: '\b(atrapar)\b'
+      captures:
+        1: keyword.control.exception.catch.latino
+      push:
+        - include: main
+        - match: '(?=\b(fin)\b)'
+          pop: true
+    - match: '\b(caso|otro|defecto)\b'
+      captures:
+        1: keyword.control.case.latino
+      push:
+        - include: main
+        - match: '(?=\b(caso|otro|defecto|fin)\b)'
+          pop: true
+
+  keywords:
+    - match: '\b(en|rango|romper|continuar|retornar|retorno|ret|ir|fin|otro|defecto|caso|atrapar)\b'
+      scope: keyword.control.latino
+    - match: '\b(lanzar)\b'
+      scope: keyword.control.exception.throw.latino
+    - match: '\b(?<!\.)(es|constructor|crear|nueva|nuevo)\b'
+      scope: storage.type.class.latino
+
+  operators:
+    - match: '\b(ý|ó|no)\b'
+      scope: keyword.operator.logical.latino
+    - match: '='
+      scope: keyword.operator.assignment.latino
+    - match: '\.\.'
+      scope: keyword.operator.concatenation.latino
+    - match: '\?\?=|\?\?|\|>|\.\.=|\+=|\-=|\*=|\/=|%=|\+\+|\-\-|~=|==|!=|<=|>=|&&|\|\||\!|\+|-|\*|\/|%|\^|<|>|\?|\:|\.|\,|\;|~'
+      scope: keyword.operator.symbol.latino
+
+  constants:
+    - match: '\b(verdadero|cierto)\b'
+      scope: constant.language.boolean.true.latino
+    - match: '\b(falso|espurio)\b'
+      scope: constant.language.boolean.false.latino
+    - match: '\b(nulo)\b'
+      scope: constant.language.null.latino
+    - match: '\b(mi|este|esta)\b'
+      scope: constant.language.latino
+
+  functions:
+    - match: '\b(?<!\.)(escribir|imprimir|imprimirf|escribirf|ponerf|poner|incluir|tipo|acadena|anumero|alogico|clonar|ç|leer|pedir|limpiar|evaluar|eval|trocar)\b'
+      scope: support.function.builtin.latino
+    - match: '\b(mate|cadena|sis|archivo|lista|dic|tupla|conjunto|pila|cola|lapsos|validar|web|hilos|mutex|canal|sqlite|formulas|cinematica|dinamica|electricidad|fluidos|termodinamica|quimica|economia|astronomia|aerodinamica|ondas|optica|estadistica|finanzas|electromagnetismo|senales|estructuras|hidraulica|matematicas|computacion|fisicaCuantica|geometria|zip|cripto|env|log|proceso|texto|raices|interpolacion|calculo|algebraLineal|edo|optimizacion|tabla)\b'
+      scope: support.class.latino
+
+  numbers:
+    - match: '\b\d+(\.\d+)?([eE][+-]?\d+)?\b'
+      scope: constant.numeric.latino
+
+  strings:
+    - match: '"'
+      push:
+        - meta_scope: string.quoted.double.latino
+        - match: '\\.'
+          scope: constant.character.escape.latino
+        - match: '"'
+          pop: true
+    - match: ''''
+      push:
+        - meta_scope: string.quoted.single.latino
+        - match: '\\.'
+          scope: constant.character.escape.latino
+        - match: ''''
+          pop: true

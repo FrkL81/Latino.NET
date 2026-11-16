@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[intervaloConfianza95]]></content>
+    <tabTrigger>str:monteCarlo:intervaloConfianza95</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de monteCarlo: intervaloConfianza95</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[min]]></content>
+    <tabTrigger>str:fecha:min</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Fecha: Componente: Minuto</description>
+</snippet>

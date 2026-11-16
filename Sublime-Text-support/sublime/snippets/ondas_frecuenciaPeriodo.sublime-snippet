@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+ondas.frecuenciaPeriodo(${1:diccionario_variables})
+]]></content>
+	<tabTrigger>ondas.frecuenciaPeriodo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Relación inversa entre frecuencia y período. Pasa 'f' o 'T'.\n\nFórmula: f = ...</description>
+</snippet>

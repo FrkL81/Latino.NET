@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[inversa]]></content>
+    <tabTrigger>str:invertir:inversa</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de invertir: inversa</description>
+</snippet>

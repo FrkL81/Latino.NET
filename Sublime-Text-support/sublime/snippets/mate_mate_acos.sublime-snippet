@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.acos(${1:numero})
+]]></content>
+	<tabTrigger>mate.acos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Arcocoseno</description>
+</snippet>
+

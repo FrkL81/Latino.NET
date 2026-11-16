@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.sumatoria(${1:lista})]]></content>
+    <tabTrigger>math:sumatoria</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Suma todos los elementos de la lista (Σ)</description>
+</snippet>

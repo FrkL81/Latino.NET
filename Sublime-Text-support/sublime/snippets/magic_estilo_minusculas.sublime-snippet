@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[minusculas]]></content>
+    <tabTrigger>str:estilo:minusculas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Convierte todo a minúsculas</description>
+</snippet>

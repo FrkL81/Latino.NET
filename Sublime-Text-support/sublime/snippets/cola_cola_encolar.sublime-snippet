@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cola.encolar(${1:cola}, ${2:elemento})
+]]></content>
+	<tabTrigger>cola.encolar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Agregar al final</description>
+</snippet>
+

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.tiempo(${1:"formato"})
+]]></content>
+	<tabTrigger>sis.tiempo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Fecha/hora actual</description>
+</snippet>
+

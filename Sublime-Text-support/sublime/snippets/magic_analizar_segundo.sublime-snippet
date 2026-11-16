@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[segundo]]></content>
+    <tabTrigger>str:analizar:segundo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de analizar: segundo</description>
+</snippet>

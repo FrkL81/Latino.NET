@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+ondas.longitudOndaLuz(${1:frecuencia})
+]]></content>
+	<tabTrigger>ondas.longitudOndaLuz</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Longitud de onda de la luz en el vacío dado su frecuencia (c = 299 792 458 m/...</description>
+</snippet>

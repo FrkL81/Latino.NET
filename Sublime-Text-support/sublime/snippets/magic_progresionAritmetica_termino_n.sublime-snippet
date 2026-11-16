@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[termino_n]]></content>
+    <tabTrigger>str:progresionAritmetica:termino_n</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de progresionAritmetica: termino_n</description>
+</snippet>

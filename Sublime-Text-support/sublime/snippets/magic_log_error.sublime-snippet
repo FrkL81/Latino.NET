@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error]]></content>
+    <tabTrigger>str:log:error</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Log: Retorno de log: error</description>
+</snippet>

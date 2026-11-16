@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.ultimo_id(${1:id_db})
+]]></content>
+	<tabTrigger>sqlite.ultimo_id</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🗄️ Obtener el último ID insertado</description>
+</snippet>

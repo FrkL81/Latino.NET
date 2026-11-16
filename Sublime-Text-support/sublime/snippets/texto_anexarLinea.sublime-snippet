@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.anexarLinea(${1:id}, ${2:valores...})
+]]></content>
+	<tabTrigger>texto.anexarLinea</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Añade valores opcionales seguidos de un salto de línea.</description>
+</snippet>

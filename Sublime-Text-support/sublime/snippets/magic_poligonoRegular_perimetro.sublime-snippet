@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[perimetro]]></content>
+    <tabTrigger>str:poligonoRegular:perimetro</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de poligonoRegular: perimetro</description>
+</snippet>

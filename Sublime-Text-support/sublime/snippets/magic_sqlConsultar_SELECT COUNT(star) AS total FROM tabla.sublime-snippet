@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[SELECT COUNT(*) AS total FROM tabla]]></content>
+    <tabTrigger>str:sqlConsultar:SELECT COUNT(*) AS total FROM tabla</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Consultar: SQL: Contar total de registros</description>
+</snippet>

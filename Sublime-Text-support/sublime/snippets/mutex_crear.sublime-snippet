@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+mutex.crear()
+]]></content>
+	<tabTrigger>mutex.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Crea un nuevo objeto mutex.</description>
+</snippet>

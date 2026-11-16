@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[lista.columna(${1:matriz}, ${2:indice_columna})]]></content>
+	<tabTrigger>lista.columna</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Extrae una columna como vector</description>
+</snippet>

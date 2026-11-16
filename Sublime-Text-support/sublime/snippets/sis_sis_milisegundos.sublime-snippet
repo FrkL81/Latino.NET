@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.milisegundos()
+]]></content>
+	<tabTrigger>sis.milisegundos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Milisegundos del sistema</description>
+</snippet>
+

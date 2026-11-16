@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.shell(${1:cmd_string}, ${2:timeout_ms})
+]]></content>
+	<tabTrigger>proceso.shell</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ejecuta un comando a través del shell del sistema</description>
+</snippet>

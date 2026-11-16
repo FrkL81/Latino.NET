@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:mcm:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de mate.mcm(): resultado </description>
+</snippet>

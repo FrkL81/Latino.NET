@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[n_isotopos]]></content>
+    <tabTrigger>str:isotopos:n_isotopos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de isotopos: n_isotopos</description>
+</snippet>

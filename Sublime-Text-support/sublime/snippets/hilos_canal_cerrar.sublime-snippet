@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+canal.cerrar(${1:id})
+]]></content>
+	<tabTrigger>canal.cerrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📨 Cierra el canal</description>
+</snippet>

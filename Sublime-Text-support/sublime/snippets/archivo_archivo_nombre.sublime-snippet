@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.nombre(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.nombre</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Obtener nombre del archivo</description>
+</snippet>
+

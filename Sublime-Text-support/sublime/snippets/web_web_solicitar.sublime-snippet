@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+web.solicitar(${1:config})
+]]></content>
+	<tabTrigger>web.solicitar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🌐 Realiza una petición HTTP personalizada mediante diccionario</description>
+</snippet>

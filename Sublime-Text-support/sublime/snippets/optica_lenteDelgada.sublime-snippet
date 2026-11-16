@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optica.lenteDelgada(${1:diccionario_variables})
+]]></content>
+	<tabTrigger>optica.lenteDelgada</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ecuación de lente delgada. Pasa 2 de: 'f', 'do', 'di' (distancias en metros)....</description>
+</snippet>

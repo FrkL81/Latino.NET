@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[t_final]]></content>
+    <tabTrigger>str:sistemaRk4:t_final</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRk4: t_final</description>
+</snippet>

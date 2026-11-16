@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.factorizacionLU(${1:matriz_A})
+]]></content>
+	<tabTrigger>algebraLineal.factorizacionLU</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Descompone A = P·L·U donde:\n</description>
+</snippet>

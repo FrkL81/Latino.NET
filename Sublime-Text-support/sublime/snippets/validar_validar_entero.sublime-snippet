@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.entero(${1:texto})
+]]></content>
+	<tabTrigger>validar.entero</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Verifica si el texto representa un número entero</description>
+</snippet>

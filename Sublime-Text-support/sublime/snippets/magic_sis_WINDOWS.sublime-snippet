@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[WINDOWS]]></content>
+    <tabTrigger>str:sis:WINDOWS</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Sistema: SO: Microsoft Windows</description>
+</snippet>

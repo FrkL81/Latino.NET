@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:mcm:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de mate.mcm(): Expresión matemática</description>
+</snippet>

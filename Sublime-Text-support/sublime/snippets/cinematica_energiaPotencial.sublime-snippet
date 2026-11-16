@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.energiaPotencial(${1:masa}, ${2:altura})
+]]></content>
+	<tabTrigger>cinematica.energiaPotencial</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Energía potencial gravitatoria (g = 9.80665 m/s²).\n\nFórmula: Ep = m·g·h</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_frobenius]]></content>
+    <tabTrigger>str:invertir:error_frobenius</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de invertir: error_frobenius</description>
+</snippet>

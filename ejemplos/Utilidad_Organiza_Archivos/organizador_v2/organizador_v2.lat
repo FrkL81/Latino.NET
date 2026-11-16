@@ -1,0 +1,119 @@
+/*
+══════════════════════════════════════════════════════════════
+🔧 UTILIDAD: ORGANIZADOR DE ARCHIVOS V2 (Nativo)
+══════════════════════════════════════════════════════════════
+Descripción:
+  Versión mejorada que utiliza las funciones nativas de Latino.NET
+  para manipular el sistema de archivos de forma segura y portable.
+══════════════════════════════════════════════════════════════
+*/
+
+// ============================================================
+// 1. CONFIGURACIÓN (¡Edita esto para extender!)
+// ============================================================
+// Formato: "extensión" : "Categoría"
+// Nota: Las extensiones deben ir sin punto y en minúsculas.
+CONFIG = {
+    // Imágenes
+    "jpg" : "Imágenes", "jpeg": "Imágenes", "png" : "Imágenes",
+    "gif" : "Imágenes", "svg" : "Imágenes", "webp": "Imágenes",
+
+    // Documentos
+    "pdf" : "Documentos", "doc" : "Documentos", "docx" : "Documentos",
+    "txt" : "Documentos", "xlsx": "Documentos", "pptx" : "Documentos",
+    "odt" : "Documentos", "md"  : "Documentos",
+
+    // Multimedia
+    "mp4" : "Videos", "mkv" : "Videos", "avi" : "Videos",
+    "mp3" : "Audio",  "wav" : "Audio", "midi": "Audio",
+    
+    // Código y Sistema
+    "lat" : "Codigo_Latino", "html": "Codigo_Web", "css" : "Codigo_Web",
+    "js"  : "Codigo_Web", "py"  : "Codigo_Python",
+    "zip" : "Comprimidos", "rar": "Comprimidos", "tar": "Comprimidos",
+    "exe" : "Ejecutables",
+
+    // Estructuras
+    "csv" : "Datos", "json" : "Datos", "xml" : "Datos",
+}
+
+// Obtenemos el nombre de este script para no moverlo
+MI_NOMBRE = archivo.nombre(sis.cwd() .. "/organizador_v2.lat")
+
+// ============================================================
+// 2. LÓGICA PRINCIPAL
+// ============================================================
+
+escribir("📂 --- ORGANIZADOR V2 (Nativo) ---")
+directorio_actual = "." // Directorio actual
+
+intentar
+    // 1. OBTENER LISTA (Nativo)
+    // Ya no usamos 'dir' o 'ls', usamos la función interna
+    items = archivo.listar(directorio_actual)
+    total = lista.longitud(items)
+    
+    escribir(ç("📄 Se encontraron |total| elementos.\n"))
+
+    movidos = 0
+    omitidos = 0
+    errores = 0
+
+    para item en items
+        // item es solo el nombre (ej: "foto.jpg")
+        
+        // 2. FILTRADO INTELIGENTE
+        // Ignoramos carpetas y al propio script
+        si archivo.es_carpeta(item) o item == MI_NOMBRE
+            omitidos++
+            continuar
+        fin
+
+        // 3. OBTENER EXTENSIÓN (Nativo)
+        // archivo.extension devuelve ".jpg". 
+        // Usamos cadena.reemplazar para quitar el punto y buscar en el dic.
+        ext_cruda = archivo.extension(item)
+        ext = cadena.minusculas(cadena.reemplazar(ext_cruda, ".", ""))
+
+        si dic.contiene(CONFIG, ext)
+            // 4. PREPARAR DESTINO
+            categoria = CONFIG[ext]
+            carpeta_destino = ç("|categoria|/|categoria|_|ext|")
+            ruta_final = ç("|carpeta_destino|/|item|")
+
+            intentar
+                // 5. CREAR CARPETA (Nativo y Recursivo)
+                // archivo.crear_carpeta no falla si ya existe, es seguro.
+                archivo.crear_carpeta(carpeta_destino)
+
+                // 6. MOVER (Renombrar)
+                si archivo.existe(ruta_final)
+                    escribir(ç("⚠️  OMITIDO: '|item|' ya existe en destino."))
+                    omitidos++
+                sino
+                    archivo.renombrar(item, ruta_final)
+                    escribir(ç("✅ MOVIDO: |item| -> |carpeta_destino|"))
+                    movidos++
+                fin
+            atrapar (e)
+                escribir(ç("❌ ERROR Moviendo '|item|': |e|"))
+                errores++
+            fin
+        sino
+            omitidos++
+        fin
+    fin
+
+    // --- REPORTE ---
+    escribir("\n════════════════════════════════════")
+    escribir("📊 REPORTE FINAL")
+    escribir("════════════════════════════════════")
+    escribir(ç("✅ Archivos movidos : |movidos|"))
+    escribir(ç("⏭️  Archivos omitidos: |omitidos|"))
+    escribir(ç("❌ Errores          : |errores|"))
+    escribir("════════════════════════════════════")
+
+atrapar (err_global)
+    escribir("🔥 ERROR CRÍTICO: No se pudo escanear el directorio.")
+    escribir("Causa: " .. err_global)
+fin

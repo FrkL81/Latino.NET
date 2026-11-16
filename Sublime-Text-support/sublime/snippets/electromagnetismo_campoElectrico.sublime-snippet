@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.campoElectrico(${1:cargaC}, ${2:distanciaM})
+]]></content>
+	<tabTrigger>electromagnetismo.campoElectrico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Intensidad del campo eléctrico generado por una carga puntual.\n\nFórmula: E ...</description>
+</snippet>

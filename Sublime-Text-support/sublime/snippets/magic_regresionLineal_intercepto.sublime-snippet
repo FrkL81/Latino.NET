@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[intercepto]]></content>
+    <tabTrigger>str:regresionLineal:intercepto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionLineal: intercepto</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[asiento]]></content>
+    <tabTrigger>str:analizarCedula:asiento</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Validar: Retorno de analizarCedula: asiento</description>
+</snippet>

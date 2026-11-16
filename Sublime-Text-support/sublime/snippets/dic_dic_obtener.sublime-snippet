@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.obtener(${1:diccionario}, ${2:"clave"}, ${3:valorDefecto})
+]]></content>
+	<tabTrigger>dic.obtener</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Obtener valor con defecto</description>
+</snippet>
+

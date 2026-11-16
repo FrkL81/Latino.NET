@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:lagrange:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de lagrange: formula</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+sqlite.transaccion(${1:id_db}, funcion(conn)
+    $0
+fin)
+]]></content>
+	<tabTrigger>sqlite.transaccion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🗄️ Ejecutar bloque dentro de una transacción SQL</description>
+</snippet>

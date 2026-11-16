@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.raizc(${1:numero})
+]]></content>
+	<tabTrigger>mate.raizc</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Raíz cúbica</description>
+</snippet>
+

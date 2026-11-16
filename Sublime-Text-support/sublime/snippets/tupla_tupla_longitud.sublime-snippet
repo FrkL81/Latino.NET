@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tupla.longitud(${1:tupla})
+]]></content>
+	<tabTrigger>tupla.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💎 Devuelve el número de elementos en la tupla</description>
+</snippet>

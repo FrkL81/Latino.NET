@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+ondas.efectoDoppler(${1:frecuencia_fuente}, ${2:velocidad_sonido}, ${3:velocidad_observador}, ${4:velocidad_fuente})
+]]></content>
+	<tabTrigger>ondas.efectoDoppler</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Frecuencia percibida por efecto Doppler (+ si se acercan, - si se alejan).\n\...</description>
+</snippet>

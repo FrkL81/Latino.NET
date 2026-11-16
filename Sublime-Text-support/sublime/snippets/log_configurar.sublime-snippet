@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+log.configurar(${1:archivo}, ${2:nivel}, ${3:max_mb})
+]]></content>
+	<tabTrigger>log.configurar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Configura el destino y nivel mínimo del log.</description>
+</snippet>

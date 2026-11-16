@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:leyFaraday:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de leyFaraday: nota</description>
+</snippet>

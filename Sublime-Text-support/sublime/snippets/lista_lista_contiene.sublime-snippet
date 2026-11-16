@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.contiene(${1:lista}, ${2:elemento})
+]]></content>
+	<tabTrigger>lista.contiene</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Verificar si contiene elemento</description>
+</snippet>
+

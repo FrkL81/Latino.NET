@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nSubintervalos]]></content>
+    <tabTrigger>str:simpson38:nSubintervalos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de simpson38: nSubintervalos</description>
+</snippet>

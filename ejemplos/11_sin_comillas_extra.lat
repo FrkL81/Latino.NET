@@ -1,0 +1,82 @@
+/*
+   11 - Sin Comillas Extra (El Compositor)
+   La función 'ç()' es una herramienta de "Interpolación de Cadenas".
+   Permite incrustar variables dentro de un texto usando barras verticales |...|.
+   
+   Su objetivo es eliminar el "Infierno de las Comillas" al concatenar.
+*/
+
+escribir("--- 1. El Problema vs La Solución ---")
+
+nombre = "Latino"
+version = 1.0
+
+// FORMA TRADICIONAL (Concatenación)
+// Difícil de leer, muchas comillas y signos ..
+txt_feo = "El lenguaje " .. nombre .. " está en la versión " .. version
+escribir("Tradicional: " .. txt_feo)
+
+// FORMA MODERNA (Compositor)
+// Limpia, se lee como una frase natural.
+// El motor busca |variable| y la reemplaza por su valor.
+txt_limpio = ç("El lenguaje |nombre| está en la versión |version|")
+escribir("Compositor:  " .. txt_limpio)
+
+
+escribir("\n--- 2. Navegación Profunda (Drill-down) ---")
+// El compositor es inteligente. Puede entrar en objetos y listas.
+
+config = {
+    "servidor": "localhost",
+    "puertos": [80, 443, 8080],
+    "usuario": { "admin": verdadero, "alias": "Root" }
+}
+
+// Mira qué fácil es acceder a datos anidados sin romper la cadena:
+msg = ç("Conectando a |config['servidor']| por puerto |config['puertos'][0]|")
+escribir(msg)
+
+user = ç("Usuario: |config['usuario']['alias']|")
+escribir(user)
+
+
+escribir("\n--- 3. Casos de Uso Reales ---")
+
+// CASO A: Generar SQL
+nombreTabla = "empleados"
+id = 45
+// Con 'c()', no te preocupas por abrir y cerrar comillas constantemente
+sql = ç("SELECT * FROM |nombreTabla| WHERE id = |id| AND activo = 1")
+escribir("SQL Generado: " .. sql)
+
+// CASO B: Generar HTML
+Clase = "alerta" # Cuidado ‘clase’ en minúsculas es una palabra reservada
+mensaje = "Error de conexión"
+html = ç("<div class='|Clase|'>|mensaje|</div>")
+escribir("HTML Generado: " .. html)
+
+
+escribir("\n--- 4. Reglas y Limitaciones ---")
+
+// REGLA 1: Solo referencias, no fórmulas.
+a = 10
+b = 20
+// Incorrecto: ç("Suma: |a + b|") -> El motor no calcula matemáticas aquí.
+// Correcto: Calcular fuera.
+suma = a + b
+escribir(ç("Suma correcta: |suma|"))
+
+// REGLA 2: Manejo de errores silencioso.
+// Si te equivocas en el nombre, el compositor NO rompe el programa.
+// Deja la etiqueta visible para que veas el error.
+error = ç("Hola |variable_fantasma|")
+escribir("Error visual: " .. error)
+
+/*
+   ⚠️ ADVERTENCIA FINAL:
+   El compositor es una función global llamada 'ç'.
+   NUNCA uses la letra 'ç' como nombre de variable, o perderás
+   el acceso a esta herramienta.
+   
+   ç = 10  <-- ¡ESTO ROMPERÍA EL COMPOSITOR!
+*/

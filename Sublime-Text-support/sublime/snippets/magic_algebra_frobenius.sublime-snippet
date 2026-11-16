@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[frobenius]]></content>
+    <tabTrigger>str:algebra:frobenius</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Norma de Frobenius</description>
+</snippet>

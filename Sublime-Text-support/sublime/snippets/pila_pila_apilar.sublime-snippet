@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+pila.apilar(${1:pila}, ${2:elemento})
+]]></content>
+	<tabTrigger>pila.apilar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📚 Agregar a la cima</description>
+</snippet>
+

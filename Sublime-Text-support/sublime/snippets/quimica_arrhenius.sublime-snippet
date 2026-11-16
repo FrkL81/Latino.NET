@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.arrhenius(${1:factorPreexponencial}, ${2:energiaActivacionJ}, ${3:temperaturaK})
+]]></content>
+	<tabTrigger>quimica.arrhenius</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Constante de velocidad de reacción (Ecuación de Arrhenius). R = 8.314 J/(mol·...</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+formulas.constantes()
+]]></content>
+	<tabTrigger>formulas.constantes</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Devuelve un diccionario con constantes físicas universales.</description>
+</snippet>

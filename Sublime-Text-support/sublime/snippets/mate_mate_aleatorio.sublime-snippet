@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.aleatorio(${1:min}, ${2:max})
+]]></content>
+	<tabTrigger>mate.aleatorio</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Número aleatorio</description>
+</snippet>
+

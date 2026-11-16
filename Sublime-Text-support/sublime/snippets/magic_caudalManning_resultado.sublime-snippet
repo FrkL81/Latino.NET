@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:caudalManning:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de caudalManning: resultado</description>
+</snippet>

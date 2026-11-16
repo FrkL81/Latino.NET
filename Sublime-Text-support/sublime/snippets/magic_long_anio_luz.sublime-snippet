@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[anio_luz]]></content>
+    <tabTrigger>str:long:anio_luz</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Astro: Año luz</description>
+</snippet>

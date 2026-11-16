@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[espontanea]]></content>
+    <tabTrigger>str:celdaElectroquimica:espontanea</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de celdaElectroquimica: espontanea</description>
+</snippet>

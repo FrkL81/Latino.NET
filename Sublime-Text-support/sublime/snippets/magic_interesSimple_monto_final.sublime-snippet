@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[monto_final]]></content>
+    <tabTrigger>str:interesSimple:monto_final</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de interesSimple: monto_final</description>
+</snippet>

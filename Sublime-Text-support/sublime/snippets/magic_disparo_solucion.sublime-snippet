@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[solucion]]></content>
+    <tabTrigger>str:disparo:solucion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de disparo: solucion</description>
+</snippet>

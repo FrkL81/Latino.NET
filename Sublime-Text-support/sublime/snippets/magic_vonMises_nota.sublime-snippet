@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:vonMises:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de vonMises: nota</description>
+</snippet>

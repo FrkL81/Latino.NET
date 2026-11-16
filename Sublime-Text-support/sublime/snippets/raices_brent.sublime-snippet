@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raices.brent(${1:funcion}, ${2:a}, ${3:b}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>raices.brent</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Encuentra una raíz de f(x) en [a, b] por el método de Brent.\n</description>
+</snippet>

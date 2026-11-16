@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[n]]></content>
+    <tabTrigger>str:resolver:n</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de resolver: n</description>
+</snippet>

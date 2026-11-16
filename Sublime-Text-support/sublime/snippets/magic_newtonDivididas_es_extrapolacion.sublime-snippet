@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[es_extrapolacion]]></content>
+    <tabTrigger>str:newtonDivididas:es_extrapolacion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de newtonDivididas: es_extrapolacion</description>
+</snippet>

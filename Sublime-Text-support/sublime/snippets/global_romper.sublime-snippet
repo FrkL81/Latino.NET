@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+romper
+]]></content>
+	<tabTrigger>romper</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🛑 Romper bucle (break)</description>
+</snippet>

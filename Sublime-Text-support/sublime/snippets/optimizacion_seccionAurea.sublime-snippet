@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.seccionAurea(${1:funcion}, ${2:a}, ${3:b}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>optimizacion.seccionAurea</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(x) en el intervalo [a, b] usando el Método de Sección Áurea.\n</description>
+</snippet>

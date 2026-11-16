@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.existe(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.existe</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Verificar si existe</description>
+</snippet>
+

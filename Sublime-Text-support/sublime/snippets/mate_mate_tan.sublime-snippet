@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.tan(${1:radianes})
+]]></content>
+	<tabTrigger>mate.tan</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Tangente (radianes)</description>
+</snippet>
+

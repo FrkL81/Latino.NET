@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:numeroFroude:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de numeroFroude: unidad</description>
+</snippet>

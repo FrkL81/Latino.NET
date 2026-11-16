@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[atm]]></content>
+    <tabTrigger>str:pres:atm</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Presión: Presión: Atmósfera</description>
+</snippet>

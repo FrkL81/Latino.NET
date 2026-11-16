@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+env.existe(${1:nombre})
+]]></content>
+	<tabTrigger>env.existe</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna verdadero si la variable de entorno existe en el proceso actual,</description>
+</snippet>

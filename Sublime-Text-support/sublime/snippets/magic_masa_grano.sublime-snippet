@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[grano]]></content>
+    <tabTrigger>str:masa:grano</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Masa: Masa: Grano (0.0648mg)</description>
+</snippet>

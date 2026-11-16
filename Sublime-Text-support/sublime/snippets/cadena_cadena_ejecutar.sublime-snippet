@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.ejecutar(${1:"codigo"})
+]]></content>
+	<tabTrigger>cadena.ejecutar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Ejecutar código (legacy)</description>
+</snippet>
+

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[trayectoria]]></content>
+    <tabTrigger>str:sistemaRk4:trayectoria</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRk4: trayectoria</description>
+</snippet>

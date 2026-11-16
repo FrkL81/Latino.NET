@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:dilucion:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de dilucion: resultado</description>
+</snippet>

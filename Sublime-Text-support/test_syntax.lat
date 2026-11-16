@@ -1,0 +1,52 @@
+# Comentario de prueba
+funcion saludar(nombre)
+    si nombre != nulo
+        mensaje = "Hola " .. nombre
+        escribir(mensaje)
+    sino
+        escribir("Nombre inválido")
+    fin
+fin
+
+clase Persona
+    constructor(nombre, edad)
+        mi.nombre = nombre
+        mi.edad = edad
+    fin
+    
+    funcion presentarse()
+        retornar ç("Soy |mi.nombre|, tengo |mi.edad| años")
+    fin
+fin
+
+# Operadores y constantes
+x = 10 + 20 * 3
+activo = verdadero
+resultado = x > 50 ? "Alto" : "Bajo"
+
+# Bucles
+para i en rango(5)
+    escribir(i)
+fin
+
+mientras x > 0
+    x = x - 1
+fin
+
+y = eval("2 * mate.sen(mate.pi)")
+
+escribir("\n--- 2. Navegación Profunda (Drill-down) ---")
+# El compositor es inteligente. Puede entrar en objetos y listas.
+
+config = {
+    "servidor": "localhost",
+    "puertos": [80, 443, 8080],
+    "usuario": { "admin": verdadero, "alias": "Root" }
+}
+
+# Mira qué fácil es acceder a datos anidados sin romper la cadena:
+msg = ç("Conectando a |config['servidor']| por puerto |config['puertos'][0]|")
+escribir(msg)
+
+user = ç("Usuario: |config['usuario']['alias']|")
+escribir(user)

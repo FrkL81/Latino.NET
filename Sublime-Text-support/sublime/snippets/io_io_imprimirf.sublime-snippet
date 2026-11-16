@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+imprimirf("${1:%.2f}", ${2:numero})
+]]></content>
+	<tabTrigger>io:imprimirf</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💬 Imprimir con formato C</description>
+</snippet>

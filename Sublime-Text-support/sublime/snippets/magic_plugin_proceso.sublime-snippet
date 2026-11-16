@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[proceso]]></content>
+    <tabTrigger>str:plugin:proceso</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: proceso</description>
+</snippet>

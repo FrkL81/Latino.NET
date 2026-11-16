@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[regex_timeout]]></content>
+    <tabTrigger>str:config:regex_timeout</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Config: Límite de tiempo para Regex (seg)</description>
+</snippet>

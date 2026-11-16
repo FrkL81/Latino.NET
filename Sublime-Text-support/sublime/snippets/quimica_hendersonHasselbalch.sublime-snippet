@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.hendersonHasselbalch(${1:pka}, ${2:concentracionBase}, ${3:concentracionAcido})
+]]></content>
+	<tabTrigger>quimica.hendersonHasselbalch</tabTrigger>
+	<scope>source.latino</scope>
+	<description>pH de una solución buffer (Ecuación de Henderson-Hasselbalch).\n\nFórmula: pH...</description>
+</snippet>

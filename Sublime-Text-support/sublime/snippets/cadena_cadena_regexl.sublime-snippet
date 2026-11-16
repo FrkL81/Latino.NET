@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.regexl(${1:texto}, ${2:"patron"})
+]]></content>
+	<tabTrigger>cadena.regexl</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verificar coincidencia regex</description>
+</snippet>
+

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[hora]]></content>
+    <tabTrigger>str:restar:hora</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de restar: hora</description>
+</snippet>

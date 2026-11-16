@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:mruaPosicion:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cinemática: Retorno de mruaPosicion: unidad</description>
+</snippet>

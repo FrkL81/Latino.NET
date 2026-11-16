@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:campoElectrico:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de campoElectrico: unidad</description>
+</snippet>

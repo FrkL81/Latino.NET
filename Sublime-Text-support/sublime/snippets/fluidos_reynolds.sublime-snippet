@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+fluidos.reynolds(${1:densidad}, ${2:velocidad}, ${3:diametro}, ${4:viscosidad})
+]]></content>
+	<tabTrigger>fluidos.reynolds</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el número de Reynolds y su régimen.\n\nFórmula: Re = (ρ·v·D) / μ</description>
+</snippet>

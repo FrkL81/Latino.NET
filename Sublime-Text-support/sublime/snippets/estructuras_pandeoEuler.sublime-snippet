@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.pandeoEuler(${1:modulo_young_Pa}, ${2:inercia_m4}, ${3:longitud_m}, ${4:condicion_apoyo})
+]]></content>
+	<tabTrigger>estructuras.pandeoEuler</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Carga crítica de pandeo de Euler para columnas.\ncondicion_apoyo: 'pp' (ambos...</description>
+</snippet>

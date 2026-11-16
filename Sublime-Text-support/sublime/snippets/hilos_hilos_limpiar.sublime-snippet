@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hilos.limpiar()
+]]></content>
+	<tabTrigger>hilos.limpiar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧵 Elimina hilos finalizados de la tabla interna</description>
+</snippet>

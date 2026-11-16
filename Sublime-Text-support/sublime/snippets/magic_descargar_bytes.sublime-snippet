@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[bytes]]></content>
+    <tabTrigger>str:descargar:bytes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de descargar: bytes</description>
+</snippet>

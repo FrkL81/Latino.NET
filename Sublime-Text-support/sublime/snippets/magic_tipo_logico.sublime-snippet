@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[logico]]></content>
+    <tabTrigger>str:tipo:logico</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tipo: Retorno de tipo: logico</description>
+</snippet>

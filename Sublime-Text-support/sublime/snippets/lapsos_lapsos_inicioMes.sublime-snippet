@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.inicioMes(${1:fecha})
+]]></content>
+<tabTrigger>lapsos.inicioMes</tabTrigger>
+<scope>source.latino</scope>
+<description>🔝 Inicio del mes</description>
+</snippet>

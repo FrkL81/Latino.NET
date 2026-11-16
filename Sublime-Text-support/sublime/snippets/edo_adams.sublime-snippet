@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.adams(${1:funcionF}, ${2:t0}, ${3:y0}, ${4:tf}, ${5:n})
+]]></content>
+	<tabTrigger>edo.adams</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve dy/dt = f(t, y) con el método Adams-Bashforth-Moulton de orden 4.\n</description>
+</snippet>

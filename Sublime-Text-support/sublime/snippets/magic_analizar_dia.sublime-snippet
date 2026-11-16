@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[dia]]></content>
+    <tabTrigger>str:analizar:dia</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de analizar: dia</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[m2]]></content>
+    <tabTrigger>str:area:m2</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Área: Área: Metro cuadrado</description>
+</snippet>

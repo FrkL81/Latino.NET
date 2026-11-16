@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+matematicas.serieGeometrica(${1:primerTermino}, ${2:razon}, ${3:numTerminos})
+]]></content>
+	<tabTrigger>matematicas.serieGeometrica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Suma de una serie geométrica finita.\n\nFórmula: S = a·(1 - rⁿ) / (1 - r)</description>
+</snippet>

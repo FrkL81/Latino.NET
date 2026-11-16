@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[km2]]></content>
+    <tabTrigger>str:area:km2</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Área: Área: Kilómetro cuadrado</description>
+</snippet>

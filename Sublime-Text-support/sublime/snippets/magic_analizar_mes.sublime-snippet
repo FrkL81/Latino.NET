@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:analizar:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de analizar: mes</description>
+</snippet>

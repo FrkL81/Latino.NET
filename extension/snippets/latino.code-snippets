@@ -1,0 +1,730 @@
+{
+    // ============================================
+    // BLOQUES CONDICIONALES (Prefix: cond:*)
+    // ============================================
+    "Condicional Simple": {
+        "prefix": "cond:si",
+        "body": [
+            "si ${1:condicion}",
+            "\t$0",
+            "fin"
+        ],
+        "description": "❓ Bloque si simple"
+    },
+    "Condicional Si-Sino": {
+        "prefix": "cond:sino",
+        "body": [
+            "si ${1:condicion}",
+            "\t$2",
+            "sino",
+            "\t$0",
+            "fin"
+        ],
+        "description": "❓ Bloque si-sino"
+    },
+    "Condicional Si-Osi-Sino": {
+        "prefix": "cond:osi",
+        "body": [
+            "si ${1:condicion1}",
+            "\t$2",
+            "osi ${3:condicion2}",
+            "\t$4",
+            "sino",
+            "\t$0",
+            "fin"
+        ],
+        "description": "❓ Bloque si-osi-sino completo"
+    },
+    "Operador Ternario": {
+        "prefix": "cond:ternario",
+        "body": [
+            "${1:condicion} ? ${2:si_verdadero} : ${3:si_falso}"
+        ],
+        "description": "❓ Operador ternario (condición ? true : false)"
+    },
+    "Estructura Elegir (Switch)": {
+        "prefix": "cond:elegir",
+        "body": [
+            "elegir (${1:variable})",
+            "\tcaso ${2:valor1}:",
+            "\t\t$3",
+            "\tcaso ${4:valor2}:",
+            "\t\t$5",
+            "\tdefecto:",
+            "\t\t$0",
+            "fin"
+        ],
+        "description": "❓ Estructura elegir (switch-case)"
+    },
+    "Caso para Elegir": {
+        "prefix": "cond:caso",
+        "body": [
+            "caso ${1:valor}:",
+            "\t$0"
+        ],
+        "description": "❓ Nuevo caso para estructura elegir"
+    },
+    // ============================================
+    // BUCLES (Prefix: loop:*)
+    // ============================================
+    "Bucle Mientras": {
+        "prefix": "loop:mientras",
+        "body": [
+            "mientras ${1:condicion}",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle mientras (while)"
+    },
+    "Bucle Repetir-Hasta": {
+        "prefix": "loop:repetir",
+        "body": [
+            "repetir",
+            "\t$0",
+            "hasta ${1:condicion}"
+        ],
+        "description": "🔁 Bucle repetir-hasta (do-while)"
+    },
+    "Bucle Desde (For C-Style)": {
+        "prefix": "loop:desde",
+        "body": [
+            "desde (${1:i} = ${2:0}; ${3:i} < ${4:10}; ${5:i}++)",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle desde (for estilo C)"
+    },
+    "Bucle Para (Foreach)": {
+        "prefix": "loop:para",
+        "body": [
+            "para ${1:elemento} en ${2:coleccion}",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle para-en (foreach)"
+    },
+    "Bucle Para con Índice": {
+        "prefix": "loop:indice",
+        "body": [
+            "desde (${1:i} = 0; ${1:i} < lista.longitud(${2:coleccion}); ${1:i}++)",
+            "\t${3:elemento} = ${2:coleccion}[${1:i}]",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle desde con índice numérico para recorrer colecciones"
+    },
+    "Bucle Infinito": {
+        "prefix": "loop:infinito",
+        "body": [
+            "mientras cierto",
+            "\t$0",
+            "\t# Usa 'romper' para salir",
+            "fin"
+        ],
+        "description": "🔁 Bucle infinito controlado"
+    },
+    "Bucle Para-Rango (0 a N)": {
+        "prefix": "loop:rango",
+        "body": [
+            "para ${1:i} en rango(${2:10})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle para-rango simple [0...N-1]"
+    },
+    "Bucle Para-Rango (Inicio-Fin)": {
+        "prefix": "loop:rango_if",
+        "body": [
+            "para ${1:i} en rango(${2:inicio}, ${3:fin})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle para-rango con inicio y fin"
+    },
+    "Bucle Para-Rango (con Paso)": {
+        "prefix": "loop:rango_paso",
+        "body": [
+            "para ${1:i} en rango(${2:inicio}, ${3:fin}, ${4:paso})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Bucle para-rango con saltos de N en N"
+    },
+    "Bucle Para-Caracteres": {
+        "prefix": "loop:caracteres",
+        "body": [
+            "para ${1:caracter} en rango(${2:texto})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🔁 Iterar sobre cada carácter/grafema de un texto"
+    },
+    // ============================================
+    // FUNCIONES (Prefix: fn:*)
+    // ============================================
+    "Función Simple": {
+        "prefix": "fn:simple",
+        "body": [
+            "funcion ${1:nombre}(${2:params})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "⚙️ Definir función simple"
+    },
+    "Función con Retorno": {
+        "prefix": "fn:retornar",
+        "body": [
+            "funcion ${1:nombre}(${2:params})",
+            "\t$3",
+            "\tretornar ${0:resultado}",
+            "fin"
+        ],
+        "description": "⚙️ Función que retorna valor"
+    },
+    "Función Main": {
+        "prefix": "fn:main",
+        "body": [
+            "funcion principal()",
+            "\t$0",
+            "fin",
+            "",
+            "principal()"
+        ],
+        "description": "⚙️ Función principal ejecutable"
+    },
+    "Función Anónima": {
+        "prefix": "fn:anonima",
+        "body": [
+            "funcion(${1:params})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "⚙️ Función anónima (lambda)"
+    },
+    // ============================================
+    // CLASES Y OBJETOS (Prefix: poo:*)
+    // ============================================
+    "Clase Básica": {
+        "prefix": "poo:clase",
+        "body": [
+            "clase ${1:Nombre}",
+            "\tconstructor(${2:params})",
+            "\t\tmi.${3:propiedad} = ${3:propiedad}",
+            "\t\t$0",
+            "\tfin",
+            "fin"
+        ],
+        "description": "🎯 Definir clase con constructor"
+    },
+    "Clase Base (Heredable)": {
+        "prefix": "poo:clase_base",
+        "body": [
+            "clase ${1:NombreBase}",
+            "\t# Regla: Las clases base usan parámetros con valores por defecto",
+            "\tconstructor(${2:param} = ${3:nulo})",
+            "\t\tmi.${2:param} = ${2:param}",
+            "\t\t$0",
+            "\tfin",
+            "fin"
+        ],
+        "description": "🎯 Definir clase preparada para herencia (Auto-Chaining)"
+    },
+    "Clase con Herencia": {
+        "prefix": "poo:herencia",
+        "body": [
+            "clase ${1:Hija} es ${2:Padre}",
+            "\tconstructor(${3:params})",
+            "\t\t$0",
+            "\tfin",
+            "fin"
+        ],
+        "description": "🎯 Clase con herencia simple"
+    },
+    "Método de Clase": {
+        "prefix": "poo:metodo",
+        "body": [
+            "funcion ${1:nombre}(${2:params})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "🎯 Método dentro de clase"
+    },
+    // ============================================
+    // MANEJO DE ERRORES (Prefix: err:*)
+    // ============================================
+    "Intentar-Atrapar": {
+        "prefix": "err:try",
+        "body": [
+            "intentar",
+            "\t$1",
+            "atrapar (${2:error})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "⚠️ Bloque intentar/atrapar"
+    },
+    "Intentar-Atrapar con Validación": {
+        "prefix": "err:validar",
+        "body": [
+            "intentar",
+            "\t${1:resultado} = ${2:operacion_peligrosa}",
+            "\t$3",
+            "atrapar (${4:error})",
+            "\tescribir(\"Error: \" .. ${4:error})",
+            "\t$0",
+            "fin"
+        ],
+        "description": "⚠️ Intentar/atrapar con reporte en consola"
+    },
+    "Lanzar Error": {
+        "prefix": "err:lanzar",
+        "body": [
+            "lanzar(\"${1:Mensaje de error}\")$0"
+        ],
+        "description": "⚠️ Lanzar un error personalizado de negocio"
+    },
+    // ============================================
+    // ESTRUCTURAS DE DATOS (Prefix: data:*)
+    // ============================================
+    "Diccionario con Valores": {
+        "prefix": "data:dic_vals",
+        "body": [
+            "${1:diccionario} = {",
+            "\t\"${2:clave1}\": ${3:valor1},",
+            "\t\"${4:clave2}\": ${5:valor2}",
+            "}$0"
+        ],
+        "description": "📦 Crear diccionario con valores literales"
+    },
+    // ============================================
+    // FUNCIONES AVANZADAS (Prefix: adv:*)
+    // ============================================
+    "Mapear Lista": {
+        "prefix": "adv:mapear",
+        "body": [
+            "${1:resultado} = lista.transformar(${2:coleccion}, funcion(${3:x})",
+            "\tretornar ${4:x * 2}",
+            "fin)$0"
+        ],
+        "description": "🔧 Transforma cada elemento de una lista (Map)"
+    },
+    "Filtrar Lista": {
+        "prefix": "adv:filtrar",
+        "body": [
+            "${1:resultado} = lista.filtrar(${2:coleccion}, funcion(${3:x})",
+            "\tretornar ${4:x > 0}",
+            "fin)$0"
+        ],
+        "description": "🔧 Filtra elementos que cumplen condición (Filter)"
+    },
+    "Reducir Lista": {
+        "prefix": "adv:reducir",
+        "body": [
+            "${1:resultado} = lista.reducir(${2:coleccion}, funcion(${3:acum}, ${4:x})",
+            "\tretornar ${5:acum + x}",
+            "fin, ${6:0})$0"
+        ],
+        "description": "🔧 Reduce lista a un valor con acumulador (Reduce)"
+    },
+    "Mapear Diccionario": {
+        "prefix": "adv:dic_mapear",
+        "body": [
+            "${1:resultado} = dic.mapear(${2:diccionario}, funcion(${3:llave}, ${4:valor})",
+            "\tretornar {\"llave\": ${5:llave}, \"valor\": ${6:valor * 2}}",
+            "fin)$0"
+        ],
+        "description": "🔧 Transforma llaves y valores de diccionario"
+    },
+    // ============================================
+    // ENTRADA/SALIDA (Prefix: io:*)
+    // ============================================
+    "Escribir con Formato .NET": {
+        "prefix": "io:escribirf",
+        "body": [
+            "escribirf(\"${1:{0}\\n}\", ${2:valor})$0"
+        ],
+        "description": "💬 Escribir con formato .NET y salto de línea"
+    },
+    "Imprimir con Formato C": {
+        "prefix": "io:imprimirf",
+        "body": [
+            "imprimirf(\"${1:Valor: %.2f\\n}\", ${2:numero})"
+        ],
+        "description": "💬 Imprimir con formato estilo C"
+    },
+    "Compositor": {
+        "prefix": [
+            "io:compositor",
+            "cc"
+        ],
+        "body": [
+            "ç(\"${1:Texto} |${2:variable}| ${3:masTexto}\")"
+        ],
+        "description": "💬 Interpolación estructural de variables (escribe 'cc')"
+    },
+    "Leer Número": {
+        "prefix": "io:leer_num",
+        "body": [
+            "${1:numero} = anumero(pedir(\"${2:Ingrese número: }\"))$0"
+        ],
+        "description": "💬 Pedir entrada y convertir a número de forma directa"
+    },
+    "Leer con Validación": {
+        "prefix": "io:leer_validar",
+        "body": [
+            "${1:entrada} = \"\"",
+            "repetir",
+            "\t${1:entrada} = pedir(\"${2:Mensaje: }\")",
+            "\tsi validar.numero(${1:entrada})",
+            "\t\tromper",
+            "\tfin",
+            "\tescribir(\"Entrada inválida, intente de nuevo\")",
+            "hasta falso",
+            "${3:valor} = anumero(${1:entrada})$0"
+        ],
+        "description": "💬 Bucle seguro de validación de entrada con preservación de ámbito"
+    },
+    // ============================================
+    // ARCHIVOS (Prefix: file:*)
+    // ============================================
+    "Leer Archivo Seguro": {
+        "prefix": "file:leer_seguro",
+        "body": [
+            "intentar",
+            "\t${1:contenido} = archivo.leer(\"${2:archivo.txt}\")",
+            "\t$0",
+            "atrapar (${3:error})",
+            "\tescribir(\"Error al leer archivo: \" .. ${3:error})",
+            "fin"
+        ],
+        "description": "📁 Leer archivo protegido con intentar/atrapar"
+    },
+    "Leer JSON": {
+        "prefix": "file:json_leer",
+        "body": [
+            "intentar",
+            "\t${1:datos} = archivo.leerJson(\"${2:datos.json}\")",
+            "\t$0",
+            "atrapar (${3:error})",
+            "\tescribir(\"Error al leer JSON: \" .. ${3:error})",
+            "fin"
+        ],
+        "description": "📁 Leer archivo JSON deserializado a diccionario o lista"
+    },
+    "Procesar Líneas de Archivo": {
+        "prefix": "file:procesar_lineas",
+        "body": [
+            "${1:lineas} = archivo.lineas(\"${2:archivo.txt}\")",
+            "para ${3:linea} en ${1:lineas}",
+            "\t$0",
+            "fin"
+        ],
+        "description": "📁 Leer archivo y procesar cada línea con bucle para"
+    },
+    // ============================================
+    // UTILIDADES (Prefix: util:*)
+    // ============================================
+    "Validar Tipo": {
+        "prefix": "util:validar",
+        "body": [
+            "si tipo(${1:variable}) != \"${2:decimal}\"",
+            "\tescribir(\"Error: Se esperaba ${2:decimal}\")",
+            "\tretornar",
+            "fin",
+            "$0"
+        ],
+        "description": "🔧 Validar tipo de dato antes de operar"
+    },
+    "Cronómetro": {
+        "prefix": "util:cronometro",
+        "body": [
+            "${1:inicio} = sis.milisegundos()",
+            "$0",
+            "${2:fin} = sis.milisegundos()",
+            "escribir(\"Tiempo de ejecución: \" .. (${2:fin} - ${1:inicio}) .. \" ms\")"
+        ],
+        "description": "🔧 Medir tiempo de ejecución en milisegundos"
+    },
+    "Validar Email": {
+        "prefix": "util:validar_email",
+        "body": [
+            "si validar.email(${1:correo})",
+            "\t$0",
+            "sino",
+            "\tescribir(\"Email inválido\")",
+            "fin"
+        ],
+        "description": "🔧 Validar formato de correo electrónico"
+    },
+    "Validar Contraseña Segura": {
+        "prefix": "util:validar_pass",
+        "body": [
+            "si validar.contrasenaSegura(${1:password})",
+            "\t$0",
+            "sino",
+            "\tescribir(\"Contraseña débil: mínimo 8 caracteres, mayúsculas, minúsculas y números\")",
+            "fin"
+        ],
+        "description": "🔧 Validar complejidad de contraseña"
+    },
+    // ============================================
+    // WEB (Prefix: web:*)
+    // ============================================
+    "Petición GET": {
+        "prefix": "web:get",
+        "body": [
+            "intentar",
+            "\t${1:respuesta} = web.obtener(\"${2:https://api.ejemplo.com/datos}\")",
+            "\t${3:datos} = ${1:respuesta}[\"${4:json}\"]",
+            "\t$0",
+            "atrapar (${5:error})",
+            "\tescribir(\"Error en petición: \" .. ${5:error})",
+            "fin"
+        ],
+        "description": "🌐 Realizar petición GET con manejo de errores"
+    },
+    "Descargar Archivo": {
+        "prefix": "web:descargar",
+        "body": [
+            "intentar",
+            "\tweb.descargar(\"${1:https://ejemplo.com/archivo.pdf}\", \"${2:descarga.pdf}\")",
+            "\tescribir(\"Descarga completada\")$0",
+            "atrapar (${3:error})",
+            "\tescribir(\"Error al descargar: \" .. ${3:error})",
+            "fin"
+        ],
+        "description": "🌐 Descargar archivo binario desde URL"
+    },
+    // ============================================
+    // PLANTILLAS DE PROGRAMA (Prefix: tpl:*)
+    // ============================================
+    "Programa Básico": {
+        "prefix": "tpl:basico",
+        "body": [
+            "# ${1:Nombre del programa}",
+            "# Autor: ${2:Tu nombre}",
+            "# Fecha: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+            "",
+            "escribir(\"¡Hola, Latino.NET!\")",
+            "",
+            "$0"
+        ],
+        "description": "📋 Plantilla de programa básico"
+    },
+    "Script con Main": {
+        "prefix": "tpl:main",
+        "body": [
+            "# ${1:Título}",
+            "# Autor: ${2:Tu nombre}",
+            "",
+            "funcion principal()",
+            "\t$0",
+            "fin",
+            "",
+            "# Punto de entrada",
+            "principal()"
+        ],
+        "description": "📋 Script con función principal aislada"
+    },
+    "CLI con Argumentos": {
+        "prefix": "tpl:cli",
+        "body": [
+            "# Script CLI con argumentos",
+            "",
+            "args = sis.argumentos()",
+            "",
+            "si lista.longitud(args) < ${1:1}",
+            "\tescribir(\"Uso: latino ${2:script.lat} <${3:argumento}>\")",
+            "\tsis.salir()",
+            "fin",
+            "",
+            "${4:entrada} = args[0]",
+            "$0"
+        ],
+        "description": "📋 Script CLI con validación de argumentos y salida limpia"
+    },
+    "Script con Manejo de Errores Global": {
+        "prefix": "tpl:robusto",
+        "body": [
+            "# ${1:Título del Script}",
+            "# Autor: ${2:Tu nombre}",
+            "",
+            "funcion principal()",
+            "\tintentar",
+            "\t\t$0",
+            "\tatrapar (${3:error})",
+            "\t\tescribir(\"Error fatal: \" .. ${3:error})",
+            "\t\tsis.salir()",
+            "\tfin",
+            "fin",
+            "",
+            "principal()"
+        ],
+        "description": "📋 Script robusto con manejo global de errores"
+    },
+    // ============================================
+    // OPERADORES ESPECIALES (Prefix: op:*)
+    // ============================================
+    "AND Acentuado (ý)": {
+        "prefix": [
+            "op:and",
+            "yy"
+        ],
+        "body": "ý",
+        "description": "⚡ Operador lógico AND (ý) - atajo 'yy'"
+    },
+    "OR Acentuado (ó)": {
+        "prefix": [
+            "op:or",
+            "oo"
+        ],
+        "body": "ó",
+        "description": "⚡ Operador lógico OR (ó) - atajo 'oo'"
+    },
+    "Regex Match": {
+        "prefix": "op:regex",
+        "body": [
+            "${1:texto} ~= \"${2:patron}\"$0"
+        ],
+        "description": "⚡ Coincidencia con expresión regular (~=)"
+    },
+    "Incremento": {
+        "prefix": "op:inc",
+        "body": "${1:variable}++$0",
+        "description": "⚡ Incrementar variable simple en 1 (++)"
+    },
+    "Decremento": {
+        "prefix": "op:dec",
+        "body": "${1:variable}--$0",
+        "description": "⚡ Decrementar variable simple en 1 (--)"
+    },
+    // ============================================
+    // SINTAXIS ALTERNATIVA (Prefix: syntax:*)
+    // ============================================
+    "Lambda Corta (One-liner)": {
+        "prefix": "syntax:lambda",
+        "body": [
+            "fun(${1:x}) ret ${2:x * 2} fin$0"
+        ],
+        "description": "🎨 Función anónima en una sola línea (compacta)"
+    },
+    "Diccionario Alineado": {
+        "prefix": "syntax:dic_alineado",
+        "body": [
+            "${1:configuracion} = {",
+            "\t\"${2:host}\"    : \"${3:localhost}\",",
+            "\t\"${4:puerto}\"  : ${5:8080},",
+            "\t\"${6:debug}\"   : ${7:cierto}",
+            "}$0"
+        ],
+        "description": "🎨 Diccionario con formato vertical y claves alineadas"
+    },
+    "Matriz 3x3 (Lista Anidada)": {
+        "prefix": "syntax:matriz",
+        "body": [
+            "${1:matriz} = [",
+            "\t[${2:1}, ${3:2}, ${4:3}],",
+            "\t[${5:4}, ${6:5}, ${7:6}],",
+            "\t[${8:7}, ${9:8}, ${10:9}]",
+            "]$0"
+        ],
+        "description": "🎨 Estructura de matriz bidimensional (lista de listas)"
+    },
+    "Pipeline de Datos": {
+        "prefix": "syntax:pipeline",
+        "body": [
+            "${1:resultado} = ${2:datos}",
+            "\t|> ${3:funcion_1}",
+            "\t|> ${4:funcion_2}",
+            "\t|> ${5:funcion_3}$0"
+        ],
+        "description": "🎨 Flujo de datos usando el operador Pipeline (|>)"
+    },
+    "Asignación Nula (Fusión)": {
+        "prefix": "syntax:fusion_nula",
+        "body": [
+            "${1:variable} ??= ${2:valor_defecto}$0"
+        ],
+        "description": "🎨 Asigna el valor solo si la variable es nula (??=)"
+    },
+    "Omni-Solver (Variables Conocidas)": {
+        "prefix": "syntax:omni",
+        "body": [
+            "${1:resultado} = ${2:modulo}.${3:funcion}({",
+            "\t\"${4:var1}\": ${5:valor1},",
+            "\t\"${6:var2}\": ${7:valor2}",
+            "})",
+            "escribir(${1:resultado}[\"resultado\"] .. \" \" .. ${1:resultado}[\"unidad\"])$0"
+        ],
+        "description": "🎨 Patrón Omni-Solver: diccionario de variables conocidas para funciones que despejan incógnitas"
+    },
+    "Desestructurar Diccionario de Resultado": {
+        "prefix": "syntax:desestructurar",
+        "body": [
+            "${1:r} = ${2:funcion}(${3:args})",
+            "${4:valor}  = ${1:r}[\"${5:resultado}\"]",
+            "${6:unidad} = ${1:r}[\"${7:unidad}\"]",
+            "${8:extra}  = ${1:r}[\"${9:clave_extra}\"]$0"
+        ],
+        "description": "🎨 Extrae múltiples claves de un diccionario de retorno en variables individuales"
+    },
+    "Fábrica de Funciones (Clausura)": {
+        "prefix": "syntax:fabrica",
+        "body": [
+            "funcion ${1:Hacer}${2:Transformador}(${3:config})",
+            "\tretornar funcion(${4:dato})",
+            "\t\tretornar ${5:dato * config}",
+            "\tfin",
+            "fin",
+            "",
+            "${6:transformador} = ${1:Hacer}${2:Transformador}(${7:valor_config})$0"
+        ],
+        "description": "🎨 Fábrica de funciones: función que genera y retorna otra función especializada (clausura)"
+    },
+    "Iterar con Índice y Valor": {
+        "prefix": "syntax:enumerar",
+        "body": [
+            "desde (${1:i} = 0; ${1:i} < lista.longitud(${2:coleccion}); ${1:i}++)",
+            "\t${3:elemento} = ${2:coleccion}[${1:i}]",
+            "\t${0:# lógica}",
+            "fin"
+        ],
+        "description": "🎨 Bucle con acceso simultáneo al índice y al valor del elemento"
+    },
+    "Función Recursiva": {
+        "prefix": "syntax:recursion",
+        "body": [
+            "funcion ${1:Resolver}(${2:n})",
+            "\t# Caso base",
+            "\tsi ${2:n} <= ${3:1}",
+            "\t\tretornar ${4:1}",
+            "\tfin",
+            "",
+            "\t# Caso recursivo",
+            "\tretornar ${5:${2:n} * ${1:Resolver}(${2:n} - 1)}",
+            "fin$0"
+        ],
+        "description": "🎨 Estructura canónica de función recursiva con caso base y caso recursivo"
+    },
+    "Acumulador Seguro en Reducción": {
+        "prefix": "syntax:acumulador",
+        "body": [
+            "${1:resultado} = lista.reducir(${2:coleccion}, funcion(${3:acum}, ${4:item})",
+            "\t${5:clave} = ${4:item}[\"${6:campo_agrupador}\"]",
+            "\t${3:acum}[${5:clave}] = (${3:acum}[${5:clave}] ?? ${7:0}) + ${4:item}[\"${8:campo_valor}\"]",
+            "\tretornar ${3:acum}",
+            "fin, {})$0"
+        ],
+        "description": "🎨 Reducción que agrupa y acumula valores en un diccionario, con fusión nula para inicializar claves"
+    },
+    "Multiasignación desde Lista": {
+        "prefix": "syntax:desempacar",
+        "body": [
+            "${1:partes}   = ${2:lista_origen}",
+            "${3:primero}  = ${1:partes}[0]",
+            "${4:segundo}  = ${1:partes}[1]",
+            "${5:tercero}  = ${1:partes}[2]$0"
+        ],
+        "description": "🎨 Extrae valores posicionales de una lista en variables individuales (desestructuración manual)"
+    }
+}

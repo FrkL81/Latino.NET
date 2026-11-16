@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.descensoGradiente(${1:funcion}, ${2:listaX0}, ${3:tasa}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>optimizacion.descensoGradiente</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(X) con el Método de Descenso de Gradiente (Steepest Descent).\n</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+archivo.escribirJson(${1:ruta}, ${2:datos}${3:, ${4:verdadero}})
+]]></content>
+	<tabTrigger>archivo.escribirJson</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Escribe un diccionario o lista como JSON</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:newtonFuerza:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Dinámica: Retorno de newtonFuerza: formula</description>
+</snippet>

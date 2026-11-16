@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.es_igual(${1:cadena1}, ${2:cadena2}, ${3:"exacta"})
+]]></content>
+	<tabTrigger>cadena.es_igual</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Comparar con modo</description>
+</snippet>
+

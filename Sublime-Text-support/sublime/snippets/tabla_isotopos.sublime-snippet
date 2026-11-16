@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.isotopos(${1:elemento})
+]]></content>
+	<tabTrigger>tabla.isotopos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna los isótopos estables conocidos de un elemento.\nRetorna: {elemento, ...</description>
+</snippet>

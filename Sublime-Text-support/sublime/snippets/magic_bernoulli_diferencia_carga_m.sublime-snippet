@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[diferencia_carga_m]]></content>
+    <tabTrigger>str:bernoulli:diferencia_carga_m</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de bernoulli: diferencia_carga_m</description>
+</snippet>

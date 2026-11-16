@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.cilindroCompleto(${1:radio}, ${2:altura})
+]]></content>
+	<tabTrigger>geometria.cilindroCompleto</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Área y volumen de un cilindro.\n\nFórmulas: A_lat = 2πrh | A_tot = 2πr(h+r) |...</description>
+</snippet>

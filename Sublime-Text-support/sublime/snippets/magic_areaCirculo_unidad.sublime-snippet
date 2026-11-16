@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:areaCirculo:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de areaCirculo: unidad</description>
+</snippet>

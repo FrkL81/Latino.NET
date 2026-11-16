@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:monteCarlo:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de monteCarlo: resultado</description>
+</snippet>

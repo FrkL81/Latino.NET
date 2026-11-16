@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[gl]]></content>
+    <tabTrigger>str:vol:gl</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Volumen: Volumen: Galón (US)</description>
+</snippet>

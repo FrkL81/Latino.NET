@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:serieGeometrica:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de serieGeometrica: unidad</description>
+</snippet>

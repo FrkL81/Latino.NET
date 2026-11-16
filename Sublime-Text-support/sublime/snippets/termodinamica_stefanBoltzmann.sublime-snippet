@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.stefanBoltzmann(${1:temperaturaK}, ${2:emisividad}, ${3:areaM2})
+]]></content>
+	<tabTrigger>termodinamica.stefanBoltzmann</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Potencia radiada por un cuerpo (Ley de Stefan-Boltzmann). σ = 5.6704×10⁻⁸ W/(...</description>
+</snippet>

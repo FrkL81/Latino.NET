@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[dimension]]></content>
+    <tabTrigger>str:sistemaRk4:dimension</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRk4: dimension</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[caudal_m3_s]]></content>
+    <tabTrigger>str:continuidad:caudal_m3_s</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de continuidad: caudal_m3_s</description>
+</snippet>

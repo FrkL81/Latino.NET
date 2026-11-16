@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:inductorEnergia:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de inductorEnergia: unidad</description>
+</snippet>

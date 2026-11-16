@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.lineas(${1:"ruta.txt"})
+]]></content>
+	<tabTrigger>archivo.lineas</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Leer como lista de líneas</description>
+</snippet>
+

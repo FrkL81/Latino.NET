@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ratio_base_acido]]></content>
+    <tabTrigger>str:hendersonHasselbalch:ratio_base_acido</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de hendersonHasselbalch: ratio_base_acido</description>
+</snippet>

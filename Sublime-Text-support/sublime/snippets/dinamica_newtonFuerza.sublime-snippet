@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.newtonFuerza(${1:masa}, ${2:aceleracion})
+]]></content>
+	<tabTrigger>dinamica.newtonFuerza</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Segunda Ley de Newton.\n\nFórmula: F = m·a</description>
+</snippet>

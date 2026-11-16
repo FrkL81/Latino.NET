@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.ipv4(${1:texto})
+]]></content>
+	<tabTrigger>validar.ipv4</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Valida dirección IPv4</description>
+</snippet>

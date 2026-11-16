@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+funcion principal()
+	$0
+fin
+
+principal()
+]]></content>
+	<tabTrigger>fn:main</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚙️ Función principal ejecutable</description>
+</snippet>

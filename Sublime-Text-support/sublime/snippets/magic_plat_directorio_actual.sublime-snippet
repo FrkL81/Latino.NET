@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[directorio_actual]]></content>
+    <tabTrigger>str:plat:directorio_actual</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plataforma: Retorno de plat: directorio_actual</description>
+</snippet>

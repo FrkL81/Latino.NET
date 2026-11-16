@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:sistemaRk4:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRk4: formula</description>
+</snippet>

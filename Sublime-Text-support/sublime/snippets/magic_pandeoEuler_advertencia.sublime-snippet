@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[advertencia]]></content>
+    <tabTrigger>str:pandeoEuler:advertencia</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de pandeoEuler: advertencia</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[capital_inicial]]></content>
+    <tabTrigger>str:interesCompuesto:capital_inicial</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de interesCompuesto: capital_inicial</description>
+</snippet>

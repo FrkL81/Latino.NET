@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:frecuenciaPeriodo:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de frecuenciaPeriodo: formula</description>
+</snippet>

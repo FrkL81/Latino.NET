@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+computacion.productoAnchoBandaLatencia(${1:ancho_banda_bps}, ${2:latencia_s})
+]]></content>
+	<tabTrigger>computacion.productoAnchoBandaLatencia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Producto ancho de banda × latencia (Bandwidth-Delay Product).\nIndica cuántos...</description>
+</snippet>

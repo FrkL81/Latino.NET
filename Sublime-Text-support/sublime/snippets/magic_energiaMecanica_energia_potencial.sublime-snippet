@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[energia_potencial]]></content>
+    <tabTrigger>str:energiaMecanica:energia_potencial</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Dinámica: Retorno de energiaMecanica: energia_potencial</description>
+</snippet>

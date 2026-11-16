@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.eliminar(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.eliminar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Alias de borrar</description>
+</snippet>
+

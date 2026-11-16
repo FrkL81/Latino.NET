@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[acre]]></content>
+    <tabTrigger>str:area:acre</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Área: Área: Acre</description>
+</snippet>

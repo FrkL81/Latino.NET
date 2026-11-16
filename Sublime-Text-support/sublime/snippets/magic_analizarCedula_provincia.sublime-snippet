@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[provincia]]></content>
+    <tabTrigger>str:analizarCedula:provincia</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Validar: Retorno de analizarCedula: provincia</description>
+</snippet>

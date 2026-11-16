@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[meses]]></content>
+    <tabTrigger>str:lapsos:meses</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Unidad: Meses (lapsos)</description>
+</snippet>

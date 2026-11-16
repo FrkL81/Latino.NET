@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ok]]></content>
+    <tabTrigger>str:obtener:ok</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de obtener: ok</description>
+</snippet>

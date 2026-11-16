@@ -1,0 +1,79 @@
+/*
+==============================================================
+LIBRERÍA: sis
+DESCRIPCIÓN: Funciones para interactuar con el sistema operativo.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: sis.cwd
+DESCRIPCIÓN: Retorna el directorio de trabajo actual.
+PARÁMETROS: ninguno
+RETORNA: cadena - Directorio actual.
+*/
+escribir("CWD: " .. sis.cwd())
+
+/*
+FUNCIÓN: sis.usuario
+DESCRIPCIÓN: Retorna el nombre del usuario actual.
+PARÁMETROS: ninguno
+RETORNA: cadena - Nombre de usuario.
+*/
+escribir("Usuario: " .. sis.usuario())
+
+/*
+FUNCIÓN: sis.operativo
+DESCRIPCIÓN: Verifica el sistema operativo actual.
+PARÁMETROS:
+  - nombre_so (cadena): WINDOWS, LINUX, o MAC.
+RETORNA: logico - verdadero si coincide.
+*/
+escribir("¿Es Windows?: " .. sis.operativo("WINDOWS"))
+
+/*
+FUNCIÓN: sis.tiempo
+DESCRIPCIÓN: Retorna la fecha/hora actual con formato opcional.
+PARÁMETROS:
+  - formato (cadena): Especificadores %Y, %m, %d, %H, %M, %S (opcional).
+RETORNA: cadena - Fecha/hora formateada.
+*/
+# Salida variable (depende del momento de ejecución y hardware):
+escribir("Tiempo: " .. sis.tiempo("%d/%m/%Y %H:%M:%S"))
+
+/*
+FUNCIÓN: sis.entorno
+DESCRIPCIÓN: Obtiene una variable de entorno.
+PARÁMETROS:
+  - nombre_var (cadena): Nombre de la variable.
+  - defecto (cadena): Valor si no existe (opcional).
+RETORNA: cadena - Valor de la variable.
+*/
+escribir("PATH: " .. cadena.subcadena(sis.entorno("PATH"), 0, 50) .. "...")
+
+/*
+FUNCIÓN: sis.ejecutar
+DESCRIPCIÓN: Ejecuta un comando del sistema y retorna la salida.
+PARÁMETROS:
+  - comando (cadena): Comando a ejecutar.
+RETORNA: cadena - Salida del comando.
+*/
+// Usamos un comando simple que funcione en Windows
+escribir("Salida de 'echo': " .. sis.ejecutar("echo Latino"))
+
+/*
+FUNCIÓN: sis.milisegundos
+DESCRIPCIÓN: Obtiene los milisegundos transcurridos desde el inicio del sistema.
+PARÁMETROS: ninguno
+RETORNA: numerico - Milisegundos.
+*/
+# Salida variable (depende del momento de ejecución y hardware):
+escribir("Tick: " .. sis.milisegundos())
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Sis.lat
+==============================================================
+*/

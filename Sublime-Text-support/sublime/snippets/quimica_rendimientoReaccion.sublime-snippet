@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.rendimientoReaccion(${1:masaObtenida}, ${2:masaTeorica})
+]]></content>
+	<tabTrigger>quimica.rendimientoReaccion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Rendimiento porcentual de una reacción química.\n\nFórmula: R% = (m_obtenida ...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[L]]></content>
+    <tabTrigger>str:factorizacionLU:L</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de factorizacionLU: L</description>
+</snippet>

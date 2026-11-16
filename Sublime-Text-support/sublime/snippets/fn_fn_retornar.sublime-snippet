@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+funcion ${1:nombre}(${2:params})
+	$3
+	retornar ${0:resultado}
+fin
+]]></content>
+	<tabTrigger>fn:retornar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚙️ Función que retorna valor</description>
+</snippet>

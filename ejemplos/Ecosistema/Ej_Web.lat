@@ -1,0 +1,71 @@
+/*
+==============================================================
+LIBRERÍA: web
+DESCRIPCIÓN: Funciones para comunicación HTTP y utilidades web.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: web.obtener
+DESCRIPCIÓN: Realiza una petición GET simple.
+PARÁMETROS:
+  - url (cadena): Dirección a consultar.
+RETORNA: diccionario - Respuesta con {estado, ok, texto, json, encabezados}.
+*/
+// Usamos un servicio de prueba (Postman Echo)
+res = web.obtener("https://postman-echo.com/get?test=latino")
+escribir("GET Status: " .. res.estado)
+escribir("GET OK: " .. res.ok)
+
+/*
+FUNCIÓN: web.enviar
+DESCRIPCIÓN: Realiza una petición POST simple.
+PARÁMETROS:
+  - url (cadena): Dirección a consultar.
+  - datos (cualquiera): Datos a enviar (diccionario o cadena).
+RETORNA: diccionario - Respuesta.
+*/
+resPost = web.enviar("https://postman-echo.com/post", {"saludo": "hola"})
+escribir("POST Status: " .. resPost.estado)
+
+/*
+FUNCIÓN: web.codificarUrl
+DESCRIPCIÓN: Codifica un string para uso en URL.
+PARÁMETROS:
+  - texto (cadena): Texto original.
+RETORNA: cadena - Texto codificado.
+*/
+escribir("URL Encoded: " .. web.codificarUrl("hola mundo!"))
+
+/*
+FUNCIÓN: web.decodificarUrl
+DESCRIPCIÓN: Decodifica un string URL-encoded.
+PARÁMETROS:
+  - texto (cadena): Texto codificado.
+RETORNA: cadena - Texto original.
+*/
+escribir("URL Decoded: " .. web.decodificarUrl("hola%20mundo%21"))
+
+/*
+FUNCIÓN: web.solicitar
+DESCRIPCIÓN: Realiza una petición HTTP personalizada.
+PARÁMETROS:
+  - config (diccionario): {url, metodo, datos, encabezados, timeout}.
+RETORNA: diccionario - Respuesta.
+*/
+config = {
+    "url": "https://postman-echo.com/get",
+    "metodo": "GET",
+    "headers": {"X-Custom": "Latino"}
+}
+resCust = web.solicitar(config)
+escribir("Custom Status: " .. resCust.estado)
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Web.lat
+==============================================================
+*/

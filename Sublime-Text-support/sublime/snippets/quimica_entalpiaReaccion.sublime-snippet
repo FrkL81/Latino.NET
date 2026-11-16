@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.entalpiaReaccion(${1:sumaProductosKJ}, ${2:sumaReactivosKJ})
+]]></content>
+	<tabTrigger>quimica.entalpiaReaccion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Entalpía estándar de reacción (Ley de Hess).\n\nFórmula: ΔH°rxn = ΣΔH°f(produ...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:seccionAurea:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de seccionAurea: formula</description>
+</snippet>

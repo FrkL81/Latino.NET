@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[exactoHastaGrado]]></content>
+    <tabTrigger>str:cuadraturaGauss:exactoHastaGrado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de cuadraturaGauss: exactoHastaGrado</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.segundaDerivada(${1:funcion}, ${2:x}, ${3:h})
+]]></content>
+	<tabTrigger>calculo.segundaDerivada</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Aproxima la segunda derivada f''(x) por Diferencias Finitas Centrales.\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[alternar]]></content>
+    <tabTrigger>str:estilo:alternar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Alterna MAY/min (SwapCase)</description>
+</snippet>

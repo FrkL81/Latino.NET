@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.simpson38(${1:funcion}, ${2:a}, ${3:b}, ${4:n})
+]]></content>
+	<tabTrigger>calculo.simpson38</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Regla de Simpson 3/8 compuesta. Integra f(x) en [a, b].\n</description>
+</snippet>

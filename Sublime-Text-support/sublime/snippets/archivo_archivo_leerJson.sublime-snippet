@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+archivo.leerJson(${1:ruta})
+]]></content>
+	<tabTrigger>archivo.leerJson</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Lee un archivo JSON y retorna diccionario o lista</description>
+</snippet>

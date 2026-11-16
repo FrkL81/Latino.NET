@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.asen(${1:numero})
+]]></content>
+	<tabTrigger>mate.asen</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Arcoseno</description>
+</snippet>
+

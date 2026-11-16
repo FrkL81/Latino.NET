@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.indice(${1:lista}, ${2:elemento})
+]]></content>
+	<tabTrigger>lista.indice</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Encontrar índice del elemento</description>
+</snippet>
+

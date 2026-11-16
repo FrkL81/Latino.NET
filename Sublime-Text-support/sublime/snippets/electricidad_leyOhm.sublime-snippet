@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electricidad.leyOhm(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>electricidad.leyOhm</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ley de Ohm. Pasa 2 valores: 'V', 'I' o 'R'.\n\nFórmula: V = I · R</description>
+</snippet>

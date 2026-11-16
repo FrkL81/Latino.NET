@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[velocidad_media_m_s]]></content>
+    <tabTrigger>str:caudalManning:velocidad_media_m_s</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de caudalManning: velocidad_media_m_s</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.cedula(${1:texto})
+]]></content>
+	<tabTrigger>validar.cedula</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Valida formato básico de cédula panameña</description>
+</snippet>

@@ -1,0 +1,85 @@
+# ==================================================================
+# Ejemplo: Mini-Framework de Pruebas Unitarias (TDD / BDD)
+# Muestra cómo construir un corredor de tests idiomático en Latino.NET
+# ==================================================================
+
+# ── 1. El motor de assertions y suite ─────────────────────────────
+clase SuitePruebas
+    constructor(nombre_modulo)
+        este.nombre = nombre_modulo
+        este.pasadas = 0
+        este.falladas = 0
+    fin
+
+    funcion afirmar_igual(obtenido, esperado, descripcion)
+        si obtenido == esperado
+            escribir(ç("  ✅ [PASS] |descripcion|"))
+            este.pasadas = este.pasadas + 1
+        sino
+            desc = descripcion
+            obt = obtenido
+            esp = esperado
+            escribir(ç("  ❌ [FAIL] |desc| (Obtenido: '|obt|', Esperado: '|esp|')"))
+            este.falladas = este.falladas + 1
+        fin
+    fin
+
+    funcion probar(descripcion, funcion_test)
+        intentar
+            funcion_test(este)
+        atrapar (e)
+            desc = descripcion
+            escribir(ç("  💥 [ERROR] |desc| -> Lanzó excepción no controlada: |e|"))
+            este.falladas = este.falladas + 1
+        fin
+    fin
+
+    funcion emitir_reporte()
+        total = este.pasadas + este.falladas
+        escribir("\n========================================")
+        escribir(ç("📊 RESUMEN: |este.nombre|"))
+        escribir("========================================")
+        escribir(ç("Total ejecutadas: |total|"))
+        escribirf("Exitosas:         {0} ✅\n", este.pasadas)
+        escribirf("Fallidas:         {0} ❌\n", este.falladas)
+        escribir("========================================\n")
+    fin
+fin
+
+# ── 2. Funciones de negocio a probar ──────────────────────────────
+funcion es_palindromo(cad)
+    limpia = cadena.minusculas(cadena.recortar(cad))
+    retornar limpia == cadena.invertir(limpia)
+fin
+
+funcion calcular_iva(subtotal)
+    si subtotal < 0
+        lanzar("El subtotal no puede ser negativo")
+    fin
+    retornar mate.redondear(subtotal * 0.16, 2)
+fin
+
+# ── 3. Ejecución de las pruebas ───────────────────────────────────
+escribir("🧪 INICIANDO SUITE DE PRUEBAS UNITARIAS...\n")
+suite = nueva SuitePruebas("Módulo de Utilidades")
+
+suite.probar("Detección de palíndromos simples", fun(s)
+    s.afirmar_igual(es_palindromo("radar"), cierto, "Debe detectar 'radar'")
+    s.afirmar_igual(es_palindromo("latino"), falso, "'latino' no es palíndromo")
+fin)
+
+suite.probar("Cálculo de impuestos estándar", fun(s)
+    s.afirmar_igual(calcular_iva(100.0), 16.0, "IVA de 100 debe ser 16")
+    s.afirmar_igual(calcular_iva(50.0),  8.0,  "IVA de 50 debe ser 8")
+fin)
+
+suite.probar("Regla de negocio: rechazar negativos en IVA", fun(s)
+    intentar
+        calcular_iva(-10.0)
+        s.afirmar_igual(cierto, falso, "Debería haber lanzado error por monto negativo")
+    atrapar (err)
+        s.afirmar_igual(cierto, cierto, "Rechaza montos negativos correctamente con lanzar()")
+    fin
+fin)
+
+suite.emitir_reporte()

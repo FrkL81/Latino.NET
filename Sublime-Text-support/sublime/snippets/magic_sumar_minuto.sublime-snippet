@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[minuto]]></content>
+    <tabTrigger>str:sumar:minuto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de sumar: minuto</description>
+</snippet>

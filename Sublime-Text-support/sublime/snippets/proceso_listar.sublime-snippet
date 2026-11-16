@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.listar()
+]]></content>
+	<tabTrigger>proceso.listar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Lista los procesos activos del sistema operativo.</description>
+</snippet>

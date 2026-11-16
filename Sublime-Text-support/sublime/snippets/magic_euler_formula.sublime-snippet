@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:euler:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de euler: formula</description>
+</snippet>

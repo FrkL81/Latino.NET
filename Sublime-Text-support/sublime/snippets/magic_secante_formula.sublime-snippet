@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:secante:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de secante: formula</description>
+</snippet>

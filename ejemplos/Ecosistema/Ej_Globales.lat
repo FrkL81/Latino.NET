@@ -1,0 +1,104 @@
+/*
+==============================================================
+LIBRERÍA: Globales
+DESCRIPCIÓN: Funciones globales disponibles en todo momento.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: escribir
+DESCRIPCIÓN: Escribe texto en la consola con salto de línea.
+PARÁMETROS:
+  - texto... : Uno o más valores.
+RETORNA: nulo
+*/
+escribir("Hola", "Mundo", 2026)
+
+/*
+FUNCIÓN: acadena
+DESCRIPCIÓN: Convierte cualquier valor a cadena de texto.
+PARÁMETROS:
+  - valor (cualquiera): Entrada.
+RETORNA: cadena - Representación textual.
+*/
+escribir("Como cadena: " .. acadena(123))
+
+/*
+FUNCIÓN: alogico
+DESCRIPCIÓN: Convierte cualquier valor a lógico (verdadero/falso).
+PARÁMETROS:
+  - valor (cualquiera): Entrada.
+RETORNA: logico - Valor booleano.
+*/
+escribir("Como lógico (1): " .. alogico(1))
+escribir("Como lógico (0): " .. alogico(0))
+
+/*
+FUNCIÓN: anumero
+DESCRIPCIÓN: Convierte cadenas y lógicos a número.
+PARÁMETROS:
+  - valor (cualquiera): Entrada.
+RETORNA: numerico - Valor numérico o nulo.
+*/
+escribir("Como número ('42'): " .. anumero("42"))
+
+/*
+FUNCIÓN: tipo
+DESCRIPCIÓN: Devuelve el tipo de dato del valor como cadena.
+PARÁMETROS:
+  - valor (cualquiera): Entrada.
+RETORNA: cadena - Nombre del tipo.
+*/
+escribir("Tipo de []: " .. tipo([]))
+
+/*
+FUNCIÓN: clonar
+DESCRIPCIÓN: Realiza una copia profunda (Deep Copy) de listas, diccionarios o tuplas.
+PARÁMETROS:
+  - objeto (cualquiera): El elemento a copiar.
+RETORNA: cualquiera - El objeto clonado.
+*/
+original = { "a": [1, 2] }
+copia = clonar(original)
+copia.a[0] = 99
+escribir("Clonación exitosa si el original sigue siendo 1: " .. original.a[0])
+
+/*
+FUNCIÓN: ç (Compositor)
+DESCRIPCIÓN: Incrusta variables en texto usando |variable|.
+PARÁMETROS:
+  - plantilla (cadena): Texto con marcas.
+RETORNA: cadena - Texto procesado.
+*/
+nombre = "Latino"
+escribir(ç("Hola |nombre|!"))
+
+/*
+FUNCIÓN: rango
+DESCRIPCIÓN: Genera lista de números.
+PARÁMETROS:
+  - inicio (numerico): Desde.
+  - fin (numerico): Hasta (exclusivo).
+  - paso (numerico): Incremento (opcional).
+RETORNA: lista - Lista de números.
+*/
+escribir("Rango 1-5: " .. rango(1, 6))
+
+/*
+FUNCIÓN: evaluar
+DESCRIPCIÓN: Ejecuta código Latino dinámicamente.
+PARÁMETROS:
+  - codigo (cadena): Script a ejecutar.
+RETORNA: cualquiera - Resultado de la última expresión.
+*/
+resultado = evaluar("2 + 2")
+escribir("Evaluación '2 + 2': " .. resultado)
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Globales.lat
+==============================================================
+*/

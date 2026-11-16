@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.atan2(${1:y}, ${2:x})
+]]></content>
+	<tabTrigger>mate.atan2</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Ángulo entre eje X y punto (y,x)</description>
+</snippet>
+

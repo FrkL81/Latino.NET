@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.esfera(${1:radio})
+]]></content>
+	<tabTrigger>geometria.esfera</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Área superficial y volumen de una esfera.\n\nFórmulas: A = 4πr² | V = (4/3)πr³</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[eficiencia_porcentaje]]></content>
+    <tabTrigger>str:cicloCarnot:eficiencia_porcentaje</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de cicloCarnot: eficiencia_porcentaje</description>
+</snippet>

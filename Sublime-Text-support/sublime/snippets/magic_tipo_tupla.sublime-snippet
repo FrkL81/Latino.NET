@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tupla]]></content>
+    <tabTrigger>str:tipo:tupla</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tipo: Retorno de tipo: tupla</description>
+</snippet>

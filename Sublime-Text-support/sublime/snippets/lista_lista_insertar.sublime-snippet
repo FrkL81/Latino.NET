@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.insertar(${1:lista}, ${2:elemento}, ${3:indice})
+]]></content>
+	<tabTrigger>lista.insertar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Insertar en posición</description>
+</snippet>
+

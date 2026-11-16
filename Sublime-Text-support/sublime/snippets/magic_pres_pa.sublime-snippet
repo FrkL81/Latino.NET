@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pa]]></content>
+    <tabTrigger>str:pres:pa</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Presión: Presión: Pascal</description>
+</snippet>

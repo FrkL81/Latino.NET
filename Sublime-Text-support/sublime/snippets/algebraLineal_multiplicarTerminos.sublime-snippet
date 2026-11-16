@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.multiplicarTerminos(${1:colA}, ${2:colB})
+]]></content>
+	<tabTrigger>algebraLineal.multiplicarTerminos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Producto de Hadamard: multiplica dos vectores o matrices elemento</description>
+</snippet>

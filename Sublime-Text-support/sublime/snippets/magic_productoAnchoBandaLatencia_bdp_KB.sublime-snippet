@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[bdp_KB]]></content>
+    <tabTrigger>str:productoAnchoBandaLatencia:bdp_KB</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de productoAnchoBandaLatencia: bdp_KB</description>
+</snippet>

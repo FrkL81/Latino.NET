@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:factorSeguridad:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de factorSeguridad: resultado</description>
+</snippet>

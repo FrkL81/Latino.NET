@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+global ${1:variable} = ${2:valor}
+]]></content>
+	<tabTrigger>global</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🌍 Variable global</description>
+</snippet>

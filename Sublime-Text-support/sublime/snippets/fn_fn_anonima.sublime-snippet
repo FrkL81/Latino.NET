@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+funcion(${1:params})
+	$0
+fin
+]]></content>
+	<tabTrigger>fn:anonima</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚙️ Función anónima (lambda)</description>
+</snippet>

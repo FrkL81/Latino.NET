@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[sqlite]]></content>
+    <tabTrigger>str:plugin:sqlite</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: sqlite</description>
+</snippet>

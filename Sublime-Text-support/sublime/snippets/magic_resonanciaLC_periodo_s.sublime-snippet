@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[periodo_s]]></content>
+    <tabTrigger>str:resonanciaLC:periodo_s</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de resonanciaLC: periodo_s</description>
+</snippet>

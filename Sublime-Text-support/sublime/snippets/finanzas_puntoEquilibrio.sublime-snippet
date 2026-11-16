@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+finanzas.puntoEquilibrio(${1:costos_fijos}, ${2:precio_venta}, ${3:costo_variable_unitario})
+]]></content>
+	<tabTrigger>finanzas.puntoEquilibrio</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Punto de equilibrio: unidades mínimas para cubrir costos.\n\nFórmula: Q = CF ...</description>
+</snippet>

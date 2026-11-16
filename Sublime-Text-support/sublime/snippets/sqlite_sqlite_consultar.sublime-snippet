@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.consultar(${1:id_db}, "${2:SELECT * FROM table}")
+]]></content>
+	<tabTrigger>sqlite.consultar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🗄️ Consultar datos (SELECT) - Retorna lista de diccionarios</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[longitud_efectiva_m]]></content>
+    <tabTrigger>str:pandeoEuler:longitud_efectiva_m</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de pandeoEuler: longitud_efectiva_m</description>
+</snippet>

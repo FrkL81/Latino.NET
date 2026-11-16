@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.minusculas(${1:texto})
+]]></content>
+	<tabTrigger>cadena.minusculas</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Convertir a minúsculas</description>
+</snippet>
+

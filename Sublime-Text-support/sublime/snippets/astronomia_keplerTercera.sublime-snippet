@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+astronomia.keplerTercera(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>astronomia.keplerTercera</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Tercera Ley de Kepler. Pasa 2 de: 'T' (periodo s), 'a' (semieje m), 'M' (masa...</description>
+</snippet>

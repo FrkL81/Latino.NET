@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+matematicas.logaritmoBase(${1:valor}, ${2:base})
+]]></content>
+	<tabTrigger>matematicas.logaritmoBase</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Logaritmo de un número en cualquier base (cambio de base).\n\nFórmula: log_b(...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:decibelesVoltaje:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de decibelesVoltaje: resultado</description>
+</snippet>

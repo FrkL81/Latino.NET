@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.pot(${1:base}, ${2:exponente})
+]]></content>
+	<tabTrigger>mate.pot</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Elevar a potencia</description>
+</snippet>
+

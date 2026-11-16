@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%.2f]]></content>
+    <tabTrigger>str:fmt:%.2f</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato C: C-Style: Decimal (2 dig)</description>
+</snippet>

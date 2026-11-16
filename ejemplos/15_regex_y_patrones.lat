@@ -1,0 +1,138 @@
+# ==================================================================
+# Ejemplo: Expresiones Regulares (Regex) en Latino.NET
+# El módulo cadena incluye soporte completo para patrones regex
+# ==================================================================
+
+escribir("=== EXPRESIONES REGULARES (REGEX) ===")
+escribir("")
+
+# ── 1. Búsqueda simple ────────────────────────────────────────────
+escribir("--- Búsqueda Simple ---")
+cadenaTexto = "Mi correo es <EMAIL> y el de mi amigo es <EMAIL>"
+
+# cadena.regex(cadenaTexto, patron) retorna lista de coincidencias
+emails = cadena.regex(cadenaTexto, "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+escribir("Texto: " .. cadenaTexto)
+escribir("Emails encontrados: " .. lista.longitud(emails))
+para email en emails
+    escribir("  -> " .. email)
+fin
+escribir("")
+
+# ── 2. Validaciones comunes ──────────────────────────────────────
+escribir("--- Validaciones Comunes ---")
+
+funcion validar_email(email)
+    patron = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    retornar lista.longitud(cadena.regex(email, patron)) > 0
+fin
+
+funcion validar_telefono(tel)
+    # Acepta: (XXX) XXX-XXXX, XXX-XXX-XXXX, XXXXXXXXXX
+    patron = "^\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$"
+    retornar lista.longitud(cadena.regex(tel, patron)) > 0
+fin
+
+funcion validar_ip(ip)
+    patron = "^[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}$"
+    retornar lista.longitud(cadena.regex(ip, patron)) > 0
+fin
+
+# Probar validaciones
+pruebas_email = ["<EMAIL>", "invalido@", "@dominio.com"]
+para e en pruebas_email
+    resultado = validar_email(e) ? "válido" : "inválido"
+    escribir(ç("  Email '|e|': |resultado|"))
+fin
+escribir("")
+
+pruebas_tel = ["(505) 123-4567", "505-123-4567", "12345"]
+para t en pruebas_tel
+    resultado = validar_telefono(t) ? "válido" : "inválido"
+    escribir(ç("  Teléfono '|t|': |resultado|"))
+fin
+escribir("")
+
+# ── 3. Extracción de datos ───────────────────────────────────────
+escribir("--- Extracción de Datos ---")
+log_servidor = "[2026-09-09 15:30:45] [ERROR] Timeout en conexión a base de datos"
+escribir("Log: " .. log_servidor)
+
+# Extraer fecha, hora y nivel de error
+fecha = cadena.regex(log_servidor, "\\d{4}-\\d{2}-\\d{2}")
+hora = cadena.regex(log_servidor, "\\d{2}:\\d{2}:\\d{2}")
+nivel = cadena.regex(log_servidor, "\\[(ERROR|WARN|INFO|DEBUG)\\]")
+
+si lista.longitud(fecha) > 0
+    escribir("  Fecha: " .. fecha[0])
+fin
+si lista.longitud(hora) > 0
+    escribir("  Hora: " .. hora[0])
+fin
+si lista.longitud(nivel) > 0
+    escribir(ç("  Nivel: |nivel[0]|"))
+fin
+escribir("")
+
+# ── 4. Reemplazo con Regex ───────────────────────────────────────
+escribir("--- Reemplazo con Regex ---")
+telefono = "Llámanos al (505) 123-4567 o al (505) 987-6543"
+
+# Enmascarar la parte central: (505) 123-4567 -> (505) ***-4567
+patron_tel = "\\(([0-9]{3})\\)\\s*([0-9]{3})-([0-9]{4})"
+enmascarado = cadena.reemplazarRegex(telefono, patron_tel, "($1) ***-$3")
+
+escribir("Original:   " .. telefono)
+escribir("Enmascarado: " .. enmascarado)
+escribir("")
+
+# ── 5. Capturas y grupos ─────────────────────────────────────────
+escribir("--- Capturas y grupos ---")
+url = "https://api.ejemplo.com:8080/v1/usuarios?id=123"
+
+# Extraer componentes de la URL
+protocolo = cadena.regex(url, "^(https?)://")
+dominio = cadena.regex(url, "://([^/]+)")
+puerto = cadena.regex(url, ":([0-9]+)")
+ruta = cadena.regex(url, "://[^/]+(.+)$")
+
+escribir("URL: " .. url)
+si lista.longitud(protocolo) > 0
+    escribir("  Protocolo: " .. protocolo[0])
+fin
+si lista.longitud(dominio) > 0
+    escribir("  Dominio: " .. dominio[0])
+fin
+si lista.longitud(puerto) > 0
+    escribir("  Puerto: " .. puerto[0])
+fin
+si lista.longitud(ruta) > 0
+    escribir("  Ruta: " .. ruta[0])
+fin
+escribir("")
+
+# ── 6. Uso práctico: Limpieza de datos ───────────────────────────
+escribir("--- Uso Práctico: Limpieza de Datos ---")
+datos_sucios = [
+    "  Juan Pérez  ",
+    "MARÍA LÓPEZ",
+  "carlos martínez",
+    "  ANA   GARCÍA  "
+]
+
+escribir("Datos originales:")
+para d en datos_sucios
+    escribir(ç("  '|d|'"))
+fin
+escribir("")
+
+escribir("Datos limpios:")
+para d en datos_sucios
+    # Eliminar espacios extra, normalizar a título
+    limpio = cadena.recortar(d)
+    limpio = cadena.reemplazarRegex(limpio, "\\s+", " ")
+    escribir(ç("  '|limpio|'"))
+fin
+
+escribir("")
+escribir("✅ Ejemplo de regex completado")

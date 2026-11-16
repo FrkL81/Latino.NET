@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.subcadena(${1:texto}, ${2:inicio}, ${3:longitud})
+]]></content>
+	<tabTrigger>cadena.subcadena</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Extraer parte de la cadena</description>
+</snippet>
+

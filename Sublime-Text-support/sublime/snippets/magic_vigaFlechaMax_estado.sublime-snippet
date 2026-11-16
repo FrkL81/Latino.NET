@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[estado]]></content>
+    <tabTrigger>str:vigaFlechaMax:estado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de vigaFlechaMax: estado</description>
+</snippet>

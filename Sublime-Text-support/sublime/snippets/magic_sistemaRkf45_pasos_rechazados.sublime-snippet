@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pasos_rechazados]]></content>
+    <tabTrigger>str:sistemaRkf45:pasos_rechazados</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRkf45: pasos_rechazados</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.romberg(${1:funcion}, ${2:a}, ${3:b}, ${4:maxNivel}, ${5:tolerancia})
+]]></content>
+	<tabTrigger>calculo.romberg</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Integración numérica por el Método de Romberg.\n</description>
+</snippet>

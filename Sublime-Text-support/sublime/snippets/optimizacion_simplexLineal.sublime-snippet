@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.simplexLineal(${1:listaC}, ${2:matrizA}, ${3:listaB})
+]]></content>
+	<tabTrigger>optimizacion.simplexLineal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve un problema de Programación Lineal en forma estándar:\n</description>
+</snippet>

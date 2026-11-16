@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:compuesto:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de mate.compuesto(): Expresión matemática</description>
+</snippet>

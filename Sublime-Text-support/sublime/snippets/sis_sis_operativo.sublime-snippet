@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.operativo(${1:"WINDOWS"})
+]]></content>
+	<tabTrigger>sis.operativo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Verificar sistema operativo</description>
+</snippet>
+

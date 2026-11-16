@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.transformador(${1:voltajePrimario}, ${2:espirasPrimario}, ${3:espirasSecundario})
+]]></content>
+	<tabTrigger>electromagnetismo.transformador</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Voltaje en el secundario de un transformador ideal.\n\nFórmula: V₂ = V₁·(N₂/N₁)</description>
+</snippet>

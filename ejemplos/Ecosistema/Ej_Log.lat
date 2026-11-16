@@ -1,0 +1,34 @@
+# Ejemplo: Plugin Log (Logging Estructurado)
+# Requiere: incluir("log")
+
+incluir("log")
+
+escribir("=== PLUGIN LOG ===")
+escribir("")
+
+# Configurar log
+log.configurar("ejemplo.log", "depurar")
+escribir("Log configurado en: ejemplo.log")
+escribir("")
+
+# Diferentes niveles
+log.info("Mensaje informativo")
+log.advertencia("Esto es una advertencia")
+log.error("Esto es un error")
+log.depurar("Mensaje de depuración")
+
+escribir("Mensajes de log escritos en ejemplo.log")
+escribir("")
+
+# Liberar archivo antes de leer
+log.limpiar()
+
+# Verificar contenido del log
+# Entrada simulada: archivo de texto 'ejemplo.log' escrito por el plugin log
+contenido = archivo.leer("ejemplo.log")
+escribir("--- Contenido del log ---")
+escribir(contenido)
+
+# Limpieza
+archivo.borrar("ejemplo.log")
+escribir("✅ Archivo de log eliminado")

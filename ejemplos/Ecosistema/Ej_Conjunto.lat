@@ -1,0 +1,91 @@
+/*
+==============================================================
+LIBRERÍA: conjunto
+DESCRIPCIÓN: Funciones para manejo de conjuntos (colecciones de elementos únicos).
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: conjunto.crear
+DESCRIPCIÓN: Crea un nuevo conjunto con los elementos únicos proporcionados.
+PARÁMETROS:
+  - elementos... : Valores iniciales.
+RETORNA: conjunto - Nuevo conjunto.
+*/
+s = conjunto.crear(1, 2, 2, 3)
+escribir(s) // Debería tener {1, 2, 3}
+
+/*
+FUNCIÓN: conjunto.agregar
+DESCRIPCIÓN: Agrega un elemento al conjunto.
+PARÁMETROS:
+  - conjunto (conjunto): Conjunto a modificar.
+  - elemento (cualquiera): Valor a agregar.
+RETORNA: conjunto - El mismo conjunto modificado.
+*/
+conjunto.agregar(s, 4)
+conjunto.agregar(s, 1) // Duplicado, se ignora
+escribir(s)
+
+/*
+FUNCIÓN: conjunto.contiene
+DESCRIPCIÓN: Verifica si el conjunto contiene el elemento.
+PARÁMETROS:
+  - conjunto (conjunto): Donde buscar.
+  - elemento (cualquiera): Qué buscar.
+RETORNA: logico - verdadero si existe.
+*/
+escribir("¿Contiene 2?: " .. conjunto.contiene(s, 2))
+
+/*
+FUNCIÓN: conjunto.eliminar
+DESCRIPCIÓN: Elimina un elemento del conjunto.
+PARÁMETROS:
+  - conjunto (conjunto): Conjunto a modificar.
+  - elemento (cualquiera): Valor a eliminar.
+RETORNA: conjunto - El mismo conjunto modificado.
+*/
+conjunto.eliminar(s, 3)
+escribir(s)
+
+/*
+FUNCIÓN: conjunto.longitud
+DESCRIPCIÓN: Devuelve el número de elementos en el conjunto.
+PARÁMETROS:
+  - conjunto (conjunto): Conjunto a medir.
+RETORNA: numerico - Tamaño del conjunto.
+*/
+escribir("Longitud: " .. conjunto.longitud(s))
+
+/*
+FUNCIÓN: conjunto.union
+DESCRIPCIÓN: Crea un nuevo conjunto con la unión de dos conjuntos.
+PARÁMETROS:
+  - conjunto1 (conjunto): Primer conjunto.
+  - conjunto2 (conjunto): Segundo conjunto.
+RETORNA: conjunto - Nuevo conjunto con todos los elementos únicos.
+*/
+s1 = conjunto.crear(1, 2)
+s2 = conjunto.crear(2, 3)
+u = conjunto.union(s1, s2)
+escribir("Unión: " .. u)
+
+/*
+FUNCIÓN: conjunto.interseccion
+DESCRIPCIÓN: Crea un nuevo conjunto con la intersección de dos conjuntos.
+PARÁMETROS:
+  - conjunto1 (conjunto): Primer conjunto.
+  - conjunto2 (conjunto): Segundo conjunto.
+RETORNA: conjunto - Nuevo conjunto con elementos comunes.
+*/
+i = conjunto.interseccion(s1, s2)
+escribir("Intersección: " .. i)
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Conjunto.lat
+==============================================================
+*/

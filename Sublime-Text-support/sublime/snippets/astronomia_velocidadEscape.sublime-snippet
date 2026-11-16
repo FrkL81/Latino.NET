@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+astronomia.velocidadEscape(${1:masaCuerpo}, ${2:radio})
+]]></content>
+	<tabTrigger>astronomia.velocidadEscape</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la velocidad de escape.\n\nFórmula: v_e = √(2·G·M / r)</description>
+</snippet>

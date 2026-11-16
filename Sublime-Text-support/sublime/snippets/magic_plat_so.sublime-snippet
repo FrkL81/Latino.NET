@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[so]]></content>
+    <tabTrigger>str:plat:so</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plataforma: Retorno de plat: so</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[suma_infinita]]></content>
+    <tabTrigger>str:serieGeometrica:suma_infinita</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de serieGeometrica: suma_infinita</description>
+</snippet>

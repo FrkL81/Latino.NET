@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[normalizada]]></content>
+    <tabTrigger>str:analizarCedula:normalizada</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Validar: Retorno de analizarCedula: normalizada</description>
+</snippet>

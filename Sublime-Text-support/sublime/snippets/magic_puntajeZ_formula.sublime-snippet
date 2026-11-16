@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:puntajeZ:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de puntajeZ: formula</description>
+</snippet>

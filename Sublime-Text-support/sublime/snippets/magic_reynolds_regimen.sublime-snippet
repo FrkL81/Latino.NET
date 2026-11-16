@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[regimen]]></content>
+    <tabTrigger>str:reynolds:regimen</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Fluidos: Retorno de reynolds: regimen</description>
+</snippet>

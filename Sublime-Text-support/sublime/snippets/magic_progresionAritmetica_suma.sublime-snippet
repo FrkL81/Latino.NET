@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[suma]]></content>
+    <tabTrigger>str:progresionAritmetica:suma</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de progresionAritmetica: suma</description>
+</snippet>

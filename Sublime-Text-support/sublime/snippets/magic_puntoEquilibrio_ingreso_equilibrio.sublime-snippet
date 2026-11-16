@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ingreso_equilibrio]]></content>
+    <tabTrigger>str:puntoEquilibrio:ingreso_equilibrio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de puntoEquilibrio: ingreso_equilibrio</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mach]]></content>
+    <tabTrigger>str:vel:mach</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Velocidad: Velocidad: Velocidad del sonido</description>
+</snippet>

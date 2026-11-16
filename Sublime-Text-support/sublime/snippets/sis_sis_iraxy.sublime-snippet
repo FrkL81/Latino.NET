@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.iraxy(${1:x}, ${2:y})
+]]></content>
+	<tabTrigger>sis.iraxy</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Mover cursor de consola</description>
+</snippet>
+

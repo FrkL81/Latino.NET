@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[texto]]></content>
+    <tabTrigger>str:parsearNumero:texto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de parsearNumero: texto</description>
+</snippet>

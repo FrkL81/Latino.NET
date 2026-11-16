@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.base(${1:parte}, ${2:porcentaje})
+]]></content>
+	<tabTrigger>mate.base</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Calcula total dado una parte</description>
+</snippet>
+

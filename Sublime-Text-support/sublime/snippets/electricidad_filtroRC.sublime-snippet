@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+electricidad.filtroRC(${1:resistencia_ohm}, ${2:capacitancia_F})
+]]></content>
+	<tabTrigger>electricidad.filtroRC</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Frecuencia de corte (-3dB) de un filtro pasa-bajos RC.\n\nFórmula: f_c = 1 / ...</description>
+</snippet>

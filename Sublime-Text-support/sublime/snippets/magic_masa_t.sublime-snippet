@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[t]]></content>
+    <tabTrigger>str:masa:t</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Masa: Masa: Tonelada métrica</description>
+</snippet>

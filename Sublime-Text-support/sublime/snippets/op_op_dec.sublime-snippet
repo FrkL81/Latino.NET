@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:variable}--
+]]></content>
+	<tabTrigger>op:dec</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚡ Decrementar en 1</description>
+</snippet>

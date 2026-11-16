@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[conteo]]></content>
+    <tabTrigger>str:filtrar:conteo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de tabla.filtrar(): conteo </description>
+</snippet>

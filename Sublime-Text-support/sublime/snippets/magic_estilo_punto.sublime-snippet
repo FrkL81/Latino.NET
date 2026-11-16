@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[punto]]></content>
+    <tabTrigger>str:estilo:punto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo dot (ej: hola.mundo)</description>
+</snippet>

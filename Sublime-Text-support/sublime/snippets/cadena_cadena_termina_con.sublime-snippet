@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.termina_con(${1:texto}, ${2:"sufijo"})
+]]></content>
+	<tabTrigger>cadena.termina_con</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verifica si termina con texto</description>
+</snippet>
+

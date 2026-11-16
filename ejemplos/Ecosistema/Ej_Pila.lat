@@ -1,0 +1,83 @@
+/*
+==============================================================
+LIBRERÍA: pila
+DESCRIPCIÓN: Funciones para manejo de pilas (LIFO - Last In, First Out).
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: pila.crear
+DESCRIPCIÓN: Crea una pila vacía.
+PARÁMETROS: ninguno
+RETORNA: pila - Nueva pila.
+*/
+p = pila.crear()
+escribir("Pila creada.")
+
+/*
+FUNCIÓN: pila.apilar
+DESCRIPCIÓN: Agrega un elemento a la cima de la pila.
+PARÁMETROS:
+  - pila (pila): Pila a modificar.
+  - elemento (cualquiera): Valor a agregar.
+RETORNA: pila - La misma pila modificada.
+*/
+pila.apilar(p, "A")
+pila.apilar(p, "B")
+escribir("Elementos apilados.")
+
+/*
+FUNCIÓN: pila.cima
+DESCRIPCIÓN: Obtiene el elemento de la cima sin extraerlo.
+PARÁMETROS:
+  - pila (pila): Donde buscar.
+RETORNA: cualquiera - Valor en la cima.
+*/
+escribir("Cima: " .. pila.cima(p))
+
+/*
+FUNCIÓN: pila.desapilar
+DESCRIPCIÓN: Extrae el elemento de la cima de la pila.
+PARÁMETROS:
+  - pila (pila): Pila a modificar.
+RETORNA: cualquiera - Valor extraído.
+*/
+escribir("Desapilado: " .. pila.desapilar(p))
+escribir("Nueva cima: " .. pila.cima(p))
+
+/*
+FUNCIÓN: pila.longitud
+DESCRIPCIÓN: Devuelve la cantidad de elementos en la pila.
+PARÁMETROS:
+  - pila (pila): Pila a medir.
+RETORNA: numerico - Número de elementos.
+*/
+escribir("Longitud: " .. pila.longitud(p))
+
+/*
+FUNCIÓN: pila.vacia
+DESCRIPCIÓN: Verifica si la pila no contiene elementos.
+PARÁMETROS:
+  - pila (pila): Pila a verificar.
+RETORNA: logico - verdadero si está vacía.
+*/
+escribir("¿Vacia?: " .. pila.vacia(p))
+
+/*
+FUNCIÓN: pila.alista
+DESCRIPCIÓN: Convierte la pila a una lista (fondo→cima).
+PARÁMETROS:
+  - pila (pila): Pila original.
+RETORNA: lista - Lista con elementos.
+*/
+pila.apilar(p, "C")
+escribir("Pila como lista: " .. pila.alista(p))
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Pila.lat
+==============================================================
+*/

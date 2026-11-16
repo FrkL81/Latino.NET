@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[es_ideal]]></content>
+    <tabTrigger>str:bernoulli:es_ideal</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de bernoulli: es_ideal</description>
+</snippet>

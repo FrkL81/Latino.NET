@@ -1,0 +1,68 @@
+# ==================================================================
+# Ejemplo: Cliente HTTP REST Genérico
+# Uso de web.solicitar con configuración completa y parseo automático
+# ==================================================================
+
+# Usamos jsonplaceholder (API pública de pruebas)
+api_url = "https://jsonplaceholder.typicode.com/posts"
+
+# ── 1. PETICIÓN POST (Crear recurso con JSON) ─────────────────────
+escribir("🌐 Enviando petición POST...")
+
+nuevo_post = {
+    "title": "Novedades en Latino.NET",
+    "body": "Probando el cliente HTTP genérico con web.solicitar",
+    "userId": 1
+}
+
+config_post = {
+    "url": api_url,
+    "metodo": "POST",
+    "encabezados": {
+        "Content-Type": "application/json",
+        "User-Agent": "Latino.NET-Cliente/1.0"
+    },
+    "datos": nuevo_post,
+    "timeout": 15
+}
+
+res_post = web.solicitar(config_post)
+
+escribirf("Status HTTP: {0}\n", res_post["estado"])
+si res_post["ok"]
+    escribir("✅ Recurso creado exitosamente.")
+    # res["json"] ya viene parseado como diccionario de Latino
+    post_creado = res_post["json"]
+    id_asignado = post_creado["id"]
+    escribir(ç("ID retornado por el servidor: |id_asignado|"))
+sino
+    escribir("❌ Falló la creación del recurso.")
+fin
+
+# ── 2. PETICIÓN GET (Consultar recurso) ───────────────────────────
+escribir("\n🌐 Consultando recurso con GET...")
+
+config_get = {
+    "url": api_url .. "/1",
+    "metodo": "GET",
+    "encabezados": {
+        "Accept": "application/json"
+    },
+    "timeout": 10
+}
+
+res_get = web.solicitar(config_get)
+
+si res_get["ok"]
+    datos = res_get["json"]
+    titulo = datos["title"]
+    cuerpo = datos["body"]
+    
+    escribir("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    escribir(ç("Título: |titulo|"))
+    escribir(ç("Cuerpo: |cuerpo|"))
+    escribir("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+sino
+    status = res_get["estado"]
+    escribir(ç("❌ Error al consultar API. Código HTTP: |status|"))
+fin

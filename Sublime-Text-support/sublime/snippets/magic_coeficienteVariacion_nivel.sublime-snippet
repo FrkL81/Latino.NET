@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nivel]]></content>
+    <tabTrigger>str:coeficienteVariacion:nivel</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de coeficienteVariacion: nivel</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+incluir("${1:modulo}")
+]]></content>
+	<tabTrigger>incluir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📦 Incluir módulo (.lat o .dll)</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[md5]]></content>
+    <tabTrigger>str:hash:md5</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hash: Algoritmo MD5 (Rápido)</description>
+</snippet>

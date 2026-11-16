@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[desconocido]]></content>
+    <tabTrigger>str:tipo:desconocido</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tipo: Retorno de tipo: desconocido</description>
+</snippet>

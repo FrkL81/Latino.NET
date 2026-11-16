@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[decimal]]></content>
+    <tabTrigger>str:parsearNumero:decimal</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de parsearNumero: decimal</description>
+</snippet>

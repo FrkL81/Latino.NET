@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[frecuencia_nyquist_Hz]]></content>
+    <tabTrigger>str:frecuenciaNyquist:frecuencia_nyquist_Hz</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de frecuenciaNyquist: frecuencia_nyquist_Hz</description>
+</snippet>

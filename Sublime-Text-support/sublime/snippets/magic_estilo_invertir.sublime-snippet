@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[invertir]]></content>
+    <tabTrigger>str:estilo:invertir</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Invierte el orden de los caracteres</description>
+</snippet>

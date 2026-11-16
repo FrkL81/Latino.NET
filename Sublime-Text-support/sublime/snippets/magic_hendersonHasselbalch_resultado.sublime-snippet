@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:hendersonHasselbalch:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de hendersonHasselbalch: resultado</description>
+</snippet>

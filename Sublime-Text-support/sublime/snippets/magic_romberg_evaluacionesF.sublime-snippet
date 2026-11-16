@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[evaluacionesF]]></content>
+    <tabTrigger>str:romberg:evaluacionesF</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de romberg: evaluacionesF</description>
+</snippet>

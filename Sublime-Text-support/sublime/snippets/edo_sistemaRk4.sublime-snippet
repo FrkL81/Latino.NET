@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.sistemaRk4(${1:funcionF}, ${2:t0}, ${3:listaY0}, ${4:tf}, ${5:n})
+]]></content>
+	<tabTrigger>edo.sistemaRk4</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve un sistema de EDOs dY/dt = F(t, Y) con RK4.\n\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:roi:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Economía: Retorno de roi: formula</description>
+</snippet>

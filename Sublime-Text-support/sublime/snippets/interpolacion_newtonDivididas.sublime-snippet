@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.newtonDivididas(${1:lista_xs}, ${2:lista_ys}, ${3:x})
+]]></content>
+	<tabTrigger>interpolacion.newtonDivididas</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Interpola en x usando el polinomio de Newton con Diferencias Divididas.\n</description>
+</snippet>

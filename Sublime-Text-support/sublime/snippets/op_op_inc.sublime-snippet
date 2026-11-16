@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:variable}++
+]]></content>
+	<tabTrigger>op:inc</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚡ Incrementar en 1</description>
+</snippet>

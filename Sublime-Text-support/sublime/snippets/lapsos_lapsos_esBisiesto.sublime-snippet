@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.esBisiesto(${1:anio_o_fecha})
+]]></content>
+<tabTrigger>lapsos.esBisiesto</tabTrigger>
+<scope>source.latino</scope>
+<description>📅 ¿Es bisiesto?</description>
+</snippet>

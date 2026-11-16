@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:darcyWeisbach:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de darcyWeisbach: unidad</description>
+</snippet>

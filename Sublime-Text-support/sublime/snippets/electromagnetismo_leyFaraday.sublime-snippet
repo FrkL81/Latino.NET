@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.leyFaraday(${1:numEspiras}, ${2:deltaFlujoWb}, ${3:deltaTiempoS})
+]]></content>
+	<tabTrigger>electromagnetismo.leyFaraday</tabTrigger>
+	<scope>source.latino</scope>
+	<description>FEM inducida por variación del flujo magnético (Ley de Faraday).\n\nFórmula: ...</description>
+</snippet>

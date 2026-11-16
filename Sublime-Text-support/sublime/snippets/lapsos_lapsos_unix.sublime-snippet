@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.unix(${1:fecha})
+]]></content>
+<tabTrigger>lapsos.unix</tabTrigger>
+<scope>source.latino</scope>
+<description>🌐 Fecha a Unix</description>
+</snippet>

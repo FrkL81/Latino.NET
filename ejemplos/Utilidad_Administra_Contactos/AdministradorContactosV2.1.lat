@@ -1,0 +1,651 @@
+/*
+======================================================================
+  ADMINISTRADOR DE CONTACTOS EN LATINO.NET
+  Ejemplo práctico de CLI, SQLite y Generación de Reportes.
+
+  Conceptos cubiertos:
+    - Variables globales y alcance (global / local)
+    - Manejo de errores con intentar / atrapar
+    - Consultas SQLite parametrizadas (prevención de SQL Injection)
+    - Validación de entrada del usuario
+    - Generación de reportes en CSV y Markdown
+    - Uso del compositor ç() para interpolación de cadenas
+    - Formateo de salida con escribirf (estilo .NET)
+    - Funciones que retornan valores (seleccionarContacto)
+    - Desambiguación interactiva cuando hay múltiples coincidencias
+======================================================================
+*/
+
+incluir("sqlite")
+
+// ---------------------------------------------------------------------------
+// CONSTANTE DE VERSIÓN
+// Las MAYÚSCULAS indican que es una constante: no puede reasignarse.
+// ---------------------------------------------------------------------------
+VERSION = "2.1"
+
+// ---------------------------------------------------------------------------
+// Variable global de conexión a la base de datos.
+// 'global' hace que db sea visible desde todas las funciones del programa.
+// ---------------------------------------------------------------------------
+global db = nulo
+
+// ══════════════════════════════════════════════════════════════════════════
+//  UTILIDADES
+// ══════════════════════════════════════════════════════════════════════════
+
+// Pausa la ejecución hasta que el usuario presione Enter.
+// Sin parámetros: pedir()/leer() actúa como un "getchar()" silencioso.
+funcion pausar()
+    escribir("\nPresiona Enter para continuar...")
+    // Entrada simulada: el usuario presiona Enter sin escribir nada
+    pedir()
+fin
+
+// Imprime un título de sección con un separador visual decorativo.
+funcion titulo(texto)
+    separador = cadena.rellenar_derecha("", "═", 42)
+    escribir(separador)
+    escribir("  " .. texto)
+    escribir(separador)
+fin
+
+// ══════════════════════════════════════════════════════════════════════════
+//  SELECTOR INTERACTIVO DE CONTACTOS
+// ══════════════════════════════════════════════════════════════════════════
+
+// Busca contactos por nombre (búsqueda parcial) y le pide al usuario que
+// elija uno de los resultados. Retorna el diccionario del contacto elegido,
+// o nulo si el usuario cancela o no hay resultados.
+//
+// Esta función es la pieza central de la UX: Ver Detalle, Editar y Eliminar
+// la invocan en lugar de pedir un ID a ciegas. El usuario nunca necesita
+// recordar un número; busca por nombre y elige de la lista.
+//
+// Patrón: función que retorna un valor (o nulo como señal de cancelación).
+funcion seleccionarContacto(accion)
+    mientras verdadero
+        // El parámetro 'accion' personaliza el prompt según el contexto
+        // ("ver", "editar", "eliminar"), haciendo la UI más descriptiva.
+        // UX: Enter vacío = ver todos los contactos. "0" = cancelar.
+        escribir(ç("\nBuscar contacto para |accion|"))
+        // Entrada simulada: el usuario ingresa un nombre de contacto o Enter vacío para ver todos
+        filtro = pedir("(Enter = ver todos, 0 = cancelar): ")
+
+        // "0" es la señal explícita de cancelación: retornamos nulo.
+        // Las funciones que llaman a seleccionarContacto comprueban este nulo
+        // para saber que el usuario no quiso continuar con la operación.
+        si filtro == "0"
+            retornar nulo
+        fin
+
+        // -----------------------------------------------------------------------
+        // CORRECCIÓN DE ALCANCE (SCOPE): query y parametros se declaran ANTES
+        // del bloque si/sino. En Latino.NET una variable declarada dentro de un
+        // bloque muere al llegar al 'fin' de ese bloque. Si las declaráramos
+        // dentro del si/sino, la llamada a sqlite.consultar() —que está fuera—
+        // no podría verlas y el programa colapsaría con "Variable no definida".
+        // -----------------------------------------------------------------------
+        query      = ""
+        parametros = {}
+
+        si cadena.recortar(filtro) != ""
+            // Búsqueda con LIKE en nombre Y empresa simultáneamente.
+            // El OR en SQL permite encontrar "Pedro" en cualquiera de los dos
+            // campos con una sola consulta parametrizada.
+            query      = "SELECT * FROM contactos WHERE nombre LIKE @f OR empresa LIKE @f ORDER BY nombre ASC"
+            parametros = {"f": "%" .. filtro .. "%"}
+        sino
+            // Enter vacío: sin filtro, devolvemos todos los registros.
+            query = "SELECT * FROM contactos ORDER BY nombre ASC"
+        fin
+
+        // query y parametros sobreviven aquí porque se declararon antes del si.
+        resultados = sqlite.consultar(db, query, parametros)
+
+        total = lista.longitud(resultados)
+
+        si total == 0
+            escribir(ç("\n📭 Sin resultados para \"|filtro|\". Intenta de nuevo."))
+            // El bucle 'mientras' repite: el usuario puede probar otra búsqueda.
+
+        osi total == 1
+            // Un solo resultado: no hay ambigüedad, retornamos directamente.
+            // Esto evita un paso innecesario cuando la búsqueda ya fue precisa.
+            retornar resultados[0]
+
+        sino
+            // Múltiples coincidencias: mostramos la lista numerada para que
+            // el usuario elija. Los números mostrados (1, 2, 3…) son posiciones
+            // visuales, NO los IDs de la base de datos — el ID se muestra
+            // como dato informativo en la columna correspondiente.
+            escribir(ç("\n|total| coincidencias encontradas:\n"))
+            escribirf("{0,-4} {1,-22} {2,-15} {3}\n", "#", "NOMBRE", "EMPRESA", "ID")
+            escribir(cadena.rellenar_derecha("", "─", 55))
+
+            // 'rango(total)' genera [0, 1, 2, … total-1]: índices base 0.
+            // Sumamos 1 solo para la etiqueta visual que ve el usuario.
+            para i en rango(total)
+                c = resultados[i]
+                escribirf("{0,-4} {1,-22} {2,-15} {3}\n",
+                    i + 1, c["nombre"], c["empresa"], c["id"])
+            fin
+
+            escribir(cadena.rellenar_derecha("", "─", 55))
+            // Entrada simulada: el usuario elige un número de la lista o 0 para buscar de nuevo
+            eleccion_str = pedir("Elige un número (0 = nueva búsqueda): ")
+            eleccion_num = anumero(eleccion_str)
+
+            // anumero() devuelve nulo si la entrada no es numérica.
+            // La condición compuesta verifica: ¿es un número? ¿está en rango?
+            si tipo(eleccion_num) != "nulo" ý eleccion_num >= 1 ý eleccion_num <= total
+                // Convertimos la elección visual (1-based) al índice real (0-based).
+                retornar resultados[eleccion_num - 1]
+            osi eleccion_str == "0"
+                // "0" aquí significa "quiero buscar de nuevo", el bucle continúa.
+            sino
+                escribir("❌ Número fuera de rango.")
+            fin
+            // Si llegamos aquí sin retornar, el bucle 'mientras' itera de nuevo.
+        fin
+    fin
+fin
+
+// ---------------------------------------------------------------------------
+
+funcion inicializarBaseDatos()
+    // sqlite.conectar() abre el archivo si existe, o lo crea si no.
+    // La base de datos queda persistida en disco como "agenda_v2.db".
+    db = sqlite.conectar("agenda_v2.db")
+
+    // CREATE TABLE IF NOT EXISTS es una práctica segura: el programa
+    // puede ejecutarse múltiples veces sin fallar ni borrar datos previos.
+    query = "CREATE TABLE IF NOT EXISTS contactos (
+        id       INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre   TEXT NOT NULL,
+        telefono TEXT DEFAULT '',
+        email    TEXT DEFAULT '',
+        empresa  TEXT DEFAULT ''
+    )"
+    sqlite.ejecutar(db, query)
+fin
+
+// ══════════════════════════════════════════════════════════════════════════
+//  OPERACIONES CRUD
+// ══════════════════════════════════════════════════════════════════════════
+
+funcion agregarContacto()
+    limpiar("pantalla")
+    titulo("➕  AGREGAR CONTACTO")
+
+    // Entrada simulada: el usuario ingresa los datos del nuevo contacto
+    nombre = pedir("Nombre (Obligatorio): ")
+
+    // Validación de campo requerido. 
+    // cadena.recortar() elimina espacios en blanco al inicio y al final,
+    // evitando que un nombre como "   " pase la validación.
+    si cadena.recortar(nombre) == ""
+        escribir("\n❌ El nombre no puede estar vacío.")
+        pausar()
+        retornar
+    fin
+
+    tel   = pedir("Teléfono:           ")
+    // Entrada simulada: el usuario ingresa el teléfono del contacto
+    email = pedir("Correo electrónico: ")
+    // Entrada simulada: el usuario ingresa el email del contacto
+    emp   = pedir("Empresa:            ")
+
+    // -----------------------------------------------------------------------
+    // CONSULTA PARAMETRIZADA: los valores se pasan en un diccionario separado.
+    // Esto previene SQL Injection: ningún valor del usuario es interpretado
+    // como código SQL. Es la única forma correcta de insertar datos externos.
+    // -----------------------------------------------------------------------
+    query = "INSERT INTO contactos (nombre, telefono, email, empresa)
+             VALUES (@nombre, @tel, @email, @emp)"
+
+    parametros = {"nombre": nombre, "tel": tel, "email": email, "emp": emp}
+
+    intentar
+        sqlite.ejecutar(db, query, parametros)
+        // sqlite.ultimo_id() devuelve el ID autogenerado del registro recién insertado.
+        nuevo_id = sqlite.ultimo_id(db)
+        escribir(ç("\n✅ Contacto guardado con ID #|nuevo_id|."))
+    atrapar (error)
+        // atrapar captura cualquier excepción lanzada dentro del bloque intentar.
+        // La variable 'error' contiene el mensaje descriptivo del fallo.
+        escribir("\n❌ Error al guardar: " .. error)
+    fin
+
+    pausar()
+fin
+
+// ---------------------------------------------------------------------------
+
+funcion listarContactos()
+    limpiar("pantalla")
+    titulo("🔍  BUSCAR / LISTAR CONTACTOS")
+
+    // Entrada simulada: el usuario ingresa un filtro o Enter vacío para ver todos
+    filtro = pedir("Buscar por nombre (vacío = ver todos): ")
+
+    // -----------------------------------------------------------------------
+    // CORRECCIÓN DE ALCANCE (SCOPE): query y parametros se declaran ANTES
+    // del bloque si/sino. Si nacieran dentro de él, morirían al llegar al
+    // 'fin' y sqlite.consultar() —fuera del bloque— no podría verlas.
+    // -----------------------------------------------------------------------
+    query      = ""
+    parametros = {}
+
+    // Construcción dinámica del query:
+    // si hay filtro → usamos LIKE para búsqueda parcial (case-insensitive en SQLite).
+    // Los % son comodines: "%texto%" encuentra cualquier cadena que contenga "texto".
+    si cadena.recortar(filtro) != ""
+        query      = "SELECT * FROM contactos WHERE nombre LIKE @filtro ORDER BY nombre ASC"
+        parametros = {"filtro": "%" .. filtro .. "%"}
+    sino
+        query = "SELECT * FROM contactos ORDER BY nombre ASC"
+    fin
+
+    // sqlite.consultar() devuelve una Lista de Diccionarios.
+    // Cada diccionario representa una fila: {"id": 1, "nombre": "Ana", ...}
+    resultados = sqlite.consultar(db, query, parametros)
+
+    si lista.longitud(resultados) == 0
+        escribir("\n📭 No se encontraron contactos.")
+    sino
+        total = lista.longitud(resultados)
+        escribir(ç("\n|total| contacto(s) encontrado(s):\n"))
+
+        // Cabecera de tabla con formato .NET: {índice, ancho_campo}
+        // Un ancho negativo alinea el texto a la IZQUIERDA dentro del campo.
+        escribirf("{0,-4} {1,-22} {2,-15} {3}\n", "ID", "NOMBRE", "TELÉFONO", "EMAIL")
+        escribir(cadena.rellenar_derecha("", "─", 65))
+
+        // Iteramos sobre la lista con 'para ... en', el bucle idiomático de Latino.NET.
+        para c en resultados
+            escribirf("{0,-4} {1,-22} {2,-15} {3}\n",
+                c["id"], c["nombre"], c["telefono"], c["email"])
+        fin
+    fin
+
+    pausar()
+fin
+
+// ---------------------------------------------------------------------------
+
+funcion verDetalleContacto()
+    limpiar("pantalla")
+    titulo("👤  VER DETALLE DE CONTACTO")
+
+    // seleccionarContacto() maneja toda la búsqueda y selección.
+    // Si el usuario cancela (Enter en blanco), retorna nulo y salimos.
+    c = seleccionarContacto("ver")
+    si c == nulo retornar fin
+
+    // Extraemos los datos del diccionario retornado y los mostramos formateados.
+    escribir("")
+    escribirf("  ID:      {0}\n", c["id"])
+    escribirf("  Nombre:  {0}\n", c["nombre"])
+    escribirf("  Tel:     {0}\n", c["telefono"])
+    escribirf("  Email:   {0}\n", c["email"])
+    escribirf("  Empresa: {0}\n", c["empresa"])
+
+    pausar()
+fin
+
+// ---------------------------------------------------------------------------
+
+funcion editarContacto()
+    limpiar("pantalla")
+    titulo("✏️   EDITAR CONTACTO")
+
+    c = seleccionarContacto("editar")
+    si c == nulo retornar fin
+
+    // Ya tenemos el contacto. El ID está dentro del diccionario: c["id"].
+    // No hubo necesidad de pedírselo al usuario en ningún momento.
+    escribir("\n[Presiona Enter para conservar el valor actual]\n")
+
+    // Entrada simulada: el usuario edita los campos o presiona Enter para conservar valores actuales
+    nuevo_nombre = pedir(ç("Nombre    [|c['nombre']|]: "))
+    // Entrada simulada: el usuario edita el teléfono o presiona Enter para conservar valor actual
+    nuevo_tel    = pedir(ç("Teléfono  [|c['telefono']|]: "))
+    // Entrada simulada: el usuario edita el email o presiona Enter para conservar valor actual
+    nuevo_email  = pedir(ç("Email     [|c['email']|]: "))
+    // Entrada simulada: el usuario edita la empresa o presiona Enter para conservar valor actual
+    nueva_emp    = pedir(ç("Empresa   [|c['empresa']|]: "))
+
+    // Aplicamos el valor antiguo si el usuario no ingresó nada nuevo.
+    // Este patrón se llama "merge de campos" y es muy común en formularios CLI.
+    si cadena.recortar(nuevo_nombre) == "" nuevo_nombre = c["nombre"] fin
+    si cadena.recortar(nuevo_tel)    == "" nuevo_tel    = c["telefono"] fin
+    si cadena.recortar(nuevo_email)  == "" nuevo_email  = c["email"] fin
+    si cadena.recortar(nueva_emp)    == "" nueva_emp    = c["empresa"] fin
+
+    // Validación: el nombre no puede quedar vacío ni siquiera tras el merge.
+    si cadena.recortar(nuevo_nombre) == ""
+        escribir("❌ El nombre no puede estar vacío.")
+        pausar()
+        retornar
+    fin
+
+    afectadas = sqlite.ejecutar(db,
+        "UPDATE contactos SET nombre=@n, telefono=@t, email=@e, empresa=@emp WHERE id=@id",
+        {"n": nuevo_nombre, "t": nuevo_tel, "e": nuevo_email, "emp": nueva_emp, "id": c["id"]})
+
+    si afectadas > 0
+        escribir("\n✅ Contacto actualizado correctamente.")
+    sino
+        escribir("\n⚠️  No se realizaron cambios.")
+    fin
+
+    pausar()
+fin
+
+// ---------------------------------------------------------------------------
+
+funcion eliminarContacto()
+    limpiar("pantalla")
+    titulo("🗑️   ELIMINAR CONTACTO")
+
+    c = seleccionarContacto("eliminar")
+    si c == nulo retornar fin
+
+    // Pedimos confirmación antes de una operación destructiva e irreversible.
+    // Ahora mostramos el nombre (no el ID), que es lo que el usuario reconoce.
+    // Entrada simulada: el usuario confirma con 's' o cancela con cualquier otra tecla
+    confirmacion = pedir(ç("\n¿Eliminar a |c['nombre']|? (s/N): "))
+
+    // Comparamos en minúsculas para aceptar tanto "s" como "S".
+    si cadena.minusculas(confirmacion) != "s"
+        escribir("Operación cancelada.")
+        pausar()
+        retornar
+    fin
+
+    afectadas = sqlite.ejecutar(db,
+        "DELETE FROM contactos WHERE id = @id",
+        {"id": c["id"]})
+
+    si afectadas > 0
+        escribir(ç("\n✅ |c['nombre']| eliminado permanentemente."))
+    sino
+        escribir("\n⚠️  No se pudo completar la eliminación.")
+    fin
+
+    pausar()
+fin
+
+// ══════════════════════════════════════════════════════════════════════════
+//  REPORTES
+// ══════════════════════════════════════════════════════════════════════════
+
+// ---------------------------------------------------------------------------
+// Paso 1-A: recolectar por búsqueda de texto
+//
+// Reutiliza la misma lógica LIKE de listarContactos pero retorna la lista
+// en lugar de imprimirla, para que generarReportes() pueda pasarla a
+// exportarContactos(). Retorna nulo si el usuario cancela.
+// ---------------------------------------------------------------------------
+funcion recolectarPorBusqueda()
+    // Entrada simulada: el usuario ingresa un filtro o Enter vacío para ver todos, o 0 para cancelar
+    filtro = pedir("Buscar (Enter = todos, 0 = cancelar): ")
+
+    si filtro == "0"
+        retornar nulo
+    fin
+
+    // Mismo patrón de scope que en listarContactos y seleccionarContacto:
+    // query se declara antes del si/sino para que sobreviva fuera del bloque.
+    query      = ""
+    parametros = {}
+
+    si cadena.recortar(filtro) != ""
+        query      = "SELECT * FROM contactos WHERE nombre LIKE @f OR empresa LIKE @f ORDER BY nombre ASC"
+        parametros = {"f": "%" .. filtro .. "%"}
+    sino
+        query = "SELECT * FROM contactos ORDER BY nombre ASC"
+    fin
+
+    retornar sqlite.consultar(db, query, parametros)
+fin
+
+// ---------------------------------------------------------------------------
+// Paso 1-B: recolectar por lista de IDs
+//
+// El usuario escribe algo como "3, 7, 12, 45". La función:
+//   1. Parte el texto por comas  →  ["3", " 7", " 12", " 45"]
+//   2. Recorta espacios y valida que cada token sea numérico
+//   3. Consulta cada ID y acumula los que existen en la BD
+//   4. Informa cuáles IDs no se encontraron (sin silenciarlos)
+//
+// Retorna la lista acumulada (puede estar vacía), o nulo si cancela.
+// ---------------------------------------------------------------------------
+funcion recolectarPorIds()
+    // Entrada simulada: el usuario ingresa IDs separados por coma o 0 para cancelar
+    entrada = pedir("IDs separados por coma (ej: 3, 7, 12) o 0 para cancelar: ")
+
+    si cadena.recortar(entrada) == "0"
+        retornar nulo
+    fin
+
+    // cadena.separar() divide el texto usando el separador indicado y
+    // devuelve una Lista de cadenas: "3, 7, 12" → ["3", " 7", " 12"]
+    tokens = cadena.separar(entrada, ",")
+
+    contactos   = []     // Lista acumuladora de resultados encontrados
+    noEncontrados = []   // IDs que el usuario pidió pero no existen en la BD
+
+    para token en tokens
+        // Recortamos espacios antes de convertir: " 7 " → "7" → 7
+        id_limpio = cadena.recortar(token)
+        id_num    = anumero(id_limpio)
+
+        // anumero() devuelve nulo si el token no es un número válido.
+        si tipo(id_num) == "nulo"
+            escribir(ç("  ⚠️  \"|\id_limpio|\" no es un ID válido, se omite."))
+            continuar   // 'continuar' salta al siguiente ciclo del bucle 'para'
+        fin
+
+        filas = sqlite.consultar(db,
+            "SELECT * FROM contactos WHERE id = @id",
+            {"id": id_num})
+
+        si lista.longitud(filas) > 0
+            // lista.agregar() añade el primer (y único) elemento al acumulador.
+            lista.agregar(contactos, filas[0])
+        sino
+            lista.agregar(noEncontrados, id_limpio)
+        fin
+    fin
+
+    // Informamos de los IDs que no produjeron resultados sin abortar.
+    si lista.longitud(noEncontrados) > 0
+        faltantes = lista.separar(noEncontrados, ", ")
+        escribir(ç("\n  ℹ️  IDs no encontrados: |faltantes|"))
+    fin
+
+    retornar contactos
+fin
+
+// ---------------------------------------------------------------------------
+// Paso 2: exportar
+//
+// Recibe una lista de contactos (ya filtrada) y pregunta el formato.
+// Al separar "qué exportar" de "cómo exportar" evitamos duplicar este
+// bloque en cada modo de filtrado — principio DRY (Don't Repeat Yourself).
+// ---------------------------------------------------------------------------
+funcion exportarContactos(contactos)
+    total = lista.longitud(contactos)
+
+    si total == 0
+        escribir("\n📭 No hay contactos para exportar con ese criterio.")
+        retornar
+    fin
+
+    escribir(ç("\n  |total| contacto(s) listos para exportar."))
+    escribir("\n  1. Exportar a CSV (para Excel / Calc)")
+    escribir("  2. Exportar a Markdown (.md)")
+    escribir("  0. Cancelar")
+
+    // Entrada simulada: el usuario elige el formato de exportación (1=CSV, 2=MD, 0=cancelar)
+    opcion = pedir("\n  Elige el formato: ")
+
+    elegir (opcion)
+        caso "1":
+            // archivo.escribirCsv() toma una Lista de Diccionarios y genera
+            // automáticamente la fila de cabecera con los nombres de las claves.
+            archivo.escribirCsv("reporte_contactos.csv", contactos)
+            escribir("\n✅ Reporte generado: reporte_contactos.csv")
+
+        caso "2":
+            // Construcción manual del Markdown usando concatenación (..)
+            // y el compositor ç() para incrustar variables dinámicamente.
+            //
+            // IMPORTANTE: En ç() las variables se delimitan con tuberías | |,
+            // NO con llaves { } como en otros lenguajes.
+            // Salida variable (depende del momento de ejecución y hardware): sis.tiempo devuelve marca de tiempo actual
+            laFecha = sis.tiempo('%Y-%m-%d %H:%M')
+            texto_md = "# 📇 Directorio de Contactos\n\n"
+            texto_md ..= ç("Generado el: |laFecha|\n\n")
+            texto_md ..= "| ID | Nombre | Teléfono | Email | Empresa |\n"
+            texto_md ..= "| :--- | :--- | :--- | :--- | :--- |\n"
+
+            para c en contactos
+                texto_md ..= ç("| |c['id']| | |c['nombre']| | |c['telefono']| | |c['email']| | |c['empresa']| |\n")
+            fin
+
+            archivo.escribir("reporte_contactos.md", texto_md)
+            escribir("\n✅ Reporte generado: reporte_contactos.md")
+
+        caso "0":
+            escribir("Exportación cancelada.")
+
+        otro:
+            escribir("\n❌ Opción no válida.")
+    fin
+fin
+
+// ---------------------------------------------------------------------------
+// Orquestador: generarReportes()
+//
+// Divide el problema en dos pasos independientes:
+//   Paso 1 — ¿qué contactos incluir?  (modo de filtrado)
+//   Paso 2 — ¿en qué formato guardar? (delegado a exportarContactos)
+//
+// Este patrón se llama "separación de responsabilidades": cada función hace
+// una sola cosa bien, y el orquestador las combina.
+// ---------------------------------------------------------------------------
+funcion generarReportes()
+    limpiar("pantalla")
+    titulo("📄  GENERAR REPORTE")
+
+    escribir(" 1. Todos los contactos")
+    escribir(" 2. Filtrar por búsqueda (nombre o empresa)")
+    escribir(" 3. Seleccionar por lista de IDs")
+    escribir("  0. Cancelar")
+
+    // Entrada simulada: el usuario elige el modo de filtrado (1=todos, 2=búsqueda, 3=IDs, 0=cancelar)
+    modo = pedir("\nElige cómo filtrar: ")
+
+    // contactos arranca como nulo; cada rama lo asigna o cancela.
+    contactos = nulo
+
+    elegir (modo)
+        caso "1":
+            contactos = sqlite.consultar(db, "SELECT * FROM contactos ORDER BY nombre ASC")
+
+        caso "2":
+            contactos = recolectarPorBusqueda()
+
+        caso "3":
+            contactos = recolectarPorIds()
+
+        caso "0":
+            retornar
+
+        otro:
+            escribir("\n❌ Opción no válida.")
+            pausar()
+            retornar
+    fin
+
+    // Si el usuario canceló dentro de recolectarPorBusqueda o recolectarPorIds,
+    // la función retornó nulo. Lo chequeamos antes de continuar.
+    si contactos == nulo
+        escribir("\nOperación cancelada.")
+        pausar()
+        retornar
+    fin
+
+    exportarContactos(contactos)
+    pausar()
+fin
+
+// ══════════════════════════════════════════════════════════════════════════
+//  MENÚ PRINCIPAL
+// ══════════════════════════════════════════════════════════════════════════
+
+funcion menuPrincipal()
+    // El bucle 'mientras verdadero' es el patrón estándar para menús CLI.
+    // La única salida es la instrucción 'romper', que interrumpe el bucle.
+    mientras verdadero
+        limpiar("pantalla")
+
+        // Mostramos el encabezado con la versión inyectada dinámicamente.
+        escribir("╔══════════════════════════════════════════╗")
+        escribir(ç("║   📇 ADMINISTRADOR DE CONTACTOS v|VERSION|     ║"))
+        escribir("╠══════════════════════════════════════════╣")
+        escribir("║  1. Agregar nuevo contacto               ║")
+        escribir("║  2. Buscar / Listar contactos            ║")
+        escribir("║  3. Ver detalle de un contacto           ║")
+        escribir("║  4. Editar un contacto                   ║")
+        escribir("║  5. Eliminar contacto                    ║")
+        escribir("║  6. Generar reportes (CSV / MD)          ║")
+        escribir("║  0. Salir                                ║")
+        escribir("╚══════════════════════════════════════════╝")
+
+        // Entrada simulada: el usuario elige una opción del menú (1-6, o 0 para salir)
+        opcion = pedir("\nElige una opción: ")
+
+        // 'elegir' es el equivalente a switch/case.
+        // 'otro' funciona como 'default': captura cualquier opción no listada.
+        elegir (opcion)
+            caso "1": agregarContacto()
+            caso "2": listarContactos()
+            caso "3": verDetalleContacto()
+            caso "4": editarContacto()
+            caso "5": eliminarContacto()
+            caso "6": generarReportes()
+            caso "0":
+                escribir("\nCerrando base de datos y saliendo... ¡Hasta pronto!")
+                sqlite.cerrar(db)
+                romper
+            otro:
+                escribir("\n❌ Opción no válida, intenta de nuevo.")
+                // sis.dormir() pausa N segundos. Útil para que el usuario
+                // alcance a leer el mensaje antes de que la pantalla se limpie.
+                sis.dormir(1)
+        fin
+    fin
+fin
+
+// ══════════════════════════════════════════════════════════════════════════
+//  PUNTO DE ENTRADA
+// ══════════════════════════════════════════════════════════════════════════
+//
+// Envolvemos el inicio en intentar/atrapar para capturar errores críticos
+// (ej: archivo de BD bloqueado, disco lleno) y cerrar la conexión limpiamente.
+// Sin este bloque, un error inesperado dejaría la BD abierta.
+
+intentar
+    inicializarBaseDatos()
+    menuPrincipal()
+atrapar (e)
+    escribir("\n💥 ERROR CRÍTICO DEL SISTEMA: " .. e)
+    // Cerramos la conexión solo si fue abierta previamente.
+    si db != nulo
+        sqlite.cerrar(db)
+    fin
+fin

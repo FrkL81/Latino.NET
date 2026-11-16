@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[exacta]]></content>
+    <tabTrigger>str:comp:exacta</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Comparación: Comparación exacta (default)</description>
+</snippet>

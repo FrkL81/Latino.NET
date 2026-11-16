@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.regex(${1:texto}, ${2:"patron"})
+]]></content>
+	<tabTrigger>cadena.regex</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Extraer coincidencias regex</description>
+</snippet>
+

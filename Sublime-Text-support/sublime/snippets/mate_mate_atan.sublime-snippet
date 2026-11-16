@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.atan(${1:numero})
+]]></content>
+	<tabTrigger>mate.atan</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Arcotangente</description>
+</snippet>
+

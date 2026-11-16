@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[{0:C}]]></content>
+    <tabTrigger>str:fmt:{0:C}</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato .NET: .NET: Formato Moneda</description>
+</snippet>

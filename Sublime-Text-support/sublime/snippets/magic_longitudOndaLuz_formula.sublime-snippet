@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:longitudOndaLuz:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de longitudOndaLuz: formula</description>
+</snippet>

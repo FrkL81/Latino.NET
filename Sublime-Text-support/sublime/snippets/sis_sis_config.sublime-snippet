@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.config(${1:"clave"}, ${2:valor})
+]]></content>
+	<tabTrigger>sis.config</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Configuración del motor</description>
+</snippet>
+

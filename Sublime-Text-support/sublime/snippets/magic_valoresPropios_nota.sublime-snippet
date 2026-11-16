@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:valoresPropios:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de valoresPropios: nota</description>
+</snippet>

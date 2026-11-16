@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+mate.epsilonMaquina()
+]]></content>
+	<tabTrigger>mate.epsilonMaquina</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Épsilon de la máquina (menor valor diferenciable)</description>
+</snippet>

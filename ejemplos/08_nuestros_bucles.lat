@@ -1,0 +1,101 @@
+/*
+   08 - Nuestros Bucles (Ciclos)
+   Los programas son excelentes haciendo tareas repetitivas.
+   Latino.NET ofrece varias formas de repetir código.
+*/
+
+escribir("--- 1. El Bucle Condicional (mientras) ---")
+// Repite MIENTRAS la condición sea verdadera.
+// Se evalúa antes de entrar.
+
+energia = 3
+mientras energia > 0
+    escribir("Energía restante: " .. energia)
+    energia--  // Decremento
+fin
+escribir("¡Batería agotada!")
+
+
+escribir("\n--- 2. El Bucle Garantizado (repetir ... hasta) ---")
+// Similar al 'mientras', pero garantiza que el código se ejecute
+// AL MENOS UNA VEZ, porque la condición se revisa al final.
+
+dado = 0
+repetir
+    // Simulamos tirar un dado
+    # Salida variable (depende del momento de ejecución y hardware):
+    dado = mate.aleatorio(1, 7)
+    escribir("Salió el número: " .. dado)
+hasta dado == 6 // Se repite hasta que salga 6
+
+
+escribir("\n--- 3. El Contador Clásico (desde) ---")
+// Ideal cuando sabes exactamente cuántas veces quieres repetir.
+// Estructura: (inicio; condición; paso)
+
+desde (i = 1; i <= 3; i++)
+    escribir("Conteo paso a paso: " .. i)
+fin
+
+
+escribir("\n--- 4. El Iterador de Colecciones (para) ---")
+// La forma moderna y más segura de recorrer listas.
+// Toma cada elemento de la lista uno por uno.
+
+colores = ["Rojo", "Verde", "Azul"]
+
+para color en colores
+    escribir("El color actual es: " .. color)
+fin
+
+escribir("\n--- 5. El Generador de Secuencias (para + rango) ---")
+// Combina el bucle 'para' con la función 'rango()' para generar
+// secuencias al vuelo. Es la forma más potente de iterar.
+
+// Caso A: Repetición Numérica
+// Genera una lista de números [0, 1, 2]
+para i en rango(3)
+    escribir("Vuelta de rango: " .. i)
+fin
+
+// Caso B: Iteración de Texto (Superpoder)
+// A diferencia del clásico, aquí puedes pasar un texto directamente
+// y el rango lo desglosa en caracteres (respetando emojis).
+para letra en rango("Aé🚀")
+    escribir("Carácter: " .. letra)
+fin
+
+escribir("\n--- 6. Controlando el Flujo (romper / continuar) ---")
+// 'continuar': Salta esta vuelta y sigue con la siguiente.
+// 'romper': Detiene el bucle completamente.
+
+desde (i = 1; i <= 5; i++)
+    
+    si i == 2
+        escribir("   (Saltando el 2 con continuar...)")
+        continuar
+    fin
+    
+    si i == 4
+        escribir("   (Deteniendo en 4 con romper!)")
+        romper
+    fin
+    
+    escribir("Procesando número: " .. i)
+fin
+
+
+escribir("\n--- 7. El Salto Manual (ir / goto) ---")
+// Latino.NET permite saltar a etiquetas específicas.
+// Úsalo con precaución para no crear "código espagueti".
+
+inicio_salto:
+    escribir("Esto se imprime una vez.")
+    
+    // Saltamos hacia el futuro, ignorando lo del medio
+    ir salida
+
+    escribir("ESTO NUNCA SE VERÁ.")
+
+salida:
+    escribir("Hemos aterrizado en la salida.")

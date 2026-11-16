@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.dilucion(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>quimica.dilucion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ley de dilución. Pasa 3 de: 'M1', 'V1', 'M2', 'V2'.\n\nFórmula: M₁·V₁ = M₂·V₂</description>
+</snippet>

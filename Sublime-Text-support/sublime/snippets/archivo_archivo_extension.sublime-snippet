@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.extension(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.extension</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Obtener extensión</description>
+</snippet>
+

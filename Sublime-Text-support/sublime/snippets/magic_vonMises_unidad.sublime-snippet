@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:vonMises:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de vonMises: unidad</description>
+</snippet>

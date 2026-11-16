@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mayusculas]]></content>
+    <tabTrigger>str:estilo:mayusculas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Convierte todo a MAYÚSCULAS</description>
+</snippet>

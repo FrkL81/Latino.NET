@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+finanzas.valorPresente(${1:valor_futuro}, ${2:tasa_anual}, ${3:tiempo_anios})
+]]></content>
+	<tabTrigger>finanzas.valorPresente</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Valor Presente: ¿cuánto vale hoy un pago futuro?\n\nFórmula: VP = VF / (1 + r)^t</description>
+</snippet>

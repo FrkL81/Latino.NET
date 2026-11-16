@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[grado]]></content>
+    <tabTrigger>str:regresionPolinomial:grado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionPolinomial: grado</description>
+</snippet>

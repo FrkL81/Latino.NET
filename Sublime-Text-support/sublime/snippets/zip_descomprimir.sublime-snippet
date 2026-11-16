@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+zip.descomprimir(${1:archivo_zip}, ${2:carpeta_destino})
+]]></content>
+	<tabTrigger>zip.descomprimir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Extrae el contenido de un .zip en una carpeta. Sobreescribe archivos existentes.</description>
+</snippet>

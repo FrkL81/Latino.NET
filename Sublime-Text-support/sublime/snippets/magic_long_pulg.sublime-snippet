@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pulg]]></content>
+    <tabTrigger>str:long:pulg</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Pulgadas</description>
+</snippet>

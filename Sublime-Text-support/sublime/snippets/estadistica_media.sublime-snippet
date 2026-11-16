@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estadistica.media(${1:lista_valores})
+]]></content>
+	<tabTrigger>estadistica.media</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Media aritmética de una lista de valores.\n\nFórmula: x̄ = (Σxᵢ) / n</description>
+</snippet>

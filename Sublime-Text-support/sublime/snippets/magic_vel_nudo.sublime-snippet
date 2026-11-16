@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nudo]]></content>
+    <tabTrigger>str:vel:nudo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Velocidad: Velocidad: Nudos náuticos</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+pedir("${1:mensaje_opcional}")
+]]></content>
+	<tabTrigger>pedir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>❓ Pedir entrada (alias leer)</description>
+</snippet>

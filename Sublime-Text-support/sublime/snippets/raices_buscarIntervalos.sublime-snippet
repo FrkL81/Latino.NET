@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raices.buscarIntervalos(${1:funcion}, ${2:a}, ${3:b}, ${4:numSubintervalos})
+]]></content>
+	<tabTrigger>raices.buscarIntervalos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Escanea [a, b] dividiendo en N subintervalos y detecta dónde f cambia de sign...</description>
+</snippet>

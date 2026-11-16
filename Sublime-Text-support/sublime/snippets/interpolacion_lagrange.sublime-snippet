@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.lagrange(${1:lista_xs}, ${2:lista_ys}, ${3:x})
+]]></content>
+	<tabTrigger>interpolacion.lagrange</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Interpola el valor y en x usando el polinomio de Lagrange de grado n-1.\n</description>
+</snippet>

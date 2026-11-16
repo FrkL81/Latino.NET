@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.fusionar(${1:dic1}, ${2:dic2})
+]]></content>
+	<tabTrigger>dic.fusionar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Combinar dos diccionarios</description>
+</snippet>
+

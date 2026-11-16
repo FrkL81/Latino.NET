@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.regresion(${1:lista_x}, ${2:lista_y})]]></content>
+    <tabTrigger>math:regresion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Realizar regresión lineal simple {m, b, formula}</description>
+</snippet>

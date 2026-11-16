@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:entropiaShannon:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de entropiaShannon: formula</description>
+</snippet>

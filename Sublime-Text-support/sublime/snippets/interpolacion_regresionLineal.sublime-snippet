@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.regresionLineal(${1:lista_xs}, ${2:lista_ys})
+]]></content>
+	<tabTrigger>interpolacion.regresionLineal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ajuste de la recta y = a + b·x por el método de Mínimos Cuadrados.\n</description>
+</snippet>

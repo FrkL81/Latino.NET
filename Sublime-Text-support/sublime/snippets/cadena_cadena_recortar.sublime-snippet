@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.recortar(${1:texto})
+]]></content>
+	<tabTrigger>cadena.recortar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Eliminar espacios al inicio/final</description>
+</snippet>
+

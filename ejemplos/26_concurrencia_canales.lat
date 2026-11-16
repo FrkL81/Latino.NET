@@ -1,0 +1,66 @@
+# ==================================================================
+# 26_concurrencia_canales.lat
+# Concurrencia Real sobre .NET 10 (Modelo CSP con Canales)
+# Demuestra hilos.lanzar(), canal (Productor-Consumidor) y Worker Pool
+# ==================================================================
+
+incluir("hilos")
+
+limpiar("pantalla")
+escribir("=== CONCURRENCIA Y CANALES DE COMUNICACIÓN ===")
+escribir("")
+
+# Creamos un canal seguro (Thread-Safe Queue)
+canal_trabajo = canal.crear()
+
+# ── 1. Subrutina del Trabajador (Consumidor) ──────────────────────
+funcion trabajador(id_canal, id_obrero)
+    local tareas_procesadas = 0
+
+    mientras cierto
+        # canal.recibir() bloquea pacíficamente hasta que llegue un mensaje
+        tarea = canal.recibir(id_canal)
+
+        # Al cerrar el canal y vaciarse la cola, recibir() retorna nulo
+        si tarea == nulo
+            romper
+        fin
+
+        # Simula tiempo de procesamiento de la tarea
+        hilos.dormir(40)
+        tareas_procesadas = tareas_procesadas + 1
+    fin
+
+    retornar {"obrero": id_obrero, "total": tareas_procesadas}
+fin
+
+# ── 2. Despachar Piscina de Trabajadores (Worker Pool) ────────────
+escribir("Despachando 3 trabajadores en núcleos independientes...")
+hilo1 = hilos.lanzar(trabajador, canal_trabajo, "Alpha")
+hilo2 = hilos.lanzar(trabajador, canal_trabajo, "Beta")
+hilo3 = hilos.lanzar(trabajador, canal_trabajo, "Gamma")
+
+# ── 3. El Hilo Principal actúa como Productor ─────────────────────
+total_paquetes = 12
+escribir(ç("Productor enviando |total_paquetes| paquetes al canal..."))
+
+para i en rango(1, total_paquetes + 1)
+    canal.enviar(canal_trabajo, ç("PAQUETE_DATOS_#|i|"))
+fin
+
+# Señalizamos que la producción ha concluido
+canal.cerrar(canal_trabajo)
+escribir("Canal cerrado por el productor. Esperando balance de carga...\n")
+
+# ── 4. Sincronización y Consolidación (Fan-In) ────────────────────
+metricas = hilos.esperarTodos([hilo1, hilo2, hilo3])
+
+escribir("=== BALANCE DE CARGA ENTRE TRABAJADORES ===")
+para m en metricas
+    escribirf("  Trabajador {0,-6} procesó {1,2} tareas de forma equilibrada.\n", m["obrero"], m["total"])
+fin
+
+# Destrucción higiénica del canal en memoria
+canal.eliminar(canal_trabajo)
+
+escribir("\n✔ Concurrencia por canales completada exitosamente.")

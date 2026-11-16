@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tipo_celda]]></content>
+    <tabTrigger>str:celdaElectroquimica:tipo_celda</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de celdaElectroquimica: tipo_celda</description>
+</snippet>

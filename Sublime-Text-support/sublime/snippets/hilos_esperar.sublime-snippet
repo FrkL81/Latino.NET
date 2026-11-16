@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hilos.esperar(${1:id}, ${2:timeoutMs})
+]]></content>
+	<tabTrigger>hilos.esperar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Espera a que un hilo termine. Con timeout, retorna nulo si no termina a tiemp...</description>
+</snippet>

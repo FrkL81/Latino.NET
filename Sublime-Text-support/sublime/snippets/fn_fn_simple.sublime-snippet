@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+funcion ${1:nombre}(${2:params})
+	$0
+fin
+]]></content>
+	<tabTrigger>fn:simple</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚙️ Definir función simple</description>
+</snippet>

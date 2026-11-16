@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:regresionPolinomial:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionPolinomial: nota</description>
+</snippet>

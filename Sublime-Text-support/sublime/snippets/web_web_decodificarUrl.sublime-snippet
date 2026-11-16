@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+web.decodificarUrl(${1:texto})
+]]></content>
+	<tabTrigger>web.decodificarUrl</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🌐 Decodifica un string URL-encoded</description>
+</snippet>

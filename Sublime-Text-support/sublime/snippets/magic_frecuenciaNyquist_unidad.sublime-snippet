@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:frecuenciaNyquist:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de frecuenciaNyquist: unidad</description>
+</snippet>

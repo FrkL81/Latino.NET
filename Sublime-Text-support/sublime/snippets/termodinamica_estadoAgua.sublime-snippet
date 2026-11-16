@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.estadoAgua(${1:temperaturaCelsius})
+]]></content>
+	<tabTrigger>termodinamica.estadoAgua</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Determina el estado del agua a 1 atm.\n\nDiagnóstico: Sólido, Líquido, Gaseoso</description>
+</snippet>

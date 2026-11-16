@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.char(${1:codigo_o_lista})
+]]></content>
+	<tabTrigger>cadena.char</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Convertir ASCII a carácter</description>
+</snippet>
+

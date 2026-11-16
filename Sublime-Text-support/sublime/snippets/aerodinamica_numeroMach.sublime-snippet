@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+aerodinamica.numeroMach(${1:velocidadObjeto}, ${2:velocidadSonido})
+]]></content>
+	<tabTrigger>aerodinamica.numeroMach</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el Número de Mach y el régimen de vuelo.\n\nFórmula: M = v / c</description>
+</snippet>

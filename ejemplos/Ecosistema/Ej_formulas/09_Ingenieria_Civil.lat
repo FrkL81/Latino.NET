@@ -1,0 +1,86 @@
+# Ejemplo: Plugin Formulas - Ingeniería Civil (Estructuras e Hidráulica)
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: INGENIERÍA CIVIL ===")
+escribir("")
+
+# --- 1. ESTRUCTURAS ---
+escribir("--- Estructuras ---")
+escribir("Estudia el comportamiento de elementos estructurales bajo carga.")
+escribir("")
+
+# Momento de inercia de un rectángulo: I = bh³/12
+escribir("Momento de Inercia (Sección Rectangular):")
+escribir("  Viga de concreto: base=0.3m, altura=0.5m")
+base = 0.3   # m
+altura = 0.5 # m
+I = (base * altura^3) / 12
+escribir("  I = bh³/12 = " .. I .. " m⁴")
+escribir("")
+
+# Esfuerzo: σ = F/A
+escribir("Esfuerzo Normal (σ = F/A):")
+escribir("  Fuerza de 50000 N aplicada en sección de 0.1 m².")
+F = 50000  # N
+A = 0.1    # m²
+sigma = F / A
+escribir("  Esfuerzo: " .. sigma .. " Pa")
+escribir("  (≈ " .. (sigma/1e6) .. " MPa)")
+escribir("")
+
+# Módulo de Young: ε = σ/E
+escribir("Deformación Unitaria (ε = σ/E):")
+escribir("  Acero con E = 200 GPa.")
+E = 200e9  # Pa
+epsilon = sigma / E
+escribir("  Deformación: " .. epsilon .. " (adimensional)")
+escribir("")
+
+# --- 2. HIDRÁULICA ---
+escribir("--- Hidráulica ---")
+escribir("Estudia el comportamiento de los fluidos en movimiento.")
+escribir("")
+
+# Caudal: Q = A·v
+escribir("Caudal (Q = A·v):")
+escribir("  Agua fluyendo a 2 m/s en tubería de 0.1 m² de sección.")
+v = 2    # m/s
+seccion = 0.1  # m²
+Q = seccion * v
+escribir("  Velocidad: " .. v .. " m/s")
+escribir("  Sección: " .. seccion .. " m²")
+escribir("  Caudal: " .. Q .. " m³/s")
+escribir("  (≈ " .. (Q*1000) .. " L/s)")
+escribir("")
+
+# Ecuación de Bernoulli: P + ½ρv² + ρgh = constante
+escribir("Ecuación de Bernoulli:")
+escribir("  Punto 1: P=101325 Pa, v=1 m/s, h=0m")
+escribir("  Punto 2: v=5 m/s, h=2m")
+P1 = 101325  # Pa
+v1 = 1       # m/s
+h1 = 0       # m
+v2 = 5       # m/s
+h2 = 2       # m
+rho = 1000   # kg/m³ (agua)
+g = 9.80665  # m/s²
+
+# P2 = P1 + ½ρ(v1²-v2²) + ρg(h1-h2)
+P2 = P1 + 0.5*rho*(v1^2 - v2^2) + rho*g*(h1 - h2)
+escribir("  Presión punto 1: " .. P1 .. " Pa")
+escribir("  Presión punto 2: " .. mate.redondear(P2, 2) .. " Pa")
+escribir("")
+
+# Pérdida de carga (Darcy-Weisbach): hL = f(L/D)(v²/2g)
+escribir("Pérdida de Carga por Fricción:")
+escribir("  Tubería: L=100m, D=0.2m, f=0.02")
+L = 100   # m
+D = 0.2   # m
+f = 0.02  # factor de fricción
+hL = f * (L/D) * (v2^2 / (2*g))
+escribir("  Pérdida de carga: " .. mate.redondear(hL, 4) .. " m")
+
+escribir("")
+escribir("✅ Ejemplo de ingeniería civil completado")

@@ -1,0 +1,76 @@
+# ==================================================================
+# Ejemplo: Pipeline de Datos (CSV -> SQLite -> Agregación)
+# Demuestra la sinergia entre el manejo de archivos y SQLite
+# ==================================================================
+
+incluir("sqlite")
+
+archivo_csv = "ventas_temporal.csv"
+archivo_db  = "tienda.db"
+
+# ── 1. Preparar datos CSV de prueba ───────────────────────────────
+datos_ventas = [
+    {"producto": "Teclado Mecánico", "categoria": "Hardware", "precio": 85.50, "cantidad": 3},
+    {"producto": "Monitor 24 IPS",   "categoria": "Hardware", "precio": 160.00, "cantidad": 2},
+    {"producto": "Licencia IDE",      "categoria": "Software", "precio": 45.00, "cantidad": 5},
+    {"producto": "Mouse Ergonómico",  "categoria": "Hardware", "precio": 35.00, "cantidad": 4}
+]
+
+escribir("📄 Exportando datos crudos a CSV...")
+archivo.escribirCsv(archivo_csv, datos_ventas)
+
+# ── 2. Inicializar Base de Datos SQLite ────────────────────────────
+escribir("🗄️ Inicializando base de datos SQLite...")
+si archivo.existe(archivo_db)
+    archivo.eliminar(archivo_db)
+fin
+
+db = sqlite.conectar(archivo_db)
+
+sqlite.ejecutar(db, "
+    CREATE TABLE ventas (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        producto TEXT,
+        categoria TEXT,
+        precio REAL,
+        cantidad INTEGER
+    );
+")
+
+# ── 3. Ingesta masiva usando Transacción Atómica ───────────────────
+escribir("📥 Leyendo CSV e insertando en SQLite con transacción...")
+filas_csv = archivo.leerCsv(archivo_csv)
+
+sqlite.transaccion(db, fun(id_conn)
+    para fila en filas_csv
+        query = "INSERT INTO ventas (producto, categoria, precio, cantidad) VALUES (@prod, @cat, @pre, @cant)"
+        params = {
+            "@prod": fila["producto"],
+            "@cat":  fila["categoria"],
+            "@pre":  fila["precio"],
+            "@cant": fila["cantidad"]
+        }
+        sqlite.ejecutar(id_conn, query, params)
+    fin
+fin)
+
+# ── 4. Consulta Analítica (Group By y Suma) ───────────────────────
+escribir("\n📊 REPORTE DE VENTAS POR CATEGORÍA:")
+escribir("============================================")
+
+consulta = "SELECT categoria, SUM(cantidad) as items, SUM(precio * cantidad) as total FROM ventas GROUP BY categoria;"
+resumen = sqlite.consultar(db, consulta)
+
+para r en resumen
+    cat   = r["categoria"]
+    items = r["items"]
+    total = r["total"]
+    escribirf("{0,-12} | {1,3} unid. | Total: ${2,8:N2}\n", cat, items, total)
+fin
+escribir("============================================")
+
+# ── 5. Limpieza de recursos ───────────────────────────────────────
+sqlite.cerrar(db)
+archivo.eliminar(archivo_csv)
+archivo.eliminar(archivo_db)
+escribir("🧹 Entorno limpio y recursos liberados.")

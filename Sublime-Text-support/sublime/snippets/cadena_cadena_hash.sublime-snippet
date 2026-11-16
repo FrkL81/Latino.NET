@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[cadena.hash(${1:texto}, "${2:sha256}")]]></content>
+    <tabTrigger>str:hash</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📝 Calcular Hash (MD5, SHA1, SHA256, SHA512)</description>
+</snippet>

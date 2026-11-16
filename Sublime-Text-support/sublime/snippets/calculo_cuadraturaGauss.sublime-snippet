@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.cuadraturaGauss(${1:funcion}, ${2:a}, ${3:b}, ${4:puntos})
+]]></content>
+	<tabTrigger>calculo.cuadraturaGauss</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Integración numérica por Cuadratura de Gauss-Legendre.\n</description>
+</snippet>

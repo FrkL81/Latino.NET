@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.rellenar_izquierda(${1:texto}, ${2:"0"}, ${3:longitud})
+]]></content>
+	<tabTrigger>cadena.rellenar_izquierda</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Rellenar por la izquierda</description>
+</snippet>
+

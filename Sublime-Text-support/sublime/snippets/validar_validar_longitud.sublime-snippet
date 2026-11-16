@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.longitud(${1:texto}, ${2:min}, ${3:max})
+]]></content>
+	<tabTrigger>validar.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Verifica si la longitud está en el rango [min, max]</description>
+</snippet>

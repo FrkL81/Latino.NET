@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[terminado]]></content>
+    <tabTrigger>str:ejecutarAsync:terminado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de proceso.ejecutarAsync(): terminado </description>
+</snippet>

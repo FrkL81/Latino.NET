@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[timeout]]></content>
+    <tabTrigger>str:esperar:timeout</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de esperar: timeout</description>
+</snippet>

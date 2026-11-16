@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[promedio]]></content>
+    <tabTrigger>str:compararMasas:promedio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de compararMasas: promedio</description>
+</snippet>

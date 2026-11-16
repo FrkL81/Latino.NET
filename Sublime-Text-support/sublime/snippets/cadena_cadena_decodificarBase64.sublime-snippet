@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[cadena.decodificarBase64(${1:base64})]]></content>
+    <tabTrigger>str:b64dec</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📝 Decodificar desde formato Base64</description>
+</snippet>

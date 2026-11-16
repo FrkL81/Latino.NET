@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pendiente]]></content>
+    <tabTrigger>str:regresionLineal:pendiente</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionLineal: pendiente</description>
+</snippet>

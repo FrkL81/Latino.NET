@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.splineCubicoLista(${1:lista_xs}, ${2:lista_ys}, ${3:lista_x_evaluar})
+]]></content>
+	<tabTrigger>interpolacion.splineCubicoLista</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Igual que interpolacion.splineCubico pero evalúa el spline en una lista\n</description>
+</snippet>

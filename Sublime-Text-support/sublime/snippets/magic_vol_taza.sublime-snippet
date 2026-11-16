@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[taza]]></content>
+    <tabTrigger>str:vol:taza</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Volumen: Volumen: Taza (0.24L)</description>
+</snippet>

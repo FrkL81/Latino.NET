@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.cruz(${1:vector_a}, ${2:vector_b})
+]]></content>
+	<tabTrigger>algebraLineal.cruz</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el producto cruz (vectorial) de dos vectores en ℝ³.\n</description>
+</snippet>

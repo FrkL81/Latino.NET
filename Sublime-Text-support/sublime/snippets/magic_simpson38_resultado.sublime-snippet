@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:simpson38:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de simpson38: resultado</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[codo]]></content>
+    <tabTrigger>str:long:codo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Histórica: Codo (0.418m)</description>
+</snippet>

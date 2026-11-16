@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.diasEnMes(${1:fecha})
+]]></content>
+<tabTrigger>lapsos.diasEnMes</tabTrigger>
+<scope>source.latino</scope>
+<description>🗓️ Días en el mes</description>
+</snippet>

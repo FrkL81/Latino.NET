@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+anumero(${1:valor})
+]]></content>
+	<tabTrigger>anumero</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔢 Convertir a número</description>
+</snippet>

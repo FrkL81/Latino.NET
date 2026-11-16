@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[limite_L_300_m]]></content>
+    <tabTrigger>str:vigaFlechaMax:limite_L_300_m</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de vigaFlechaMax: limite_L_300_m</description>
+</snippet>

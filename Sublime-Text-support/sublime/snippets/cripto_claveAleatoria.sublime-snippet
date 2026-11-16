@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cripto.claveAleatoria()
+]]></content>
+	<tabTrigger>cripto.claveAleatoria</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Genera una clave aleatoria segura de 256 bits codificada en Base64.</description>
+</snippet>

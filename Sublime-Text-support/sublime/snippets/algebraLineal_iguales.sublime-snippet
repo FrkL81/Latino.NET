@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.iguales(${1:colA}, ${2:colB}, ${3:tolerancia})
+]]></content>
+	<tabTrigger>algebraLineal.iguales</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Compara dos tensores elemento a elemento dentro de una tolerancia.\n</description>
+</snippet>

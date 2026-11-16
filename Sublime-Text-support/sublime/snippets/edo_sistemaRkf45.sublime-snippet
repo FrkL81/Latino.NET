@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.sistemaRkf45(${1:funcionF}, ${2:t0}, ${3:listaY0}, ${4:tf}, ${5:tolerancia}, ${6:hInicial}, ${7:hMin}, ${8:hMax})
+]]></content>
+	<tabTrigger>edo.sistemaRkf45</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve un sistema de EDOs dY/dt = F(t, Y) con RKF45 adaptativo.\n\n</description>
+</snippet>

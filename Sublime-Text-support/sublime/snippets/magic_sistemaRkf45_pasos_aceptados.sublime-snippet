@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pasos_aceptados]]></content>
+    <tabTrigger>str:sistemaRkf45:pasos_aceptados</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRkf45: pasos_aceptados</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.estado(${1:elemento}, ${2:temperatura_celsius})
+]]></content>
+	<tabTrigger>tabla.estado</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Determina el estado de agregación de un elemento a una temperatura dada en °C...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[inf]]></content>
+    <tabTrigger>str:algebra:inf</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Norma de filas</description>
+</snippet>

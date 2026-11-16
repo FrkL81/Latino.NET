@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.sumar(${1:fecha}, ${2:cantidad}, ")"
+]]></content>
+<tabTrigger>lapsos.sumar</tabTrigger>
+<scope>source.latino</scope>
+<description>➕ Sumar tiempo</description>
+</snippet>

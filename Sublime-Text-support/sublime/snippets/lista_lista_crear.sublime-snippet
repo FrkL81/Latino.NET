@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.crear(${1:tamaño})
+]]></content>
+	<tabTrigger>lista.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Crear lista de tamaño N</description>
+</snippet>
+

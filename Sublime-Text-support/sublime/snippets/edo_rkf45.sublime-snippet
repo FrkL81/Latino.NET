@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.rkf45(${1:funcionF}, ${2:t0}, ${3:y0}, ${4:tf}, ${5:tolerancia}, ${6:hInicial}, ${7:hMin}, ${8:hMax})
+]]></content>
+	<tabTrigger>edo.rkf45</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve dy/dt = f(t, y) con el método Runge-Kutta-Fehlberg RKF45.\n</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+zip.listar(${1:archivo_zip})
+]]></content>
+	<tabTrigger>zip.listar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna una lista con las rutas internas de todos los archivos dentro del zip.</description>
+</snippet>

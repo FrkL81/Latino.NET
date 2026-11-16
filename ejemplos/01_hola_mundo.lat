@@ -1,0 +1,18 @@
+/*
+   -----------------------------------------
+   Tu Primer Programa en Latino.NET
+   -----------------------------------------
+*/
+
+// 1. El saludo clásico
+escribir("¡Hola, Mundo!")
+
+// 2. Latino.NET soporta tildes y emojis nativamente
+escribir("¡Programar en español es genial! 🚀")
+
+/* 
+   NOTA:
+   Si prefieres, también puedes usar 'imprimir()' o 'poner()'.
+   Son sinónimos exactos de 'escribir()'.
+*/
+# imprimir("Esto también funciona")

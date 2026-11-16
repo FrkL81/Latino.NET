@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[bar]]></content>
+    <tabTrigger>str:pres:bar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Presión: Presión: Bar</description>
+</snippet>

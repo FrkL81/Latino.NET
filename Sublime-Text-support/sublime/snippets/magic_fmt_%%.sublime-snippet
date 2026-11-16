@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%%]]></content>
+    <tabTrigger>str:fmt:%%</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato C: C-Style: Símbolo % literal</description>
+</snippet>

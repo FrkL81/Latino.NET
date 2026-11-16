@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[masa_molar_g_mol]]></content>
+    <tabTrigger>str:masaMolar:masa_molar_g_mol</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de masaMolar: masa_molar_g_mol</description>
+</snippet>

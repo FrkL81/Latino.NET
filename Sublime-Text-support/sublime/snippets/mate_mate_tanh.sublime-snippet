@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.tanh(${1:numero})
+]]></content>
+	<tabTrigger>mate.tanh</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Tangente hiperbólica</description>
+</snippet>
+

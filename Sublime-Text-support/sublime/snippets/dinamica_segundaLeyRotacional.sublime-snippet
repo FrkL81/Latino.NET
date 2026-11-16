@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.segundaLeyRotacional(${1:momento_inercia}, ${2:aceleracion_angular})
+]]></content>
+	<tabTrigger>dinamica.segundaLeyRotacional</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Segunda Ley de Newton para rotación.\n\nFórmula: τ = I·α</description>
+</snippet>

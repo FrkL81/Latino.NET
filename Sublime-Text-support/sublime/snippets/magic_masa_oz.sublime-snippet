@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[oz]]></content>
+    <tabTrigger>str:masa:oz</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Masa: Masa: Onzas</description>
+</snippet>

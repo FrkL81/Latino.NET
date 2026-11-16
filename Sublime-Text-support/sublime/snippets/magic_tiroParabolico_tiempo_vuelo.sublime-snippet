@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tiempo_vuelo]]></content>
+    <tabTrigger>str:tiroParabolico:tiempo_vuelo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cinemática: Retorno de tiroParabolico: tiempo_vuelo</description>
+</snippet>

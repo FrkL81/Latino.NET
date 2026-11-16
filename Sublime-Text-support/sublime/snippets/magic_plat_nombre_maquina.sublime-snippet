@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nombre_maquina]]></content>
+    <tabTrigger>str:plat:nombre_maquina</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plataforma: Retorno de plat: nombre_maquina</description>
+</snippet>

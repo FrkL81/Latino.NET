@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:inductorEnergia:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de inductorEnergia: formula</description>
+</snippet>

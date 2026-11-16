@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.url(${1:texto})
+]]></content>
+	<tabTrigger>validar.url</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Valida formato de URL (http/https)</description>
+</snippet>

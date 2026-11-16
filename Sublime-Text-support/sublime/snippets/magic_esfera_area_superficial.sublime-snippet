@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[area_superficial]]></content>
+    <tabTrigger>str:esfera:area_superficial</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de esfera: area_superficial</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ruta_windows]]></content>
+    <tabTrigger>str:estilo:ruta_windows</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo ruta Windows (ej: hola\mundo)</description>
+</snippet>

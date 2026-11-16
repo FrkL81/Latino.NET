@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.valoresPropios(${1:matriz_A}, ${2:max_iter}, ${3:tolerancia})
+]]></content>
+	<tabTrigger>algebraLineal.valoresPropios</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula todos los valores propios de una matriz cuadrada real\n</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.ordenar(${1:lista})
+]]></content>
+	<tabTrigger>lista.ordenar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Ordenar elementos</description>
+</snippet>
+

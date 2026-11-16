@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[timeout]]></content>
+    <tabTrigger>str:ejecutarAsync:timeout</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de proceso.ejecutarAsync(): timeout </description>
+</snippet>

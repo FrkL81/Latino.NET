@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[anio]]></content>
+    <tabTrigger>str:desdeUnix:anio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de desdeUnix: anio</description>
+</snippet>

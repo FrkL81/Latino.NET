@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:modeloBohr:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Física Cuántica: Retorno de modeloBohr: formula</description>
+</snippet>

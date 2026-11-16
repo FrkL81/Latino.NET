@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[n]]></content>
+    <tabTrigger>str:invertir:n</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de invertir: n</description>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+clase ${1:Nombre}
+	constructor(${2:params})
+		mi.${3:propiedad} = ${3:propiedad}
+		$0
+	fin
+fin
+]]></content>
+	<tabTrigger>poo:clase</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🎯 Definir clase con constructor</description>
+</snippet>

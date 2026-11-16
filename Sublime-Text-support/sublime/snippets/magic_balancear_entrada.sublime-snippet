@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[entrada]]></content>
+    <tabTrigger>str:balancear:entrada</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de balancear: entrada</description>
+</snippet>

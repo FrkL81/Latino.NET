@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hidraulica.darcyWeisbach(${1:factor_friccion}, ${2:longitud_m}, ${3:diametro_m}, ${4:velocidad_m_s})
+]]></content>
+	<tabTrigger>hidraulica.darcyWeisbach</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Pérdida de carga por fricción en tuberías (Darcy-Weisbach).\n\nFórmula: h_f =...</description>
+</snippet>

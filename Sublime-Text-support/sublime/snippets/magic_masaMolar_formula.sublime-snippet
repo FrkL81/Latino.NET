@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:masaMolar:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de masaMolar: formula</description>
+</snippet>

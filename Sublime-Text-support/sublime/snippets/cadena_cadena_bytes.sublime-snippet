@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.bytes(${1:texto})
+]]></content>
+	<tabTrigger>cadena.bytes</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Convertir a códigos ASCII</description>
+</snippet>
+

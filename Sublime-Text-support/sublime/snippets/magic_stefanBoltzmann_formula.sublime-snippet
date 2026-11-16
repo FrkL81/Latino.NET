@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:stefanBoltzmann:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de stefanBoltzmann: formula</description>
+</snippet>

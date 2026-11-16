@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[titulo]]></content>
+    <tabTrigger>str:estilo:titulo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo Título (ej: Hola Mundo)</description>
+</snippet>

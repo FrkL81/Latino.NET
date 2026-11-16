@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.bilineal(${1:x0}, ${2:x1}, ${3:y0}, ${4:y1}, ${5:f00}, ${6:f10}, ${7:f01}, ${8:f11}, ${9:x}, ${10:y})
+]]></content>
+	<tabTrigger>interpolacion.bilineal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Interpolación bilineal en una celda rectangular 2D.\n</description>
+</snippet>

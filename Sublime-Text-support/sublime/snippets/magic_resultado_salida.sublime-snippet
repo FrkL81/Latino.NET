@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[salida]]></content>
+    <tabTrigger>str:resultado:salida</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de resultado: salida</description>
+</snippet>

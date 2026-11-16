@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+finanzas.interesCompuesto(${1:capital}, ${2:tasa_anual}, ${3:tiempo_anios}, ${4:periodos_por_anio})
+]]></content>
+	<tabTrigger>finanzas.interesCompuesto</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Monto final con capitalización compuesta. periodos_por_anio: 1=anual, 12=mens...</description>
+</snippet>

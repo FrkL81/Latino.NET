@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[energia_eV]]></content>
+    <tabTrigger>str:modeloBohr:energia_eV</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Física Cuántica: Retorno de modeloBohr: energia_eV</description>
+</snippet>

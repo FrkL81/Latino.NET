@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+senales.anchoBandaModulacionAM(${1:frecuencia_portadora_Hz}, ${2:frecuencia_maxima_audio_Hz})
+]]></content>
+	<tabTrigger>senales.anchoBandaModulacionAM</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ancho de banda de una señal AM (doble banda lateral).\n\nFórmula: BW = 2·f_m</description>
+</snippet>

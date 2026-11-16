@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[puntosUsados]]></content>
+    <tabTrigger>str:cuadraturaGauss:puntosUsados</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de cuadraturaGauss: puntosUsados</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[regimen]]></content>
+    <tabTrigger>str:numeroFroude:regimen</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de numeroFroude: regimen</description>
+</snippet>

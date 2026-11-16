@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:resolver:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de resolver: formula</description>
+</snippet>

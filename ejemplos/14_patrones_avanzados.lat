@@ -1,0 +1,56 @@
+/*
+   14 - Patrones Avanzados y Configuración
+   Latino.NET permite técnicas de ingeniería de software avanzadas.
+   
+   1. Privacidad Real: Datos que nadie puede leer desde fuera.
+   2. Configuración del Motor: Controlar los límites de la máquina.
+*/
+
+escribir("--- 1. Patrón de Privacidad Estricta (Clausuras) ---")
+// En POO clásica, usamos '_variable' para indicar privado, pero se puede leer.
+// En Latino.NET, podemos usar 'local' dentro del constructor para hacer
+// datos matemáticamente invisibles.
+
+clase CajaFuerte
+    constructor(claveSecreta)
+        // Esta variable 'local' muere al terminar el constructor...
+        local secreto = claveSecreta
+
+        // ...pero este método la "recuerda" para siempre (Closure).
+        mi.abrir = funcion(intento)
+            si intento == secreto
+                retornar "🔓 ¡Abierto! Tesoro: Lingotes de Oro"
+            sino
+                retornar "🔒 Clave incorrecta"
+            fin
+        fin
+    fin
+fin
+
+boveda = nueva CajaFuerte("1234")
+
+// Intento 1: Acceso directo (Hackeo)
+// Como 'secreto' era local, no existe en el objeto 'mi'.
+escribir("Intento de leer secreto: " .. boveda.secreto) // Imprime: nulo
+
+// Intento 2: Uso legítimo
+escribir("Intento de abrir: " .. boveda.abrir("1234"))
+
+
+escribir("\n--- 2. Configuración del Motor (sis.config) ---")
+// Latino.NET corre sobre .NET y tiene protecciones de seguridad.
+// Puedes consultar y modificar estos límites en tiempo de ejecución.
+
+// Consultar límite de recursividad actual
+limite = sis.config("max_stack")
+escribir("Límite de recursividad actual: " .. limite)
+
+// Modificar el límite (útil para algoritmos muy profundos)
+sis.config("max_stack", 500)
+escribir("Nuevo límite ajustado a: " .. sis.config("max_stack"))
+
+/*
+   CONCLUSIÓN:
+   Tienes el control total. Desde la privacidad de tus datos
+   hasta los límites de memoria del propio lenguaje.
+*/

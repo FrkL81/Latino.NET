@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[l]]></content>
+    <tabTrigger>str:vol:l</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Volumen: Volumen: Litro</description>
+</snippet>

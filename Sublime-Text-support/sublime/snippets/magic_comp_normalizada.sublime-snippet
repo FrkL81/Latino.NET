@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[normalizada]]></content>
+    <tabTrigger>str:comp:normalizada</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Comparación: Ignora acentos y MAY/min</description>
+</snippet>

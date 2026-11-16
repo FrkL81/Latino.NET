@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.gradiente(${1:funcionNVar}, ${2:listaPunto}, ${3:h})
+]]></content>
+	<tabTrigger>calculo.gradiente</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el gradiente numérico ∇f en un punto dado.\n</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hidraulica.numeroFroude(${1:velocidad_m_s}, ${2:profundidad_hidraulica_m})
+]]></content>
+	<tabTrigger>hidraulica.numeroFroude</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Número de Froude para clasificar el régimen de flujo en canal abierto.\n\nFór...</description>
+</snippet>

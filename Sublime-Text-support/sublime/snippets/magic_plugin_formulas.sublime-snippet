@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formulas]]></content>
+    <tabTrigger>str:plugin:formulas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: formulas</description>
+</snippet>

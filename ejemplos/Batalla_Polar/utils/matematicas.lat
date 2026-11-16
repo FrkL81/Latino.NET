@@ -1,0 +1,22 @@
+﻿# ==================================================================
+# utils/matematicas.lat
+# Módulo de herramientas matemáticas para Batalla Polar
+# ==================================================================
+
+# Convierte un vector (distancia, ángulo) en coordenadas (X, Y)
+funcion polar_a_cartesiano(distancia, angulo_grados)
+    # 1. Convertimos grados a radianes (fórmula estándar)
+    rad = angulo_grados * (mate.pi / 180.0)
+    
+    # 2. Calculamos componentes X e Y
+    # Usamos mate.redondear() para alinear el resultado a números enteros
+    # ya que nuestro tablero de terminal es una cuadrícula discreta.
+    x_calc = mate.redondear(distancia * mate.cos(rad))
+    y_calc = mate.redondear(distancia * mate.sen(rad))
+    
+    # Retornamos un diccionario con la coordenada resultante
+    retornar {
+        "x": x_calc,
+        "y": y_calc
+    }
+fin

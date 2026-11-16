@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[columnas]]></content>
+    <tabTrigger>str:multiplicar:columnas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de multiplicar: columnas</description>
+</snippet>

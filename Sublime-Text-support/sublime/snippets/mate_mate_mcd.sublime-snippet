@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.mcd(${1:a}, ${2:b})]]></content>
+    <tabTrigger>math:mcd</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Máximo Común Divisor</description>
+</snippet>

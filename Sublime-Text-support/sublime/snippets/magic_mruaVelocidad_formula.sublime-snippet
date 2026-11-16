@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:mruaVelocidad:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cinemática: Retorno de mruaVelocidad: formula</description>
+</snippet>

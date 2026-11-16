@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[area_total]]></content>
+    <tabTrigger>str:piramideRectangular:area_total</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de piramideRectangular: area_total</description>
+</snippet>

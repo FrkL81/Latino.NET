@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:longitudArco:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de longitudArco: formula</description>
+</snippet>

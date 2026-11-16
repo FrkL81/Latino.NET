@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[bloque]]></content>
+    <tabTrigger>str:tabla:bloque</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla Periódica: Filtro por bloque</description>
+</snippet>

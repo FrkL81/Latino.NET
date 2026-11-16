@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[radio_orbital_m]]></content>
+    <tabTrigger>str:modeloBohr:radio_orbital_m</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Física Cuántica: Retorno de modeloBohr: radio_orbital_m</description>
+</snippet>

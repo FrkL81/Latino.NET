@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+finanzas.interesSimple(${1:capital}, ${2:tasa_anual}, ${3:tiempo_anios})
+]]></content>
+	<tabTrigger>finanzas.interesSimple</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Interés simple (sin capitalización).\n\nFórmula: I = C · r · t</description>
+</snippet>

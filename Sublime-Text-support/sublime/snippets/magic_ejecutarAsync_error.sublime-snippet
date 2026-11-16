@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error]]></content>
+    <tabTrigger>str:ejecutarAsync:error</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de proceso.ejecutarAsync(): error </description>
+</snippet>

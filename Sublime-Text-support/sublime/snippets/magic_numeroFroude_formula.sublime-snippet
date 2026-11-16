@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:numeroFroude:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de numeroFroude: formula</description>
+</snippet>

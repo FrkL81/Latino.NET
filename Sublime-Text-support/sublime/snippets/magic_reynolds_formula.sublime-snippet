@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:reynolds:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Fluidos: Retorno de reynolds: formula</description>
+</snippet>

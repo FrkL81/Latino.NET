@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cripto.firmar(${1:texto}, ${2:clave})
+]]></content>
+	<tabTrigger>cripto.firmar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Genera una firma HMAC-SHA256 del texto usando la clave.</description>
+</snippet>

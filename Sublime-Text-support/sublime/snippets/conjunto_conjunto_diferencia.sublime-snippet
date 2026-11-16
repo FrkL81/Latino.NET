@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.diferencia(${1:conjunto1}, ${2:conjunto2})
+]]></content>
+	<tabTrigger>conjunto.diferencia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Diferencia de conjuntos</description>
+</snippet>
+

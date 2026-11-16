@@ -1,0 +1,28 @@
+﻿# ==================================================================
+# utils/input.lat
+# Lector de teclado a prueba de fallos (Fail-Safe)
+# ==================================================================
+
+# Obliga al usuario a ingresar un número válido dentro de un rango
+funcion leer_entero_seguro(mensaje, min, max)
+    mientras verdadero
+        # 1. Leemos el texto desde la consola
+        # Entrada simulada: valor numérico del usuario
+        entrada = pedir(mensaje)
+        
+        # 2. Verificamos estructuralmente si es un número entero
+        si validar.entero(entrada)
+            # 3. Lo convertimos de forma segura
+            valor = anumero(entrada)
+            
+            # 4. Validamos las reglas de negocio (el rango)
+            si valor >= min ý valor <= max
+                retornar valor
+            sino
+                escribir(ç("⚠️ Valor fuera de rango. Debe estar entre |min| y |max|."))
+            fin
+        sino
+            escribir("⚠️ Entrada inválida. Por favor, ingresa un número entero.")
+        fin
+    fin
+fin

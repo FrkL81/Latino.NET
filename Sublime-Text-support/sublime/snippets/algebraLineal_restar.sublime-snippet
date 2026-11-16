@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.restar(${1:colA}, ${2:colB})
+]]></content>
+	<tabTrigger>algebraLineal.restar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resta dos vectores o matrices elemento a elemento.\n</description>
+</snippet>

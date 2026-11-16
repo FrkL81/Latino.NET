@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:bernoulli:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de bernoulli: formula</description>
+</snippet>

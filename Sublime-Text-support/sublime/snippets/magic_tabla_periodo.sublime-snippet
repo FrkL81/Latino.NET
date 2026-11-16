@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[periodo]]></content>
+    <tabTrigger>str:tabla:periodo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla Periódica: Filtro por periodo</description>
+</snippet>

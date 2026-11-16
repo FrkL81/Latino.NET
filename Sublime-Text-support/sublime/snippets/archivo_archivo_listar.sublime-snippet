@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.listar(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.listar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Listar archivos y carpetas</description>
+</snippet>
+

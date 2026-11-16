@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.inductorEnergia(${1:inductanciaH}, ${2:corrienteA})
+]]></content>
+	<tabTrigger>electromagnetismo.inductorEnergia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Energía almacenada en el campo magnético de un inductor.\n\nFórmula: U = ½·L·I²</description>
+</snippet>

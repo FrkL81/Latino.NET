@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[barril]]></content>
+    <tabTrigger>str:vol:barril</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Volumen: Volumen: Barril de petróleo</description>
+</snippet>

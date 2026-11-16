@@ -1,0 +1,69 @@
+/*
+   09 - Funciones y Programación Funcional
+   Las funciones son el corazón de la modularidad.
+   Latino.NET soporta paradigmas modernos como lambdas y operaciones funcionales.
+*/
+
+escribir("--- 1. Funciones Básicas ---")
+// Definición clásica: nombre, parámetros y cuerpo
+funcion Saludar(nombre)
+    retornar "Hola, " .. nombre
+fin
+
+mensaje = Saludar("Mundo")
+escribir(mensaje)
+
+
+escribir("\n--- 2. Parámetros Opcionales ---")
+// Puedes asignar un valor por defecto con '='
+// Regla: Los opcionales siempre van al final.
+funcion Potencia(base, exponente = 2)
+    retornar mate.pot(base, exponente)
+fin
+
+escribir("Potencia(3):    " .. Potencia(3))    // Usa el 2 por defecto (3^2)
+escribir("Potencia(3, 3): " .. Potencia(3, 3)) // Usa el 3 (3^3)
+
+
+escribir("\n--- 3. Funciones Anónimas (Lambdas) ---")
+// Las funciones son valores. Puedes guardarlas en variables.
+// Esto es vital para la programación moderna.
+
+duplicar = funcion(n) 
+    retornar n * 2 
+fin
+
+escribir("Duplicar 10: " .. duplicar(10))
+
+
+escribir("\n--- 4. Programación Funcional (Listas) ---")
+// En lugar de usar bucles 'para', usamos funciones de orden superior.
+// Esto hace el código más limpio y declarativo.
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+escribir("Lista original: " .. numeros)
+
+// A) FILTRAR (Filter)
+// Queremos solo los números pares.
+// Pasamos una función anónima que devuelve verdadero/falso.
+pares = lista.filtrar(numeros, funcion(n)
+    retornar n % 2 == 0
+fin)
+
+escribir("Solo pares:     " .. pares)
+
+// B) TRANSFORMAR (Map)
+// Queremos convertir esos pares en sus cuadrados.
+// Pasamos una función que transforma el dato.
+cuadrados = lista.transformar(pares, funcion(n)
+    retornar n * n
+fin)
+
+escribir("Cuadrados:      " .. cuadrados)
+
+/*
+   RESUMEN:
+   En lugar de escribir bucles 'desde' o 'mientras' y crear listas temporales,
+   encadenamos operaciones lógicas.
+   Entrada -> Filtrar -> Transformar -> Salida
+*/

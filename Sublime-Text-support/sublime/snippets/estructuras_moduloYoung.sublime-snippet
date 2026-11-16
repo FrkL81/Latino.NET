@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.moduloYoung(${1:diccionario_variables})
+]]></content>
+	<tabTrigger>estructuras.moduloYoung</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Módulo de Young (elasticidad). Omni-Solver: pasa 2 de 'E', 'sigma', 'epsilon'...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[delta_f]]></content>
+    <tabTrigger>str:efectoDoppler:delta_f</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de efectoDoppler: delta_f</description>
+</snippet>

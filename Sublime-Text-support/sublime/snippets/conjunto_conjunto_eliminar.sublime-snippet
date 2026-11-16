@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.eliminar(${1:conjunto}, ${2:elemento})
+]]></content>
+	<tabTrigger>conjunto.eliminar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Eliminar elemento</description>
+</snippet>
+

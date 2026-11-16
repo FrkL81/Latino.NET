@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[total_horas]]></content>
+    <tabTrigger>str:diferencia:total_horas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de diferencia: total_horas</description>
+</snippet>

@@ -1,0 +1,9 @@
+﻿<snippet>
+	<content><![CDATA[
+archivo.rutaAbsoluta(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.rutaAbsoluta</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Convertir a ruta absoluta</description>
+</snippet>
+

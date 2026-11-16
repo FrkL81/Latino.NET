@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.dividirTerminos(${1:colA}, ${2:colB})
+]]></content>
+	<tabTrigger>algebraLineal.dividirTerminos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Divide dos vectores o matrices elemento a elemento.\n</description>
+</snippet>

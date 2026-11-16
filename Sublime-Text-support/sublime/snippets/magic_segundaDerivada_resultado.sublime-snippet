@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:segundaDerivada:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de segundaDerivada: resultado</description>
+</snippet>

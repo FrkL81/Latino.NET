@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[desviacion_estandar]]></content>
+    <tabTrigger>str:varianzaDesviacion:desviacion_estandar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de varianzaDesviacion: desviacion_estandar</description>
+</snippet>

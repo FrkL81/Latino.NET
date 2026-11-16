@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[inercia_xx]]></content>
+    <tabTrigger>str:momentoInerciaRectangulo:inercia_xx</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de momentoInerciaRectangulo: inercia_xx</description>
+</snippet>

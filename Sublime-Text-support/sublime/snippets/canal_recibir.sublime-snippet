@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+canal.recibir(${1:id}, ${2:timeoutMs})
+]]></content>
+	<tabTrigger>canal.recibir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Recibe un mensaje de un canal.</description>
+</snippet>

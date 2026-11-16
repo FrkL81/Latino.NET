@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.tiroParabolico(${1:velocidadInicial}, ${2:anguloGrados})
+]]></content>
+	<tabTrigger>cinematica.tiroParabolico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Componentes de tiro parabólico.\n\nFórmulas: h_max = (v₀²·sin²(θ))/2g | d_max...</description>
+</snippet>

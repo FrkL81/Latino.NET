@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_estimado]]></content>
+    <tabTrigger>str:biseccion:error_estimado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de biseccion: error_estimado</description>
+</snippet>

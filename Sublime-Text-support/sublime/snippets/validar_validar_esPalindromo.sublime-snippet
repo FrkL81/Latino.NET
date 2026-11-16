@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.esPalindromo(${1:valor})
+]]></content>
+	<tabTrigger>validar.esPalindromo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Verifica si se lee igual al derecho y al revés</description>
+</snippet>

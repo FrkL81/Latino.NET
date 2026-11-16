@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ruta]]></content>
+    <tabTrigger>str:estilo:ruta</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo ruta (detecta SO automáticamente)</description>
+</snippet>

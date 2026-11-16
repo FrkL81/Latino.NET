@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.momentoInerciaRectangulo(${1:base}, ${2:altura})
+]]></content>
+	<tabTrigger>estructuras.momentoInerciaRectangulo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Momento de inercia de una sección rectangular respecto al eje centroidal.\n\n...</description>
+</snippet>

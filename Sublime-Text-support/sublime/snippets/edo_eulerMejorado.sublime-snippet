@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.eulerMejorado(${1:funcionF}, ${2:t0}, ${3:y0}, ${4:tf}, ${5:n})
+]]></content>
+	<tabTrigger>edo.eulerMejorado</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve dy/dt = f(t, y) con el Método de Euler Mejorado (Heun).\n</description>
+</snippet>

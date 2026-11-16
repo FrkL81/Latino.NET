@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.encontrar(${1:texto}, ${2:"buscar"})
+]]></content>
+	<tabTrigger>cadena.encontrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Alias de indice</description>
+</snippet>
+

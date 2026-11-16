@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.sumar(${1:colA}, ${2:colB})
+]]></content>
+	<tabTrigger>algebraLineal.sumar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Suma dos vectores o matrices elemento a elemento.\n</description>
+</snippet>

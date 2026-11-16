@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:interesCompuesto:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de interesCompuesto: unidad</description>
+</snippet>

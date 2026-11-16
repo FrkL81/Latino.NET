@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.negativo(${1:coleccion})
+]]></content>
+	<tabTrigger>algebraLineal.negativo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Invierte el signo de cada elemento del vector o matriz.\n</description>
+</snippet>

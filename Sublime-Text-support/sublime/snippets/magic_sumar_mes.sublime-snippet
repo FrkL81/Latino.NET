@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:sumar:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de sumar: mes</description>
+</snippet>

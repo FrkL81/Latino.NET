@@ -1,0 +1,50 @@
+# Ejemplo: Plugin Formulas - Estadística
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: ESTADÍSTICA ===")
+escribir("")
+
+notas = [85, 90, 78, 92, 88]
+escribir("Datos: " .. notas)
+escribir("")
+
+# --- Media ---
+escribir("--- Media ---")
+media = estadistica.media(notas)
+escribir("Media: " .. media["resultado"] .. " " .. media["unidad"])
+escribir("Fórmula: " .. media["formula"])
+
+# --- Varianza y Desviación ---
+escribir("")
+escribir("--- Varianza y Desviación Estándar ---")
+varianza = estadistica.varianzaDesviacion(notas)
+escribir("Varianza: " .. varianza["varianza"])
+escribir("Desviación estándar: " .. varianza["desviacion_estandar"])
+escribir("N: " .. varianza["n"])
+
+# --- Puntaje Z ---
+escribir("")
+escribir("--- Puntaje Z ---")
+z = estadistica.puntajeZ(95, media["resultado"], varianza["desviacion_estandar"])
+escribir("Puntaje Z para 95: " .. z["resultado"])
+escribir("Interpretación: " .. z["interpretacion"])
+
+# --- Combinaciones y Permutaciones ---
+escribir("")
+escribir("--- Combinatoria ---")
+comb = estadistica.combinaciones(10, 3)
+escribir("C(10,3) = " .. comb)
+perm = estadistica.permutaciones(10, 3)
+escribir("P(10,3) = " .. perm)
+
+# --- Coeficiente de Variación ---
+escribir("")
+escribir("--- Coeficiente de Variación ---")
+cv = estadistica.coeficienteVariacion(media["resultado"], varianza["desviacion_estandar"])
+escribir("CV: " .. cv["resultado"] .. "%")
+escribir("Nivel: " .. cv["nivel"])
+
+escribir("")
+escribir("✅ Ejemplo de estadística completado")

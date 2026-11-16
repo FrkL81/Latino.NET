@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.genetico(${1:funcion}, ${2:listaLimitesInf}, ${3:listaLimitesSup})
+]]></content>
+	<tabTrigger>optimizacion.genetico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(X) mediante un Algoritmo Genético de valor real.\n</description>
+</snippet>

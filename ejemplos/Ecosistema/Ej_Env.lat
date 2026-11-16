@@ -1,0 +1,42 @@
+# Ejemplo: Plugin Env (Variables de Entorno y Parser .env)
+# Requiere: incluir("env")
+
+incluir("env")
+
+escribir("=== PLUGIN ENV ===")
+escribir("")
+
+# --- Variables de entorno ---
+escribir("--- Variables del proceso ---")
+env.escribir("MI_VARIABLE", "Hola Mundo")
+escribir("MI_VARIABLE = " .. env.leer("MI_VARIABLE"))
+existe = env.existe("MI_VARIABLE")
+escribir("¿MI_VARIABLE existe? " .. existe)
+
+# Eliminar variable
+env.escribir("MI_VARIABLE", nulo)
+escribir("Después de eliminar, existe = " .. env.existe("MI_VARIABLE"))
+
+escribir("")
+
+# --- Parser .env ---
+escribir("--- Parser de archivo .env ---")
+
+# Crear archivo .env de ejemplo
+archivo.escribir("config_demo.env", "# Configuración de demo\nDB_HOST=localhost\nDB_PORT=5432\nDB_USER=admin\n# Password\nDB_PASS=\"secreto123\"\n")
+
+# Cargar .env
+env.leerArchivo("config_demo.env")
+
+escribir("DB_HOST = " .. env.leer("DB_HOST", "no definido"))
+# Entrada simulada: variable de entorno DB_PORT cargada desde config_demo.env
+escribir("DB_PORT = " .. env.leer("DB_PORT", "no definido"))
+# Entrada simulada: variable de entorno DB_USER cargada desde config_demo.env
+escribir("DB_USER = " .. env.leer("DB_USER", "no definido"))
+# Entrada simulada: variable de entorno DB_PASS cargada desde config_demo.env
+escribir("DB_PASS = " .. env.leer("DB_PASS", "no definido"))
+
+# Limpieza
+archivo.borrar("config_demo.env")
+env.escribir("DB_PASS", nulo)
+escribir("✅ Archivo .env de demo eliminado")

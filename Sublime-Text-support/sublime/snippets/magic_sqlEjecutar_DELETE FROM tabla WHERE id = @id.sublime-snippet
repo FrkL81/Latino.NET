@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[DELETE FROM tabla WHERE id = @id]]></content>
+    <tabTrigger>str:sqlEjecutar:DELETE FROM tabla WHERE id = @id</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Borrar registro por id</description>
+</snippet>

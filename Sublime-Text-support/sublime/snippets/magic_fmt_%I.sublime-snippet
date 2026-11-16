@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%I]]></content>
+    <tabTrigger>str:fmt:%I</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato Tiempo: Tiempo: Hora 12h (01-12)</description>
+</snippet>

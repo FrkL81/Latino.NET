@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[SELECT categoria, COUNT(*) AS cantidad FROM tabla GROUP BY categoria]]></content>
+    <tabTrigger>str:sqlConsultar:SELECT categoria, COUNT(*) AS cantidad FROM tabla GROUP BY categoria</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Consultar: SQL: Agrupar y contar por categoría</description>
+</snippet>

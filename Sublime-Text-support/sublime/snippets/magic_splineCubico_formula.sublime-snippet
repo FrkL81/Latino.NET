@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:splineCubico:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de splineCubico: formula</description>
+</snippet>

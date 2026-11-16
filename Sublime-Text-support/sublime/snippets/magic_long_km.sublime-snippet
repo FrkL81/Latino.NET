@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[km]]></content>
+    <tabTrigger>str:long:km</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Kilómetros</description>
+</snippet>

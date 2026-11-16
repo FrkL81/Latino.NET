@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.punto(${1:vector_a}, ${2:vector_b})
+]]></content>
+	<tabTrigger>algebraLineal.punto</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el producto punto (escalar) de dos vectores de igual longitud.\n</description>
+</snippet>

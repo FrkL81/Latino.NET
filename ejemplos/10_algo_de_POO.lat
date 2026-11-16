@@ -1,0 +1,88 @@
+/*
+   10 - Algo de POO (Programación Orientada a Objetos)
+   Latino.NET soporta Clases, Herencia y Polimorfismo.
+   
+   Destaca por su flexibilidad gramatical: puedes usar 'mi', 'este' o 'esta'
+   para referirte al objeto, y varias formas de crear instancias.
+*/
+
+escribir("--- 1. Clases y Referencias (Gramática Natural) ---")
+
+clase Persona
+    constructor(nombre, edad)
+        // 'mi' es la referencia estándar (this/self)
+        mi.nombre = nombre
+        
+        // 'este' es un alias. Úsalo si suena mejor (ej: este.objeto)
+        esta.edad = edad
+    fin
+
+    funcion Presentarse()
+        retornar "Hola, soy " .. mi.nombre .. " y tengo " .. mi.edad
+    fin
+fin
+
+clase Ventana
+    constructor(titulo)
+        // 'esta' es otro alias. Úsalo para concordancia femenina.
+        este.titulo = titulo
+        esta.abierta = falso
+    fin
+
+    funcion Abrir()
+        esta.abierta = verdadero
+        retornar "Ventana '" .. este.titulo .. "' abierta."
+    fin
+fin
+
+p = nueva Persona("Juan", 30)
+v = nueva Ventana("Principal")
+
+escribir(p.Presentarse())
+escribir(v.Abrir())
+
+
+escribir("\n--- 2. Variedad de Instanciación ---")
+// Latino.NET se adapta a tu estilo de programación preferido.
+
+// A) Estilo Clásico/Java (Explícito)
+p1 = nueva Persona("Ana", 25)
+escribir("Estilo 'nueva': " .. p1.nombre)
+
+// B) Estilo Neutro (Verbo)
+p2 = crear Persona("Beto", 40)
+escribir("Estilo 'crear': " .. p2.nombre)
+
+// C) Estilo Moderno/Python (Implícito)
+p3 = Persona("Carla", 22)
+escribir("Estilo implícito: " .. p3.nombre)
+
+
+escribir("\n--- 3. Herencia y Polimorfismo ---")
+
+clase Animal
+    funcion HacerRuido()
+        retornar "..."
+    fin
+fin
+
+// 'es' conecta la clase hija con el padre
+clase Perro es Animal
+    // Sobreescritura (Override): Reemplazamos el comportamiento
+    funcion HacerRuido()
+        retornar "¡Guau!"
+    fin
+fin
+
+clase Gato es Animal
+    funcion HacerRuido()
+        retornar "¡Miau!"
+    fin
+fin
+
+// Polimorfismo: Tratamos a todos como animales, pero cada uno actúa distinto
+zoo = [ nuevo Perro(), nuevo Gato(), nuevo Animal() ]
+
+para animal en zoo
+    escribir("El animal dice: " .. animal.HacerRuido())
+fin

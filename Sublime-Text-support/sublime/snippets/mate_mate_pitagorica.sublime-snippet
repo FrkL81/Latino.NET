@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.pitagorica(${1:cateto_a}, ${2:cateto_b}, ${3:hipotenusa_c})
+]]></content>
+	<tabTrigger>mate.pitagorica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Teorema de Pitágoras</description>
+</snippet>
+

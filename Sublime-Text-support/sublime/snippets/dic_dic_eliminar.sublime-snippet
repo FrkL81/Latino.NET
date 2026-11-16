@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.eliminar(${1:diccionario}, ${2:"clave"})
+]]></content>
+	<tabTrigger>dic.eliminar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Eliminar clave</description>
+</snippet>
+

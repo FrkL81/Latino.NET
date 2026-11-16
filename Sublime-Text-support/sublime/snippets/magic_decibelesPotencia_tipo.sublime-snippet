@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tipo]]></content>
+    <tabTrigger>str:decibelesPotencia:tipo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de decibelesPotencia: tipo</description>
+</snippet>

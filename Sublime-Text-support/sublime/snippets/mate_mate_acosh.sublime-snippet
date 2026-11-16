@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.acosh(${1:numero})
+]]></content>
+	<tabTrigger>mate.acosh</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Arcocoseno hiperbólico</description>
+</snippet>
+

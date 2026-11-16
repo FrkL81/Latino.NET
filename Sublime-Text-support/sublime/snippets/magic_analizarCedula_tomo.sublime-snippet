@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tomo]]></content>
+    <tabTrigger>str:analizarCedula:tomo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Validar: Retorno de analizarCedula: tomo</description>
+</snippet>

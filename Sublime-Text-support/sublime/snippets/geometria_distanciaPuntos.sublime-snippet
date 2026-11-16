@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.distanciaPuntos(${1:diccionario_puntos})
+]]></content>
+	<tabTrigger>geometria.distanciaPuntos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Distancia euclidiana entre dos puntos en 2D o 3D.\nPasa: {'x1','y1','x2','y2'...</description>
+</snippet>

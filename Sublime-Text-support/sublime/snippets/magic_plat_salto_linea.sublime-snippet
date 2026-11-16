@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[salto_linea]]></content>
+    <tabTrigger>str:plat:salto_linea</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plataforma: Retorno de plat: salto_linea</description>
+</snippet>

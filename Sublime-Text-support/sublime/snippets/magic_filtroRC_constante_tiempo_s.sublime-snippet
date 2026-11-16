@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[constante_tiempo_s]]></content>
+    <tabTrigger>str:filtroRC:constante_tiempo_s</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de filtroRC: constante_tiempo_s</description>
+</snippet>

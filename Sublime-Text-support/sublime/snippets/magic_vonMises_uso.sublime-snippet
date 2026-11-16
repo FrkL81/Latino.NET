@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[uso]]></content>
+    <tabTrigger>str:vonMises:uso</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de vonMises: uso</description>
+</snippet>

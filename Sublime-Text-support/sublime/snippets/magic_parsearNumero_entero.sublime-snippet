@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[entero]]></content>
+    <tabTrigger>str:parsearNumero:entero</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de parsearNumero: entero</description>
+</snippet>

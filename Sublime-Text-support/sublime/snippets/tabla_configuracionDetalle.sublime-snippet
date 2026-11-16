@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.configuracionDetalle(${1:elemento})
+]]></content>
+	<tabTrigger>tabla.configuracionDetalle</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Expande la configuración electrónica abreviada de un elemento.\nRetorna: {sim...</description>
+</snippet>

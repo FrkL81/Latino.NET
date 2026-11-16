@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+log.advertencia(${1:mensaje})
+]]></content>
+	<tabTrigger>log.advertencia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Registra un mensaje de advertencia.</description>
+</snippet>

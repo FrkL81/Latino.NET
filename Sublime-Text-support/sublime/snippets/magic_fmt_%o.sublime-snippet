@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%o]]></content>
+    <tabTrigger>str:fmt:%o</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato C: C-Style: Octal</description>
+</snippet>

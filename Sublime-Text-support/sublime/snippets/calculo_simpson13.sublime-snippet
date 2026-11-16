@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+calculo.simpson13(${1:lista_valores_y}, ${2:paso_h})
+]]></content>
+	<tabTrigger>calculo.simpson13</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Integración numérica por la Regla de Simpson 1/3. La lista debe tener un núme...</description>
+</snippet>

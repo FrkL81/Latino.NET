@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[condicion]]></content>
+    <tabTrigger>str:pandeoEuler:condicion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de pandeoEuler: condicion</description>
+</snippet>

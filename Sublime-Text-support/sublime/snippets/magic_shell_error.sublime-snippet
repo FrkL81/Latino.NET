@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error]]></content>
+    <tabTrigger>str:shell:error</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de shell: error</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:coeficienteVariacion:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de coeficienteVariacion: formula</description>
+</snippet>

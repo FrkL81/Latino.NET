@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.potencia(${1:trabajo}, ${2:tiempo})
+]]></content>
+	<tabTrigger>dinamica.potencia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Potencia mecánica media.\n\nFórmula: P = W / t</description>
+</snippet>

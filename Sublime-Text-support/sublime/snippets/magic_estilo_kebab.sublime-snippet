@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[kebab]]></content>
+    <tabTrigger>str:estilo:kebab</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo kebab-case (ej: hola-mundo)</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hilos.lanzar(${1:f}, ${2:args...})
+]]></content>
+	<tabTrigger>hilos.lanzar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧵 Inicia una función en un hilo separado</description>
+</snippet>

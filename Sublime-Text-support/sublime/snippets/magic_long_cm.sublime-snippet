@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[cm]]></content>
+    <tabTrigger>str:long:cm</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Centímetros</description>
+</snippet>

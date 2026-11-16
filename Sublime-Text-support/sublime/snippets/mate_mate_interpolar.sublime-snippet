@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.interpolar(${1:inicio}, ${2:fin}, ${3:factor})
+]]></content>
+	<tabTrigger>mate.interpolar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Interpolación lineal</description>
+</snippet>
+

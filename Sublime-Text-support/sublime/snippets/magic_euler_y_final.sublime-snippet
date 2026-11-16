@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[y_final]]></content>
+    <tabTrigger>str:euler:y_final</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de euler: y_final</description>
+</snippet>

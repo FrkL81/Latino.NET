@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.capacitorEnergia(${1:capacitanciaF}, ${2:voltajeV})
+]]></content>
+	<tabTrigger>electromagnetismo.capacitorEnergia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Energía almacenada en un capacitor cargado.\n\nFórmula: U = ½·C·V²</description>
+</snippet>

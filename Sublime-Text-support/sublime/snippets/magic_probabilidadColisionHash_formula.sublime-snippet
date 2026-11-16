@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:probabilidadColisionHash:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de probabilidadColisionHash: formula</description>
+</snippet>

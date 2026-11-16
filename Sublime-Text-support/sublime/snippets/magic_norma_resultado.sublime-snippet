@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:norma:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de norma: resultado</description>
+</snippet>

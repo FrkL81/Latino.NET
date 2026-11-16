@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[SELECT * FROM tabla ORDER BY columna DESC LIMIT 10]]></content>
+    <tabTrigger>str:sqlConsultar:SELECT * FROM tabla ORDER BY columna DESC LIMIT 10</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Consultar: SQL: Últimos 10 registros ordenados</description>
+</snippet>

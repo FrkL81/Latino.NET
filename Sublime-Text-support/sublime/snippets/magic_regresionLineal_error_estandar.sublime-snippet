@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_estandar]]></content>
+    <tabTrigger>str:regresionLineal:error_estandar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionLineal: error_estandar</description>
+</snippet>

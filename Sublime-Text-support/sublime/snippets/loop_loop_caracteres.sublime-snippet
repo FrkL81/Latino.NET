@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+para ${1:caracter} en rango(${2:texto})
+	$0
+fin
+]]></content>
+	<tabTrigger>loop:caracteres</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔁 Iterar sobre cada carácter</description>
+</snippet>

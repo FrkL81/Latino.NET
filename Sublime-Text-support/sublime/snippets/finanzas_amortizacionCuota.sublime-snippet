@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+finanzas.amortizacionCuota(${1:capital}, ${2:tasa_mensual}, ${3:numero_cuotas})
+]]></content>
+	<tabTrigger>finanzas.amortizacionCuota</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cuota mensual fija de un préstamo (sistema francés).\n\nFórmula: C = P · [r(1...</description>
+</snippet>

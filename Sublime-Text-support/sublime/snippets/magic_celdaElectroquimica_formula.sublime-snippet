@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:celdaElectroquimica:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de celdaElectroquimica: formula</description>
+</snippet>

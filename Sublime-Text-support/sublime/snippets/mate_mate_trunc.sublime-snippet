@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.trunc(${1:numero})
+]]></content>
+	<tabTrigger>mate.trunc</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Truncar parte decimal</description>
+</snippet>
+

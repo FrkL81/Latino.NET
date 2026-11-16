@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+lista.filtrar(${1:lista}, funcion(${2:x})
+	${3:retornar x > 0}
+fin)
+]]></content>
+	<tabTrigger>lista.filtrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Filtrar elementos (filter)</description>
+</snippet>
+

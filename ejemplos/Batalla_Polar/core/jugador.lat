@@ -1,0 +1,50 @@
+﻿# ==================================================================
+# core/jugador.lat
+# Representa al Comandante y gestiona su ejército
+# ==================================================================
+
+clase Jugador
+    constructor(nombre = "Desconocido", emoji = "🟦", simbolo = "[B]")
+        mi.nombre = nombre
+        mi.emoji = emoji
+        mi.simbolo = simbolo
+        mi.unidades =[]
+        mi.disparos = 0
+        mi.aciertos = 0
+        # Variables para la IA
+        mi.es_ia = falso
+        mi.dificultad = 0
+        mi.modelo_ia = "llama-3.3-70b-versatile"
+        mi.proveedor = "groq"
+        mi.api_key = ""
+    fin
+
+    funcion agregar_unidad(x, y)
+        nueva_unidad = nueva Unidad(x, y, mi.simbolo)
+        lista.agregar(mi.unidades, nueva_unidad)
+    fin
+
+    funcion obtener_vivas()
+        retornar lista.filtrar(mi.unidades, fun(u) ret u.esta_viva() fin)
+    fin
+
+    funcion contar_vivas()
+        vivas = mi.obtener_vivas()
+        retornar lista.longitud(vivas)
+    fin
+
+    funcion registrar_disparo(fue_acierto)
+        mi.disparos = mi.disparos + 1
+        si fue_acierto
+            mi.aciertos = mi.aciertos + 1
+        fin
+    fin
+
+    funcion calcular_precision()
+        si mi.disparos == 0
+            retornar 0
+        fin
+        porcentaje = (mi.aciertos / mi.disparos) * 100
+        retornar mate.redondear(porcentaje, 2)
+    fin
+fin

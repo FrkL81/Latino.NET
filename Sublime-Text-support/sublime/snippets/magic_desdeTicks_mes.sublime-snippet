@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:desdeTicks:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de desdeTicks: mes</description>
+</snippet>

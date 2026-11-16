@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[numero_cuotas]]></content>
+    <tabTrigger>str:amortizacionCuota:numero_cuotas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de amortizacionCuota: numero_cuotas</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[cripto]]></content>
+    <tabTrigger>str:plugin:cripto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: cripto</description>
+</snippet>

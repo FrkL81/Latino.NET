@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.tensionNormal(${1:fuerza_N}, ${2:area_m2})
+]]></content>
+	<tabTrigger>estructuras.tensionNormal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Tensión (esfuerzo) normal en una sección transversal.\n\nFórmula: σ = F / A</description>
+</snippet>

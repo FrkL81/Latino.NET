@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.ejecutar(${1:cmd}, ${2:args}, ${3:timeout_ms})
+]]></content>
+	<tabTrigger>proceso.ejecutar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ejecuta un comando del sistema y espera su resultado.</description>
+</snippet>

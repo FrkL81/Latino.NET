@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.rk4(${1:funcionF}, ${2:t0}, ${3:y0}, ${4:tf}, ${5:n})
+]]></content>
+	<tabTrigger>edo.rk4</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve dy/dt = f(t, y) con el método clásico Runge-Kutta de orden 4.\n</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+local ${1:variable} = ${2:valor}
+]]></content>
+	<tabTrigger>local</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔒 Variable local</description>
+</snippet>

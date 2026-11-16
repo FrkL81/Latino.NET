@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[alcance_maximo]]></content>
+    <tabTrigger>str:tiroParabolico:alcance_maximo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cinemática: Retorno de tiroParabolico: alcance_maximo</description>
+</snippet>

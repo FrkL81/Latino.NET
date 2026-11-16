@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[hilos]]></content>
+    <tabTrigger>str:plugin:hilos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: hilos</description>
+</snippet>

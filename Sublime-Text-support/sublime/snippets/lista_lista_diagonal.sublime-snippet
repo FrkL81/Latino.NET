@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[lista.diagonal(${1:matriz})]]></content>
+	<tabTrigger>lista.diagonal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Extrae la diagonal principal</description>
+</snippet>

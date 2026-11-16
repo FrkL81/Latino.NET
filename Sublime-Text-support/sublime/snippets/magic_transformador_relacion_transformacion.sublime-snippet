@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[relacion_transformacion]]></content>
+    <tabTrigger>str:transformador:relacion_transformacion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de transformador: relacion_transformacion</description>
+</snippet>

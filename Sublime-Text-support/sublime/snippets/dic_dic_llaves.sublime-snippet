@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.llaves(${1:diccionario})
+]]></content>
+	<tabTrigger>dic.llaves</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Obtener todas las claves</description>
+</snippet>
+

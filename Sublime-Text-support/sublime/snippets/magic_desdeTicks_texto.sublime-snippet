@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[texto]]></content>
+    <tabTrigger>str:desdeTicks:texto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de desdeTicks: texto</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hidraulica.bernoulli(${1:diccionario_punto1}, ${2:diccionario_punto2}, ${3:densidad_kg_m3})
+]]></content>
+	<tabTrigger>hidraulica.bernoulli</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Verifica la ecuación de Bernoulli entre dos puntos.\nCada punto: {'P','v','z'...</description>
+</snippet>

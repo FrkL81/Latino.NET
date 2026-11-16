@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.potenciaElectrica(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>electromagnetismo.potenciaElectrica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Potencia eléctrica. Pasa 2 de: 'V', 'I', 'R'.\n\nFórmulas: P = V·I | P = I²·R...</description>
+</snippet>

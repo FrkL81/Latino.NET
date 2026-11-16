@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cripto.verificar(${1:texto}, ${2:firma}, ${3:clave})
+]]></content>
+	<tabTrigger>cripto.verificar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Verifica que la firma HMAC-SHA256 corresponde al texto y la clave.</description>
+</snippet>

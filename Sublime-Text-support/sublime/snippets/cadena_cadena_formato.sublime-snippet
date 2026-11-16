@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.formato("${1:%s %d}", ${2:valores})
+]]></content>
+	<tabTrigger>cadena.formato</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Formato estilo printf</description>
+</snippet>
+

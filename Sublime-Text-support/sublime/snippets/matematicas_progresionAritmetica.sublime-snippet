@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+matematicas.progresionAritmetica(${1:primerTermino}, ${2:diferenciaComun}, ${3:numTerminos})
+]]></content>
+	<tabTrigger>matematicas.progresionAritmetica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Suma y término n-ésimo de una progresión aritmética.\n\nFórmulas: aₙ = a₁ + (...</description>
+</snippet>

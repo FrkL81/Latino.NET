@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pascal]]></content>
+    <tabTrigger>str:estilo:pascal</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo PascalCase (ej: HolaMundo)</description>
+</snippet>

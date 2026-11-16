@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[optimo]]></content>
+    <tabTrigger>str:seccionAurea:optimo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de seccionAurea: optimo</description>
+</snippet>

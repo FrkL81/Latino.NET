@@ -1,0 +1,636 @@
+{
+    "name": "Latino",
+    "scopeName": "source.latino",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#compositor"
+        },
+        {
+            "include": "#evaluator"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#modifiers"
+        },
+        {
+            "include": "#blocks"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#functions"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.latino",
+                    "match": "(#|//).*$"
+                },
+                {
+                    "name": "comment.block.latino",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "modifiers": {
+            "name": "storage.modifier.latino",
+            "match": "\\b(local|global|estatico)\\b"
+        },
+        "blocks": {
+            "patterns": [
+                {
+                    "name": "meta.block.conditional.latino",
+                    "begin": "\\b(si)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.conditional.if.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#blocks-internal"
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.loop.while.latino",
+                    "begin": "\\b(mientras)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.loop.while.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.loop.repeat.latino",
+                    "begin": "\\b(repetir)\\b",
+                    "end": "\\b(hasta)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.loop.repeat.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.loop.until.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.loop.for.latino",
+                    "begin": "\\b(para|desde)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.loop.for.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.function.latino",
+                    "begin": "\\b(funcion|fun)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "storage.type.function.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.class.latino",
+                    "begin": "\\b(clase)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "storage.type.class.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.switch.latino",
+                    "begin": "\\b(elegir)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.switch.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#blocks-internal"
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.exception.latino",
+                    "begin": "\\b(intentar)\\b",
+                    "end": "\\b(fin)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.exception.try.latino"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.end.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#blocks-internal"
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                }
+            ]
+        },
+        "blocks-internal": {
+            "patterns": [
+                {
+                    "name": "meta.block.conditional.else.latino",
+                    "begin": "\\b(sino|osi)\\b",
+                    "end": "(?=\\b(fin|sino|osi)\\b)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.conditional.else.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.block.exception.catch.latino",
+                    "begin": "\\b(atrapar)\\b",
+                    "end": "(?=\\b(fin)\\b)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.exception.catch.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.case.latino",
+                    "begin": "\\b(caso|otro|defecto)\\b",
+                    "end": "(?=\\b(caso|otro|defecto|fin)\\b)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.case.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.latino",
+                    "match": "\\b(en|rango|romper|continuar|retornar|retorno|ret|ir|fin|otro|defecto|caso|atrapar)\\b"
+                },
+                {
+                    "name": "keyword.control.exception.throw.latino",
+                    "match": "\\b(lanzar)\\b"
+                },
+                {
+                    "name": "storage.type.class.latino",
+                    "match": "\\b(?<!\\.)(es|constructor|crear|nueva|nuevo)\\b"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.logical.latino",
+                    "match": "\\b(ý|ó|no)\\b"
+                },
+                {
+                    "name": "keyword.operator.assignment.latino",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.operator.concatenation.latino",
+                    "match": "\\.\\."
+                },
+                {
+                    "name": "keyword.operator.symbol.latino",
+                    "match": "\\?\\?=|\\?\\?|\\|>|\\.\\.=|\\+=|\\-=|\\*=|\\/=|%=|\\+\\+|\\-\\-|~=|==|!=|<=|>=|&&|\\|\\||\\!|\\+|-|\\*|\\/|%|\\^|<|>|\\?|\\:|\\.|\\,|\\;|~"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.true.latino",
+                    "match": "\\b(verdadero|cierto)\\b"
+                },
+                {
+                    "name": "constant.language.boolean.false.latino",
+                    "match": "\\b(falso|espurio)\\b"
+                },
+                {
+                    "name": "constant.language.null.latino",
+                    "match": "\\b(nulo)\\b"
+                },
+                {
+                    "name": "constant.language.latino",
+                    "match": "\\b(mi|este|esta)\\b"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.latino",
+                    "match": "\\b(?<!\\.)(escribir|imprimir|imprimirf|escribirf|ponerf|poner|incluir|tipo|acadena|anumero|alogico|clonar|ç|leer|pedir|limpiar|evaluar|eval|trocar)\\b"
+                },
+                {
+                    "name": "support.class.latino",
+                    "match": "\\b(mate|cadena|sis|archivo|lista|dic|tupla|conjunto|pila|cola|lapsos|validar|web|hilos|mutex|canal|sqlite|formulas|cinematica|dinamica|electricidad|fluidos|termodinamica|quimica|economia|astronomia|aerodinamica|ondas|optica|estadistica|finanzas|electromagnetismo|senales|estructuras|hidraulica|matematicas|computacion|fisicaCuantica|geometria|zip|cripto|env|log|proceso|texto|raices|interpolacion|calculo|algebraLineal|edo|optimizacion|tabla)\\b"
+                }
+            ]
+        },
+        "numbers": {
+            "name": "constant.numeric.latino",
+            "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.latino",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.latino",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.latino",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.latino",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "compositor": {
+            "begin": "(ç)(?=\\s*\\()",
+            "beginCaptures": {
+                "1": {
+                    "name": "support.function.builtin.latino"
+                }
+            },
+            "end": "\\)",
+            "patterns": [
+                {
+                    "begin": "\"",
+                    "end": "\"",
+                    "name": "string.quoted.double.latino",
+                    "patterns": [
+                        {
+                            "include": "#compositor-interpolation"
+                        },
+                        {
+                            "name": "constant.character.escape.latino",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "end": "'",
+                    "name": "string.quoted.single.latino",
+                    "patterns": [
+                        {
+                            "include": "#compositor-interpolation"
+                        },
+                        {
+                            "name": "constant.character.escape.latino",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "include": "$self"
+                }
+            ]
+        },
+        "compositor-interpolation": {
+            "name": "meta.template.expression.latino",
+            "begin": "\\|",
+            "end": "\\|",
+            "beginCaptures": {
+                "0": {
+                    "name": "keyword.operator.latino"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.operator.latino"
+                }
+            },
+            "patterns":[
+                {
+                    "name": "punctuation.accessor.latino",
+                    "match": "\\."
+                },
+                {
+                    "name": "punctuation.section.brackets.latino",
+                    "match": "\\[|\\]"
+                },
+                {
+                    "name": "string.quoted.single.latino",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns":[
+                        {
+                            "name": "constant.character.escape.latino",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.double.latino",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns":[
+                        {
+                            "name": "constant.character.escape.latino",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "constant.numeric.latino",
+                    "match": "\\b\\d+\\b"
+                },
+                {
+                    "name": "constant.language.latino",
+                    "match": "\\b(mi|este|esta)\\b"
+                },
+                {
+                    "name": "variable.other.readwrite.latino",
+                    "match": "[a-zA-Z_\\u00A0-\\uFFFF][a-zA-Z0-9_\\u00A0-\\uFFFF]*"
+                }
+            ]
+        },
+        "evaluator": {
+            "patterns": [
+                {
+                    "name": "meta.function-call.eval.latino",
+                    "begin": "\\b(evaluar|eval)\\s*\\(",
+                    "end": "\\)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "support.function.builtin.latino"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#evaluator-string-double"
+                        },
+                        {
+                            "include": "#evaluator-string-single"
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                }
+            ]
+        },
+        "evaluator-string-double": {
+            "name": "string.quoted.double.latino",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "include": "#evaluator-syntax"
+                },
+                {
+                    "name": "constant.character.escape.latino",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "evaluator-string-single": {
+            "name": "string.quoted.single.latino",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "include": "#evaluator-syntax"
+                },
+                {
+                    "name": "constant.character.escape.latino",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "evaluator-syntax": {
+            "patterns": [
+                {
+                    "name": "comment.line.latino",
+                    "match": "(#|//).*(?=\"|')"
+                },
+                {
+                    "name": "support.class.latino",
+                    "match": "\\b(mate|cadena|sis|archivo|lista|dic|tupla|conjunto|pila|cola|lapsos|validar|web|hilos|mutex|canal|sqlite|formulas|cinematica|dinamica|electricidad|fluidos|termodinamica|quimica|economia|astronomia|aerodinamica|ondas|optica|estadistica|finanzas|electromagnetismo|senales|estructuras|hidraulica|matematicas|computacion|fisicaCuantica|geometria|zip|cripto|env|log|proceso|texto|raices|interpolacion|calculo|algebraLineal|edo|optimizacion|tabla)\\b"
+                },
+                {
+                    "name": "support.function.builtin.latino",
+                    "match": "\\b(?<!\\.)(escribir|imprimir|tipo|acadena|anumero|alogico|clonar|leer|limpiar|trocar)\\b"
+                },
+                {
+                    "name": "keyword.control.conditional.if.latino",
+                    "match": "\\b(si)\\b"
+                },
+                {
+                    "name": "keyword.control.conditional.else.latino",
+                    "match": "\\b(sino|osi)\\b"
+                },
+                {
+                    "name": "keyword.control.loop.while.latino",
+                    "match": "\\b(mientras)\\b"
+                },
+                {
+                    "name": "keyword.control.loop.for.latino",
+                    "match": "\\b(para|desde)\\b"
+                },
+                {
+                    "name": "keyword.control.loop.repeat.latino",
+                    "match": "\\b(repetir)\\b"
+                },
+                {
+                    "name": "keyword.control.loop.until.latino",
+                    "match": "\\b(hasta)\\b"
+                },
+                {
+                    "name": "keyword.control.end.latino",
+                    "match": "\\b(fin)\\b"
+                },
+                {
+                    "name": "storage.type.function.latino",
+                    "match": "\\b(funcion|fun)\\b"
+                },
+                {
+                    "name": "storage.type.class.latino",
+                    "match": "\\b(clase)\\b"
+                },
+                {
+                    "name": "keyword.control.latino",
+                    "match": "\\b(en|rango|romper|continuar|retornar|retorno|ret)\\b"
+                },
+                {
+                    "name": "keyword.control.exception.throw.latino",
+                    "match": "\\b(lanzar)\\b"
+                },
+                {
+                    "name": "constant.language.boolean.true.latino",
+                    "match": "\\b(verdadero|cierto)\\b"
+                },
+                {
+                    "name": "constant.language.boolean.false.latino",
+                    "match": "\\b(falso|espurio)\\b"
+                },
+                {
+                    "name": "constant.language.null.latino",
+                    "match": "\\b(nulo)\\b"
+                },
+                {
+                    "name": "keyword.operator.logical.latino",
+                    "match": "\\b(ý|ó|no)\\b"
+                },
+                {
+                    "name": "keyword.operator.assignment.latino",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.operator.concatenation.latino",
+                    "match": "\\.\\."
+                },
+                {
+                    "name": "keyword.operator.symbol.latino",
+                    "match": "\\?\\?=|\\?\\?|\\|>|==|!=|<=|>=|&&|\\|\\||\\+|-|\\*|/|%|\\^|<|>|\\(|\\)|\\[|\\]|\\{|\\}|~"
+                },
+                {
+                    "name": "constant.numeric.latino",
+                    "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+                },
+                {
+                    "name": "punctuation.accessor.latino",
+                    "match": "\\."
+                },
+                {
+                    "name": "punctuation.separator.latino",
+                    "match": ","
+                },
+                {
+                    "name": "variable.other.readwrite.latino",
+                    "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+                }
+            ]
+        }
+    }
+}

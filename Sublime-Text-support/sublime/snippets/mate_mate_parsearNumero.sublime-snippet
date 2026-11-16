@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+mate.parsearNumero(${1:valor}${2:, ${3:sep_miles}})
+]]></content>
+	<tabTrigger>mate.parsearNumero</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Parsea un número desde texto o valor numérico</description>
+</snippet>

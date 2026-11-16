@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.mruaVelocidad(${1:velocidadInicial}, ${2:aceleracion}, ${3:tiempo})
+]]></content>
+	<tabTrigger>cinematica.mruaVelocidad</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Velocidad final en Movimiento Rectilíneo Uniformemente Acelerado.\n\nFórmula:...</description>
+</snippet>

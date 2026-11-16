@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.ultimo_id(${1:id})
+]]></content>
+	<tabTrigger>sqlite.ultimo_id</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Devuelve el ID de la última fila insertada en esta conexión.</description>
+</snippet>

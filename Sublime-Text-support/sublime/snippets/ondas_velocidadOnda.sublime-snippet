@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+ondas.velocidadOnda(${1:frecuencia}, ${2:longitud_onda})
+]]></content>
+	<tabTrigger>ondas.velocidadOnda</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Velocidad de propagación de una onda.\n\nFórmula: v = f·λ</description>
+</snippet>

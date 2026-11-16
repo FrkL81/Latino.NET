@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:trapecio:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de trapecio: formula</description>
+</snippet>

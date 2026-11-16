@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:numeroMach:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Aerodinámica: Retorno de numeroMach: resultado</description>
+</snippet>

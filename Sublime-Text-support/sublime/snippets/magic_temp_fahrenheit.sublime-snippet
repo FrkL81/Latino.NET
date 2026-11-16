@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[fahrenheit]]></content>
+    <tabTrigger>str:temp:fahrenheit</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Temperatura: Temp: Grados Fahrenheit</description>
+</snippet>

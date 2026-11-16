@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tren]]></content>
+    <tabTrigger>str:estilo:tren</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo Train-Case (ej: Hola-Mundo)</description>
+</snippet>

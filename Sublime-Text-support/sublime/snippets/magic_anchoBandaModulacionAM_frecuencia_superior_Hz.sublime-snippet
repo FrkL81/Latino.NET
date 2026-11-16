@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[frecuencia_superior_Hz]]></content>
+    <tabTrigger>str:anchoBandaModulacionAM:frecuencia_superior_Hz</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de anchoBandaModulacionAM: frecuencia_superior_Hz</description>
+</snippet>

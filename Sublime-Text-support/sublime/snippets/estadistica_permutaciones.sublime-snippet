@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estadistica.permutaciones(${1:n}, ${2:r})
+]]></content>
+	<tabTrigger>estadistica.permutaciones</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Permutaciones sin repetición.\n\nFórmula: P(n,r) = n! / (n-r)!</description>
+</snippet>

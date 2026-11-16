@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.conectar("${1:ruta.db}")
+]]></content>
+	<tabTrigger>sqlite.conectar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🗄️ Conectar/Crear base de datos SQLite</description>
+</snippet>

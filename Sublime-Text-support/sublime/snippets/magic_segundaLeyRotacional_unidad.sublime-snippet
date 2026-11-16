@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:segundaLeyRotacional:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Dinámica: Retorno de segundaLeyRotacional: unidad</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.jacobiana(${1:funcionVectorial}, ${2:listaX}, ${3:h})
+]]></content>
+	<tabTrigger>calculo.jacobiana</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la matriz Jacobiana J de una función vectorial F: ℝⁿ → ℝᵐ en el punto...</description>
+</snippet>

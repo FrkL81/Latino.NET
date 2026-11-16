@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.leer(${1:"ruta.txt"})
+]]></content>
+	<tabTrigger>archivo.leer</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Leer contenido completo</description>
+</snippet>
+

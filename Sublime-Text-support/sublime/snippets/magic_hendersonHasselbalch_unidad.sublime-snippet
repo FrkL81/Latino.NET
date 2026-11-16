@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:hendersonHasselbalch:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de hendersonHasselbalch: unidad</description>
+</snippet>

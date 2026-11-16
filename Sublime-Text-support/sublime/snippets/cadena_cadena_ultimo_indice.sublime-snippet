@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.ultimo_indice(${1:texto}, ${2:"buscar"})
+]]></content>
+	<tabTrigger>cadena.ultimo_indice</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Última posición de subcadena</description>
+</snippet>
+

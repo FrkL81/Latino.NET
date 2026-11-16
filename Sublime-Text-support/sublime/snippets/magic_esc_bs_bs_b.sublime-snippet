@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[\\b]]></content>
+    <tabTrigger>str:esc:\\b</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Escape: Retorno de esc: \\b</description>
+</snippet>

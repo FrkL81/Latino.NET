@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:elemento} = pila.cima(${2:pila})
+]]></content>
+	<tabTrigger>pila.cima</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📚 Ver cima sin extraer</description>
+</snippet>
+

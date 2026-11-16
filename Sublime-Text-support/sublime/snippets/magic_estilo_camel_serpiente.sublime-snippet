@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[camel_serpiente]]></content>
+    <tabTrigger>str:estilo:camel_serpiente</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Híbrido (hola_Mundo_Cruel)</description>
+</snippet>

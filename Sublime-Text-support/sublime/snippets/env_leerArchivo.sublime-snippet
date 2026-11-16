@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+env.leerArchivo(${1:ruta}, ${2:prefijo})
+]]></content>
+	<tabTrigger>env.leerArchivo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Parsea un archivo .env y carga sus variables en el proceso actual.</description>
+</snippet>

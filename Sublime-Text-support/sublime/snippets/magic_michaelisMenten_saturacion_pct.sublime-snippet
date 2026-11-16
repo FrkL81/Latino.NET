@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[saturacion_pct]]></content>
+    <tabTrigger>str:michaelisMenten:saturacion_pct</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de michaelisMenten: saturacion_pct</description>
+</snippet>

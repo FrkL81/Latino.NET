@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:miConjunto} = conjunto.crear(${2:elementos})
+]]></content>
+	<tabTrigger>conjunto.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Crear conjunto (sin duplicados)</description>
+</snippet>
+

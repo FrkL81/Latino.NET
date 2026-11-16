@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[iteraciones]]></content>
+    <tabTrigger>str:brent:iteraciones</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de brent: iteraciones</description>
+</snippet>

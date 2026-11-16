@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[carga_almacenada_C]]></content>
+    <tabTrigger>str:capacitorEnergia:carga_almacenada_C</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de capacitorEnergia: carga_almacenada_C</description>
+</snippet>

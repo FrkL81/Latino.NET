@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[texto]]></content>
+    <tabTrigger>str:restar:texto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de restar: texto</description>
+</snippet>

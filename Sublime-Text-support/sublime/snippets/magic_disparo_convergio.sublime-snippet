@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[convergio]]></content>
+    <tabTrigger>str:disparo:convergio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de disparo: convergio</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.ejecutar(${1:"comando"})
+]]></content>
+	<tabTrigger>sis.ejecutar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Ejecutar comando del sistema</description>
+</snippet>
+

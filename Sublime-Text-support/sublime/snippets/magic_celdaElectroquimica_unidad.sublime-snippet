@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:celdaElectroquimica:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de celdaElectroquimica: unidad</description>
+</snippet>

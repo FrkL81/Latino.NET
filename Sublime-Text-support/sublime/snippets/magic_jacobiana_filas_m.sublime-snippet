@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[filas_m]]></content>
+    <tabTrigger>str:jacobiana:filas_m</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de jacobiana: filas_m</description>
+</snippet>

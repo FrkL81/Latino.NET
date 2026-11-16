@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tipo]]></content>
+    <tabTrigger>str:transformador:tipo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de transformador: tipo</description>
+</snippet>

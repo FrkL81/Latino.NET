@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+computacion.entropiaShannon(${1:lista_probabilidades})
+]]></content>
+	<tabTrigger>computacion.entropiaShannon</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Entropía de Shannon de una fuente de información (en bits).\n\nFórmula: H = -...</description>
+</snippet>

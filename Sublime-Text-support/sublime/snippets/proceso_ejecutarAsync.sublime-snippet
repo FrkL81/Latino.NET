@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.ejecutarAsync(${1:cmd}, ${2:args})
+]]></content>
+	<tabTrigger>proceso.ejecutarAsync</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Inicia un proceso en segundo plano y retorna un ID interno.</description>
+</snippet>

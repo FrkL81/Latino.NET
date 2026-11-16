@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.senh(${1:numero})
+]]></content>
+	<tabTrigger>mate.senh</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Seno hiperbólico</description>
+</snippet>
+

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.recocidoSimulado(${1:funcion}, ${2:listaX0}, ${3:listaLimitesInf}, ${4:listaLimitesSup})
+]]></content>
+	<tabTrigger>optimizacion.recocidoSimulado</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(X) con el Método de Recocido Simulado (Simulated Annealing).\n</description>
+</snippet>

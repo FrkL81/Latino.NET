@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:coeficienteVariacion:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de coeficienteVariacion: unidad</description>
+</snippet>

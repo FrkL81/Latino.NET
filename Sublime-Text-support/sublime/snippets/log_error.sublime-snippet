@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+log.error(${1:mensaje})
+]]></content>
+	<tabTrigger>log.error</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Registra un mensaje de error. Siempre se escribe salvo que el nivel</description>
+</snippet>

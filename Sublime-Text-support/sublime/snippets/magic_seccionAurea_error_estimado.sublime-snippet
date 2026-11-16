@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_estimado]]></content>
+    <tabTrigger>str:seccionAurea:error_estimado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de seccionAurea: error_estimado</description>
+</snippet>

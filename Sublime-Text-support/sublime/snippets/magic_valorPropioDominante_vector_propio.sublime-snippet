@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[vector_propio]]></content>
+    <tabTrigger>str:valorPropioDominante:vector_propio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de valorPropioDominante: vector_propio</description>
+</snippet>

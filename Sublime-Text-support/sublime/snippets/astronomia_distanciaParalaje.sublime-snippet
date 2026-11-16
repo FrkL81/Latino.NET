@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+astronomia.distanciaParalaje(${1:paralajeArcsec})
+]]></content>
+	<tabTrigger>astronomia.distanciaParalaje</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Distancia a una estrella basada en su ángulo de paralaje.\n\nFórmula: d = 1 / p</description>
+</snippet>

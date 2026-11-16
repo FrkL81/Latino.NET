@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.insertar(${1:texto}, ${2:"insertar"}, ${3:posicion})
+]]></content>
+	<tabTrigger>cadena.insertar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Insertar subcadena</description>
+</snippet>
+

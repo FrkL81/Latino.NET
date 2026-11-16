@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[signo]]></content>
+    <tabTrigger>str:diferencia:signo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de diferencia: signo</description>
+</snippet>

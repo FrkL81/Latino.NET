@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.reemplazar(${1:id}, ${2:viejo}, ${3:nuevo})
+]]></content>
+	<tabTrigger>texto.reemplazar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Reemplaza todas las ocurrencias de 'viejo' por 'nuevo' DENTRO del buffer,</description>
+</snippet>

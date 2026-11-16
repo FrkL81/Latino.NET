@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.momentoLineal(${1:masa}, ${2:velocidad})
+]]></content>
+	<tabTrigger>cinematica.momentoLineal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cantidad de movimiento (momento lineal).\n\nFórmula: p = m·v</description>
+</snippet>

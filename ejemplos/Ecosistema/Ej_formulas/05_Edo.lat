@@ -1,0 +1,41 @@
+# Ejemplo: Plugin Formulas - Ecuaciones Diferenciales (EDO)
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: ECUACIONES DIFERENCIALES ===")
+escribir("")
+
+# --- Runge-Kutta-Fehlberg (rkf45) ---
+escribir("--- Método Runge-Kutta-Fehlberg (rkf45) ---")
+# dy/dt = -2y, y(0) = 1
+# Solución analítica: y(t) = e^(-2t)
+f = fun(t, y) retornar -2 * y fin
+
+resultado = edo.rkf45(f, 0, 1, 2)
+escribir("EDO: dy/dt = -2y, y(0) = 1")
+escribir("y(2) ≈ " .. resultado["y_final"])
+escribir("Solución exacta: e^(-4) = " .. mate.e^(-4))
+escribir("Pasos aceptados: " .. resultado["pasos_aceptados"])
+escribir("Fórmula: " .. resultado["formula"])
+
+# --- Adams-Bashforth ---
+escribir("")
+escribir("--- Método Adams-Bashforth ---")
+resultado = edo.adams(f, 0, 1, 2, 10)
+escribir("EDO: dy/dt = -2y, y(0) = 1")
+escribir("y(2) ≈ " .. resultado["y_final"])
+escribir("Número de pasos: " .. resultado["n_pasos"])
+
+# --- EDO oscilatorio ---
+escribir("")
+escribir("--- Oscilador armónico ---")
+# dy/dt = y * cos(t)
+fOsc = fun(t, y) retornar y * mate.cos(t) fin
+
+resultado = edo.rkf45(fOsc, 0, 1, 10)
+escribir("EDO: dy/dt = y·cos(t)")
+escribir("y(10) ≈ " .. resultado["y_final"])
+
+escribir("")
+escribir("✅ Ejemplo de EDO completado")

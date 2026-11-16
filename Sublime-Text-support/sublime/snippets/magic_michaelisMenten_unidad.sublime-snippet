@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:michaelisMenten:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de michaelisMenten: unidad</description>
+</snippet>

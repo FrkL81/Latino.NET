@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:capacitorEnergia:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de capacitorEnergia: unidad</description>
+</snippet>

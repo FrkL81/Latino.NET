@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:reynolds:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Fluidos: Retorno de reynolds: unidad</description>
+</snippet>

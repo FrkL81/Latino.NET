@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.dividirEscalar(${1:coleccion}, ${2:n})
+]]></content>
+	<tabTrigger>algebraLineal.dividirEscalar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Divide cada elemento de un vector o matriz por un escalar n.\n</description>
+</snippet>

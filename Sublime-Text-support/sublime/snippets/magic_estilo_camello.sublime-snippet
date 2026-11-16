@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[camello]]></content>
+    <tabTrigger>str:estilo:camello</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo camelCase (ej: holaMundo)</description>
+</snippet>

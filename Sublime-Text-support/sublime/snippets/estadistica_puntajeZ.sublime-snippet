@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estadistica.puntajeZ(${1:valor}, ${2:media}, ${3:desviacion_estandar})
+]]></content>
+	<tabTrigger>estadistica.puntajeZ</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Puntaje Z (estandarización): cuántas desviaciones estándar se aleja un valor ...</description>
+</snippet>

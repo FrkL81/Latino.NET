@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+fisicaCuantica.modeloBohr(${1:numeroCuanticoN}, ${2:numeroAtomicoZ})
+]]></content>
+	<tabTrigger>fisicaCuantica.modeloBohr</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Radio, Energía y Velocidad del electrón en un átomo hidrogenoide (Modelo de B...</description>
+</snippet>

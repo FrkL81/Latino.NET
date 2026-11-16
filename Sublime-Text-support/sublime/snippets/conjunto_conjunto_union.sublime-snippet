@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.union(${1:conjunto1}, ${2:conjunto2})
+]]></content>
+	<tabTrigger>conjunto.union</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Unión de conjuntos</description>
+</snippet>
+

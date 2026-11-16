@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[masa]]></content>
+    <tabTrigger>str:datos:masa</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de datos: masa</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:distanciaParalaje:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Astronomía: Retorno de distanciaParalaje: formula</description>
+</snippet>

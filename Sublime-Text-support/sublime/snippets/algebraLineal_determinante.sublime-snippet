@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.determinante(${1:matriz_A})
+]]></content>
+	<tabTrigger>algebraLineal.determinante</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el determinante de una matriz cuadrada usando factorización LU.\n</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.log10(${1:numero})
+]]></content>
+	<tabTrigger>mate.log10</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Logaritmo base 10</description>
+</snippet>
+

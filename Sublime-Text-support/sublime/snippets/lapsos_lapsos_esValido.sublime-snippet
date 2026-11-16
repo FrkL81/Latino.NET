@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.esValido(")"
+]]></content>
+<tabTrigger>lapsos.esValido</tabTrigger>
+<scope>source.latino</scope>
+<description>✅ Validar fecha</description>
+</snippet>

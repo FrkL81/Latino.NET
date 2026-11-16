@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+senales.capacidadCanalShannon(${1:ancho_banda_Hz}, ${2:snr_lineal})
+]]></content>
+	<tabTrigger>senales.capacidadCanalShannon</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Capacidad máxima teórica de un canal con ruido (Teorema de Shannon-Hartley).\...</description>
+</snippet>

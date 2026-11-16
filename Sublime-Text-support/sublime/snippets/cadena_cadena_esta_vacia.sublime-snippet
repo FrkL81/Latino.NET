@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.esta_vacia(${1:texto})
+]]></content>
+	<tabTrigger>cadena.esta_vacia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verificar si está vacía</description>
+</snippet>
+

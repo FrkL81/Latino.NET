@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[oracion]]></content>
+    <tabTrigger>str:estilo:oracion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo Oración (ej: Hola mundo)</description>
+</snippet>

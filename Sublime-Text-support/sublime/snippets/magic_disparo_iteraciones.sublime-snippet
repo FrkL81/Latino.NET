@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[iteraciones]]></content>
+    <tabTrigger>str:disparo:iteraciones</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de disparo: iteraciones</description>
+</snippet>

@@ -1,0 +1,9 @@
+﻿<snippet>
+	<content><![CDATA[
+archivo.esArchivo(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.esArchivo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Verificar si es archivo</description>
+</snippet>
+

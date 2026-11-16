@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.longitud(${1:id})
+]]></content>
+	<tabTrigger>texto.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna la longitud actual del texto en el buffer en O(1),</description>
+</snippet>

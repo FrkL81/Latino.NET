@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hilos.estaVivo(${1:id})
+]]></content>
+	<tabTrigger>hilos.estaVivo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧵 Consulta si el hilo id sigue en ejecución</description>
+</snippet>

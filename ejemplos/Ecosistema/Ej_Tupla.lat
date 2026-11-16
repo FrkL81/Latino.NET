@@ -1,0 +1,44 @@
+/*
+==============================================================
+LIBRERÍA: tupla
+DESCRIPCIÓN: Funciones para manejo de tuplas (colecciones inmutables).
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: tupla.crear
+DESCRIPCIÓN: Crea una nueva tupla con los elementos proporcionados.
+PARÁMETROS:
+  - elementos... : Valores iniciales.
+RETORNA: tupla - Nueva tupla.
+*/
+t = tupla.crear(10, "Latino", verdadero)
+escribir(t)
+
+/*
+FUNCIÓN: tupla.obtener
+DESCRIPCIÓN: Obtiene el elemento en la posición especificada de la tupla.
+PARÁMETROS:
+  - tupla (tupla): Tupla original.
+  - indice (numerico): Posición (0-based).
+RETORNA: cualquiera - Valor encontrado.
+*/
+escribir("Elemento 1: " .. tupla.obtener(t, 1))
+
+/*
+FUNCIÓN: tupla.longitud
+DESCRIPCIÓN: Devuelve el número de elementos en la tupla.
+PARÁMETROS:
+  - tupla (tupla): Tupla a medir.
+RETORNA: numerico - Tamaño de la tupla.
+*/
+escribir("Longitud: " .. tupla.longitud(t))
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Tupla.lat
+==============================================================
+*/

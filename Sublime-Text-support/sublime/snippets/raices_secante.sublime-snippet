@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raices.secante(${1:funcion}, ${2:x0}, ${3:x1}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>raices.secante</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Encuentra una raíz de f(x) por el método de la Secante.\n</description>
+</snippet>

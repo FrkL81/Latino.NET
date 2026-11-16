@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[interes_generado]]></content>
+    <tabTrigger>str:interesSimple:interes_generado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de interesSimple: interes_generado</description>
+</snippet>

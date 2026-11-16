@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[n_nodos]]></content>
+    <tabTrigger>str:pvf:n_nodos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de pvf: n_nodos</description>
+</snippet>

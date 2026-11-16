@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.esperar(${1:milisegundos})
+]]></content>
+	<tabTrigger>sis.esperar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Pausar ejecución (ms)</description>
+</snippet>
+

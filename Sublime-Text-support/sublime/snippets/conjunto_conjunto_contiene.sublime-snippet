@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.contiene(${1:conjunto}, ${2:elemento})
+]]></content>
+	<tabTrigger>conjunto.contiene</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Verificar si contiene</description>
+</snippet>
+

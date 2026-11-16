@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[anio]]></content>
+    <tabTrigger>str:sumar:anio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de sumar: anio</description>
+</snippet>

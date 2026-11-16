@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[segundo]]></content>
+    <tabTrigger>str:restar:segundo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de restar: segundo</description>
+</snippet>

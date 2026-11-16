@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="src\Latino.Core\Latino.Core.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/Latino.LanguageServer/Latino.LanguageServer.csproj" />
+  </Folder>
+  <Project Path="src\Latino.App\Latino.App.csproj" />
+  <Project Path="tests\Latino.Tests\Latino.Tests.csproj" />
+</Solution>

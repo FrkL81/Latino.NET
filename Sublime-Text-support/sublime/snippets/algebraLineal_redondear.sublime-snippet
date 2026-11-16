@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.redondear(${1:coleccion}, ${2:decimales})
+]]></content>
+	<tabTrigger>algebraLineal.redondear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Redondea cada elemento del vector o matriz al número de decimales</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+zip.contiene(${1:archivo_zip}, ${2:ruta_interna})
+]]></content>
+	<tabTrigger>zip.contiene</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna verdadero si la ruta interna existe dentro del zip.</description>
+</snippet>

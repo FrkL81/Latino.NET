@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+mutex.eliminar(${1:id})
+]]></content>
+	<tabTrigger>mutex.eliminar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Elimina un mutex de la memoria. Lanza error si está bloqueado actualmente.</description>
+</snippet>

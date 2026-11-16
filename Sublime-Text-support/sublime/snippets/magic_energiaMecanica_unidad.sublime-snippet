@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:energiaMecanica:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Dinámica: Retorno de energiaMecanica: unidad</description>
+</snippet>

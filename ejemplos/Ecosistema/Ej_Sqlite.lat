@@ -1,0 +1,63 @@
+# Ejemplo: Plugin SQLite (Base de Datos Relacional)
+# Requiere: incluir("sqlite")
+
+incluir("sqlite")
+
+escribir("=== PLUGIN SQLITE ===")
+escribir("")
+
+# --- Conectar/Crear base de datos ---
+escribir("--- Conectando a base de datos ---")
+db = sqlite.conectar("ejemplo.db")
+escribir("✅ Base de datos conectada")
+
+# --- Crear tabla ---
+escribir("")
+escribir("--- Creando tabla ---")
+sqlite.ejecutar(db, "CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nombre TEXT, edad INTEGER)")
+escribir("✅ Tabla 'usuarios' creada")
+
+# --- Insertar datos (parámetros con @) ---
+escribir("")
+escribir("--- Insertando datos ---")
+sqlite.ejecutar(db, "INSERT INTO usuarios (nombre, edad) VALUES (@nom, @edad)", {"@nom": "Ana", "@edad": 25})
+sqlite.ejecutar(db, "INSERT INTO usuarios (nombre, edad) VALUES (@nom, @edad)", {"@nom": "Luis", "@edad": 30})
+sqlite.ejecutar(db, "INSERT INTO usuarios (nombre, edad) VALUES (@nom, @edad)", {"@nom": "María", "@edad": 28})
+escribir("✅ 3 usuarios insertados")
+
+# --- Consultar ---
+escribir("")
+escribir("--- Consultando todos los usuarios ---")
+resultados = sqlite.consultar(db, "SELECT * FROM usuarios")
+para fila en resultados
+    escribir("  ID: " .. fila["id"] .. " | Nombre: " .. fila["nombre"] .. " | Edad: " .. fila["edad"])
+fin
+
+# --- Consultar con filtro ---
+escribir("")
+escribir("--- Usuarios mayores de 26 ---")
+resultados = sqlite.consultar(db, "SELECT * FROM usuarios WHERE edad > @min", {"min": 26})
+para fila en resultados
+    escribir("  " .. fila["nombre"] .. " (" .. fila["edad"] .. " años)")
+fin
+
+# --- Actualizar ---
+escribir("")
+escribir("--- Actualizando edad de Ana ---")
+sqlite.ejecutar(db, "UPDATE usuarios SET edad = @edad WHERE nombre = @nom", {"@edad": 26, "@nom": "Ana"})
+resultados = sqlite.consultar(db, "SELECT * FROM usuarios WHERE nombre = @nom", {"nom": "Ana"})
+escribir("  Nueva edad de Ana: " .. resultados[0]["edad"])
+
+# --- Eliminar ---
+escribir("")
+escribir("--- Eliminando a Luis ---")
+sqlite.ejecutar(db, "DELETE FROM usuarios WHERE nombre = @nom", {"nom": "Luis"})
+resultados = sqlite.consultar(db, "SELECT COUNT(*) as total FROM usuarios")
+escribir("  Usuarios restantes: " .. resultados[0]["total"])
+
+# --- Cerrar y limpiar ---
+escribir("")
+escribir("--- Cerrando conexión ---")
+sqlite.cerrar(db)
+archivo.borrar("ejemplo.db")
+escribir("✅ Base de datos cerrada y eliminada")

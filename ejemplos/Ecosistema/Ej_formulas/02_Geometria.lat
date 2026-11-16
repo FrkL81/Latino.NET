@@ -1,0 +1,63 @@
+# Ejemplo: Plugin Formulas - Geometría
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: GEOMETRÍA ===")
+escribir("")
+
+# --- Círculo ---
+escribir("--- Círculo (radio = 5) ---")
+radio = 5
+area = geometria.areaCirculo(radio)
+escribir("Radio: " .. radio)
+escribir("Resultado: " .. area["resultado"] .. " " .. area["unidad"])
+escribir("Fórmula: " .. area["formula"])
+
+# --- Esfera ---
+escribir("")
+escribir("--- Esfera (radio = 3) ---")
+radio = 3
+esf = geometria.esfera(radio)
+escribir("Radio: " .. radio)
+escribir("Área superficial: " .. esf["area_superficial"] .. " m²")
+escribir("Volumen: " .. esf["volumen"] .. " m³")
+
+# --- Cilindro ---
+escribir("")
+escribir("--- Cilindro (radio=3, altura=5) ---")
+cil = geometria.cilindroCompleto(3, 5)
+escribir("Área lateral: " .. cil["area_lateral"] .. " m²")
+escribir("Área total: " .. cil["area_total"] .. " m²")
+escribir("Volumen: " .. cil["volumen"] .. " m³")
+
+# --- Cono ---
+escribir("")
+escribir("--- Cono (radio=3, altura=4) ---")
+cono = geometria.cono(3, 4)
+escribir("Generatriz: " .. cono["generatriz"] .. " m")
+escribir("Área total: " .. cono["area_total"] .. " m²")
+escribir("Volumen: " .. cono["volumen"] .. " m³")
+
+# --- Distancia entre puntos ---
+escribir("")
+escribir("--- Distancia entre puntos ---")
+dist = geometria.distanciaPuntos({"x1": 0, "y1": 0, "x2": 3, "y2": 4})
+escribir("Distancia (0,0) a (3,4): " .. dist["resultado"] .. " " .. dist["unidad"])
+
+# --- Trapecio ---
+escribir("")
+escribir("--- Trapecio (B=6, b=4, h=3) ---")
+trap = geometria.trapecio(6, 4, 3)
+escribir("Área: " .. trap["resultado"] .. " " .. trap["unidad"])
+
+# --- Elipse ---
+escribir("")
+escribir("--- Elipse (a=5, b=3) ---")
+elip = geometria.elipse(5, 3)
+escribir("Área: " .. elip["area"])
+escribir("Perímetro: " .. elip["perimetro"])
+escribir("Excentricidad: " .. elip["excentricidad"])
+
+escribir("")
+escribir("✅ Ejemplo de geometría completado")

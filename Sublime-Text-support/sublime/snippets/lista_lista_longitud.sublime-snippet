@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.longitud(${1:lista})
+]]></content>
+	<tabTrigger>lista.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Cantidad de elementos</description>
+</snippet>
+

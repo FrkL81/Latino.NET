@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:filtroRC:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de filtroRC: formula</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.monteCarlo(${1:funcion}, ${2:a}, ${3:b}, ${4:nMuestras}, ${5:semilla})
+]]></content>
+	<tabTrigger>calculo.monteCarlo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Estimación de ∫ₐᵇ f(x)dx por el Método de Monte Carlo.\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.esPrimo(${1:numero})]]></content>
+    <tabTrigger>math:primo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Retorna verdadero si el número es primo</description>
+</snippet>

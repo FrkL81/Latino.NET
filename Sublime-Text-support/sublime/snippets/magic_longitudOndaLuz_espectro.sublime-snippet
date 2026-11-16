@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[espectro]]></content>
+    <tabTrigger>str:longitudOndaLuz:espectro</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de longitudOndaLuz: espectro</description>
+</snippet>

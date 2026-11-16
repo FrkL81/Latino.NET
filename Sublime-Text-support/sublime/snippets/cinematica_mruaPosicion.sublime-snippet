@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.mruaPosicion(${1:posicionInicial}, ${2:velocidadInicial}, ${3:aceleracion}, ${4:tiempo})
+]]></content>
+	<tabTrigger>cinematica.mruaPosicion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Posición en MRUA (segunda ecuación cinemática).\n\nFórmula: x = x₀ + v₀·t + ½...</description>
+</snippet>

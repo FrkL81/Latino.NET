@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+electromagnetismo.resonanciaLC(${1:inductancia_H}, ${2:capacitancia_F})
+]]></content>
+	<tabTrigger>electromagnetismo.resonanciaLC</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Frecuencia de resonancia de un circuito LC.\n\nFórmula: f₀ = 1 / (2π·√(L·C))</description>
+</snippet>

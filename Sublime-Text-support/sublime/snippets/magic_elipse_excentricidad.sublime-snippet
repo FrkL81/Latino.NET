@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[excentricidad]]></content>
+    <tabTrigger>str:elipse:excentricidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de elipse: excentricidad</description>
+</snippet>

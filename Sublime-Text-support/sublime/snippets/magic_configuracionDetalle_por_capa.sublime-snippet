@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[por_capa]]></content>
+    <tabTrigger>str:configuracionDetalle:por_capa</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de configuracionDetalle: por_capa</description>
+</snippet>

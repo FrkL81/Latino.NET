@@ -1,0 +1,39 @@
+# Ejemplo: Plugin Texto (StringBuilder Eficiente)
+# Requiere: incluir("texto")
+
+incluir("texto")
+
+escribir("=== PLUGIN TEXTO ===")
+escribir("")
+
+# --- StringBuilder ---
+escribir("--- StringBuilder (concatenación eficiente) ---")
+
+id = texto.crear()
+texto.anexar(id, "Hola")
+texto.anexar(id, " ")
+texto.anexar(id, "Mundo")
+texto.anexar(id, "!")
+
+resultado = texto.obtener(id)
+escribir("Resultado: " .. resultado)
+
+# --- Utilidades ---
+escribir("")
+escribir("--- Utilidades de texto ---")
+
+# Reemplazar dentro del buffer
+texto.reemplazar(id, "Mundo", "Latino")
+resultado = texto.obtener(id)
+escribir("Después de reemplazar: " .. resultado)
+
+# Longitud
+escribir("Longitud del buffer: " .. texto.longitud(id))
+
+# Limpiar buffer
+texto.limpiar(id)
+escribir("Después de limpiar, longitud: " .. texto.longitud(id))
+
+# Liberar memoria
+texto.eliminar(id)
+escribir("✅ Buffer eliminado")

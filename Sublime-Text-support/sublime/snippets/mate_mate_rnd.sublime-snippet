@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.rnd(${1:numero})
+]]></content>
+	<tabTrigger>mate.rnd</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Alias de redondear</description>
+</snippet>
+

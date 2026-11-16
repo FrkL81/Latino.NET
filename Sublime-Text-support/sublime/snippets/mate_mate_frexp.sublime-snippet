@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.frexp(${1:numero})
+]]></content>
+	<tabTrigger>mate.frexp</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Descompone en [mantisa, exponente]</description>
+</snippet>
+

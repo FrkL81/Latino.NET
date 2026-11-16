@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[sha512]]></content>
+    <tabTrigger>str:hash:sha512</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hash: Algoritmo SHA-512 (Máximo)</description>
+</snippet>

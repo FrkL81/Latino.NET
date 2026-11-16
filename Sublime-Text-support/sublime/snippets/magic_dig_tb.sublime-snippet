@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tb]]></content>
+    <tabTrigger>str:dig:tb</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Digital: Digital: Terabyte</description>
+</snippet>

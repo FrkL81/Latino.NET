@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[kelvin]]></content>
+    <tabTrigger>str:temp:kelvin</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Temperatura: Temp: Kelvin</description>
+</snippet>

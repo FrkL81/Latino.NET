@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[cadena.contar(${1:texto}, ${2:subcadena})]]></content>
+    <tabTrigger>str:contar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📝 Contar ocurrencias de una subcadena</description>
+</snippet>

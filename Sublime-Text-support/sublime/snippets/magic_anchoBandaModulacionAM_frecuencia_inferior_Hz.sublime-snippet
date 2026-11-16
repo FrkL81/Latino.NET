@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[frecuencia_inferior_Hz]]></content>
+    <tabTrigger>str:anchoBandaModulacionAM:frecuencia_inferior_Hz</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de anchoBandaModulacionAM: frecuencia_inferior_Hz</description>
+</snippet>

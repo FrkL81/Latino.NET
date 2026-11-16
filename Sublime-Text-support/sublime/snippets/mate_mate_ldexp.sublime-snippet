@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.ldexp(${1:x}, ${2:exp})
+]]></content>
+	<tabTrigger>mate.ldexp</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 x * 2^exp</description>
+</snippet>
+

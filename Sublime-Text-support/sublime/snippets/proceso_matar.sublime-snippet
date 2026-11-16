@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.matar(${1:pid})
+]]></content>
+	<tabTrigger>proceso.matar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Termina un proceso del sistema operativo por su PID real.</description>
+</snippet>

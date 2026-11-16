@@ -1,0 +1,52 @@
+# Ejemplo: Plugin Formulas - Optimización
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: OPTIMIZACIÓN ===")
+escribir("")
+
+# --- Sección Áurea ---
+escribir("--- Búsqueda por Sección Áurea ---")
+# Minimizar f(x) = x² en [-5, 5]
+funcion f1(x)
+    retornar x^2
+fin
+
+resultado = optimizacion.seccionAurea(f1, -5, 5)
+escribir("Función: f(x) = x²")
+escribir("Mínimo en x = " .. resultado["optimo"])
+escribir("Valor mínimo: " .. resultado["f_optimo"])
+escribir("Iteraciones: " .. resultado["iteraciones"])
+
+# --- Descenso de Gradiente ---
+escribir("")
+escribir("--- Descenso de Gradiente ---")
+# Minimizar f(x,y) = x² + y²
+funcion f2(v)
+    retornar v[0]^2 + v[1]^2
+fin
+
+resultado = optimizacion.descensoGradiente(f2, [5, 5], 0.1)
+escribir("Función: f(x,y) = x² + y²")
+escribir("Mínimo en: [" .. resultado["optimo"][0] .. ", " .. resultado["optimo"][1] .. "]")
+escribir("Valor mínimo: " .. resultado["f_optimo"])
+
+# --- BFGS ---
+escribir("")
+escribir("--- Método BFGS ---")
+resultado = optimizacion.bfgs(f2, [10, 10])
+escribir("Función: f(x,y) = x² + y²")
+escribir("Mínimo en: [" .. resultado["optimo"][0] .. ", " .. resultado["optimo"][1] .. "]")
+escribir("Convergencia: " .. resultado["convergio"])
+
+# --- Nelder-Mead ---
+escribir("")
+escribir("--- Método Nelder-Mead ---")
+resultado = optimizacion.nelderMead(f2, [3, 4])
+escribir("Función: f(x,y) = x² + y²")
+escribir("Mínimo en: [" .. resultado["optimo"][0] .. ", " .. resultado["optimo"][1] .. "]")
+escribir("Iteraciones: " .. resultado["iteraciones"])
+
+escribir("")
+escribir("✅ Ejemplo de optimización completado")

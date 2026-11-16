@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.crear(${1:capacidad_inicial})
+]]></content>
+	<tabTrigger>texto.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Crea un nuevo constructor de texto mutable y retorna su ID único.</description>
+</snippet>

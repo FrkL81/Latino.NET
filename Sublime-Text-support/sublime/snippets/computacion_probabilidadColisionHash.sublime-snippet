@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+computacion.probabilidadColisionHash(${1:num_elementos}, ${2:tamano_tabla})
+]]></content>
+	<tabTrigger>computacion.probabilidadColisionHash</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Probabilidad aproximada de al menos una colisión en una tabla hash (paradoja ...</description>
+</snippet>

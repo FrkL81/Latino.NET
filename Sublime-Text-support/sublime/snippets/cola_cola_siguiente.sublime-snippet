@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:elemento} = cola.siguiente(${2:cola})
+]]></content>
+	<tabTrigger>cola.siguiente</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Ver siguiente sin extraer</description>
+</snippet>
+

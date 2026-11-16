@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+alogico(${1:valor})
+]]></content>
+	<tabTrigger>alogico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚖️ Convertir a lógico</description>
+</snippet>

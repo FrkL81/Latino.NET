@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[salida]]></content>
+    <tabTrigger>str:shell:salida</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de shell: salida</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.atanh(${1:numero})
+]]></content>
+	<tabTrigger>mate.atanh</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Arcotangente hiperbólica</description>
+</snippet>
+

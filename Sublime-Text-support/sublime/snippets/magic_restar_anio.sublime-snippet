@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[anio]]></content>
+    <tabTrigger>str:restar:anio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de restar: anio</description>
+</snippet>

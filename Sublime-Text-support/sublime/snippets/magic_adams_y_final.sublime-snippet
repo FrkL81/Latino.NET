@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[y_final]]></content>
+    <tabTrigger>str:adams:y_final</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de adams: y_final</description>
+</snippet>

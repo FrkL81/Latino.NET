@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%g]]></content>
+    <tabTrigger>str:fmt:%g</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato C: C-Style: Formato general</description>
+</snippet>

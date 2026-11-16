@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[filas]]></content>
+    <tabTrigger>str:multiplicar:filas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de multiplicar: filas</description>
+</snippet>

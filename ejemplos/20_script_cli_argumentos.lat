@@ -1,0 +1,61 @@
+# ==================================================================
+# Ejemplo: Script CLI Reutilizable con Argumentos y Flags
+# Demuestra el uso de sis.argumentos() para utilidades de terminal
+# ==================================================================
+
+funcion mostrar_ayuda()
+    escribir("Uso: latino script_cli.lat [opciones] [archivo]")
+    escribir("\nOpciones:")
+    escribir("  -h, --ayuda       Muestra este mensaje de ayuda")
+    escribir("  -v, --version     Muestra la versión de la herramienta")
+    escribir("  -m, --modo <val>  Define el modo de ejecución (rapido|seguro)")
+    escribir("  -s, --silencioso  Omite mensajes informativos")
+fin
+
+argumentos = sis.argumentos()
+
+# Valores por defecto
+modo = "seguro"
+es_silencioso = falso
+archivo_objetivo = nulo
+
+i = 0
+mientras i < lista.longitud(argumentos)
+    arg = argumentos[i]
+
+    si arg == "-h" ó arg == "--ayuda"
+        mostrar_ayuda()
+        sis.salir()
+    osi arg == "-v" ó arg == "--version"
+        escribir("Herramienta CLI Latino.NET v1.0.0")
+        sis.salir()
+    osi arg == "-s" ó arg == "--silencioso"
+        es_silencioso = cierto
+    osi arg == "-m" ó arg == "--modo"
+        # Leer el siguiente argumento como valor
+        si i + 1 < lista.longitud(argumentos)
+            i = i + 1
+            modo = argumentos[i]
+        sino
+            escribir("❌ Error: Se esperaba un valor para el parámetro --modo")
+            sis.salir()
+        fin
+    sino
+        # Argumento posicional
+        archivo_objetivo = arg
+    fin
+
+    i = i + 1
+fin
+
+# Ejecución según flags
+si no es_silencioso
+    escribir("🚀 Iniciando herramienta...")
+    escribir(ç("Modo seleccionado: |modo|"))
+    
+    si archivo_objetivo != nulo
+        escribir(ç("Archivo objetivo:  |archivo_objetivo|"))
+    sino
+        escribir("Archivo objetivo:  (Entrada estándar)")
+    fin
+fin

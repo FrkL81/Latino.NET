@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.hermite(${1:lista_xs}, ${2:lista_ys}, ${3:lista_dys}, ${4:x})
+]]></content>
+	<tabTrigger>interpolacion.hermite</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Interpolación de Hermite cúbica por tramos.\n</description>
+</snippet>

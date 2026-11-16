@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.restarEscalar(${1:coleccion}, ${2:n})
+]]></content>
+	<tabTrigger>algebraLineal.restarEscalar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resta un escalar n a cada elemento de un vector o matriz.\n</description>
+</snippet>

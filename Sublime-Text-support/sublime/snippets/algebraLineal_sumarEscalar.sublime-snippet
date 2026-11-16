@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.sumarEscalar(${1:coleccion}, ${2:n})
+]]></content>
+	<tabTrigger>algebraLineal.sumarEscalar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Suma un escalar n a cada elemento de un vector o matriz</description>
+</snippet>

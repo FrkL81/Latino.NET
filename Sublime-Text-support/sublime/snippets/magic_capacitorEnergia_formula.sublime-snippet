@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:capacitorEnergia:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de capacitorEnergia: formula</description>
+</snippet>

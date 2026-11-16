@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:logaritmoBase:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de logaritmoBase: resultado</description>
+</snippet>

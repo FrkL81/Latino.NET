@@ -1,0 +1,92 @@
+/*
+==============================================================
+LIBRERÍA: lapsos
+DESCRIPCIÓN: Plugin para manejo profesional de fechas y tiempos.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+incluir("lapsos")
+escribir("Librería 'lapsos' cargada correctamente.")
+
+/*
+FUNCIÓN: lapsos.ahora
+DESCRIPCIÓN: Obtiene la fecha y hora actual del sistema.
+PARÁMETROS: ninguno
+RETORNA: diccionario - Objeto fecha.
+*/
+ahora = lapsos.ahora()
+escribir("Ahora: " .. ahora.texto)
+
+/*
+FUNCIÓN: lapsos.hoy
+DESCRIPCIÓN: Obtiene la fecha actual (hora 00:00:00).
+PARÁMETROS: ninguno
+RETORNA: diccionario - Objeto fecha.
+*/
+// (Hoy no está implementado en el ejemplo de la guía, pero sí en el plugin real)
+si dic.contiene(lapsos, "hoy")
+    escribir("Hoy: " .. lapsos.hoy().texto)
+fin
+
+/*
+FUNCIÓN: lapsos.fecha
+DESCRIPCIÓN: Crea un objeto fecha específico.
+PARÁMETROS:
+  - a (numerico): Año.
+  - m (numerico): Mes.
+  - d (numerico): Día.
+RETORNA: diccionario - Objeto fecha.
+*/
+cumple = lapsos.fecha(2026, 8, 15)
+escribir("Cumpleaños: " .. cumple.texto)
+
+/*
+FUNCIÓN: lapsos.formato
+DESCRIPCIÓN: Convierte fecha a texto con formato.
+PARÁMETROS:
+  - fecha (diccionario): Objeto fecha.
+  - fmt (cadena): Formato (opcional).
+RETORNA: cadena - Fecha formateada.
+*/
+escribir("Formato: " .. lapsos.formato(cumple, "dd/MM/yyyy"))
+
+/*
+FUNCIÓN: lapsos.esBisiesto
+DESCRIPCIÓN: Verifica si es año bisiesto.
+PARÁMETROS:
+  - año_o_fecha (cualquiera): Año o objeto fecha.
+RETORNA: logico - verdadero si es bisiesto.
+*/
+escribir("¿2024 bisiesto?: " .. lapsos.esBisiesto(2024))
+
+/*
+FUNCIÓN: lapsos.sumar
+DESCRIPCIÓN: Suma tiempo a una fecha.
+PARÁMETROS:
+  - fecha (diccionario): Objeto fecha.
+  - cant (numerico): Cantidad.
+  - unidad (cadena): dias, meses, anios, horas, min, seg.
+RETORNA: diccionario - Nueva fecha.
+*/
+mañana = lapsos.sumar(ahora, 1, "dias")
+escribir("Mañana: " .. mañana.texto)
+
+/*
+FUNCIÓN: lapsos.diferencia
+DESCRIPCIÓN: Calcula diferencia entre dos fechas.
+PARÁMETROS:
+  - f1 (diccionario): Inicio.
+  - f2 (diccionario): Fin.
+RETORNA: diccionario - Diferencia detallada.
+*/
+dif = lapsos.diferencia(ahora, cumple)
+escribir("Días para el cumple: " .. dif.total_dias)
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Lapsos.lat
+==============================================================
+*/

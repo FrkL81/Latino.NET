@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_estimado]]></content>
+    <tabTrigger>str:valorPropioDominante:error_estimado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de valorPropioDominante: error_estimado</description>
+</snippet>

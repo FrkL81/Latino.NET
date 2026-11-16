@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.alt(${1:min}, ${2:max})
+]]></content>
+	<tabTrigger>mate.alt</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Alias de aleatorio</description>
+</snippet>
+

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.telefono(${1:texto})
+]]></content>
+	<tabTrigger>validar.telefono</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Valida formato telefónico flexible</description>
+</snippet>

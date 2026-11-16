@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tramo_usado]]></content>
+    <tabTrigger>str:splineCubico:tramo_usado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de splineCubico: tramo_usado</description>
+</snippet>

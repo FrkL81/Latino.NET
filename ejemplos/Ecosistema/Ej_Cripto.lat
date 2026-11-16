@@ -1,0 +1,56 @@
+# Ejemplo: Plugin Cripto (Cifrado AES-256-GCM y HMAC)
+# Requiere: incluir("cripto")
+
+incluir("cripto")
+
+escribir("=== PLUGIN CRIPTO ===")
+escribir("")
+
+# --- Cifrado y Descifrado ---
+llave = "MiClaveSecreta2026!"
+textoOriginal = "Datos sensibles: 4111-XXXX-XXXX-1111"
+
+escribir("Texto original: " .. textoOriginal)
+
+# Cifrar
+cifrado = cripto.encriptar(textoOriginal, llave)
+escribir("Cifrado (Base64): " .. cifrado)
+
+# Descifrar
+descifrado = cripto.desencriptar(cifrado, llave)
+escribir("Descifrado: " .. descifrado)
+
+# Verificar integridad
+si descifrado == textoOriginal
+    escribir("✅ Cifrado/descifrado exitoso")
+sino
+    escribir("❌ Error en cifrado")
+fin
+
+escribir("")
+
+# --- Firma Digital (HMAC) ---
+mensaje = "Transferencia de $1000 a cuenta 12345"
+firma = cripto.firmar(mensaje, llave)
+escribir("Mensaje: " .. mensaje)
+escribir("Firma HMAC: " .. firma)
+
+# Verificar firma
+si cripto.verificar(mensaje, firma, llave)
+    escribir("✅ Firma válida - mensaje no alterado")
+sino
+    escribir("❌ Firma inválida")
+fin
+
+# Intentar verificar con mensaje alterado
+si cripto.verificar("Mensaje alterado", firma, llave)
+    escribir("❌ ERROR: Mensaje alterado pasó la verificación")
+sino
+    escribir("✅ Mensaje alterado correctamente rechazado")
+fin
+
+escribir("")
+
+# --- Clave Aleatoria ---
+claveAleatoria = cripto.claveAleatoria()
+escribir("Clave aleatoria generada: " .. claveAleatoria)

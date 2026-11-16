@@ -1,0 +1,81 @@
+# Ejemplo: Plugin Formulas - Astronomía y Termodinámica
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: ASTRONOMÍA Y TERMODINÁMICA ===")
+escribir("")
+
+# --- 1. ASTRONOMÍA ---
+escribir("--- Astronomía ---")
+escribir("Estudia los cuerpos celestes y fenómenos del universo.")
+escribir("")
+
+# Velocidad de escape de la Tierra
+escribir("Velocidad de Escape:")
+escribir("  La velocidad mínima para escapar de la gravedad terrestre.")
+masaTierra = 5.972e24  # kg
+radioTierra = 6.371e6  # m
+escape = astronomia.velocidadEscape(masaTierra, radioTierra)
+escribir("  Masa Tierra: " .. masaTierra .. " kg")
+escribir("  Radio Tierra: " .. radioTierra .. " m")
+escribir("  Velocidad de escape: " .. escape["resultado"] .. " m/s")
+escribir("  (≈ 11.2 km/s)")
+escribir("")
+
+# Velocidad de escape de la Luna
+masaLuna = 7.342e22  # kg
+radioLuna = 1.737e6  # m
+escapeLuna = astronomia.velocidadEscape(masaLuna, radioLuna)
+escribir("Velocidad de Escape de la Luna:")
+escribir("  Velocidad de escape: " .. escapeLuna["resultado"] .. " m/s")
+escribir("  (≈ 2.4 km/s)")
+escribir("")
+
+# --- 2. TERMODINÁMICA ---
+escribir("--- Termodinámica ---")
+escribir("Estudia las relaciones entre calor, trabajo y energía.")
+escribir("")
+
+# Ley de los gases ideales: PV = nRT
+escribir("Ley de los Gases Ideales (PV = nRT):")
+escribir("  Calculamos la presión de 1 mol de gas a 300K en 0.024 m³.")
+R = formulas.constantes()["R"]
+n = 1      # mol
+T = 300    # K
+V = 0.024  # m³
+P = (n * R * T) / V
+escribir("  P = nRT/V = " .. P .. " Pa")
+escribir("")
+
+# Energía interna de un gas ideal
+escribir("Energía Interna de Gas Ideal:")
+escribir("  Para 2 moles de gas a 400K (monoatómico).")
+n = 2
+temp = 400
+# U = (3/2) * n * R * T (gas monoatómico)
+U = (3/2) * n * R * temp
+escribir("  U = (3/2)nRT = " .. U .. " J")
+escribir("")
+
+# Eficiencia de Carnot
+escribir("Eficiencia de Máquina de Carnot:")
+escribir("  Una máquina térmica opera entre 500K y 300K.")
+tCaliente = 500  # K
+tFria = 300      # K
+eficiencia = 1 - (tFria / tCaliente)
+escribir("  Eficiencia = 1 - T_fría/T_caliente = " .. (eficiencia * 100) .. "%")
+escribir("")
+
+# Calor específico
+escribir("Calor Necesario para Calentar Agua:")
+escribir("  Calentar 1 kg de agua de 20°C a 80°C.")
+masa = 1        # kg
+cAgua = 4186   # J/(kg·K)
+deltaT = 60    # K
+Q = masa * cAgua * deltaT
+escribir("  Q = mcΔT = " .. Q .. " J")
+escribir("  (≈ " .. (Q/1000) .. " kJ)")
+
+escribir("")
+escribir("✅ Ejemplo de astronomía y termodinámica completado")

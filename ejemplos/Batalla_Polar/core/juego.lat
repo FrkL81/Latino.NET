@@ -1,0 +1,287 @@
+﻿# ==================================================================
+# core/juego.lat
+# Controlador del Flujo y Reglas de la Partida
+# ==================================================================
+
+clase Partida
+    constructor(jugador1 = nulo, jugador2 = nulo, tablero = nulo)
+        mi.p1 = jugador1
+        mi.p2 = jugador2
+        mi.tablero = tablero
+        mi.jugador_actual = nulo
+        mi.oponente = nulo
+        mi.puntos_accion = 1
+        mi.ultimo_mensaje = ""
+        mi.turno_actual = 1
+    fin
+
+    # ── HUD COMPACTO ─────────────────────────────────────────────
+    # Toda la info de estado en una sola línea — minimiza scroll
+    funcion mostrar_hud(num_disparo)
+        v1    = mi.p1.contar_vivas()
+        v2    = mi.p2.contar_vivas()
+        nom   = mi.jugador_actual.nombre
+        emo   = mi.jugador_actual.emoji
+        pts   = mi.puntos_accion
+        turno = mi.turno_actual
+
+        # Scope: declarar antes del si/sino
+        estado = ""
+        si num_disparo > 0
+            estado = ç(" | Disparo |num_disparo|/|pts| completado")
+        sino
+            estado = ç(" | Disparos: |pts|")
+        fin
+
+        escribir(ç("🎖️  Turno |turno| | |nom| |emo| | Vidas: [B] |v1| vs [R] |v2||estado|"))
+        escribir("─────────────────────────────────────────────────────────────────")
+    fin
+
+    # ── DADO INDIVIDUAL ──────────────────────────────────────────
+    funcion tirar_dado(jugador)
+        # Salida variable (depende del momento de ejecución y hardware):
+        _ = mate.aleatorio(0, 999)
+        # Salida variable (depende del momento de ejecución y hardware):
+        valor = mate.aleatorio(1, 6)
+        nom = jugador.nombre
+        emo = jugador.emoji
+        escribirf("  {0} {1:<18} saca: [ {2} ]", emo, nom, valor)
+        escribir("")
+        retornar valor
+    fin
+
+    # ── INICIATIVA (solo al inicio) ───────────────────────────────
+    funcion determinar_iniciativa()
+        limpiar("todo")
+        escribir("\n🎲 LANZAMIENTO DE INICIATIVA 🎲")
+        escribir("─────────────────────────────────────────")
+
+        dado1 = mi.tirar_dado(mi.p1)
+        sis.esperar(600)
+        dado2 = mi.tirar_dado(mi.p2)
+        sis.esperar(600)
+
+        intentos = 0
+        mientras dado1 == dado2 ý intentos < 10
+            escribir("  ⚖️  ¡Empate! Relanzando...")
+            sis.esperar(700)
+            dado1 = mi.tirar_dado(mi.p1)
+            sis.esperar(400)
+            dado2 = mi.tirar_dado(mi.p2)
+            intentos = intentos + 1
+        fin
+
+        mi.puntos_accion = 0
+
+        si dado1 < dado2
+            mi.jugador_actual = mi.p1
+            mi.oponente       = mi.p2
+            mi.puntos_accion  = dado1
+        sino
+            mi.jugador_actual = mi.p2
+            mi.oponente       = mi.p1
+            mi.puntos_accion  = dado2
+        fin
+
+        nom_g = mi.jugador_actual.nombre
+        pts   = mi.puntos_accion
+        escribir(ç("\n⚡ |nom_g| va primero con |pts| disparo(s)."))
+
+        si no mi.jugador_actual.es_ia
+            # Entrada simulada: presionar Enter para comenzar la batalla
+            pedir("\nPresiona [Enter] para comenzar la batalla...")
+        sino
+            sis.dormir(3)
+        fin
+    fin
+
+    # ── TIRADA DE TURNO ───────────────────────────────────────────
+    # Solo determina disparos — el orden ya está fijado por el swap.
+    # Humano: [Enter] para disparar. IA: pausa automática.
+    funcion tirada_de_turno()
+        escribir("\n🎲 TIRADA DE DISPAROS 🎲")
+        escribir("─────────────────────────────────────────")
+
+        dado = mi.tirar_dado(mi.jugador_actual)
+        sis.esperar(500)
+
+        mi.puntos_accion = dado
+        nom = mi.jugador_actual.nombre
+        escribir(ç("⚡ |nom| tiene |dado| disparo(s) este turno."))
+
+        si no mi.jugador_actual.es_ia
+            # Entrada simulada: presionar Enter para disparar
+            pedir("\nPresiona [Enter] para disparar...")
+        sino
+            sis.dormir(2.5)
+        fin
+    fin
+
+    # ── CAMBIO DE TURNO ───────────────────────────────────────────
+    funcion cambiar_turno()
+        mi.jugador_actual ~ mi.oponente
+        mi.turno_actual = mi.turno_actual + 1
+        mi.tablero.dibujar()
+        mi.tirada_de_turno()
+    fin
+
+    # ── BUCLE PRINCIPAL ───────────────────────────────────────────
+    funcion iniciar_bucle()
+        tiempo_inicio = lapsos.ahora()
+        mi.determinar_iniciativa()
+
+        mientras mi.p1.contar_vivas() > 0 ý mi.p2.contar_vivas() > 0
+            mi.tablero.dibujar()
+            mi.mostrar_hud(0)
+
+            # Intercomunicador: solo cuando el humano enfrenta a la IA
+            si no mi.jugador_actual.es_ia ý mi.oponente.es_ia
+                # Entrada simulada: mensaje de radio para el oponente (Enter para omitir)
+                msg = pedir(ç("\n📻 Mensaje de radio para |mi.oponente.nombre| (Enter para omitir): "))
+                si cadena.recortar(msg) != ""
+                    mi.ultimo_mensaje = msg
+                fin
+            fin
+
+            pts = mi.puntos_accion
+
+            desde (i = 0; i < pts; i++)
+                num_disparo = i + 1
+                escribir(ç("\n--- Preparando Disparo |num_disparo| de |pts| ---"))
+
+                angulo    = 0
+                distancia = 0
+
+                si mi.jugador_actual.es_ia
+                    nom_ia    = mi.jugador_actual.nombre
+                    coords_ia = ia.jugar_turno(mi.jugador_actual, mi.oponente, mi.ultimo_mensaje)
+                    mi.ultimo_mensaje = ""
+                    angulo    = coords_ia["angulo"]
+                    distancia = coords_ia["distancia"]
+                    escribir(ç("🎯 |nom_ia| dispara: Angulo |angulo|°, Distancia |distancia|"))
+                    sis.esperar(1000)
+                sino
+                    # Entrada simulada: ángulo de disparo (-360 a 360)
+                    angulo    = leer_entero_seguro("Angulo (-360 a 360): ", -360, 360)
+                    # Entrada simulada: distancia de disparo (0-14)
+                    distancia = leer_entero_seguro("Distancia (0-14): ", 0, 14)
+                fin
+
+                escribir("Calculando trayectoria... 🌠")
+                sis.esperar(700)
+
+                coords = polar_a_cartesiano(distancia, angulo)
+                cx = coords["x"]
+                cy = coords["y"]
+                escribir(ç("📍 Impacto en: (|cx|, |cy|)"))
+
+                impacto = falso
+
+                para enemigo en mi.oponente.obtener_vivas()
+                    si enemigo.x == coords["x"] ý enemigo.y == coords["y"]
+                        enemigo.destruir()
+                        impacto = cierto
+                        escribir("💥 ¡BLANCO CONFIRMADO! Tropa enemiga eliminada.")
+                        romper
+                    fin
+                fin
+
+                si no impacto
+                    para aliado en mi.jugador_actual.obtener_vivas()
+                        si aliado.x == coords["x"] ý aliado.y == coords["y"]
+                            aliado.destruir()
+                            impacto = cierto
+                            escribir("☠️  ¡FUEGO AMIGO! Eliminaste a tus propias tropas.")
+                            romper
+                        fin
+                    fin
+                fin
+
+                si no impacto
+                    escribir("💨 Agua. El proyectil cayo en el hielo.")
+                fin
+
+                mi.tablero.registrar_impacto(coords["x"], coords["y"], impacto)
+                mi.jugador_actual.registrar_disparo(impacto)
+
+                # Humano confirma con [Enter] — tiene tiempo de leer el resultado.
+                # IA pausa automáticamente — el humano también puede leerlo.
+                si no mi.jugador_actual.es_ia
+                    # Entrada simulada: presionar Enter para continuar con el turno
+                    pedir("\nPresiona [Enter] para continuar...")
+                sino
+                    escribir("\n⏳ Analizando resultados del impacto...")
+                    sis.dormir(3)
+                fin
+
+                mi.tablero.dibujar()
+                mi.mostrar_hud(num_disparo)
+
+                si mi.p1.contar_vivas() == 0 ó mi.p2.contar_vivas() == 0
+                    romper
+                fin
+            fin
+
+            si mi.p1.contar_vivas() == 0 ó mi.p2.contar_vivas() == 0
+                romper
+            fin
+
+            mi.cambiar_turno()
+        fin
+
+        tiempo_fin = lapsos.ahora()
+        mi.mostrar_estadisticas(tiempo_inicio, tiempo_fin)
+    fin
+
+    # ── REPORTE FINAL ─────────────────────────────────────────────
+    funcion mostrar_estadisticas(inicio, fin_juego)
+        mi.tablero.dibujar()
+
+        escribir("==============================================")
+        escribir(" 🏆 REPORTE DE BATALLA - FIN DE LA PARTIDA 🏆")
+        escribir("==============================================")
+
+        ganador  = mi.p1.contar_vivas() > 0 ? mi.p1 : mi.p2
+        perdedor = mi.p1.contar_vivas() > 0 ? mi.p2 : mi.p1
+
+        nom_g = ganador.nombre
+        emo_g = ganador.emoji
+        nom_p = perdedor.nombre
+        emo_p = perdedor.emoji
+        escribir(ç("👑 VICTORIA PARA: |nom_g| |emo_g|"))
+        escribir(ç("💀 DERROTA PARA:  |nom_p| |emo_p|"))
+
+        duracion = lapsos.diferencia(inicio, fin_juego)
+        seg = duracion["total_segundos"]
+        escribir(ç("\n⏱️  Duracion del combate: |seg| segundos"))
+
+        escribir("\n📊 ESTADISTICAS DE PRECISION:")
+        prec1 = mi.p1.calcular_precision()
+        ac1   = mi.p1.aciertos
+        dis1  = mi.p1.disparos
+        nom1  = mi.p1.nombre
+        escribir(ç("  |nom1|: |prec1|% (|ac1|/|dis1|)"))
+
+        prec2 = mi.p2.calcular_precision()
+        ac2   = mi.p2.aciertos
+        dis2  = mi.p2.disparos
+        nom2  = mi.p2.nombre
+        escribir(ç("  |nom2|: |prec2|% (|ac2|/|dis2|)"))
+
+        mvp     = mi.p1.calcular_precision() > mi.p2.calcular_precision() ? mi.p1 : mi.p2
+        nom_mvp = mvp.nombre
+        escribir(ç("\n⭐ MVP (Mayor Precision): |nom_mvp|"))
+        escribir("==============================================\n")
+
+        si mi.p1.es_ia ó mi.p2.es_ia
+            jugador_ia = mi.p1.es_ia ? mi.p1 : mi.p2
+            gano_ia    = jugador_ia.contar_vivas() > 0
+            mensaje    = ia.mensaje_final(jugador_ia, gano_ia)
+            nom_ia     = jugador_ia.nombre
+            escribir("🤖 Mensaje final del " .. nom_ia .. ":")
+            escribir("─────────────────────────────────────────")
+            escribir(mensaje)
+            escribir("─────────────────────────────────────────")
+        fin
+    fin
+fin

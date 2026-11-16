@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:media:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de media: formula</description>
+</snippet>

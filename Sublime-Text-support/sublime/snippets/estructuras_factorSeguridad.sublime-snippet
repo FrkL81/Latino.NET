@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.factorSeguridad(${1:resistencia_material}, ${2:tension_aplicada})
+]]></content>
+	<tabTrigger>estructuras.factorSeguridad</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Factor de seguridad estructural. Mínimo recomendado: 1.5 (estático), 3.0 (din...</description>
+</snippet>

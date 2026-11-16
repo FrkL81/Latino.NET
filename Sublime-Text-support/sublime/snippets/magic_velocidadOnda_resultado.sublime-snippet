@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:velocidadOnda:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de velocidadOnda: resultado</description>
+</snippet>

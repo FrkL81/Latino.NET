@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pies]]></content>
+    <tabTrigger>str:long:pies</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Pies</description>
+</snippet>

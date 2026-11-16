@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.ejecutar(${1:id}, ${2:query}, ${3:parametros})
+]]></content>
+	<tabTrigger>sqlite.ejecutar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ejecuta una consulta (INSERT, UPDATE, CREATE) y devuelve las filas afectadas.</description>
+</snippet>

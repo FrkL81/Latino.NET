@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.invertir(${1:lista})
+]]></content>
+	<tabTrigger>lista.invertir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Invertir orden de elementos</description>
+</snippet>
+

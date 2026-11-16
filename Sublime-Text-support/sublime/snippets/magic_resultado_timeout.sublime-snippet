@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[timeout]]></content>
+    <tabTrigger>str:resultado:timeout</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de resultado: timeout</description>
+</snippet>

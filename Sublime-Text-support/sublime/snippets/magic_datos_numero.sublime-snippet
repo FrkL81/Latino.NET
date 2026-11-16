@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[numero]]></content>
+    <tabTrigger>str:datos:numero</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de datos: numero</description>
+</snippet>

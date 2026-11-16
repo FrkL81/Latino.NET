@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[n_subintervalos]]></content>
+    <tabTrigger>str:longitudArco:n_subintervalos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de longitudArco: n_subintervalos</description>
+</snippet>

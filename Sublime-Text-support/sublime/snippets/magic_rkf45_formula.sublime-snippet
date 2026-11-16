@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:rkf45:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de rkf45: formula</description>
+</snippet>

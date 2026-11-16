@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cripto.desencriptar(${1:cifrado}, ${2:clave})
+]]></content>
+	<tabTrigger>cripto.desencriptar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Desencripta una cadena producida por cripto.encriptar().</description>
+</snippet>

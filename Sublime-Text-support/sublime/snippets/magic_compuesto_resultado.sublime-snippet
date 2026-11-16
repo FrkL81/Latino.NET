@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:compuesto:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de mate.compuesto(): resultado </description>
+</snippet>

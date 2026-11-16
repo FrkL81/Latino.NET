@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:snr:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de snr: unidad</description>
+</snippet>

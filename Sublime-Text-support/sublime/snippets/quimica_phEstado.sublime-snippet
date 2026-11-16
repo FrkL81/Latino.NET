@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.phEstado(${1:concentracionH})
+]]></content>
+	<tabTrigger>quimica.phEstado</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el pH y el estado de la solución.\n\nFórmula: pH = -log₁₀[H⁺]</description>
+</snippet>

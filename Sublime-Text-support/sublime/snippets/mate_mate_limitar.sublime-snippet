@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.limitar(${1:valor}, ${2:minimo}, ${3:maximo})
+]]></content>
+	<tabTrigger>mate.limitar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Limitar al rango (clamp)</description>
+</snippet>
+

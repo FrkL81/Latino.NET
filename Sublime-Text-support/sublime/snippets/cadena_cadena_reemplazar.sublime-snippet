@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.reemplazar(${1:texto}, ${2:"buscar"}, ${3:"reemplazo"})
+]]></content>
+	<tabTrigger>cadena.reemplazar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Reemplazar texto</description>
+</snippet>
+

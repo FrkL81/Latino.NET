@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[h_usado]]></content>
+    <tabTrigger>str:jacobiana:h_usado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de jacobiana: h_usado</description>
+</snippet>

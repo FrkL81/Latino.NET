@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hilos.dormir(${1:ms})
+]]></content>
+	<tabTrigger>hilos.dormir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Pausa la ejecución del hilo actual por N milisegundos.</description>
+</snippet>

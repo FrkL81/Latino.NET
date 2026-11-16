@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pinta]]></content>
+    <tabTrigger>str:vol:pinta</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Volumen: Volumen: Pinta (0.473L)</description>
+</snippet>

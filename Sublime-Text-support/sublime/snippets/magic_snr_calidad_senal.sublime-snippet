@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[calidad_senal]]></content>
+    <tabTrigger>str:snr:calidad_senal</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de snr: calidad_senal</description>
+</snippet>

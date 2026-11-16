@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[json]]></content>
+    <tabTrigger>str:obtener:json</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de obtener: json</description>
+</snippet>

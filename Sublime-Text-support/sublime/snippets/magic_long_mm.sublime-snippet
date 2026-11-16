@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mm]]></content>
+    <tabTrigger>str:long:mm</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Milímetros</description>
+</snippet>

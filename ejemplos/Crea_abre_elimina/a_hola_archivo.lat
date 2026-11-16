@@ -1,0 +1,32 @@
+escribir("--- Iniciando Creación de Saludo ---")
+
+nombre_archivo = "saludo_latino.txt"
+mensaje = "¡Hola desarrollador de Latino.NET!\nEste archivo fue creado automáticamente por tu código."
+
+intentar
+    // 1. Escribir el archivo en el disco
+    archivo.escribir(nombre_archivo, mensaje)
+    escribir("✅ Archivo '" .. nombre_archivo .. "' creado con éxito.")
+    
+    // 2. Abrir el archivo automáticamente según el Sistema Operativo
+    escribir("Abriendo archivo...")
+
+    si sis.operativo("WIN32")
+        // En Windows, el comando 'start' abre el archivo con el programa predeterminado (Bloc de notas)
+        sis.ejecutar("start " .. nombre_archivo)
+    
+    osi sis.operativo("LINUX")
+        // En Linux (Gnome/KDE), 'xdg-open' es el estándar
+        sis.ejecutar("xdg-open " .. nombre_archivo)
+    
+    osi sis.operativo("MAC")
+        // En macOS, 'open' hace el trabajo
+        sis.ejecutar("open " .. nombre_archivo)
+    
+    sino
+        escribir("Sistema operativo no identificado, no puedo abrir el archivo automáticamente.")
+    fin
+
+atrapar (err)
+    escribir("🔥 Ocurrió un error: " .. err)
+fin

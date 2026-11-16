@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.dirActual()
+]]></content>
+<tabTrigger>sis.dirActual</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Alias de cwd</description>
+</snippet>
+

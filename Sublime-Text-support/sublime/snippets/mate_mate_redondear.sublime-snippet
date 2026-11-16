@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.redondear(${1:numero})
+]]></content>
+	<tabTrigger>mate.redondear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Redondear al entero más cercano</description>
+</snippet>
+

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.contiene(${1:texto}, ${2:"buscar"})
+]]></content>
+	<tabTrigger>cadena.contiene</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verificar si contiene subcadena</description>
+</snippet>
+

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.multiplicar(${1:matriz_A}, ${2:matriz_B})
+]]></content>
+	<tabTrigger>algebraLineal.multiplicar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Multiplica dos matrices A (m×k) y B (k×n).\n</description>
+</snippet>

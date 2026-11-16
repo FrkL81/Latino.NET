@@ -1,0 +1,45 @@
+/*
+   04 - Variables y Nombres
+   Las variables son como cajas donde guardamos información.
+   En Latino.NET, puedes nombrar estas cajas en tu propio idioma.
+*/
+
+escribir("--- Creando un Perfil de Usuario ---")
+
+// 1. Declaración de Variables (Estilo camelCase)
+// Se recomienda usar minúscula al inicio.
+nombre = "Ada Lovelace"
+edad = 36
+
+// 2. Variables en Español (¡Con tildes y ñ!)
+// Latino.NET soporta caracteres latinos en los nombres.
+añoNacimiento = 1815
+profesión = "Programadora"
+
+// 3. Constantes (MAYÚSCULAS)
+// Si escribes todo en mayúsculas, el sistema protege el valor
+// para que no se pueda cambiar por accidente.
+GRAVEDAD = 9.81
+LENGUAJE_FAVORITO = "Latino.NET"
+
+// --- Usando las variables ---
+
+escribir("Nombre:    " .. nombre)
+escribir("Profesión: " .. profesión)
+escribir("Nació el año: " .. añoNacimiento)
+
+escribir("\n--- Cambiando el contenido de la caja ---")
+
+escribir("Edad antes: " .. edad)
+
+// Modificamos la variable
+edad = edad + 1
+
+escribir("Edad ahora: " .. edad)
+
+/* 
+   PRUEBA TÚ MISMO:
+   Descomenta la siguiente línea y ejecuta. Verás que el sistema
+   te protege de cambiar una Constante.
+*/
+# GRAVEDAD = 10

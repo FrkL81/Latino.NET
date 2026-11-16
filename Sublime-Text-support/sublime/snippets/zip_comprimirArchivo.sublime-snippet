@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+zip.comprimirArchivo(${1:archivo_origen}, ${2:archivo_destino})
+]]></content>
+	<tabTrigger>zip.comprimirArchivo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Comprime un solo archivo en un .zip.</description>
+</snippet>

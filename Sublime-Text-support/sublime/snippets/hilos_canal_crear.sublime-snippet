@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+canal.crear()
+]]></content>
+	<tabTrigger>canal.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📨 Crea un nuevo canal</description>
+</snippet>

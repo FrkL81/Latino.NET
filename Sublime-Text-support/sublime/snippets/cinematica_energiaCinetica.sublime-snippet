@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.energiaCinetica(${1:masa}, ${2:velocidad})
+]]></content>
+	<tabTrigger>cinematica.energiaCinetica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Energía cinética de un objeto en movimiento.\n\nFórmula: Ec = ½·m·v²</description>
+</snippet>

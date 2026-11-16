@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.limpiar()
+]]></content>
+	<tabTrigger>sis.limpiar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Limpiar pantalla</description>
+</snippet>
+

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.anexar(${1:id}, ${2:valores...})
+]]></content>
+	<tabTrigger>texto.anexar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Añade uno o más valores al final del texto actual sin salto de línea.</description>
+</snippet>

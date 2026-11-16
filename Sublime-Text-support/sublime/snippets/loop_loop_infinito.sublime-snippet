@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+mientras verdadero
+	$0
+	# Usa 'romper' para salir
+fin
+]]></content>
+	<tabTrigger>loop:infinito</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔁 Bucle infinito</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.cerrar(${1:id_db})
+]]></content>
+	<tabTrigger>sqlite.cerrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🗄️ Cerrar conexión SQLite</description>
+</snippet>

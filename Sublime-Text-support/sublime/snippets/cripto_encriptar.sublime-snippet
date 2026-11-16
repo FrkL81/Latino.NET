@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cripto.encriptar(${1:texto}, ${2:clave})
+]]></content>
+	<tabTrigger>cripto.encriptar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Encripta un texto con AES-256-GCM. Retorna una cadena Base64 auto-contenida</description>
+</snippet>

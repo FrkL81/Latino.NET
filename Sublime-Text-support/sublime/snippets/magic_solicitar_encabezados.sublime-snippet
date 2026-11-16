@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[encabezados]]></content>
+    <tabTrigger>str:solicitar:encabezados</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de solicitar: encabezados</description>
+</snippet>

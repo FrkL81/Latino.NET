@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:cicloCarnot:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de cicloCarnot: nota</description>
+</snippet>

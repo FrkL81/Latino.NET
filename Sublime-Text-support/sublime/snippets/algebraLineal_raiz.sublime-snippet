@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.raiz(${1:coleccion})
+]]></content>
+	<tabTrigger>algebraLineal.raiz</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Aplica raíz cuadrada a cada elemento del vector o matriz.\n</description>
+</snippet>

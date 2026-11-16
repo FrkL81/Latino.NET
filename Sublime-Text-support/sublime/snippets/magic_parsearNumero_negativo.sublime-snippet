@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[negativo]]></content>
+    <tabTrigger>str:parsearNumero:negativo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de parsearNumero: negativo</description>
+</snippet>

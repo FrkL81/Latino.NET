@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.usuario()
+]]></content>
+	<tabTrigger>sis.usuario</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Usuario actual del sistema</description>
+</snippet>
+

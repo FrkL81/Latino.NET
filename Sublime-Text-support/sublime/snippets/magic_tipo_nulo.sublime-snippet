@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nulo]]></content>
+    <tabTrigger>str:tipo:nulo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tipo: Retorno de tipo: nulo</description>
+</snippet>

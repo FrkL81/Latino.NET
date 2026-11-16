@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:restar:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de restar: mes</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[area_base]]></content>
+    <tabTrigger>str:piramideRectangular:area_base</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de piramideRectangular: area_base</description>
+</snippet>

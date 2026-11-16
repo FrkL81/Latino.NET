@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ton_corta]]></content>
+    <tabTrigger>str:masa:ton_corta</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Masa: Masa: Tonelada corta (907.185kg)</description>
+</snippet>

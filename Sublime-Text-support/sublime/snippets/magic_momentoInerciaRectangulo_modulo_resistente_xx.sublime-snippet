@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[modulo_resistente_xx]]></content>
+    <tabTrigger>str:momentoInerciaRectangulo:modulo_resistente_xx</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de momentoInerciaRectangulo: modulo_resistente_xx</description>
+</snippet>

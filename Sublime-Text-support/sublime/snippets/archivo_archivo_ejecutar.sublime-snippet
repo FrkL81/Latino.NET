@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.ejecutar(${1:"script.lat"})
+]]></content>
+	<tabTrigger>archivo.ejecutar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Ejecutar script .lat</description>
+</snippet>
+

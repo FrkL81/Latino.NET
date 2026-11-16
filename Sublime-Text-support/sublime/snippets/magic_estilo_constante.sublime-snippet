@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[constante]]></content>
+    <tabTrigger>str:estilo:constante</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo SCREAMING_SNAKE (ej: HOLA_MUNDO)</description>
+</snippet>

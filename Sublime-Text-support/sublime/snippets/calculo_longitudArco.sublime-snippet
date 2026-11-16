@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.longitudArco(${1:funcion}, ${2:a}, ${3:b}, ${4:n})
+]]></content>
+	<tabTrigger>calculo.longitudArco</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la longitud de arco de y = f(x) en [a, b] numéricamente.\n</description>
+</snippet>

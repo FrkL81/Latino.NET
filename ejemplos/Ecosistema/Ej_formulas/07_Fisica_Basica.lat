@@ -1,0 +1,97 @@
+# Ejemplo: Plugin Formulas - Física Básica (Constantes, Aerodinámica, Cinemática)
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: FÍSICA BÁSICA ===")
+escribir("")
+
+# --- 1. CONSTANTES FÍSICAS ---
+escribir("--- Constantes Físicas ---")
+escribir("El plugin formulas incluye constantes fundamentales de la física.")
+escribir("")
+
+const = formulas.constantes()
+
+escribir("Gravedad (g): " .. const["g"] .. " m/s²")
+escribir("Velocidad de la luz (c): " .. const["c"] .. " m/s")
+escribir("Constante gravitacional (G_univ): " .. const["G_univ"] .. " N·m²/kg²")
+escribir("Constante de Planck (h): " .. const["h"] .. " J·s")
+escribir("Constante de Boltzmann (k_B): " .. const["k_B"] .. " J/K")
+escribir("Constante de los gases (R): " .. const["R"] .. " J/(mol·K)")
+escribir("")
+
+# --- 2. AERODINÁMICA ---
+escribir("--- Aerodinámica ---")
+escribir("El número de Mach indica la relación entre la velocidad de un objeto")
+escribir("y la velocidad del sonido en el medio.")
+escribir("")
+
+# Velocidad del sonido ≈ 340 m/s a nivel del mar
+velocidadSonido = 340
+
+# Objeto a velocidad del sonido (Mach 1)
+mach1 = aerodinamica.numeroMach(340, velocidadSonido)
+escribir("Velocidad: 340 m/s (velocidad del sonido)")
+escribir("Mach: " .. mach1["resultado"])
+escribir("Régimen: " .. mach1["regimen_vuelo"])
+escribir("")
+
+# Objeto a Mach 0.5 (subsónico)
+machSub = aerodinamica.numeroMach(170, velocidadSonido)
+escribir("Velocidad: 170 m/s")
+escribir("Mach: " .. machSub["resultado"])
+escribir("Régimen: " .. machSub["regimen_vuelo"])
+escribir("")
+
+# Objeto supersónico
+machSuper = aerodinamica.numeroMach(680, velocidadSonido)
+escribir("Velocidad: 680 m/s")
+escribir("Mach: " .. machSuper["resultado"])
+escribir("Régimen: " .. machSuper["regimen_vuelo"])
+escribir("")
+
+# --- 3. CINEMÁTICA ---
+escribir("--- Cinemática ---")
+escribir("Estudia el movimiento de los objetos sin considerar las causas.")
+escribir("")
+
+# MRU - Movimiento Rectilíneo Uniforme
+escribir("MRU (Movimiento Rectilíneo Uniforme):")
+escribir("  Un coche recorre 100 km en 2 horas a velocidad constante.")
+mru = cinematica.mru({"d": 100, "t": 2})
+escribir("  Velocidad: " .. mru["resultado"] .. " km/h")
+escribir("")
+
+# MRUA - Movimiento Rectilíneo Uniformemente Acelerado
+escribir("MRUA (Movimiento Acelerado):")
+escribir("  Un coche parte de reposo (v0=0) y acelera a 2 m/s² durante 5 segundos.")
+pos = cinematica.mruaPosicion(0, 0, 2, 5)
+escribir("  Posición final: " .. pos["resultado"] .. " m")
+
+vel = cinematica.mruaVelocidad(0, 2, 5)
+escribir("  Velocidad final: " .. vel["resultado"] .. " m/s")
+escribir("")
+
+# Energía Cinética
+escribir("Energía Cinética:")
+escribir("  Un objeto de 10 kg se mueve a 5 m/s.")
+ec = cinematica.energiaCinetica(10, 5)
+escribir("  Energía cinética: " .. ec["resultado"] .. " J")
+escribir("")
+
+# Energía Potencial
+escribir("Energía Potencial Gravitatoria:")
+escribir("  Un objeto de 10 kg está a 5 m de altura.")
+ep = cinematica.energiaPotencial(10, 5)
+escribir("  Energía potencial: " .. ep["resultado"] .. " J")
+escribir("")
+
+# Momento Lineal
+escribir("Momento Lineal:")
+escribir("  Un objeto de 10 kg se mueve a 5 m/s.")
+p = cinematica.momentoLineal(10, 5)
+escribir("  Momento lineal: " .. p["resultado"] .. " kg·m/s")
+
+escribir("")
+escribir("✅ Ejemplo de física básica completado")

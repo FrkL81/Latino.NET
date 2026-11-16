@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+canal.enviar(${1:id}, ${2:mensaje})
+]]></content>
+	<tabTrigger>canal.enviar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Envía un mensaje a un canal.</description>
+</snippet>

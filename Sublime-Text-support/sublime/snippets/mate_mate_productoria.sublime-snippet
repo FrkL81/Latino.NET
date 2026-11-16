@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.productoria(${1:lista})]]></content>
+    <tabTrigger>math:productoria</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Multiplica todos los elementos de la lista (∏)</description>
+</snippet>

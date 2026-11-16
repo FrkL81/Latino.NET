@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.diferencia(${1:f1}, ${2:f2})
+]]></content>
+<tabTrigger>lapsos.diferencia</tabTrigger>
+<scope>source.latino</scope>
+<description>📏 Diferencia entre fechas</description>
+</snippet>

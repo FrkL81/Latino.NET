@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[carga_punto_2_m]]></content>
+    <tabTrigger>str:bernoulli:carga_punto_2_m</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de bernoulli: carga_punto_2_m</description>
+</snippet>

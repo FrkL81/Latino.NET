@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.comparar(${1:f1}, ${2:f2})
+]]></content>
+<tabTrigger>lapsos.comparar</tabTrigger>
+<scope>source.latino</scope>
+<description>⚖️ Comparar fechas</description>
+</snippet>

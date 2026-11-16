@@ -1,0 +1,64 @@
+/*
+   12 - Atrapando Errores (Manejo de Excepciones)
+   En el mundo real, las cosas fallan: archivos que no existen,
+   divisiones por cero o datos incorrectos.
+   
+   Latino.NET es un lenguaje "Fail-Safe" (A prueba de fallos).
+   Usa 'intentar' y 'atrapar' para manejar problemas sin que el programa se cierre.
+*/
+
+escribir("--- 1. Error Matemático (División por Cero) ---")
+
+// Declaramos la variable FUERA para que sobreviva al bloque
+resultado = nulo
+
+intentar
+    num = 100
+    div = 0
+    
+    // Si esto falla, salta al atrapar inmediatamente
+    resultado = num / div
+    
+    escribir("Esto nunca se imprimirá.")
+atrapar (error)
+    // Aquí manejamos el problema elegantemente
+    escribir("¡Capturado! " .. error)
+    escribir("Solución: Usaremos 0 por defecto.")
+    resultado = 0
+fin
+
+// Como la declaramos antes, aquí sigue viva y con el valor seguro
+escribir("El programa continúa. Resultado seguro: " .. resultado)
+
+
+escribir("\n--- 2. Error de Tipos (Seguridad de Librerías) ---")
+
+intentar
+    // Intentamos usar una función de lista sobre un booleano.
+    // Latino.NET valida los tipos antes de ejecutar para proteger la memoria.
+    lista.agregar(verdadero, "Dato")
+atrapar (e)
+    escribir("Error de tipo detectado: " .. e)
+    escribir("El sistema protegió la memoria.")
+fin
+
+
+escribir("\n--- 3. Error de Sistema (Archivos) ---")
+
+intentar
+    // Intentamos leer un archivo que no existe en el disco.
+    config = archivo.leer("configuracion_secreta.txt")
+atrapar (e)
+    escribir("Error de disco: " .. e)
+fin
+
+
+escribir("\n--- 4. Conclusión ---")
+escribir("A pesar de los 3 errores graves, el programa sigue vivo.")
+escribir("¡Fin exitoso!")
+
+/*
+   REGLA DE SINTAXIS:
+   Todo bloque 'intentar' DEBE llevar obligatoriamente su bloque 'atrapar'.
+   No puedes dejar un 'intentar' solo.
+*/

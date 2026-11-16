@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.poligonoRegular(${1:num_lados}, ${2:longitud_lado})
+]]></content>
+	<tabTrigger>geometria.poligonoRegular</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Área y perímetro de un polígono regular.\n\nFórmula: A = (n·l²) / (4·tan(π/n))</description>
+</snippet>

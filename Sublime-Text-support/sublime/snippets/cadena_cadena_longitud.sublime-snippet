@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.longitud(${1:texto})
+]]></content>
+	<tabTrigger>cadena.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Número de caracteres</description>
+</snippet>
+

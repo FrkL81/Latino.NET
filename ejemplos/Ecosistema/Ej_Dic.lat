@@ -1,0 +1,113 @@
+/*
+==============================================================
+LIBRERÍA: dic
+DESCRIPCIÓN: Funciones para manipulación de diccionarios (clave-valor).
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: dic.agregar
+DESCRIPCIÓN: Agrega o actualiza un valor en el diccionario.
+PARÁMETROS:
+  - diccionario (diccionario): Diccionario a modificar.
+  - clave (cualquiera): Llave única.
+  - valor (cualquiera): Valor asociado.
+RETORNA: nulo
+*/
+d = {"a": 1}
+dic.agregar(d, "b", 2)
+escribir(d)
+
+/*
+FUNCIÓN: dic.contiene
+DESCRIPCIÓN: Verifica si el diccionario contiene la clave especificada.
+PARÁMETROS:
+  - diccionario (diccionario): Donde buscar.
+  - clave (cualquiera): Llave a buscar.
+RETORNA: logico - verdadero si existe.
+*/
+escribir("Contiene 'a'?: " .. dic.contiene(d, "a"))
+
+/*
+FUNCIÓN: dic.eliminar
+DESCRIPCIÓN: Elimina una clave del diccionario.
+PARÁMETROS:
+  - diccionario (diccionario): Diccionario a modificar.
+  - clave (cualquiera): Llave a eliminar.
+RETORNA: diccionario - El mismo diccionario modificado.
+*/
+dic.eliminar(d, "a")
+escribir(d)
+
+/*
+FUNCIÓN: dic.llaves
+DESCRIPCIÓN: Devuelve una lista con todas las claves del diccionario.
+PARÁMETROS:
+  - diccionario (diccionario): Diccionario original.
+RETORNA: lista - Lista de llaves.
+*/
+escribir("Llaves: " .. dic.llaves(d))
+
+/*
+FUNCIÓN: dic.valores
+DESCRIPCIÓN: Devuelve una lista con todos los valores del diccionario.
+PARÁMETROS:
+  - diccionario (diccionario): Diccionario original.
+RETORNA: lista - Lista de valores.
+*/
+escribir("Valores: " .. dic.valores(d))
+
+/*
+FUNCIÓN: dic.fusionar
+DESCRIPCIÓN: Crea un nuevo diccionario combinando dos diccionarios.
+PARÁMETROS:
+  - diccionario1 (diccionario): Base.
+  - diccionario2 (diccionario): Valores a agregar/sobreescribir.
+RETORNA: diccionario - Nuevo diccionario fusionado.
+*/
+d1 = {"x": 10}
+d2 = {"y": 20}
+d3 = dic.fusionar(d1, d2)
+escribir(d3)
+
+/*
+FUNCIÓN: dic.obtener
+DESCRIPCIÓN: Obtiene el valor de una clave o devuelve un valor por defecto.
+PARÁMETROS:
+  - diccionario (diccionario): Donde buscar.
+  - clave (cualquiera): Llave a buscar.
+  - defecto (cualquiera): Valor si no existe (opcional).
+RETORNA: cualquiera - Valor encontrado o defecto.
+*/
+escribir(dic.obtener(d3, "z", "no existe"))
+
+/*
+FUNCIÓN: dic.invertir
+DESCRIPCIÓN: Crea un nuevo diccionario intercambiando llaves por valores.
+PARÁMETROS:
+  - diccionario (diccionario): Diccionario original.
+RETORNA: diccionario - Nuevo diccionario invertido.
+*/
+inv = dic.invertir({"uno": 1, "dos": 2})
+escribir(inv)
+
+/*
+FUNCIÓN: dic.transformarValores
+DESCRIPCIÓN: Aplica una función a cada valor y retorna un nuevo diccionario.
+PARÁMETROS:
+  - diccionario (diccionario): Diccionario original.
+  - funcion (ICallable): Función que recibe el valor.
+RETORNA: diccionario - Nuevo diccionario transformado.
+*/
+precios = {"pan": 10, "leche": 20}
+oferta = dic.transformarValores(precios, funcion(v) retornar v * 0.5 fin)
+escribir(oferta)
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Dic.lat
+==============================================================
+*/

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[grado_polinomio]]></content>
+    <tabTrigger>str:lagrange:grado_polinomio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de lagrange: grado_polinomio</description>
+</snippet>

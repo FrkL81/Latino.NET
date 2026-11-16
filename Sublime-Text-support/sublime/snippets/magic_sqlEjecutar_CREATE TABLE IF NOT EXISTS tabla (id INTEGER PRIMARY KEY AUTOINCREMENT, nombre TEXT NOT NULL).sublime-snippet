@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[CREATE TABLE IF NOT EXISTS tabla (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL)]]></content>
+    <tabTrigger>str:sqlEjecutar:CREATE TABLE IF NOT EXISTS tabla (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL)</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Crear tabla con clave primaria</description>
+</snippet>

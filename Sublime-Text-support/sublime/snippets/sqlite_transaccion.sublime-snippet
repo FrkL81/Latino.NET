@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.transaccion(${1:id}, ${2:funcion_cuerpo})
+]]></content>
+	<tabTrigger>sqlite.transaccion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ejecuta una función dentro de una transacción atómica con rollback automático.</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[porcentaje]]></content>
+    <tabTrigger>str:probabilidadColisionHash:porcentaje</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de probabilidadColisionHash: porcentaje</description>
+</snippet>

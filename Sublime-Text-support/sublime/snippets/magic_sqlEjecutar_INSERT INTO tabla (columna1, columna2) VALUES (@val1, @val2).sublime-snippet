@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[INSERT INTO tabla (columna1, columna2) VALUES (@val1, @val2)]]></content>
+    <tabTrigger>str:sqlEjecutar:INSERT INTO tabla (columna1, columna2) VALUES (@val1, @val2)</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Insertar registro con parámetros</description>
+</snippet>

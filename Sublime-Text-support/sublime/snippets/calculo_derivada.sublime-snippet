@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.derivada(${1:funcion}, ${2:x}, ${3:h}, ${4:orden})
+]]></content>
+	<tabTrigger>calculo.derivada</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Aproxima la primera derivada f'(x) por Diferencias Finitas.\n</description>
+</snippet>

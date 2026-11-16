@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mph]]></content>
+    <tabTrigger>str:vel:mph</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Velocidad: Velocidad: Millas por hora</description>
+</snippet>

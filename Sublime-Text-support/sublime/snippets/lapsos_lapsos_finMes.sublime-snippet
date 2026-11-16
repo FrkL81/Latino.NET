@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.finMes(${1:fecha})
+]]></content>
+<tabTrigger>lapsos.finMes</tabTrigger>
+<scope>source.latino</scope>
+<description>🔚 Fin del mes</description>
+</snippet>

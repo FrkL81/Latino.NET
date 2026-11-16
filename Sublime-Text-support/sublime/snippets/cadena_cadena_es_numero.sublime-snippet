@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.es_numero(${1:texto})
+]]></content>
+	<tabTrigger>cadena.es_numero</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verificar si es número</description>
+</snippet>
+

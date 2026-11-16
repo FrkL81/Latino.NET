@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.desdeUnix(${1:timestamp})
+]]></content>
+<tabTrigger>lapsos.desdeUnix</tabTrigger>
+<scope>source.latino</scope>
+<description>🌐 Unix a fecha</description>
+</snippet>

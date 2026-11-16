@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:leyOhm:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de leyOhm: resultado</description>
+</snippet>

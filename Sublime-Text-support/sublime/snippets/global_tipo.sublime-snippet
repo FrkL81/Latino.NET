@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tipo(${1:valor})
+]]></content>
+	<tabTrigger>tipo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔎 Obtener tipo de dato</description>
+</snippet>

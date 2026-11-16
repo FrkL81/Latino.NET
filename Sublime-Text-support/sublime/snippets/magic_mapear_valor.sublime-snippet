@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[valor]]></content>
+    <tabTrigger>str:mapear:valor</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Diccionario: Retorno de dic.mapear(): valor </description>
+</snippet>

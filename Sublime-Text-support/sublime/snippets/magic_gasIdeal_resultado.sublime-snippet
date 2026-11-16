@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:gasIdeal:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de gasIdeal: resultado</description>
+</snippet>

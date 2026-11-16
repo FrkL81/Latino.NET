@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.cono(${1:radio}, ${2:altura})
+]]></content>
+	<tabTrigger>geometria.cono</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Área total y volumen de un cono recto.\n\nFórmulas: g = √(r²+h²) | A_tot = πr...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:productoAnchoBandaLatencia:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de productoAnchoBandaLatencia: formula</description>
+</snippet>

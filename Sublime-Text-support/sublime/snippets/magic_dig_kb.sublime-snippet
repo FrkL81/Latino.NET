@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[kb]]></content>
+    <tabTrigger>str:dig:kb</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Digital: Digital: Kilobyte</description>
+</snippet>

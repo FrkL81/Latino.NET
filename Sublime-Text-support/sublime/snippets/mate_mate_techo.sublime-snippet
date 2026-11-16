@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.techo(${1:numero})
+]]></content>
+	<tabTrigger>mate.techo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Redondear hacia arriba</description>
+</snippet>
+

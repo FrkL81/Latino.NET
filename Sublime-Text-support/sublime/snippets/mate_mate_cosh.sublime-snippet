@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.cosh(${1:numero})
+]]></content>
+	<tabTrigger>mate.cosh</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Coseno hiperbólico</description>
+</snippet>
+

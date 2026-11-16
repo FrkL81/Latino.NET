@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[texto]]></content>
+    <tabTrigger>str:ahora:texto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de ahora: texto</description>
+</snippet>

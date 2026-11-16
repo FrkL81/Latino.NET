@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.escribir(${1:"ruta.txt"}, ${2:contenido})
+]]></content>
+	<tabTrigger>archivo.escribir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Escribir archivo (sobrescribe)</description>
+</snippet>
+

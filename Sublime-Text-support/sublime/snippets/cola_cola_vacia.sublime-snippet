@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cola.vacia(${1:cola})
+]]></content>
+	<tabTrigger>cola.vacia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Verificar si está vacía</description>
+</snippet>
+

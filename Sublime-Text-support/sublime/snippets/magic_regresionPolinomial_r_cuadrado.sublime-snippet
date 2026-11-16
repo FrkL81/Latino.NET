@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[r_cuadrado]]></content>
+    <tabTrigger>str:regresionPolinomial:r_cuadrado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionPolinomial: r_cuadrado</description>
+</snippet>

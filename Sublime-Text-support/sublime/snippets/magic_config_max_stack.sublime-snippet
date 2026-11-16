@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[max_stack]]></content>
+    <tabTrigger>str:config:max_stack</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Config: Límite de profundidad de recursión</description>
+</snippet>

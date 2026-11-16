@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[depurar]]></content>
+    <tabTrigger>str:log:depurar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Log: Retorno de log: depurar</description>
+</snippet>

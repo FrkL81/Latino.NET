@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[expandida]]></content>
+    <tabTrigger>str:configuracionDetalle:expandida</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de configuracionDetalle: expandida</description>
+</snippet>

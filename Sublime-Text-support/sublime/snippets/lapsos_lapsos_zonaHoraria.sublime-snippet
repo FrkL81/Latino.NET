@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.zonaHoraria()
+]]></content>
+<tabTrigger>lapsos.zonaHoraria</tabTrigger>
+<scope>source.latino</scope>
+<description>🌍 Zona horaria</description>
+</snippet>

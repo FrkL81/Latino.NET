@@ -1,0 +1,267 @@
+/*
+==============================================================
+LIBRERÍA: cadena
+DESCRIPCIÓN: Funciones para manipulación de cadenas de texto.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: cadena.longitud
+DESCRIPCIÓN: Devuelve el número de caracteres en la cadena.
+PARÁMETROS:
+  - texto (cadena): Cadena a medir.
+RETORNA: numerico - Longitud de la cadena.
+EJEMPLO:
+  escribir(cadena.longitud("Hola"))  // Salida: 4
+*/
+escribir("Longitud: " .. cadena.longitud("Latino"))
+
+/*
+FUNCIÓN: cadena.concatenar
+DESCRIPCIÓN: Une dos cadenas.
+PARÁMETROS:
+  - cadena1 (cadena): Primera cadena.
+  - cadena2 (cadena): Segunda cadena.
+RETORNA: cadena - Resultado de la unión.
+EJEMPLO:
+  escribir(cadena.concatenar("Hola ", "Mundo"))
+*/
+escribir(cadena.concatenar("Hola ", "Mundo"))
+
+/*
+FUNCIÓN: cadena.contiene
+DESCRIPCIÓN: Verifica si una cadena contiene otra.
+PARÁMETROS:
+  - texto (cadena): Cadena donde buscar.
+  - subcadena (cadena): Texto a buscar.
+RETORNA: logico - verdadero si la contiene.
+EJEMPLO:
+  escribir(cadena.contiene("Latino", "tin"))
+*/
+escribir("Contiene 'tin'?: " .. cadena.contiene("Latino", "tin"))
+
+/*
+FUNCIÓN: cadena.mayusculas
+DESCRIPCIÓN: Convierte la cadena a MAYÚSCULAS.
+PARÁMETROS:
+  - texto (cadena): Cadena a convertir.
+RETORNA: cadena - Texto en mayúsculas.
+EJEMPLO:
+  escribir(cadena.mayusculas("hola"))
+*/
+escribir(cadena.mayusculas("latino"))
+
+/*
+FUNCIÓN: cadena.minusculas
+DESCRIPCIÓN: Convierte la cadena a minúsculas.
+PARÁMETROS:
+  - texto (cadena): Cadena a convertir.
+RETORNA: cadena - Texto en minúsculas.
+*/
+escribir(cadena.minusculas("LATINO"))
+
+/*
+FUNCIÓN: cadena.recortar
+DESCRIPCIÓN: Elimina espacios al inicio y final de la cadena.
+PARÁMETROS:
+  - texto (cadena): Cadena a limpiar.
+RETORNA: cadena - Texto sin espacios en los extremos.
+*/
+escribir("[" .. cadena.recortar("  hola  ") .. "]")
+
+/*
+FUNCIÓN: cadena.invertir
+DESCRIPCIÓN: Invierte el orden de los caracteres en la cadena.
+PARÁMETROS:
+  - texto (cadena): Cadena a invertir.
+RETORNA: cadena - Texto invertido.
+*/
+escribir(cadena.invertir("roma"))
+
+/*
+FUNCIÓN: cadena.estilo
+DESCRIPCIÓN: Transforma texto a diferentes estilos (camello, pascal, serpiente, kebab, etc.).
+PARÁMETROS:
+  - texto (cadena): Texto a formatear.
+  - estilo (cadena): Nombre del estilo.
+RETORNA: cadena - Texto formateado.
+EJEMPLOS:
+  escribir(cadena.estilo("hola mundo", "camello"))
+  escribir(cadena.estilo("hola mundo", "serpiente"))
+*/
+escribir(cadena.estilo("hola mundo", "camello"))
+escribir(cadena.estilo("hola mundo", "serpiente"))
+escribir(cadena.estilo("hola mundo", "kebab"))
+
+/*
+FUNCIÓN: cadena.subcadena
+DESCRIPCIÓN: Extrae una parte de la cadena.
+PARÁMETROS:
+  - texto (cadena): Cadena original.
+  - inicio (numerico): Posición inicial (0-based).
+  - longitud (numerico): Cantidad de caracteres.
+RETORNA: cadena - Subcadena extraída.
+*/
+escribir(cadena.subcadena("Latino.NET", 0, 6))
+
+/*
+FUNCIÓN: cadena.indice
+DESCRIPCIÓN: Encuentra la posición de una subcadena.
+PARÁMETROS:
+  - texto (cadena): Donde buscar.
+  - subcadena (cadena): Qué buscar.
+RETORNA: numerico - Posición (-1 si no existe).
+*/
+escribir(cadena.indice("hola mundo", "mundo"))
+
+/*
+FUNCIÓN: cadena.rellenar_izquierda
+DESCRIPCIÓN: Rellena la cadena por la izquierda hasta alcanzar la longitud especificada.
+PARÁMETROS:
+  - texto (cadena): Cadena original.
+  - caracter (cadena): Carácter de relleno.
+  - longitud (numerico): Longitud final deseada.
+RETORNA: cadena - Texto rellenado.
+*/
+escribir(cadena.rellenar_izquierda("42", "0", 5))
+
+/*
+FUNCIÓN: cadena.formato
+DESCRIPCIÓN: Genera una cadena con formato estilo printf.
+PARÁMETROS:
+  - formato (cadena): Plantilla de formato.
+  - valores... : Valores a inyectar.
+RETORNA: cadena - Texto formateado.
+*/
+escribir(cadena.formato("PI es %.2f y nombre es %s", 3.14159, "Latino"))
+
+/*
+FUNCIÓN: cadena.separar
+DESCRIPCIÓN: Divide la cadena en una lista usando un separador.
+PARÁMETROS:
+  - texto (cadena): Cadena a dividir.
+  - separador (cadena): Delimitador (opcional, default espacio).
+RETORNA: lista - Lista de subcadenas.
+*/
+escribir(cadena.separar("uno,dos,tres", ","))
+
+/*
+FUNCIÓN: cadena.reemplazar
+DESCRIPCIÓN: Reemplaza todas las ocurrencias de un texto.
+PARÁMETROS:
+  - texto (cadena): Cadena original.
+  - buscar (cadena): Texto a buscar.
+  - reemplazo (cadena): Texto nuevo.
+RETORNA: cadena - Texto modificado.
+*/
+escribir(cadena.reemplazar("hola mundo", "mundo", "latino"))
+
+/*
+FUNCIÓN: cadena.es_igual
+DESCRIPCIÓN: Compara dos cadenas con diferentes modos.
+PARÁMETROS:
+  - cadena1 (cadena): Primera cadena.
+  - cadena2 (cadena): Segunda cadena.
+  - modo (cadena): Modo (exacta, ignora_caso, normalizada, comodin).
+RETORNA: logico - verdadero si coinciden.
+*/
+escribir(cadena.es_igual("José", "jose", "normalizada"))
+
+/*
+FUNCIÓN: cadena.contar
+DESCRIPCIÓN: Cuenta cuántas veces aparece la subcadena (sin solapamiento).
+PARÁMETROS:
+  - texto (cadena): Texto donde buscar.
+  - subcadena (cadena): Qué buscar.
+RETORNA: numerico - Cantidad de ocurrencias.
+*/
+escribir("Ocurrencias de 'a': " .. cadena.contar("banana", "a"))
+
+/*
+FUNCIÓN: cadena.contarPalabras
+DESCRIPCIÓN: Retorna el número de palabras en el texto.
+PARÁMETROS:
+  - texto (cadena): Texto a analizar.
+RETORNA: numerico - Cantidad de palabras.
+*/
+escribir("Palabras: " .. cadena.contarPalabras("Hola mundo desde Latino.NET"))
+
+/*
+FUNCIÓN: cadena.partir
+DESCRIPCIÓN: Divide el texto con límite máximo de divisiones.
+PARÁMETROS:
+  - texto (cadena): Texto a dividir.
+  - separador (cadena): Delimitador.
+  - limite (numerico): Máximo de partes.
+RETORNA: lista - Partes obtenidas.
+*/
+escribir(cadena.partir("uno:dos:tres:cuatro", ":", 2))
+
+/*
+FUNCIÓN: cadena.centrar
+DESCRIPCIÓN: Centra el texto en un campo de ancho especificado.
+PARÁMETROS:
+  - texto (cadena): Texto a centrar.
+  - ancho (numerico): Ancho total del campo.
+  - relleno (cadena): Carácter de relleno (opcional, default espacio).
+RETORNA: cadena - Texto centrado.
+*/
+escribir("[" .. cadena.centrar("TITULO", 20, "=") .. "]")
+
+/*
+FUNCIÓN: cadena.extraer
+DESCRIPCIÓN: Extrae patrones del texto (emails, urls, digitos, etc.).
+PARÁMETROS:
+  - texto (cadena): Texto a analizar.
+  - modo (cadena): Tipo de extracción.
+RETORNA: lista - Coincidencias encontradas.
+*/
+escribir(cadena.extraer("Mi email es test@latino.org", "emails"))
+
+/*
+FUNCIÓN: cadena.nombrarNumero
+DESCRIPCIÓN: Convierte un número a su representación cardinal en español.
+PARÁMETROS:
+  - numero (numerico): Número a nombrar.
+RETORNA: cadena - Nombre del número.
+*/
+escribir(cadena.nombrarNumero(1234))
+
+/*
+FUNCIÓN: cadena.hash
+DESCRIPCIÓN: Calcula el hash de una cadena usando diversos algoritmos.
+PARÁMETROS:
+  - texto (cadena): Texto a procesar.
+  - algoritmo (cadena): MD5, SHA1, SHA256 (default), SHA512.
+RETORNA: cadena - Hash en formato hexadecimal minúscula.
+*/
+escribir("SHA256: " .. cadena.hash("latino_2026"))
+escribir("MD5: " .. cadena.hash("12345", "MD5"))
+
+/*
+FUNCIÓN: cadena.codificarBase64
+DESCRIPCIÓN: Codifica una cadena de texto a formato Base64.
+PARÁMETROS:
+  - texto (cadena): Texto original.
+RETORNA: cadena - Texto codificado.
+*/
+b64 = cadena.codificarBase64("Hola Mundo")
+escribir("Base64: " .. b64)
+
+/*
+FUNCIÓN: cadena.decodificarBase64
+DESCRIPCIÓN: Decodifica una cadena en formato Base64 a texto plano.
+PARÁMETROS:
+  - base64 (cadena): Texto codificado.
+RETORNA: cadena - Texto original.
+*/
+escribir("Decodificado: " .. cadena.decodificarBase64(b64))
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Cadena.lat
+==============================================================
+*/

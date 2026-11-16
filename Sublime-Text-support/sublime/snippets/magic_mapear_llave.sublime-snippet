@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[llave]]></content>
+    <tabTrigger>str:mapear:llave</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Diccionario: Retorno de dic.mapear(): llave </description>
+</snippet>

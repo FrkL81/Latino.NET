@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.penduloSimple(${1:longitud})
+]]></content>
+	<tabTrigger>dinamica.penduloSimple</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Período de oscilación de un péndulo simple (g = 9.80665 m/s²).\n\nFórmula: T ...</description>
+</snippet>

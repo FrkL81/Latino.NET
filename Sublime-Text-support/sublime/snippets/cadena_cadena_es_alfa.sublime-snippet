@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.es_alfa(${1:texto})
+]]></content>
+	<tabTrigger>cadena.es_alfa</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verificar si es alfanumérico</description>
+</snippet>
+

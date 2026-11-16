@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:energiaMasa:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Física Cuántica: Retorno de energiaMasa: resultado</description>
+</snippet>

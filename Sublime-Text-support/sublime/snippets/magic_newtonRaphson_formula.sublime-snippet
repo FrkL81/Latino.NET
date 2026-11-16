@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:newtonRaphson:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de newtonRaphson: formula</description>
+</snippet>

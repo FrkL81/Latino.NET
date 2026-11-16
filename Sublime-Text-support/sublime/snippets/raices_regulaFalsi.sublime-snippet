@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raices.regulaFalsi(${1:funcion}, ${2:a}, ${3:b}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>raices.regulaFalsi</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Encuentra una raíz de f(x) en [a, b] por el método de Regula Falsi.\n</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.manual()
+]]></content>
+	<tabTrigger>sis.manual</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Abrir manual PDF</description>
+</snippet>
+

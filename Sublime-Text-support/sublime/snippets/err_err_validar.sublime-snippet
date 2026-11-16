@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+intentar
+	${1:resultado} = ${2:operacion_peligrosa}
+	$3
+atrapar (${4:error})
+	escribir("Error: " .. ${4:error})
+	$0
+fin
+]]></content>
+	<tabTrigger>err:validar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚠️ Try-catch con mensaje de error</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:brent:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de brent: resultado</description>
+</snippet>

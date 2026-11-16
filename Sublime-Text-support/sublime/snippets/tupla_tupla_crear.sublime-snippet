@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:miTupla} = tupla.crear(${2:elementos})
+]]></content>
+	<tabTrigger>tupla.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💎 Crear tupla (inmutable)</description>
+</snippet>
+

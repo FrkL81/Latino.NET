@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:elemento} = pila.desapilar(${2:pila})
+]]></content>
+	<tabTrigger>pila.desapilar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📚 Extraer de la cima</description>
+</snippet>
+

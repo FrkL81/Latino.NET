@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:penduloSimple:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Dinámica: Retorno de penduloSimple: unidad</description>
+</snippet>

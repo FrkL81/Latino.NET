@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.concentracionMolar(${1:molesSoluto}, ${2:volumenLitros})
+]]></content>
+	<tabTrigger>quimica.concentracionMolar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Concentración molar de una solución.\n\nFórmula: M = n / V</description>
+</snippet>

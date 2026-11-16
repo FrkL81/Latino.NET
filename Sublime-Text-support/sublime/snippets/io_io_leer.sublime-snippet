@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:entrada} = leer("${2:Mensaje: }")
+]]></content>
+	<tabTrigger>io:leer</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💬 Leer entrada del usuario</description>
+</snippet>

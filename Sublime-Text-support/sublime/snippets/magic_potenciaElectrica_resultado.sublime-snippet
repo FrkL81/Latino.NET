@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:potenciaElectrica:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de potenciaElectrica: resultado</description>
+</snippet>

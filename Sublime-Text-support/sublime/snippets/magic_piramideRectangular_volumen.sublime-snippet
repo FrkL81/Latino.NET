@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[volumen]]></content>
+    <tabTrigger>str:piramideRectangular:volumen</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de piramideRectangular: volumen</description>
+</snippet>

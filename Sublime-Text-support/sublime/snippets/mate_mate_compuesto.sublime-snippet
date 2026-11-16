@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.compuesto(${1:valor_inicial}, ${2:tasa}, ${3:periodos})
+]]></content>
+	<tabTrigger>mate.compuesto</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Crecimiento compuesto</description>
+</snippet>
+

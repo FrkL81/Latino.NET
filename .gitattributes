@@ -1,0 +1,30 @@
+# Normalización de finales de línea para el repositorio público.
+# El contenido se almacena con LF; el checkout lo convierte a native.
+* text=auto eol=lf
+
+# Scripts de Windows que requieren CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binarios explícitos
+*.ico binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.zip binary
+*.vsix binary
+*.dll binary
+*.pdb binary
+*.so binary
+*.woff binary
+
+# Lenguajes con contenido de plantillas literales (LF obligatorio)
+*.lat text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.cs text eol=lf
+*.ts text eol=lf
+*.csproj text eol=lf
+*.slnx text eol=lf
+*.code-snippets text eol=lf
+*.sublime-syntax text eol=lf

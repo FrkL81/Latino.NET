@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[d_anio]]></content>
+    <tabTrigger>str:fecha:d_anio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Fecha: Componente: Día del año (1-366)</description>
+</snippet>

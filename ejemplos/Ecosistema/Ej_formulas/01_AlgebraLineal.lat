@@ -1,0 +1,67 @@
+# Ejemplo: Plugin Formulas - Álgebra Lineal
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: ÁLGEBRA LINEAL ===")
+escribir("")
+
+# --- Vectores ---
+escribir("--- Operaciones con vectores ---")
+v1 = [1, 2, 3]
+v2 = [4, 5, 6]
+
+escribir("v1 = " .. v1)
+escribir("v2 = " .. v2)
+
+# Producto punto
+productoPunto = algebraLineal.punto(v1, v2)
+escribir("Producto punto: " .. productoPunto)
+
+# Norma
+norma = algebraLineal.norma(v1)
+escribir("Norma de v1: " .. norma["resultado"])
+
+# Producto cruz
+productoCruz = algebraLineal.cruz(v1, v2)
+escribir("Producto cruz: " .. productoCruz["resultado"])
+
+# --- Matrices ---
+escribir("")
+escribir("--- Operaciones con matrices ---")
+
+matrizA = [[1, 2], [3, 4]]
+matrizB = [[5, 6], [7, 8]]
+
+escribir("Matriz A: " .. matrizA)
+escribir("Matriz B: " .. matrizB)
+
+# Suma
+suma = algebraLineal.sumar(matrizA, matrizB)
+escribir("A + B = " .. suma)
+
+# Multiplicación
+producto = algebraLineal.multiplicar(matrizA, matrizB)
+escribir("A × B = " .. producto["resultado"])
+
+# Determinante
+det = algebraLineal.determinante([[1, 2], [3, 4]])
+escribir("Determinante [[1,2],[3,4]]: " .. det["resultado"])
+
+# Transpuesta
+transpuesta = algebraLineal.transponer(matrizA)
+escribir("Transpuesta de A: " .. transpuesta)
+
+# --- Resolver sistema lineal ---
+escribir("")
+escribir("--- Sistema lineal Ax = b ---")
+# 2x + y = 5
+# x + 3y = 7
+a = [[2, 1], [1, 3]]
+b = [5, 7]
+
+solucion = algebraLineal.resolver(a, b)
+escribir("Solución: x = " .. solucion["solucion"][0] .. ", y = " .. solucion["solucion"][1])
+
+escribir("")
+escribir("✅ Ejemplo de álgebra lineal completado")

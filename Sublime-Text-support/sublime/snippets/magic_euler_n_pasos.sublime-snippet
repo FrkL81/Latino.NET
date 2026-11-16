@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[n_pasos]]></content>
+    <tabTrigger>str:euler:n_pasos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de euler: n_pasos</description>
+</snippet>

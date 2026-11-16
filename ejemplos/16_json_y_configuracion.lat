@@ -1,0 +1,55 @@
+# ==================================================================
+# Ejemplo: Manejo de JSON y Configuración
+# Latino.NET delega la serialización JSON directamente al motor de .NET
+# ==================================================================
+
+ruta_config = "app_config.json"
+
+# 1. Crear una estructura de datos compleja (Diccionarios, Listas, Booleanos)
+configuracion = {
+    "app": "MiServidorLatino",
+    "version": "1.0.0",
+    "puerto": 8080,
+    "debug": cierto,
+    "rutas_permitidas": [
+        "/api/v1/usuarios",
+        "/api/v1/status"
+    ],
+    "base_datos": {
+        "host": "localhost",
+        "pool": 10
+    }
+}
+
+escribir("💾 Guardando archivo de configuración JSON...")
+# archivo.escribirJson(ruta, datos, [identado_booleano])
+archivo.escribirJson(ruta_config, configuracion, cierto)
+
+# 2. Leer e inspeccionar el JSON desde disco
+escribir("📂 Leyendo y parseando configuración desde disco...")
+datos_cargados = archivo.leerJson(ruta_config)
+
+# 3. Navegación estructural
+nombre_app = datos_cargados["app"]
+puerto = datos_cargados["puerto"]
+db_host = datos_cargados["base_datos"]["host"]
+primera_ruta = datos_cargados["rutas_permitidas"][0]
+
+escribir("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+escribir(ç("App:    |nombre_app| (Puerto: |puerto|)"))
+escribir(ç("DB:     |db_host|"))
+escribir(ç("Ruta 1: |primera_ruta|"))
+escribir("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+
+# 4. Modificación y persistencia
+escribir("🔄 Actualizando configuración...")
+datos_cargados["version"] = "1.0.1"
+lista.agregar(datos_cargados["rutas_permitidas"], "/api/v1/metricas")
+
+archivo.escribirJson(ruta_config, datos_cargados, cierto)
+escribir("✅ Configuración actualizada con éxito.")
+
+# Limpieza del ejemplo
+si archivo.existe(ruta_config)
+    archivo.eliminar(ruta_config)
+fin

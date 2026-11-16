@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+acadena(${1:valor})
+]]></content>
+	<tabTrigger>acadena</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔄 Convertir a cadena</description>
+</snippet>

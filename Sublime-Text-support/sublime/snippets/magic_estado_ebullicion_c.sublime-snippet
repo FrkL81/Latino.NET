@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ebullicion_c]]></content>
+    <tabTrigger>str:estado:ebullicion_c</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de estado: ebullicion_c</description>
+</snippet>

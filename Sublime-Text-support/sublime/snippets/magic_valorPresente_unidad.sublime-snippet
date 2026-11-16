@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:valorPresente:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de valorPresente: unidad</description>
+</snippet>

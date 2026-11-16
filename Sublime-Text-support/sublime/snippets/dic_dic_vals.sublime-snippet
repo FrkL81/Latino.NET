@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.vals(${1:diccionario})
+]]></content>
+	<tabTrigger>dic.vals</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Alias de valores</description>
+</snippet>
+

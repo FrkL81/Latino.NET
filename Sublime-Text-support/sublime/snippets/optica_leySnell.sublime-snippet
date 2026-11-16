@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optica.leySnell(${1:n1}, ${2:angulo1_grados}, ${3:n2})
+]]></content>
+	<tabTrigger>optica.leySnell</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ley de Snell-Descartes (refracción). Calcula el ángulo de refracción.\n\nFórm...</description>
+</snippet>

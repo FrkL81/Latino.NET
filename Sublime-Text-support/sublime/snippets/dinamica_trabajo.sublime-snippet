@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.trabajo(${1:fuerza}, ${2:distancia}, ${3:anguloGrados})
+]]></content>
+	<tabTrigger>dinamica.trabajo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el trabajo mecánico.\n\nFórmula: W = F · d · cos(θ)</description>
+</snippet>

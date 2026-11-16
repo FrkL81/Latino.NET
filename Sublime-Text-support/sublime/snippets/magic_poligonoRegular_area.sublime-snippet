@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[area]]></content>
+    <tabTrigger>str:poligonoRegular:area</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de poligonoRegular: area</description>
+</snippet>

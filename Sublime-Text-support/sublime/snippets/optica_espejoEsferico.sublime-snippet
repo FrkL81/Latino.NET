@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optica.espejoEsferico(${1:radio_curvatura}, ${2:distancia_objeto})
+]]></content>
+	<tabTrigger>optica.espejoEsferico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Posición de la imagen en un espejo esférico. Radio positivo = cóncavo, negati...</description>
+</snippet>

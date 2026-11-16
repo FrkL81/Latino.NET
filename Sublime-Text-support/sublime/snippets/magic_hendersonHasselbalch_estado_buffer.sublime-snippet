@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[estado_buffer]]></content>
+    <tabTrigger>str:hendersonHasselbalch:estado_buffer</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de hendersonHasselbalch: estado_buffer</description>
+</snippet>

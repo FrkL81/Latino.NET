@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+mate.resolverPol(${1:coeficientes...})
+]]></content>
+	<tabTrigger>mate.resolverPol</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Solver de polinomios (Alias)</description>
+</snippet>

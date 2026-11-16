@@ -1,0 +1,188 @@
+/*
+══════════════════════════════════════════════════════════════
+🔧 UTILIDAD: ORGANIZADOR DE ARCHIVOS INTELIGENTE
+══════════════════════════════════════════════════════════════
+Descripción:
+  Escanea la carpeta actual y mueve los archivos a carpetas
+  basadas en su categoría y extensión.
+
+Configuración:
+  Edita el diccionario 'CONFIGURACION' para agregar tus propios tipos.
+══════════════════════════════════════════════════════════════
+*/
+
+// ============================================================
+// 1. CONFIGURACIÓN (¡Edita esto para extender!)
+// ============================================================
+// Formato: "extensión" : "Categoría"
+// Nota: Las extensiones deben ir sin punto y en minúsculas.
+
+CONFIGURACION = {
+    // Imágenes
+    "jpg" : "Imágenes",
+    "jpeg": "Imágenes",
+    "png" : "Imágenes",
+    "gif" : "Imágenes",
+    "bmp" : "Imágenes",
+    "svg" : "Imágenes",
+
+    // Documentos
+    "pdf" : "Documentos",
+    "doc" : "Documentos",
+    "docx": "Documentos",
+    "txt" : "Documentos",
+    "xlsx": "Documentos",
+    "ppt" : "Documentos",
+
+    // Multimedia
+    "mp4" : "Videos",
+    "avi" : "Videos",
+    "mov" : "Videos",
+    "mp3" : "Audio",
+    "wav" : "Audio",
+    
+    // Código
+    "lat" : "Codigo_Latino",
+    "cs"  : "Codigo_CSharp",
+    "js"  : "Codigo_Web",
+    "html": "Codigo_Web",
+    "css" : "Codigo_Web"
+}
+
+// Nombre de este script para no auto-moverse
+MI_NOMBRE = "organizador.lat" 
+
+// ============================================================
+// 2. FUNCIONES AUXILIARES
+// ============================================================
+
+// Obtiene la extensión de un archivo (sin el punto)
+funcion ObtenerExtension(nombreArchivo)
+    puntoIndex = cadena.ultimo_indice(nombreArchivo, ".")
+    
+    si puntoIndex == -1
+        retornar nulo // No tiene extensión
+    fin
+
+    // Extraemos desde el punto hasta el final
+    // longitud total - posicion punto = largo extension
+    largoTotal = cadena.longitud(nombreArchivo)
+    
+    // Nota: subcadena en Latino usa (inicio, longitud)
+    // puntoIndex es base 0. Sumamos 1 para empezar después del punto.
+    ext = cadena.subcadena(nombreArchivo, puntoIndex + 1, largoTotal - puntoIndex)
+    
+    retornar cadena.minusculas(ext)
+fin
+
+// Obtiene la lista de archivos de la carpeta actual usando el SO
+funcion ListarArchivos()
+    escribir("🔍 Escaneando directorio...")
+    listaCruda = ""
+    
+    si sis.operativo("WIN32")
+        // Windows: dir /b /a-d (Solo nombres, solo archivos, no carpetas)
+        listaCruda = sis.ejecutar("dir /b /a-d")
+    sino
+        // Linux/Mac: ls -p | grep -v / (Lista, filtra carpetas que terminan en /)
+        listaCruda = sis.ejecutar("ls -p | grep -v /")
+    fin
+    
+    // Convertimos el texto en una lista real
+    // Windows usa \r\n, Linux \n. Separamos por \n y limpiamos \r después.
+    items = cadena.separar(listaCruda, "\n")
+    
+    archivosLimpios = []
+    para item en items
+        limpio = cadena.recortar(item)
+        si cadena.longitud(limpio) > 0
+            lista.agregar(archivosLimpios, limpio)
+        fin
+    fin
+    
+    retornar archivosLimpios
+fin
+
+// Crea una carpeta si no existe (usando comando del SO)
+funcion AsegurarCarpeta(ruta)
+    // Truco: 'mkdir -p' en Linux o 'mkdir' en Windows ignoran error si ya existe
+    // o podemos capturar el error.
+    intentar
+        si sis.operativo("WIN32")
+             // En Windows 'mkdir' da error si existe, lo silenciamos redirigiendo a NUL
+             // O mejor, intentamos y atrapamos.
+             sis.ejecutar(ç("if not exist \"|ruta|\" mkdir \"|ruta|\""))
+        sino
+             sis.ejecutar(ç("mkdir -p \"|ruta|\""))
+        fin
+    atrapar (e)
+        // Ignoramos error si la carpeta ya existe
+    fin
+fin
+
+// ============================================================
+// 3. LÓGICA PRINCIPAL
+// ============================================================
+
+escribir("📂 --- ORGANIZADOR DE ARCHIVOS LATINO.NET ---")
+escribir("Directorio actual: " .. sis.cwd())
+
+archivos = ListarArchivos()
+total = lista.longitud(archivos)
+escribir(ç("📄 Se encontraron |total| archivos.\n"))
+
+// Contadores para el reporte final
+movidos = 0
+omitidos = 0
+errores = 0
+
+para archivoOriginal en archivos
+    // 1. Ignorar al propio script y archivos ocultos/sistema
+    si archivoOriginal == MI_NOMBRE || cadena.inicia_con(archivoOriginal, ".")
+        omitidos++
+        continuar
+    fin
+
+    // 2. Analizar Extensión
+    ext = ObtenerExtension(archivoOriginal)
+    
+    si ext != nulo && dic.contiene(CONFIGURACION, ext)
+        // 3. Calcular Destino
+        categoria = CONFIGURACION[ext]
+        carpetaDestino = ç("|categoria|/|categoria|_|ext|") // Ej: Imágenes/Imágenes_jpg
+        
+        // La ruta final del archivo
+        rutaFinal = ç("|carpetaDestino|/|archivoOriginal|")
+        
+        intentar
+            // 4. Preparar y Mover
+            AsegurarCarpeta(carpetaDestino)
+            
+            // Verificamos si ya existe para no sobrescribir
+            si archivo.existe(rutaFinal)
+                escribir(ç("⚠️  OMITIDO: '|archivoOriginal|' ya existe en destino."))
+                omitidos++
+            sino
+                archivo.renombrar(archivoOriginal, rutaFinal)
+                escribir(ç("✅ MOVIDO: |archivoOriginal| -> |carpetaDestino|"))
+                movidos++
+            fin
+            
+        atrapar (err)
+            escribir(ç("❌ ERROR con '|archivoOriginal|': |err|"))
+            errores++
+        fin
+    sino
+        // Archivo sin extensión o extensión no configurada
+        // escribir(ç("ℹ️  Ignorado: |archivoOriginal| (Tipo desconocido)"))
+        omitidos++
+    fin
+fin
+
+escribir("\n════════════════════════════════════")
+escribir("📊 REPORTE FINAL")
+escribir("════════════════════════════════════")
+escribir(ç("✅ Archivos movidos : |movidos|"))
+escribir(ç("⏭️  Archivos omitidos: |omitidos|"))
+escribir(ç("❌ Errores          : |errores|"))
+escribir("════════════════════════════════════")

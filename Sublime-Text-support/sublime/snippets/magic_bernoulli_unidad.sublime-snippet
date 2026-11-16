@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:bernoulli:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de bernoulli: unidad</description>
+</snippet>

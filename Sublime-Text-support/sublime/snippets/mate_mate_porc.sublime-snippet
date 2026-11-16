@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.porc(${1:parte}, ${2:total})
+]]></content>
+	<tabTrigger>mate.porc</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Proporción decimal</description>
+</snippet>
+

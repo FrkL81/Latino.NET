@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+evaluar("${1:codigo}")
+]]></content>
+	<tabTrigger>evaluar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧪 Evaluar código dinámico</description>
+</snippet>

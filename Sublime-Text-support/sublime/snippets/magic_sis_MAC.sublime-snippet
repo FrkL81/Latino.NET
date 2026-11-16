@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[MAC]]></content>
+    <tabTrigger>str:sis:MAC</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Sistema: SO: Apple macOS</description>
+</snippet>

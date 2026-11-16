@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[diccionario]]></content>
+    <tabTrigger>str:tipo:diccionario</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tipo: Retorno de tipo: diccionario</description>
+</snippet>

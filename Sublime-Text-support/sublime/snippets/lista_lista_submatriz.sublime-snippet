@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[lista.submatriz(${1:matriz}, ${2:filaInicio}, ${3:filaFin}, ${4:colInicio}, ${5:colFin})]]></content>
+	<tabTrigger>lista.submatriz</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Extrae un bloque rectangular</description>
+</snippet>

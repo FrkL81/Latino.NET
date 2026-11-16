@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[frecuencia_fuente]]></content>
+    <tabTrigger>str:efectoDoppler:frecuencia_fuente</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de efectoDoppler: frecuencia_fuente</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[SELECT * FROM tabla WHERE columna LIKE @patron]]></content>
+    <tabTrigger>str:sqlConsultar:SELECT * FROM tabla WHERE columna LIKE @patron</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Consultar: SQL: Buscar por texto parcial</description>
+</snippet>

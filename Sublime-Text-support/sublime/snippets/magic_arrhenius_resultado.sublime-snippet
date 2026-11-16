@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:arrhenius:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de arrhenius: resultado</description>
+</snippet>

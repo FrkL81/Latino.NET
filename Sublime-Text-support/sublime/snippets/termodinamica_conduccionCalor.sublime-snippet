@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.conduccionCalor(${1:conductividad}, ${2:area}, ${3:deltaTemperatura}, ${4:espesor})
+]]></content>
+	<tabTrigger>termodinamica.conduccionCalor</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Flujo de calor por conducción (Ley de Fourier).\n\nFórmula: Q/t = k·A·ΔT / d</description>
+</snippet>

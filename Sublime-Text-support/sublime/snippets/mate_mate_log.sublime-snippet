@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.log(${1:numero})
+]]></content>
+	<tabTrigger>mate.log</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Logaritmo natural (ln)</description>
+</snippet>
+

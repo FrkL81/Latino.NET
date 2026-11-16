@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[iteraciones]]></content>
+    <tabTrigger>str:descensoGradiente:iteraciones</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de descensoGradiente: iteraciones</description>
+</snippet>

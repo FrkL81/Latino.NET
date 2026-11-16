@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:arrhenius:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de arrhenius: unidad</description>
+</snippet>

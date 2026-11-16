@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:varianzaDesviacion:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de varianzaDesviacion: formula</description>
+</snippet>

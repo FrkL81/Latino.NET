@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.min(${1:lista})
+]]></content>
+	<tabTrigger>mate.min</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Valor mínimo</description>
+</snippet>
+

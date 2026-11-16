@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[velocidad_tangencial_ms]]></content>
+    <tabTrigger>str:modeloBohr:velocidad_tangencial_ms</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Física Cuántica: Retorno de modeloBohr: velocidad_tangencial_ms</description>
+</snippet>

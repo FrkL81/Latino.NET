@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.esFuturo(${1:fecha})
+]]></content>
+<tabTrigger>lapsos.esFuturo</tabTrigger>
+<scope>source.latino</scope>
+<description>🚀 ¿Es futuro?</description>
+</snippet>

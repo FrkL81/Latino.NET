@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.contiene(${1:diccionario}, ${2:"clave"})
+]]></content>
+	<tabTrigger>dic.contiene</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Verificar si existe clave</description>
+</snippet>
+

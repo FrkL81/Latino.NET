@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.michaelisMenten(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>quimica.michaelisMenten</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cinética enzimática de Michaelis-Menten. Pasa 3 de: 'v', 'Vmax', 'Km', 'S'.\n...</description>
+</snippet>

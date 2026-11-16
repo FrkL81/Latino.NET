@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[iteraciones]]></content>
+    <tabTrigger>str:secante:iteraciones</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de secante: iteraciones</description>
+</snippet>

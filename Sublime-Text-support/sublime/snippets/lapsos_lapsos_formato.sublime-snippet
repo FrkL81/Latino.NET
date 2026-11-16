@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.formato(${1:fecha}, ")"
+]]></content>
+<tabTrigger>lapsos.formato</tabTrigger>
+<scope>source.latino</scope>
+<description>📝 Fecha a texto</description>
+</snippet>

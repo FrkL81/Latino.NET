@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.transponer(${1:matriz_A})
+]]></content>
+	<tabTrigger>algebraLineal.transponer</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la transpuesta Aᵀ de una matriz.\n</description>
+</snippet>

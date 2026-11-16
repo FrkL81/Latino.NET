@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:instancia} = nuevo ${2:Clase}(${3:params})
+]]></content>
+	<tabTrigger>poo:nuevo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🎯 Crear instancia (estilo tradicional)</description>
+</snippet>

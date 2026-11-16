@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raices.biseccion(${1:funcion}, ${2:a}, ${3:b}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>raices.biseccion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Encuentra una raíz de f(x) en el intervalo [a, b] por el método de Bisección.\n</description>
+</snippet>

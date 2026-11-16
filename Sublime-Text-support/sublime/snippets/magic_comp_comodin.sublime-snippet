@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[comodin]]></content>
+    <tabTrigger>str:comp:comodin</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Comparación: Usa comodines (* y ?)</description>
+</snippet>

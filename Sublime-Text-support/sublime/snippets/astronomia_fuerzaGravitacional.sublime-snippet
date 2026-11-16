@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+astronomia.fuerzaGravitacional(${1:masa1}, ${2:masa2}, ${3:distancia})
+]]></content>
+	<tabTrigger>astronomia.fuerzaGravitacional</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Fuerza de atracción gravitacional entre dos cuerpos.\n\nFórmula: F = G·m₁·m₂ ...</description>
+</snippet>

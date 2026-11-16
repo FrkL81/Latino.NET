@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.abs(${1:numero})
+]]></content>
+	<tabTrigger>mate.abs</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Valor absoluto</description>
+</snippet>
+

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tipo_reaccion]]></content>
+    <tabTrigger>str:entalpiaReaccion:tipo_reaccion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de entalpiaReaccion: tipo_reaccion</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[SELECT t1.*, t2.nombre FROM tabla1 t1 INNER JOIN tabla2 t2 ON t1.fk_id = t2.id]]></content>
+    <tabTrigger>str:sqlConsultar:SELECT t1.*, t2.nombre FROM tabla1 t1 INNER JOIN tabla2 t2 ON t1.fk_id = t2.id</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Consultar: SQL: Consulta con INNER JOIN (relación obligatoria)</description>
+</snippet>

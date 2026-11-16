@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.derivadaRichardson(${1:funcion}, ${2:x}, ${3:h}, ${4:niveles})
+]]></content>
+	<tabTrigger>calculo.derivadaRichardson</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Aproxima f'(x) con alta precisión usando Extrapolación de Richardson.\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:newtonFuerza:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Dinámica: Retorno de newtonFuerza: unidad</description>
+</snippet>

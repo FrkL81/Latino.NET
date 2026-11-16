@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.factorial(${1:numero})
+]]></content>
+	<tabTrigger>mate.factorial</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Factorial (n!)</description>
+</snippet>
+

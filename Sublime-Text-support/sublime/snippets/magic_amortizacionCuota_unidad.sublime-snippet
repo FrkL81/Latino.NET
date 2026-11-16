@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:amortizacionCuota:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de amortizacionCuota: unidad</description>
+</snippet>

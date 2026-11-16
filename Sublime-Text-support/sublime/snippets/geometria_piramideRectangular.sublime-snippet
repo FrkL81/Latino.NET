@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.piramideRectangular(${1:base_largo}, ${2:base_ancho}, ${3:altura})
+]]></content>
+	<tabTrigger>geometria.piramideRectangular</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Área total y volumen de una pirámide de base rectangular.\n\nFórmula: V = (1/...</description>
+</snippet>

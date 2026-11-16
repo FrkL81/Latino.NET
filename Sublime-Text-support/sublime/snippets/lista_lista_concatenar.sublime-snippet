@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.concatenar(${1:lista1}, ${2:lista2})
+]]></content>
+	<tabTrigger>lista.concatenar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Unir dos listas</description>
+</snippet>
+

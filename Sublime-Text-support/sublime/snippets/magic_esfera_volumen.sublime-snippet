@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[volumen]]></content>
+    <tabTrigger>str:esfera:volumen</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de esfera: volumen</description>
+</snippet>

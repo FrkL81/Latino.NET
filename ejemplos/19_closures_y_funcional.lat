@@ -1,0 +1,50 @@
+# ==================================================================
+# Ejemplo: Closures (Clausuras) y Programación Funcional
+# Estado encapsulado mediante alcance léxico y transformaciones
+# ==================================================================
+
+# ── 1. Fábrica de acumuladores (Estado léxico privado) ────────────
+funcion crear_acumulador(valor_inicial)
+    local saldo = valor_inicial ?? 0
+
+    # Retorna una función que muta y preserva 'saldo' en su closure
+    retornar fun(cantidad)
+        saldo = saldo + cantidad
+        retornar saldo
+    fin
+fin
+
+bóveda = crear_acumulador(100)
+
+escribir("💰 Usando acumulador con estado cerrado:")
+saldo1 = bóveda(50)
+saldo2 = bóveda(200)
+saldo3 = bóveda(-70)
+
+escribir(ç("Ingreso 50:  $|saldo1|"))  # 150
+escribir(ç("Ingreso 200: $|saldo2|"))  # 350
+escribir(ç("Retiro -70:  $|saldo3|"))  # 280
+
+# ── 2. Fábrica de multiplicadores (Currying) ──────────────────────
+funcion crear_multiplicador(factor)
+    retornar fun(x)
+        retornar x * factor
+    fin
+fin
+
+duplicar = crear_multiplicador(2)
+triplicar = crear_multiplicador(3)
+
+escribirf("\n10 duplicado: {0} | 10 triplicado: {1}\n", duplicar(10), triplicar(10))
+
+# ── 3. Pipeline funcional de procesamiento ────────────────────────
+numeros = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+escribir("\n🔄 Procesando lista mediante pipeline (|>) y funciones de orden superior:")
+
+resultado = numeros
+    |> fun(datos) retornar lista.filtrar(datos, fun(n) retornar n % 2 == 0 fin) fin
+    |> fun(pares) retornar lista.transformar(pares, fun(n) retornar n * 10 fin) fin
+    |> fun(por_diez) retornar lista.separar(por_diez, " -> ") fin
+
+escribir(ç("Pares multiplicados por 10: |resultado|"))

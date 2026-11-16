@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[errorEstimado]]></content>
+    <tabTrigger>str:monteCarlo:errorEstimado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de monteCarlo: errorEstimado</description>
+</snippet>

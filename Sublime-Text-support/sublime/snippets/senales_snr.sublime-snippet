@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+senales.snr(${1:potencia_senal}, ${2:potencia_ruido})
+]]></content>
+	<tabTrigger>senales.snr</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Relación Señal-Ruido (Signal-to-Noise Ratio).\n\nFórmula: SNR = 10·log₁₀(P_se...</description>
+</snippet>

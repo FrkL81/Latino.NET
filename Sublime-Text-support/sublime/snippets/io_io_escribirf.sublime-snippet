@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+escribirf("${1:{0}}", ${2:valor})
+]]></content>
+	<tabTrigger>io:escribirf</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💬 Escribir con formato .NET</description>
+</snippet>

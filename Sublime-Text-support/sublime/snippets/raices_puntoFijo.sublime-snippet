@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raices.puntoFijo(${1:funcionG}, ${2:x0}, ${3:tolerancia}, ${4:maxIter})
+]]></content>
+	<tabTrigger>raices.puntoFijo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula un punto fijo x* tal que g(x*) = x*, por iteración x_{n+1} = g(x_n).\n</description>
+</snippet>

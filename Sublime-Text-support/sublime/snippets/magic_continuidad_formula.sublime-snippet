@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:continuidad:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de continuidad: formula</description>
+</snippet>

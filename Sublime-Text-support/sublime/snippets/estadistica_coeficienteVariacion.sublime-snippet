@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estadistica.coeficienteVariacion(${1:media}, ${2:desviacion_estandar})
+]]></content>
+	<tabTrigger>estadistica.coeficienteVariacion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Coeficiente de Variación: dispersión relativa como porcentaje de la media.\n\...</description>
+</snippet>

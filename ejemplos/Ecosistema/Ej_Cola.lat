@@ -1,0 +1,83 @@
+/*
+==============================================================
+LIBRERÍA: cola
+DESCRIPCIÓN: Funciones para manejo de colas (FIFO - First In, First Out).
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: cola.crear
+DESCRIPCIÓN: Crea una cola vacía.
+PARÁMETROS: ninguno
+RETORNA: cola - Nueva cola.
+*/
+c = cola.crear()
+escribir("Cola creada.")
+
+/*
+FUNCIÓN: cola.encolar
+DESCRIPCIÓN: Agrega un elemento al final de la cola.
+PARÁMETROS:
+  - cola (cola): Cola a modificar.
+  - elemento (cualquiera): Valor a agregar.
+RETORNA: cola - La misma cola modificada.
+*/
+cola.encolar(c, "A")
+cola.encolar(c, "B")
+escribir("Elementos encolados.")
+
+/*
+FUNCIÓN: cola.siguiente
+DESCRIPCIÓN: Obtiene el siguiente elemento sin extraerlo.
+PARÁMETROS:
+  - cola (cola): Donde buscar.
+RETORNA: cualquiera - Valor al inicio.
+*/
+escribir("Siguiente: " .. cola.siguiente(c))
+
+/*
+FUNCIÓN: cola.desencolar
+DESCRIPCIÓN: Extrae el elemento del inicio de la cola.
+PARÁMETROS:
+  - cola (cola): Cola a modificar.
+RETORNA: cualquiera - Valor extraído.
+*/
+escribir("Desencolado: " .. cola.desencolar(c))
+escribir("Nuevo siguiente: " .. cola.siguiente(c))
+
+/*
+FUNCIÓN: cola.longitud
+DESCRIPCIÓN: Devuelve la cantidad de elementos en la cola.
+PARÁMETROS:
+  - cola (cola): Cola a medir.
+RETORNA: numerico - Número de elementos.
+*/
+escribir("Longitud: " .. cola.longitud(c))
+
+/*
+FUNCIÓN: cola.vacia
+DESCRIPCIÓN: Verifica si la cola no contiene elementos.
+PARÁMETROS:
+  - cola (cola): Cola a verificar.
+RETORNA: logico - verdadero si está vacía.
+*/
+escribir("¿Vacia?: " .. cola.vacia(c))
+
+/*
+FUNCIÓN: cola.alista
+DESCRIPCIÓN: Convierte la cola a una lista (inicio→fin).
+PARÁMETROS:
+  - cola (cola): Cola original.
+RETORNA: lista - Lista con elementos.
+*/
+cola.encolar(c, "C")
+escribir("Cola como lista: " .. cola.alista(c))
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Cola.lat
+==============================================================
+*/

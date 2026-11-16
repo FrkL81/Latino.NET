@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[aumento]]></content>
+    <tabTrigger>str:lenteDelgada:aumento</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Óptica: Retorno de lenteDelgada: aumento</description>
+</snippet>

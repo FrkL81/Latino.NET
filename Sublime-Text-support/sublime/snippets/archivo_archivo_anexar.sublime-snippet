@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.anexar(${1:"ruta.txt"}, ${2:contenido})
+]]></content>
+	<tabTrigger>archivo.anexar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Añadir al final del archivo</description>
+</snippet>
+

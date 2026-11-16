@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.entorno(${1:"VARIABLE"})
+]]></content>
+	<tabTrigger>sis.entorno</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Obtener variable de entorno</description>
+</snippet>
+

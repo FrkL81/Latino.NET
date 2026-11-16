@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sis.argumentos()
+]]></content>
+	<tabTrigger>sis.argumentos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Retorna lista de argumentos pasados al script</description>
+</snippet>

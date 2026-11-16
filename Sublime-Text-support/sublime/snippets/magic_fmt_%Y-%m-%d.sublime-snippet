@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%Y-%m-%d]]></content>
+    <tabTrigger>str:fmt:%Y-%m-%d</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato Tiempo: Tiempo: ISO Fecha</description>
+</snippet>

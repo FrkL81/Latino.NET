@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[serpiente]]></content>
+    <tabTrigger>str:estilo:serpiente</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Estilo snake_case (ej: hola_mundo)</description>
+</snippet>

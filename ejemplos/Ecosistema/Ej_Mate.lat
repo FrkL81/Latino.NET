@@ -1,0 +1,203 @@
+/*
+==============================================================
+LIBRERÍA: mate
+DESCRIPCIÓN: Funciones matemáticas y constantes.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: mate.pi
+DESCRIPCIÓN: Retorna el valor de PI.
+*/
+escribir("PI: " .. mate.pi)
+
+/*
+FUNCIÓN: mate.abs
+DESCRIPCIÓN: Valor absoluto de un número.
+PARÁMETROS:
+  - numero (numerico): Valor original.
+RETORNA: numerico - Valor absoluto.
+*/
+escribir("abs(-10): " .. mate.abs(-10))
+
+/*
+FUNCIÓN: mate.raiz
+DESCRIPCIÓN: Raíz cuadrada de un número.
+PARÁMETROS:
+  - numero (numerico): Valor original.
+RETORNA: numerico - Raíz cuadrada.
+*/
+escribir("raiz(25): " .. mate.raiz(25))
+
+/*
+FUNCIÓN: mate.pot
+DESCRIPCIÓN: Eleva una base a un exponente.
+PARÁMETROS:
+  - base (numerico): Base.
+  - exponente (numerico): Potencia.
+RETORNA: numerico - Resultado.
+*/
+escribir("pot(2, 3): " .. mate.pot(2, 3))
+
+/*
+FUNCIÓN: mate.redondear
+DESCRIPCIÓN: Redondea al entero más cercano.
+PARÁMETROS:
+  - numero (numerico): Valor original.
+RETORNA: numerico - Entero redondeado.
+*/
+escribir("redondear(3.6): " .. mate.redondear(3.6))
+
+/*
+FUNCIÓN: mate.aleatorio
+DESCRIPCIÓN: Genera un número aleatorio.
+PARÁMETROS:
+  - min (numerico): Mínimo (opcional).
+  - max (numerico): Máximo (opcional).
+RETORNA: numerico - Valor aleatorio.
+*/
+# Salida variable (depende del momento de ejecución y hardware):
+escribir("aleatorio(1, 10): " .. mate.aleatorio(1, 10))
+
+/*
+FUNCIÓN: mate.limitar
+DESCRIPCIÓN: Limita un valor a un rango (clamp).
+PARÁMETROS:
+  - valor (numerico): Entrada.
+  - min (numerico): Límite inferior.
+  - max (numerico): Límite superior.
+RETORNA: numerico - Valor limitado.
+*/
+escribir("limitar(15, 0, 10): " .. mate.limitar(15, 0, 10))
+
+/*
+FUNCIÓN: mate.esPrimo
+DESCRIPCIÓN: Verifica si un número es primo.
+PARÁMETROS:
+  - numero (numerico): Entero.
+RETORNA: logico - verdadero si es primo.
+*/
+escribir("¿Es primo 7?: " .. mate.esPrimo(7))
+
+/*
+FUNCIÓN: mate.factorial
+DESCRIPCIÓN: Calcula el factorial de un número.
+PARÁMETROS:
+  - numero (numerico): Entero positivo.
+RETORNA: numerico - Factorial.
+*/
+escribir("factorial(5): " .. mate.factorial(5))
+
+/*
+FUNCIÓN: mate.mcd
+DESCRIPCIÓN: Máximo Común Divisor.
+PARÁMETROS:
+  - numeros (lista | variadic): Valores.
+RETORNA: numerico - MCD.
+*/
+escribir("mcd(12, 18): " .. mate.mcd(12, 18))
+
+/*
+FUNCIÓN: mate.sumatoria
+DESCRIPCIÓN: Suma todos los elementos de la lista.
+PARÁMETROS:
+  - lista (lista): Números.
+RETORNA: numerico - Suma total.
+*/
+escribir("sumatoria([1, 2, 3]): " .. mate.sumatoria([1, 2, 3]))
+
+/*
+FUNCIÓN: mate.epsilonMaquina
+DESCRIPCIÓN: El número positivo más pequeño tal que 1.0 + epsilon != 1.0.
+RETORNA: numerico - Epsilon de máquina.
+*/
+escribir("Epsilon: " .. mate.epsilonMaquina())
+
+/*
+FUNCIÓN: mate.mcm
+DESCRIPCIÓN: Mínimo Común Múltiplo.
+PARÁMETROS:
+  - numeros (lista | variadic): Valores.
+RETORNA: numerico - MCM.
+*/
+escribir("mcm(4, 6): " .. mate.mcm(4, 6))
+
+/*
+FUNCIÓN: mate.mediana
+DESCRIPCIÓN: Calcula el valor central de una lista ordenada.
+PARÁMETROS:
+  - lista (lista): Números.
+RETORNA: numerico - Mediana.
+*/
+escribir("mediana([1, 3, 5]): " .. mate.mediana([1, 3, 5]))
+
+/*
+FUNCIÓN: mate.moda
+DESCRIPCIÓN: Retorna el valor que más se repite en la lista.
+PARÁMETROS:
+  - lista (lista): Números.
+RETORNA: numerico - Moda.
+*/
+escribir("moda([1, 2, 2, 3]): " .. mate.moda([1, 2, 2, 3]))
+
+/*
+FUNCIÓN: mate.productoria
+DESCRIPCIÓN: Multiplica todos los elementos de la lista.
+PARÁMETROS:
+  - lista (lista): Números.
+RETORNA: numerico - Producto total.
+*/
+escribir("productoria([1, 2, 3, 4]): " .. mate.productoria([1, 2, 3, 4]))
+
+/*
+FUNCIÓN: mate.varianza
+DESCRIPCIÓN: Calcula la varianza muestral de una lista de números.
+PARÁMETROS:
+  - numeros (lista | variadic): Valores.
+RETORNA: numerico - Varianza.
+*/
+escribir("Varianza: " .. mate.varianza([10, 12, 23, 23]))
+
+/*
+FUNCIÓN: mate.desviacion
+DESCRIPCIÓN: Calcula la desviación estándar muestral.
+PARÁMETROS:
+  - numeros (lista | variadic): Valores.
+RETORNA: numerico - Desviación estándar.
+*/
+escribir("Desviación: " .. mate.desviacion([10, 12, 23, 23]))
+
+/*
+FUNCIÓN: mate.regresion
+DESCRIPCIÓN: Realiza una regresión lineal simple entre dos conjuntos de datos.
+PARÁMETROS:
+  - lista_x (lista): Valores independientes.
+  - lista_y (lista): Valores dependientes.
+RETORNA: diccionario - {m, b, formula}.
+*/
+reg = mate.regresion([1, 2, 3], [2, 4, 5])
+escribir("Fórmula Regresión: " .. reg.formula)
+
+/*
+FUNCIÓN: mate.convertir
+DESCRIPCIÓN: Convierte valores entre diferentes unidades físicas.
+PARÁMETROS:
+  - valor (numerico): Cantidad original.
+  - desde (cadena): Unidad origen.
+  - hacia (cadena): Unidad destino.
+RETORNA: numerico - Valor convertido.
+EJEMPLOS:
+  mate.convertir(100, "celsius", "fahrenheit")
+  mate.convertir(1, "km", "m")
+*/
+escribir("100C a F: " .. mate.convertir(100, "celsius", "fahrenheit"))
+escribir("10 pulgadas a cm: " .. mate.convertir(10, "pulgadas", "cm"))
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Mate.lat
+==============================================================
+*/

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.agregar(${1:diccionario}, ${2:"clave"}, ${3:valor})
+]]></content>
+	<tabTrigger>dic.agregar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Agregar o actualizar</description>
+</snippet>
+

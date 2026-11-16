@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:fusionar:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Diccionario: Retorno de dic.fusionar(): resultado </description>
+</snippet>

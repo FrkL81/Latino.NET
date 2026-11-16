@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[material_referencia]]></content>
+    <tabTrigger>str:hazenWilliams:material_referencia</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de hazenWilliams: material_referencia</description>
+</snippet>

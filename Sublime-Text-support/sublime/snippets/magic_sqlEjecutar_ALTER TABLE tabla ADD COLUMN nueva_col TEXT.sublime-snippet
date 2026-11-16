@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ALTER TABLE tabla ADD COLUMN nueva_col TEXT]]></content>
+    <tabTrigger>str:sqlEjecutar:ALTER TABLE tabla ADD COLUMN nueva_col TEXT</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Agregar columna a tabla existente</description>
+</snippet>

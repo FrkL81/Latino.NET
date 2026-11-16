@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.extender(${1:lista_destino}, ${2:lista_origen})
+]]></content>
+	<tabTrigger>lista.extender</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Agregar elementos de otra lista</description>
+</snippet>
+

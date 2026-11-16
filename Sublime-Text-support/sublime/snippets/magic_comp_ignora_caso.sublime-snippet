@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ignora_caso]]></content>
+    <tabTrigger>str:comp:ignora_caso</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Comparación: Ignora diferencias MAY/min</description>
+</snippet>

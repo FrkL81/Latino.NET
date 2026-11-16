@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.terminado(${1:id})
+]]></content>
+	<tabTrigger>proceso.terminado</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Verifica si el proceso asíncrono con el ID interno dado ha terminado.</description>
+</snippet>

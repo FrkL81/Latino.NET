@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.esperar(${1:id}, ${2:timeout_ms})
+]]></content>
+	<tabTrigger>proceso.esperar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Bloquea hasta que el proceso asíncrono con el ID interno dado termine.</description>
+</snippet>

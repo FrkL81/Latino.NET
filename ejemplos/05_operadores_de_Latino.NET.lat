@@ -1,0 +1,59 @@
+/*
+   05 - Operadores
+   Las herramientas para comparar datos y tomar decisiones.
+   Latino.NET permite usar símbolos clásicos o palabras en español.
+*/
+
+a = 10
+b = 20
+
+escribir("--- 1. Comparaciones (Relacionales) ---")
+// El resultado siempre es un valor lógico: verdadero o falso
+
+escribir("¿Es A mayor que B?    " .. (a > b))
+escribir("¿Es A igual a 10?     " .. (a == 10))
+escribir("¿Es B diferente de 0? " .. (b != 0))
+
+/*
+El operador de intercambio de variables ~
+Permite intercambiar los valores de dos variables sin necesidad de utilizar una variable auxiliar. Al aplicarlo, los valores se transfieren entre las variables, de modo que cada una termina conteniendo el valor que previamente tenía la otra. ** Sin importar el tipo **
+*/
+
+a ~ b
+
+escribir("\nAntes a = 10, ahora a = " .. a)  // Antes a = 10, ahora a = 20
+escribir("Antes b = 20, ahora b = " .. b)    // Antes b = 20, ahora b = 10
+
+escribir("\n--- 2. Lógica (En Español) ---")
+tengo_entrada = verdadero
+el_cine_esta_abierto = falso
+
+// Operador 'ý' (AND): Ambas deben ser ciertas
+puedo_entrar = tengo_entrada ý el_cine_esta_abierto
+escribir("¿Puedo entrar al cine? (ý): " .. puedo_entrar)
+
+// Operador 'ó' (OR): Basta con que una sea cierta
+me_quedo_cerca = tengo_entrada ó el_cine_esta_abierto
+escribir("¿Me quedo cerca?     (ó): " .. me_quedo_cerca)
+
+// Operador 'no' (NOT): Invierte el valor
+escribir("¿El cine está cerrado? (no): " .. (no el_cine_esta_abierto))
+
+/* 
+   NOTA: También puedes usar los símbolos clásicos si prefieres:
+   ý  -> &&
+   ó  -> ||
+   no -> !
+*/
+
+escribir("\n--- 3. Modificación Rápida ---")
+contador = 0
+escribir("Inicio: " .. contador)
+
+contador++          // Incremento (Suma 1)
+escribir("Suma 1: " .. contador)
+
+contador += 10      // Suma acumulada
+escribir("Suma 10: " .. contador)
+
+# Hay algunos más, revisa la documentación …

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:longitudOndaLuz:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de longitudOndaLuz: unidad</description>
+</snippet>

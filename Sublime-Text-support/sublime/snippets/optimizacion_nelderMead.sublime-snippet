@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.nelderMead(${1:funcion}, ${2:listaX0}, ${3:escalaInicial}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>optimizacion.nelderMead</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(X) con el Método de Nelder-Mead (Simplex Downhill).\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:fuerzaGravitacional:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Astronomía: Retorno de fuerzaGravitacional: unidad</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.hoy()
+]]></content>
+<tabTrigger>lapsos.hoy</tabTrigger>
+<scope>source.latino</scope>
+<description>📅 Fecha de hoy</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[sha1]]></content>
+    <tabTrigger>str:hash:sha1</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hash: Algoritmo SHA-1 (Legacy)</description>
+</snippet>

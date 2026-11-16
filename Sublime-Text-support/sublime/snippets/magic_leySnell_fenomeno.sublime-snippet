@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[fenomeno]]></content>
+    <tabTrigger>str:leySnell:fenomeno</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Óptica: Retorno de leySnell: fenomeno</description>
+</snippet>

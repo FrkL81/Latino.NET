@@ -1,0 +1,95 @@
+﻿# ==================================================================
+# core/tablero.lat
+# Representa el campo de batalla y renderiza la cuadrícula
+# ==================================================================
+
+clase Tablero
+    constructor(radio = 10, mostrar_puntos = cierto)
+        mi.radio = radio
+        mi.mostrar_puntos = mostrar_puntos
+        mi.jugador1 = nulo
+        mi.jugador2 = nulo
+        mi.impactos =[]
+    fin
+
+    funcion registrar_jugadores(j1, j2)
+        mi.jugador1 = j1
+        mi.jugador2 = j2
+    fin
+
+    funcion registrar_impacto(x, y, fue_hit)
+        si no fue_hit
+            encontrado = falso
+            para imp en mi.impactos
+                si imp["x"] == x ý imp["y"] == y
+                    imp["contador"] = imp["contador"] + 1
+                    encontrado = cierto
+                    romper
+                fin
+            fin
+            si no encontrado
+                lista.agregar(mi.impactos, {"x": x, "y": y, "contador": 1})
+            fin
+        fin
+    fin
+
+    funcion obtener_celda(x, y)
+        si mi.jugador1 != nulo
+            para u en mi.jugador1.unidades
+                si u.x == x ý u.y == y
+                    retornar u.simbolo
+                fin
+            fin
+        fin
+
+        si mi.jugador2 != nulo
+            para u en mi.jugador2.unidades
+                si u.x == x ý u.y == y
+                    retornar u.simbolo
+                fin
+            fin
+        fin
+
+        para imp en mi.impactos
+            si imp["x"] == x ý imp["y"] == y
+                c = imp["contador"]
+                si c < 10
+                    retornar ç("(|c|)")
+                sino
+                    retornar "(+)"
+                fin
+            fin
+        fin
+
+        si x == 0 ý y == 0
+            retornar " ┼ "
+        osi x == 0
+            retornar " │ "
+        osi y == 0
+            retornar " ─ "
+        sino
+            retornar mi.mostrar_puntos ? " · " : "   "
+        fin
+    fin
+
+    funcion dibujar()
+        limpiar("todo")
+        escribir("")
+        
+        # Identificadores de bando en la cabecera (alineados para radio 10)
+        escribir("           [B] BANDO AZUL                          BANDO ROJO [R]")
+        
+        ancho_linea = (mi.radio * 2 + 1) * 3
+        borde = cadena.rellenar_derecha("", "-", ancho_linea)
+        escribir(ç("      |borde|"))
+        desde (y = mi.radio; y >= -mi.radio; y--)
+            fila_str = ""
+            desde (x = -mi.radio; x <= mi.radio; x++)
+                fila_str = fila_str .. mi.obtener_celda(x, y)
+            fin
+            escribir(ç("      |fila_str|"))
+        fin
+        escribir(ç("      |borde|"))
+        escribir("")
+    fin
+fin

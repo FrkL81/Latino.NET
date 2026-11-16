@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:velocidadOnda:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de velocidadOnda: formula</description>
+</snippet>

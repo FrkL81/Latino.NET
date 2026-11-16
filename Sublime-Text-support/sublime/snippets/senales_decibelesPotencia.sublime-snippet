@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+senales.decibelesPotencia(${1:potencia_salida}, ${2:potencia_entrada})
+]]></content>
+	<tabTrigger>senales.decibelesPotencia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Nivel en decibeles para relación de potencias.\n\nFórmula: dB = 10·log₁₀(P_ou...</description>
+</snippet>

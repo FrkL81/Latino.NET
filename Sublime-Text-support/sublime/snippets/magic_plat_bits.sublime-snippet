@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[bits]]></content>
+    <tabTrigger>str:plat:bits</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plataforma: Retorno de plat: bits</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.norma(${1:lista}, ${2:tipo})
+]]></content>
+	<tabTrigger>algebraLineal.norma</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la norma de un vector o matriz.\n</description>
+</snippet>

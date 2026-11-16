@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[lista.saltar(${1:lista}, ${2:n})]]></content>
+    <tabTrigger>data:saltar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📦 Omitir los primeros N elementos</description>
+</snippet>

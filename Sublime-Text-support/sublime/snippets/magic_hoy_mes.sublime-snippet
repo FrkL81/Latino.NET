@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:hoy:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de hoy: mes</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:pandeoEuler:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de pandeoEuler: unidad</description>
+</snippet>

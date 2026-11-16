@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.cicloCarnot(${1:temperaturaCalienteK}, ${2:temperaturaFriaK})
+]]></content>
+	<tabTrigger>termodinamica.cicloCarnot</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Eficiencia máxima teórica del ciclo de Carnot.\n\nFórmula: η = 1 - (T_fría / ...</description>
+</snippet>

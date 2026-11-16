@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.restar(${1:fecha}, ${2:cantidad}, ")"
+]]></content>
+<tabTrigger>lapsos.restar</tabTrigger>
+<scope>source.latino</scope>
+<description>➖ Restar tiempo</description>
+</snippet>

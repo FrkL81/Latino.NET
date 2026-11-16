@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+quimica.celdaElectroquimica(${1:potencialCatodo}, ${2:potencialAnodo})
+]]></content>
+	<tabTrigger>quimica.celdaElectroquimica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Voltaje de celda electroquímica estándar.\n\nFórmula: E°_celda = E°_catodo - ...</description>
+</snippet>

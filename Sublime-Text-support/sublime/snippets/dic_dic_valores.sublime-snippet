@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.valores(${1:diccionario})
+]]></content>
+	<tabTrigger>dic.valores</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Obtener todos los valores</description>
+</snippet>
+

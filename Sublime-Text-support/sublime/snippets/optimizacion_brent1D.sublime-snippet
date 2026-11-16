@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.brent1D(${1:funcion}, ${2:a}, ${3:b}, ${4:tolerancia}, ${5:maxIter})
+]]></content>
+	<tabTrigger>optimizacion.brent1D</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(x) en [a, b] con el Método de Brent para optimización 1D.\n</description>
+</snippet>

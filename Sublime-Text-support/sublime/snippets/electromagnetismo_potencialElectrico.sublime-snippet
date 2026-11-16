@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electromagnetismo.potencialElectrico(${1:cargaC}, ${2:distanciaM})
+]]></content>
+	<tabTrigger>electromagnetismo.potencialElectrico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Potencial eléctrico en un punto a distancia r de una carga puntual.\n\nFórmul...</description>
+</snippet>

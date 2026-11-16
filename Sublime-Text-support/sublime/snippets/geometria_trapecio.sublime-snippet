@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.trapecio(${1:base_mayor}, ${2:base_menor}, ${3:altura})
+]]></content>
+	<tabTrigger>geometria.trapecio</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Área de un trapecio.\n\nFórmula: A = ((B + b) / 2) · h</description>
+</snippet>

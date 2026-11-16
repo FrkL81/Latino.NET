@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+escribir(${1:"texto"})
+]]></content>
+	<tabTrigger>io:escribir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💬 Escribir con salto de línea</description>
+</snippet>

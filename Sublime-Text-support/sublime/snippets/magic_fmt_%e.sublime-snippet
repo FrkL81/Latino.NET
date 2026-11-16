@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%e]]></content>
+    <tabTrigger>str:fmt:%e</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato C: C-Style: Notación científica</description>
+</snippet>

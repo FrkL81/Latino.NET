@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.masaMolar(${1:formula})
+]]></content>
+	<tabTrigger>tabla.masaMolar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la masa molar de una fórmula química estándar (ej: 'H2O', 'CO2').</description>
+</snippet>

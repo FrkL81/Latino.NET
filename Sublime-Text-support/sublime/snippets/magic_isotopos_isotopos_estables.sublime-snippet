@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[isotopos_estables]]></content>
+    <tabTrigger>str:isotopos:isotopos_estables</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de isotopos: isotopos_estables</description>
+</snippet>

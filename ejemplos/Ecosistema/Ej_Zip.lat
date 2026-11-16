@@ -1,0 +1,49 @@
+# Ejemplo: Plugin Zip (Compresión y Descompresión)
+# Requiere: incluir("zip")
+
+incluir("zip")
+
+escribir("=== PLUGIN ZIP ===")
+escribir("")
+
+# Crear archivos de prueba
+archivo.escribir("archivo1.txt", "Contenido del archivo 1")
+archivo.escribir("archivo2.txt", "Contenido del archivo 2")
+escribir("Archivos de prueba creados")
+escribir("")
+
+# --- Comprimir ---
+escribir("--- Comprimiendo archivos ---")
+zip.comprimirArchivo("archivo1.txt", "prueba.zip")
+zip.agregar("prueba.zip", "archivo2.txt", "archivo2.txt")
+escribir("✅ Archivo prueba.zip creado")
+
+# Listar contenido
+escribir("")
+escribir("Contenido del zip:")
+contenido = zip.listar("prueba.zip")
+para item en contenido
+    escribir("  - " .. item)
+fin
+
+# --- Descomprimir ---
+escribir("")
+escribir("--- Descomprimiendo ---")
+zip.descomprimir("prueba.zip", "extraido/")
+escribir("✅ Archivos extraídos en carpeta 'extraido/'")
+
+# Verificar contenido extraído
+escribir("")
+escribir("Contenido extraído:")
+# Entrada simulada: archivos extraídos por zip.descomprimir en carpeta 'extraido/'
+escribir("archivo1.txt: " .. archivo.leer("extraido/archivo1.txt"))
+# Entrada simulada: archivos extraídos por zip.descomprimir en carpeta 'extraido/'
+escribir("archivo2.txt: " .. archivo.leer("extraido/archivo2.txt"))
+
+# Limpieza
+archivo.borrar("archivo1.txt")
+archivo.borrar("archivo2.txt")
+archivo.borrar("prueba.zip")
+# Limpiar carpeta extraida
+archivo.borrar("extraido")
+escribir("✅ Archivos de prueba eliminados")

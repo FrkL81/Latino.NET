@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:newtonDivididas:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de newtonDivididas: formula</description>
+</snippet>

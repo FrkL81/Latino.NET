@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:frecuenciaPeriodo:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de frecuenciaPeriodo: unidad</description>
+</snippet>

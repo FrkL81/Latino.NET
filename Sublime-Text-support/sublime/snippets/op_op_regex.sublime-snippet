@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:texto} ~= "${2:patron}"
+]]></content>
+	<tabTrigger>op:regex</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⚡ Coincidencia con regex</description>
+</snippet>

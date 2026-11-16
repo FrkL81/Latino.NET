@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[segundos]]></content>
+    <tabTrigger>str:diferencia:segundos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de diferencia: segundos</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estadistica.combinaciones(${1:n}, ${2:r})
+]]></content>
+	<tabTrigger>estadistica.combinaciones</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Combinaciones sin repetición (coeficiente binomial).\n\nFórmula: C(n,r) = n! ...</description>
+</snippet>

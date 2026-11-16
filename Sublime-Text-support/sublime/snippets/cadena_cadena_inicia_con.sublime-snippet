@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.inicia_con(${1:texto}, ${2:"prefijo"})
+]]></content>
+	<tabTrigger>cadena.inicia_con</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Verifica si inicia con texto</description>
+</snippet>
+

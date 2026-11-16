@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.encontrar(${1:lista}, ${2:elemento})
+]]></content>
+	<tabTrigger>lista.encontrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Alias de indice</description>
+</snippet>
+

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:puntoEquilibrio:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de puntoEquilibrio: unidad</description>
+</snippet>

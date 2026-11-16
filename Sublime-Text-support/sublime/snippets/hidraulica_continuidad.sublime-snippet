@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hidraulica.continuidad(${1:area1_m2}, ${2:velocidad1_m_s}, ${3:area2_m2})
+]]></content>
+	<tabTrigger>hidraulica.continuidad</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Velocidad en la sección 2 por la ecuación de continuidad (flujo incompresible...</description>
+</snippet>

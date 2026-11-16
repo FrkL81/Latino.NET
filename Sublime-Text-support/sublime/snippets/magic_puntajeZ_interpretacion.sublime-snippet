@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[interpretacion]]></content>
+    <tabTrigger>str:puntajeZ:interpretacion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de puntajeZ: interpretacion</description>
+</snippet>

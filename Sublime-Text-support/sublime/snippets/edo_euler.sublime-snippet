@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.euler(${1:funcionF}, ${2:t0}, ${3:y0}, ${4:tf}, ${5:n})
+]]></content>
+	<tabTrigger>edo.euler</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve dy/dt = f(t, y) con condición inicial y(t₀) = y₀\n</description>
+</snippet>

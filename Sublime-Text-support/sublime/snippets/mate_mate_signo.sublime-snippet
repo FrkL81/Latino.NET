@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.signo(${1:numero})
+]]></content>
+	<tabTrigger>mate.signo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Signo: -1, 0, 1</description>
+</snippet>
+

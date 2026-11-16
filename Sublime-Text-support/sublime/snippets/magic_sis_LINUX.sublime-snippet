@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[LINUX]]></content>
+    <tabTrigger>str:sis:LINUX</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Sistema: SO: Linux / Unix</description>
+</snippet>

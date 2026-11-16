@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[grado_polinomio]]></content>
+    <tabTrigger>str:newtonDivididas:grado_polinomio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de newtonDivididas: grado_polinomio</description>
+</snippet>

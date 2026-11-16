@@ -1,0 +1,240 @@
+/*
+==============================================================
+LIBRERÍA: lista
+DESCRIPCIÓN: Funciones para manipulación de colecciones ordenadas (arrays).
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: lista.agregar
+DESCRIPCIÓN: Agrega un elemento al final de la lista.
+PARÁMETROS:
+  - lista (lista): Lista a modificar.
+  - elemento (cualquiera): Valor a agregar.
+RETORNA: lista - La misma lista modificada.
+*/
+l = [1, 2]
+lista.agregar(l, 3)
+escribir(l)
+
+/*
+FUNCIÓN: lista.insertar
+DESCRIPCIÓN: Inserta un elemento en una posición específica.
+PARÁMETROS:
+  - lista (lista): Lista a modificar.
+  - elemento (cualquiera): Valor a insertar.
+  - indice (numerico): Posición (0-based).
+RETORNA: lista - La misma lista modificada.
+*/
+lista.insertar(l, "nuevo", 1)
+escribir(l)
+
+/*
+FUNCIÓN: lista.eliminar
+DESCRIPCIÓN: Elimina la primera ocurrencia de un elemento.
+PARÁMETROS:
+  - lista (lista): Lista a modificar.
+  - elemento (cualquiera): Valor a buscar y eliminar.
+RETORNA: lista - La misma lista modificada.
+*/
+lista.eliminar(l, 2)
+escribir(l)
+
+/*
+FUNCIÓN: lista.eliminar_indice
+DESCRIPCIÓN: Elimina el elemento en el índice indicado.
+PARÁMETROS:
+  - lista (lista): Lista a modificar.
+  - indice (numerico): Posición del elemento.
+RETORNA: lista - La misma lista modificada.
+*/
+lista.eliminar_indice(l, 0)
+escribir(l)
+
+/*
+FUNCIÓN: lista.longitud
+DESCRIPCIÓN: Devuelve la cantidad de elementos.
+PARÁMETROS:
+  - lista (lista): Lista a medir.
+RETORNA: numerico - Número de elementos.
+*/
+escribir("Longitud: " .. lista.longitud(l))
+
+/*
+FUNCIÓN: lista.contiene
+DESCRIPCIÓN: Verifica si la lista contiene el elemento.
+PARÁMETROS:
+  - lista (lista): Donde buscar.
+  - elemento (cualquiera): Qué buscar.
+RETORNA: logico - verdadero si lo contiene.
+*/
+escribir("Contiene 'nuevo'?: " .. lista.contiene(l, "nuevo"))
+
+/*
+FUNCIÓN: lista.indice
+DESCRIPCIÓN: Devuelve el índice del elemento o -1.
+PARÁMETROS:
+  - lista (lista): Donde buscar.
+  - elemento (cualquiera): Qué buscar.
+RETORNA: numerico - Índice encontrado.
+*/
+escribir("Indice de 'nuevo': " .. lista.indice(l, "nuevo"))
+
+/*
+FUNCIÓN: lista.transformar
+DESCRIPCIÓN: Crea una nueva lista transformando cada elemento con una función.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - funcion (ICallable): Función que recibe el elemento.
+RETORNA: lista - Nueva lista transformada.
+*/
+nums = [1, 2, 3]
+dobles = lista.transformar(nums, funcion(x) retornar x * 2 fin)
+escribir(dobles)
+
+/*
+FUNCIÓN: lista.filtrar
+DESCRIPCIÓN: Crea una nueva lista con elementos que cumplen la condición.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - funcion (ICallable): Función que retorna verdadero/falso.
+RETORNA: lista - Nueva lista filtrada.
+*/
+pares = lista.filtrar(nums, funcion(x) retornar x % 2 == 0 fin)
+escribir(pares)
+
+/*
+FUNCIÓN: lista.sumar
+DESCRIPCIÓN: Calcula la suma de todos los elementos numéricos de la lista.
+PARÁMETROS:
+  - lista (lista): Lista de números.
+RETORNA: numerico - Suma total.
+*/
+escribir("Suma: " .. lista.sumar(nums))
+
+/*
+FUNCIÓN: lista.unicos
+DESCRIPCIÓN: Retorna una nueva lista eliminando elementos duplicados.
+PARÁMETROS:
+  - lista (lista): Lista original.
+RETORNA: lista - Nueva lista con elementos únicos.
+*/
+escribir(lista.unicos([1, 1, 2, 2, 3]))
+
+/*
+FUNCIÓN: lista.promedio
+DESCRIPCIÓN: Calcula el promedio aritmético de los elementos numéricos.
+PARÁMETROS:
+  - lista (lista): Lista de números.
+RETORNA: numerico - Promedio.
+*/
+escribir("Promedio: " .. lista.promedio(nums))
+
+/*
+FUNCIÓN: lista.contar
+DESCRIPCIÓN: Cuenta cuántas veces aparece el elemento en la lista.
+PARÁMETROS:
+  - lista (lista): Donde buscar.
+  - elemento (cualquiera): Qué buscar.
+RETORNA: numerico - Cantidad de veces.
+*/
+escribir("Contar 1 en [1, 1, 2]: " .. lista.contar([1, 1, 2], 1))
+
+/*
+FUNCIÓN: lista.aleatorio
+DESCRIPCIÓN: Retorna un elemento aleatorio de la lista.
+PARÁMETROS:
+  - lista (lista): Lista original.
+RETORNA: cualquiera - Elemento seleccionado.
+*/
+escribir("Aleatorio de nums: " .. lista.aleatorio(nums))
+
+/*
+FUNCIÓN: lista.tomar
+DESCRIPCIÓN: Retorna una nueva lista con los primeros N elementos.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - n (numerico): Cantidad de elementos.
+RETORNA: lista - Sublista.
+*/
+escribir(lista.tomar([1, 2, 3, 4], 2))
+
+/*
+FUNCIÓN: lista.saltar
+DESCRIPCIÓN: Retorna una nueva lista omitiendo los primeros N elementos.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - n (numerico): Cantidad a omitir.
+RETORNA: lista - Sublista.
+*/
+escribir(lista.saltar([1, 2, 3, 4], 2))
+
+/*
+FUNCIÓN: lista.zip
+DESCRIPCIÓN: Combina múltiples listas en tuplas.
+PARÁMETROS:
+  - listas (variadic): Listas a combinar.
+RETORNA: lista - Lista de listas (tuplas).
+*/
+escribir(lista.zip([1, 2], ["a", "b"]))
+
+/*
+FUNCIÓN: lista.aplanar
+DESCRIPCIÓN: Aplana recursivamente listas anidadas.
+PARÁMETROS:
+  - lista (lista): Lista con sublistas.
+RETORNA: lista - Lista plana.
+*/
+escribir(lista.aplanar([1, [2, [3, 4]], 5]))
+
+/*
+FUNCIÓN: lista.reducir
+DESCRIPCIÓN: Reduce la lista a un valor usando función acumuladora.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - funcion (ICallable): f(acum, val).
+  - semilla (cualquiera): Valor inicial (opcional).
+RETORNA: cualquiera - Resultado acumulado.
+*/
+suma = lista.reducir(nums, funcion(acc, x) retornar acc + x fin, 0)
+escribir("Suma con reducir: " .. suma)
+
+/*
+FUNCIÓN: lista.todos
+DESCRIPCIÓN: Retorna verdadero si todos los elementos cumplen la condición.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - funcion (ICallable): Condición.
+RETORNA: logico - Resultado.
+*/
+escribir("¿Todos > 0?: " .. lista.todos(nums, funcion(x) retornar x > 0 fin))
+
+/*
+FUNCIÓN: lista.alguno
+DESCRIPCIÓN: Retorna verdadero si al menos un elemento cumple la condición.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - funcion (ICallable): Condición.
+RETORNA: logico - Resultado.
+*/
+escribir("¿Alguno > 2?: " .. lista.alguno(nums, funcion(x) retornar x > 2 fin))
+
+/*
+FUNCIÓN: lista.particionar
+DESCRIPCIÓN: Divide la lista en dos grupos según condición.
+PARÁMETROS:
+  - lista (lista): Lista original.
+  - funcion (ICallable): Condición.
+RETORNA: diccionario - { "verdadero": [...], "falso": [...] }.
+*/
+partes = lista.particionar(nums, funcion(x) retornar x % 2 == 0 fin)
+escribir(partes)
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Lista.lat
+==============================================================
+*/

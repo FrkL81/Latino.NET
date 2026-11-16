@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[lista.identidad(${1:tamano_n})]]></content>
+	<tabTrigger>lista.identidad</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Crea una matriz identidad n×n</description>
+</snippet>

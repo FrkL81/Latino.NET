@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.concatenar(${1:cadena1}, ${2:cadena2})
+]]></content>
+	<tabTrigger>cadena.concatenar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Unir dos cadenas</description>
+</snippet>
+

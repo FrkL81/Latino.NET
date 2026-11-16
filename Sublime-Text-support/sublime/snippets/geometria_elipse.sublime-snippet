@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.elipse(${1:semieje_mayor}, ${2:semieje_menor})
+]]></content>
+	<tabTrigger>geometria.elipse</tabTrigger>
+	<scope>source.latino</scope>
+	<description></description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_estimado]]></content>
+    <tabTrigger>str:descensoGradiente:error_estimado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de descensoGradiente: error_estimado</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:fecha:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de lapsos.fecha(): mes </description>
+</snippet>

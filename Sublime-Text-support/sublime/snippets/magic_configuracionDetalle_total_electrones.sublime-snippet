@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[total_electrones]]></content>
+    <tabTrigger>str:configuracionDetalle:total_electrones</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de configuracionDetalle: total_electrones</description>
+</snippet>

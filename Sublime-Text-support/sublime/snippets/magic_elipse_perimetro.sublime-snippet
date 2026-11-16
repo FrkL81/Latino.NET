@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[perimetro]]></content>
+    <tabTrigger>str:elipse:perimetro</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de elipse: perimetro</description>
+</snippet>

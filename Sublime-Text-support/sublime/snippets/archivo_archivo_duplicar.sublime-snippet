@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.duplicar(${1:"origen"}, ${2:"destino"})
+]]></content>
+	<tabTrigger>archivo.duplicar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Copiar archivo</description>
+</snippet>
+

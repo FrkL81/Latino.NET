@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[minuto]]></content>
+    <tabTrigger>str:desdeTicks:minuto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de desdeTicks: minuto</description>
+</snippet>

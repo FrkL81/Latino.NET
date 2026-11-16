@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+pila.limpiar(${1:pila})
+]]></content>
+	<tabTrigger>pila.limpiar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📚 Eliminar todos los elementos</description>
+</snippet>
+

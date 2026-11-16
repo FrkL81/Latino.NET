@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.cholesky(${1:matriz_A})
+]]></content>
+	<tabTrigger>algebraLineal.cholesky</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Descompone A = L·Lᵀ para matrices simétricas definidas positivas.\n</description>
+</snippet>

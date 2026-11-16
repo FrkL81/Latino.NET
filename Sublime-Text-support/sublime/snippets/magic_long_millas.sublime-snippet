@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[millas]]></content>
+    <tabTrigger>str:long:millas</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Millas terrestres</description>
+</snippet>

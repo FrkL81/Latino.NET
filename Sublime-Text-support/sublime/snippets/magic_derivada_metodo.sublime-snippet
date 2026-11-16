@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[metodo]]></content>
+    <tabTrigger>str:derivada:metodo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de derivada: metodo</description>
+</snippet>

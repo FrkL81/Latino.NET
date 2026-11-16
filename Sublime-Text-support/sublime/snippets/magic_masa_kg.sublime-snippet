@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[kg]]></content>
+    <tabTrigger>str:masa:kg</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Masa: Masa: Kilogramos</description>
+</snippet>

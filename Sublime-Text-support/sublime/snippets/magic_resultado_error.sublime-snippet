@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error]]></content>
+    <tabTrigger>str:resultado:error</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de resultado: error</description>
+</snippet>

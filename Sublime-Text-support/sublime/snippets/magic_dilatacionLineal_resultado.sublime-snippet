@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:dilatacionLineal:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de dilatacionLineal: resultado</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.filtrar(${1:campo}, ${2:valor})
+]]></content>
+	<tabTrigger>tabla.filtrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Filtra elementos por 'categoria', 'periodo' o 'bloque'. Retorna lista de dicc...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:puntajeZ:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de puntajeZ: unidad</description>
+</snippet>

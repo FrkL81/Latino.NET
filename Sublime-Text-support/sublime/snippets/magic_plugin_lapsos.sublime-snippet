@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[lapsos]]></content>
+    <tabTrigger>str:plugin:lapsos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: lapsos</description>
+</snippet>

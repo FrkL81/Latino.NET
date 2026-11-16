@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:vonMises:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de vonMises: formula</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.compararMasas(${1:lista_elementos})
+]]></content>
+	<tabTrigger>tabla.compararMasas</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Compara masas molares de una lista de elementos. Retorna {elementos, mas_pesa...</description>
+</snippet>

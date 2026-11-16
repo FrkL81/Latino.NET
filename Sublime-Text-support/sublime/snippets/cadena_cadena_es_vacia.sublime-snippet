@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.es_vacia(${1:texto})
+]]></content>
+	<tabTrigger>cadena.es_vacia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Alias de esta_vacia</description>
+</snippet>
+

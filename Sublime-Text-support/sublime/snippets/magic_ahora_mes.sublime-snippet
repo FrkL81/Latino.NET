@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mes]]></content>
+    <tabTrigger>str:ahora:mes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de ahora: mes</description>
+</snippet>

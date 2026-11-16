@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.pvf(${1:funcion_f}, ${2:a}, ${3:b}, ${4:ya}, ${5:yb}, ${6:n})
+]]></content>
+	<tabTrigger>edo.pvf</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve un Problema de Valor de Frontera (PVF) de segundo orden:\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[h]]></content>
+    <tabTrigger>str:eulerImplicito:h</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de eulerImplicito: h</description>
+</snippet>

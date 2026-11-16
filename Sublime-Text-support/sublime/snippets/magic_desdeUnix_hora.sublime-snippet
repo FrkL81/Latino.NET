@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[hora]]></content>
+    <tabTrigger>str:desdeUnix:hora</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de desdeUnix: hora</description>
+</snippet>

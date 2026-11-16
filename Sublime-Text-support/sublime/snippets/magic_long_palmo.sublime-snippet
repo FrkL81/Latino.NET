@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[palmo]]></content>
+    <tabTrigger>str:long:palmo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Histórica: Palmo (0.209m)</description>
+</snippet>

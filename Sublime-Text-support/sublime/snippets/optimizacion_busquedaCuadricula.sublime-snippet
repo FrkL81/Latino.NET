@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.busquedaCuadricula(${1:funcion}, ${2:lista_limites_inf}, ${3:lista_limites_sup}, ${4:lista_n_puntos})
+]]></content>
+	<tabTrigger>optimizacion.busquedaCuadricula</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Evalúa f(X) en una cuadrícula regular y retorna el mejor punto encontrado.\n</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.contrasenaSegura(${1:texto})
+]]></content>
+	<tabTrigger>validar.contrasenaSegura</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Verifica complejidad mínima de contraseña</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[cadena.codificarBase64(${1:texto})]]></content>
+    <tabTrigger>str:b64enc</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📝 Codificar a formato Base64</description>
+</snippet>

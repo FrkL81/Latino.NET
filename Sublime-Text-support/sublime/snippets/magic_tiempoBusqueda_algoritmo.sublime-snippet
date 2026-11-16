@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[algoritmo]]></content>
+    <tabTrigger>str:tiempoBusqueda:algoritmo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de tiempoBusqueda: algoritmo</description>
+</snippet>

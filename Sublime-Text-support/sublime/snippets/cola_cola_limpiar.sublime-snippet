@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cola.limpiar(${1:cola})
+]]></content>
+	<tabTrigger>cola.limpiar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Eliminar todos los elementos</description>
+</snippet>
+

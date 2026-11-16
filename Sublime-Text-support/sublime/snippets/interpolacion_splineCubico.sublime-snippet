@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.splineCubico(${1:lista_xs}, ${2:lista_ys}, ${3:x})
+]]></content>
+	<tabTrigger>interpolacion.splineCubico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Interpola en x usando un Spline Cúbico Natural.\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[consola]]></content>
+    <tabTrigger>str:log:consola</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Log: Retorno de log: consola</description>
+</snippet>

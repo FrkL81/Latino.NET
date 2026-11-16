@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[area_total]]></content>
+    <tabTrigger>str:cilindroCompleto:area_total</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de cilindroCompleto: area_total</description>
+</snippet>

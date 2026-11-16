@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mas_liviano]]></content>
+    <tabTrigger>str:compararMasas:mas_liviano</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de compararMasas: mas_liviano</description>
+</snippet>

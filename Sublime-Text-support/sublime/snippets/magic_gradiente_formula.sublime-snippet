@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:gradiente:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de gradiente: formula</description>
+</snippet>

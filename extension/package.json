@@ -1,0 +1,147 @@
+{
+    "name": "latino-net-vscode",
+    "displayName": "Latino.NET",
+    "description": "Soporte oficial para el lenguaje Latino.NET (Basado en .NET 10)",
+    "version": "1.0.81",
+    "license": "MIT",
+    "publisher": "LatinoLang",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FrkL81/Latino.NET.git"
+    },
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "icon": "images/icon.png",
+    "readme": "./README.md",
+    "main": "./dist/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "latino",
+                "aliases": [
+                    "Latino",
+                    "latino"
+                ],
+                "extensions": [
+                    ".lat"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./images/icon.png",
+                    "dark": "./images/icon.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "latino",
+                "scopeName": "source.latino",
+                "path": "./syntaxes/latino.tmLanguage.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Latino.NET Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Latino.NET-Dark-color-theme.json"
+            },
+            {
+                "label": "Latino.NET Light",
+                "uiTheme": "vs",
+                "path": "./themes/Latino.NET-Light-color-theme.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "latino",
+                "path": "./snippets/latino.code-snippets"
+            }
+        ],
+        "configuration": {
+            "title": "Latino.NET",
+            "properties": {
+                "latino.binaryPath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Ruta completa al ejecutable 'latino.exe' (para el botón Run)."
+                }
+            }
+        },
+        "configurationDefaults": {
+            "[latino]": {
+                "files.encoding": "utf8bom",
+                "editor.tabSize": 4,
+                "editor.insertSpaces": true
+            }
+        },
+        "commands": [
+            {
+                "command": "latino.run",
+                "title": "Ejecutar Latino",
+                "category": "Latino",
+                "icon": "$(play)"
+            },
+            {
+                "command": "latino.newFile",
+                "title": "Nuevo archivo vacío",
+                "category": "Latino"
+            },
+            {
+                "command": "latino.newModule",
+                "title": "Nuevo módulo simple",
+                "category": "Latino"
+            },
+            {
+                "command": "latino.newClass",
+                "title": "Nuevo módulo de clases",
+                "category": "Latino"
+            },
+            {
+                "command": "latino.newCrudProject",
+                "title": "Nuevo proyecto CRUD CLI (SQLite)",
+                "category": "Latino"
+            },
+            {
+                "command": "latino.newProfessionalProject",
+                "title": "Nuevo Proyecto Profesional (Estructura Base)",
+                "category": "Latino"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "latino.newFile",
+                "key": "ctrl+alt+oem_3",
+                "mac": "cmd+alt+oem_3",
+                "when": "explorerViewletVisible || editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "latino.run",
+                    "group": "navigation",
+                    "when": "resourceLangId == latino"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "16.x",
+        "typescript": "^5.0.0",
+        "@vscode/vsce": "^2.19.0"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^9.0.1"
+    }
+}

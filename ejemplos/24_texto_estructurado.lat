@@ -1,0 +1,165 @@
+# ==================================================================
+# 24_texto_estructurado.lat
+# Catálogo de Formateo de Texto y Presentación en Latino.NET
+# Demuestra escribirf() (estilo .NET) e imprimirf() (estilo C)
+# ==================================================================
+
+# ------------------------------------------------------------------
+# REGLA DE ORO DE FORMATEO EN LATINO.NET:
+# 1. escribirf() / ponerf(): Usa sintaxis .NET ({0}, {0:N2}, {0,-15}).
+#    Ideal para alineación tabular, separadores de miles y moneda.
+# 2. imprimirf(): Usa sintaxis C (%s, %d, %.2f, %04d, %X).
+#    Ideal para precisión decimal directa, ceros a la izquierda y octal.
+# ------------------------------------------------------------------
+
+limpiar("pantalla")
+
+# ==================================================================
+# CASO 1: Tablas de Datos con Columnas Alineadas (escribirf)
+# ==================================================================
+# Sintaxis: {índice,ancho[:formato]}
+# - Ancho negativo (-15): Alinea a la IZQUIERDA con relleno de espacios.
+# - Ancho positivo (10):  Alinea a la DERECHA con relleno de espacios.
+# ==================================================================
+
+escribir("=== CASO 1: REPORTE DE INVENTARIO (TABLA ALINEADA) ===")
+
+# Encabezado con anchos fijos por columna
+escribirf("{0,-8} | {1,-20} | {2,10} | {3,8} | {4,12}\n", "CÓDIGO", "PRODUCTO", "PRECIO", "STOCK", "SUBTOTAL")
+escribir("---------+----------------------+------------+----------+-------------")
+
+articulos = [
+    {"cod": "PRD-01", "nom": "Teclado Mecánico",  "precio": 85.50,  "stock": 14},
+    {"cod": "PRD-02", "nom": "Monitor 24 IPS",    "precio": 165.00, "stock": 4},
+    {"cod": "PRD-03", "nom": "Mouse Ergonómico",  "precio": 29.99,  "stock": 45},
+    {"cod": "PRD-04", "nom": "Cable HDMI 2.1 2m", "precio": 8.75,   "stock": 110}
+]
+
+total_inventario = 0.0
+
+para item en articulos
+    codigo   = item["cod"]
+    nombre   = item["nom"]
+    precio   = item["precio"]
+    stock    = item["stock"]
+    subtotal = precio * stock
+    
+    total_inventario = total_inventario + subtotal
+    
+    # {0,-8}  -> Código a la izquierda (8 chars)
+    # {1,-20} -> Nombre a la izquierda (20 chars)
+    # {2,10:N2} -> Precio a la derecha con separador de miles y 2 decimales
+    # {3,8}   -> Stock a la derecha
+    # {4,12:N2} -> Subtotal a la derecha
+    escribirf("{0,-8} | {1,-20} | ${2,9:N2} | {3,8} | ${4,11:N2}\n", codigo, nombre, precio, stock, subtotal)
+fin
+
+escribir("---------+----------------------+------------+----------+-------------")
+escribirf("{0,-31} VALOR TOTAL EN BÓVEDA: | ${1,11:N2}\n\n", "", total_inventario)
+
+
+# ==================================================================
+# CASO 2: Códigos Seriados y Padding con Ceros a la Izquierda
+# ==================================================================
+# NOTA: %0Xd (relleno con ceros) no está implementado en imprimirf.
+# Alternativa funcional: usar escribirf con {0:DX} (ej: {0:D6}).
+# ==================================================================
+
+escribir("=== CASO 2: NÚMEROS DE FACTURA CON RELLENO DE CEROS ===")
+
+facturas_id = [ 1, 42, 385, 4920, 10580 ]
+
+para id en facturas_id
+    # {0:D6} -> Entero de 6 dígitos con relleno de ceros: 000001, 000042...
+    escribirf("  Folio de Venta: FACT-{0:D6} (Control interno: [{1,-8}])\n", id, "OK")
+fin
+escribir("")
+
+
+# ==================================================================
+# CASO 3: Redondeo Científico y Control de Precisión
+# ==================================================================
+
+escribir("=== CASO 3: COMPARATIVA DE PRECISIÓN MATEMÁTICA ===")
+
+numero_pi = mate.pi
+
+escribirf("  Valor original sin formato: {0}\n", numero_pi)
+escribirf("  Dos decimales fijos (:F2) : {0:F2}\n", numero_pi)
+escribirf("  Cuatro decimales (:F4)    : {0:F4}\n", numero_pi)
+imprimirf("  Estilo C seis decimales   : %.6f\n", numero_pi)
+imprimirf("  Notación científica (%%e)  : %e\n\n", numero_pi * 100000)
+
+
+# ==================================================================
+# CASO 4: Bases Numéricas (Hexadecimal, Octal y Colores RGB)
+# ==================================================================
+# - :X / :X2  -> Hexadecimal en mayúsculas (.NET)
+# - %x / %X   -> Hexadecimal minúsculas / mayúsculas (C)
+# - %o        -> Octal (C)
+# ==================================================================
+
+escribir("=== CASO 4: FORMATEO HEXADECIMAL Y CONVERSIÓN DE COLOR ===")
+
+r = 255
+g = 87
+b = 51
+
+# Generación directa de un código de color web tipo #FF5733
+# :X2 asegura que valores menores a 16 mantengan dos dígitos (ej: 0A en vez de A)
+escribirf("  RGB({0}, {1}, {2}) en formato Web Hexadecimal -> #{3:X2}{4:X2}{5:X2}\n", r, g, b, r, g, b)
+
+# Direcciones de memoria o puertos del sistema
+puerto = 8080
+imprimirf("  Puerto decimal: %d  ->  Hex: 0x%X  ->  Octal: %o\n\n", puerto, puerto, puerto)
+
+
+# ==================================================================
+# CASO 5: Bloques Visuales, Cajas y Dashboards de Terminal
+# ==================================================================
+
+escribir("=== CASO 5: TARJETA DE ESTADO / DASHBOARD TUI ===")
+
+servidor = "prod-server-01"
+cpu_uso  = 78.4
+ram_mb   = 12450
+uptime_d = 14
+activo   = cierto
+
+estado_txt = activo ? "EN LÍNEA" : "FUERA DE LÍNEA"
+
+# Plantilla de tarjeta con bordes Unicode
+tarjeta = "
+  ┌──────────────────────────────────────────────┐
+  │         ESTADO DEL NODO DE SERVICIO          │
+  ├──────────────────────────────────────────────┤
+  │  Identificador : {0,-26}  │
+  │  Estado actual : {1,-26}  │
+  │  Carga de CPU  : {2,5:F1}%                      │
+  │  Memoria RAM   : {3,8:N0} MB                 │
+  │  Tiempo activo : {4,3} días                    │
+  └──────────────────────────────────────────────┘\n"
+
+escribirf(tarjeta, servidor, estado_txt, cpu_uso, ram_mb, uptime_d)
+
+
+# ==================================================================
+# CASO 6: Barra de Progreso Textual con Porcentaje Integrado
+# ==================================================================
+
+escribir("=== CASO 6: SIMULADOR DE BARRA DE PROGRESO CLI ===")
+
+pasos = [ 20, 45, 70, 100 ]
+
+para pct en pasos
+    bloques_llenos = mate.piso(pct / 5)
+    bloques_vacios = 20 - bloques_llenos
+    
+    barra = cadena.rellenar_derecha("", "█", bloques_llenos)
+    fondo = cadena.rellenar_derecha("", "░", bloques_vacios)
+    
+    # % literal en imprimirf se escapa duplicándolo (%%)
+    imprimirf("  Descargando: [%s%s] %3d%%\n", barra, fondo, pct)
+fin
+
+escribir("\n✔ Ejecución del catálogo finalizada con éxito.")

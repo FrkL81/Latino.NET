@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[celsius]]></content>
+    <tabTrigger>str:temp:celsius</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Temperatura: Temp: Grados Celsius</description>
+</snippet>

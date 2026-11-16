@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.sen(${1:radianes})
+]]></content>
+	<tabTrigger>mate.sen</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Seno (radianes)</description>
+</snippet>
+

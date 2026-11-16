@@ -1,0 +1,205 @@
+/*
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  EJEMPLO: Chat con IA usando Groq                                ║
+    ║  Inferencia ultra-rápida con modelos open source                 ║
+    ╚══════════════════════════════════════════════════════════════════╝
+    
+    CONFIGURACIÓN:
+    
+    Opción 1 - Variable de Entorno (RECOMENDADO):
+    ───────────────────────────────────────────────────────────────────
+    1. Obtén tu clave API gratis en: https://console.groq.com/keys
+    2. Configura la variable de entorno:
+       
+       Windows (PowerShell):
+         $env:GROQ_API_KEY = "gsk_tu-clave-aqui"
+       
+       Windows (CMD):
+         set GROQ_API_KEY=gsk_tu-clave-aqui
+       
+       Linux/macOS:
+         export GROQ_API_KEY='gsk_tu-clave-aqui'
+    
+    
+    Opción 2 - Clave Directa (Para pruebas):
+    ───────────────────────────────────────────────────────────────────
+    // miApiKey = "gsk_tu-clave-aqui"
+    
+    
+    MODELOS DISPONIBLES EN GROQ (Free Tier):
+    ───────────────────────────────────────────────────────────────────
+    Groq ofrece acceso gratuito a todos los modelos con rate limits
+    (30 req/min, 14,400 req/día en modelos pequeños).
+    
+    Razonamiento y Multilingüe:
+    - qwen/qwen3.6-27b                (Razonamiento, excelente en español)
+    - qwen/qwen3.8-27b                (Más reciente, soporta imagen)
+    
+    Modelos OpenAI:
+    - openai/gpt-oss-120b             (Gran capacidad, razonamiento)
+    - openai/gpt-oss-20b              (Razonamiento eficiente)
+    
+    Nota: Los modelos pueden cambiar. Verifica disponibles en:
+    https://console.groq.com/docs/models
+*/
+
+// ═══════════════════════════════════════════════════════════════════
+// CONFIGURACIÓN
+// ═══════════════════════════════════════════════════════════════════
+
+// Opción 1: Leer desde variable de entorno (recomendado)
+miApiKey = sis.entorno("GroqAPIKey01")
+
+// Opción 2: Descomentar para usar clave directa
+// miApiKey = "gsk_tu-clave-aqui"
+
+// Validar clave API
+si miApiKey == nulo o cadena.recortar(miApiKey) == ""
+    escribir("╔════════════════════════════════════════════════════════╗")
+    escribir("║  ⚠️  NO SE ENCONTRÓ LA CLAVE API DE GROQ               ║")
+    escribir("╚════════════════════════════════════════════════════════╝")
+    escribir("")
+    escribir("Configura tu clave API:")
+    escribir("")
+    escribir("1️⃣  Variable de Entorno:")
+    escribir("   Windows: $env:GROQ_API_KEY = 'tu-clave'")
+    escribir("   Linux/macOS: export GROQ_API_KEY='tu-clave'")
+    escribir("")
+    escribir("2️⃣  Directamente en el código:")
+    escribir("   Descomenta: miApiKey = \"gsk_tu-clave-aqui\"")
+    escribir("")
+    escribir("Obtén tu clave gratis en: https://console.groq.com/keys")
+    escribir("")
+    sis.salir()
+fin
+
+// ═══════════════════════════════════════════════════════════════════
+// FUNCIÓN PRINCIPAL: CHATEAR CON GROQ
+// ═══════════════════════════════════════════════════════════════════
+
+funcion chatearConGroq(pregunta, apiKey, modelo, temperatura)
+    /*
+        Envía una pregunta a Groq para inferencia ultra-rápida.
+        
+        Parámetros:
+            pregunta     - String con la consulta
+            apiKey       - Clave API de Groq
+            modelo       - ID del modelo (opcional, default: llama-3.3-70b)
+            temperatura  - Creatividad 0.0-2.0 (opcional, default: 0.7)
+        
+        Retorna:
+            String con la respuesta de la IA
+    */
+    
+    // Valores por defecto
+    si modelo == nulo ó modelo == ""
+        modelo = "llama-3.3-70b-versatile"
+    fin
+    
+    si temperatura == nulo
+        temperatura = 0.7
+    fin
+    
+    escribir("⚡ Consultando Groq (" .. modelo .. ")...")
+    
+    // Configuración de la petición
+    config = {
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "metodo": "POST",
+        "encabezados": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " .. apiKey
+        },
+        "datos": {
+            "model": modelo,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": pregunta
+                }
+            ],
+            "temperature": temperatura,
+            "max_tokens": 8192,
+            "top_p": 1,
+            "stream": falso
+        },
+        "timeout": 30
+    }
+    
+    // Realizar petición
+    intentar
+        respuesta = web.solicitar(config)
+        
+        si respuesta["ok"]
+            // Extraer contenido
+            contenido = respuesta["json"]["choices"][0]["message"]["content"]
+            
+            // Información de uso (opcional)
+            // uso = respuesta["json"]["usage"]
+            // tokens = uso["total_tokens"]
+            // escribir("   (Tokens usados: " .. tokens .. ")")
+            
+            retornar contenido
+        sino
+            estado = respuesta["estado"]
+            
+            si estado == 401
+                retornar "❌ Error 401: Clave API inválida"
+            sino_si estado == 429
+                retornar "❌ Error 429: Límite de peticiones excedido"
+            sino
+                retornar "❌ Error HTTP " .. estado .. ": " .. respuesta["texto"]
+            fin
+        fin
+    atrapar (error)
+        retornar "❌ Error de conexión: " .. error
+    fin
+fin
+
+// ═══════════════════════════════════════════════════════════════════
+// EJECUCIÓN
+// ═══════════════════════════════════════════════════════════════════
+
+escribir("╔══════════════════════════════════════════════════════════╗")
+escribir("║          Latino.NET + Groq AI (Ultra Rápido)             ║")
+escribir("╚══════════════════════════════════════════════════════════╝")
+escribir("")
+
+// Pregunta de ejemplo
+pregunta = "Explica qué es un closure en programación con un ejemplo en Python"
+escribir("👤 Pregunta: " .. pregunta)
+escribir("")
+
+// Llamar a Groq
+respuesta = chatearConGroq(pregunta, miApiKey, nulo, nulo)
+
+// Mostrar respuesta
+escribir("⚡ Respuesta:")
+escribir("────────────────────────────────────────────────────────────")
+escribir(respuesta)
+escribir("────────────────────────────────────────────────────────────")
+escribir("")
+
+// ═══════════════════════════════════════════════════════════════════
+// EJEMPLO: GENERACIÓN DE CÓDIGO (Donde Groq brilla)
+// ═══════════════════════════════════════════════════════════════════
+
+/*
+// Descomentar para probar generación de código:
+
+escribir("\n╔══════════════════════════════════════════════════════════╗")
+escribir("║          EJEMPLO: GENERACIÓN DE CÓDIGO                   ║")
+escribir("╚══════════════════════════════════════════════════════════╝\n")
+
+prompt_codigo = "Escribe una función en JavaScript que ordene un array de objetos por una propiedad específica"
+
+escribir("👤 Prompt: " .. prompt_codigo)
+escribir("")
+
+codigo = chatearConGroq(prompt_codigo, miApiKey, "llama-3.3-70b-versatile", 0.3)
+
+escribir("💻 Código Generado:")
+escribir("────────────────────────────────────────────────────────────")
+escribir(codigo)
+escribir("────────────────────────────────────────────────────────────")
+*/

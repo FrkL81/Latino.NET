@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[es_extrapolacion]]></content>
+    <tabTrigger>str:lagrange:es_extrapolacion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de lagrange: es_extrapolacion</description>
+</snippet>

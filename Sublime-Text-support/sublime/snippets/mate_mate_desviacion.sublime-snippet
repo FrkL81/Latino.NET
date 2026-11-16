@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.desviacion(${1:lista_o_numeros})]]></content>
+    <tabTrigger>math:desviacion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Calcular desviación estándar</description>
+</snippet>

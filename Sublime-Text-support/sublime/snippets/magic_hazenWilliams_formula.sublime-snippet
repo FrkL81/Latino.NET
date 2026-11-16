@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:hazenWilliams:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de hazenWilliams: formula</description>
+</snippet>

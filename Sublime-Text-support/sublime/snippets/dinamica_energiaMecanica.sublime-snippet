@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.energiaMecanica(${1:masa}, ${2:velocidad}, ${3:altura})
+]]></content>
+	<tabTrigger>dinamica.energiaMecanica</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Energía mecánica total (cinética + potencial).\n\nFórmula: Em = ½·m·v² + m·g·h</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:factorSeguridad:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de factorSeguridad: unidad</description>
+</snippet>

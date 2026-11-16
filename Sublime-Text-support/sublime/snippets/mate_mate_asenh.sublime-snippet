@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.asenh(${1:numero})
+]]></content>
+	<tabTrigger>mate.asenh</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Arcoseno hiperbólico</description>
+</snippet>
+

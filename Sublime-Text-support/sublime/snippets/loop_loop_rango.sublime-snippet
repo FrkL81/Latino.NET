@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+para ${1:i} en rango(${2:10})
+	$0
+fin
+]]></content>
+	<tabTrigger>loop:rango</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔁 Bucle para-rango [0...N-1]</description>
+</snippet>

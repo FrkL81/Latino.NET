@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[comodin_insensible]]></content>
+    <tabTrigger>str:comp:comodin_insensible</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Comparación: Comodines + ignora MAY/min</description>
+</snippet>

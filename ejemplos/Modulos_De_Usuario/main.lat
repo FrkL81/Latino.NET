@@ -1,0 +1,88 @@
+# ==================================================================
+# Ejemplo: Módulos de Usuario en Latino.NET
+# ==================================================================
+# Este ejemplo muestra cómo crear y usar módulos .lat propios.
+#
+# Un módulo es simplemente un archivo .lat con funciones que puedes
+# reutilizar en otros scripts usando: incluir("nombre_archivo")
+#
+# Estructura del ejemplo:
+#   geometria.lat  → Módulo con funciones reutilizables
+#   main.lat       → Este archivo, que usa el módulo
+# ==================================================================
+
+# --- 1. CARGAR EL MÓDULO ---
+# La función incluir() busca el archivo .lat en la misma carpeta
+# (o en rutas del sistema) y ejecuta su código, haciendo disponibles
+# todas las funciones y variables definidas en él.
+incluir("geometria")
+
+escribir("=========================================")
+escribir("  EJEMPLO: MÓDULOS DE USUARIO")
+escribir("=========================================")
+escribir("")
+
+# --- 2. USAR FUNCIONES DEL MÓDULO ---
+# Ahora podemos usar las funciones definidas en geometria.lat
+
+# Círculo
+escribir("--- Círculo (radio = 5) ---")
+radio = 5
+escribir("Área: " .. areaCirculo(radio) .. " m²")
+escribir("Perímetro: " .. perimetroCirculo(radio) .. " m")
+escribir("")
+
+# Rectángulo
+escribir("--- Rectángulo (base=4, altura=6) ---")
+base = 4
+altura = 6
+escribir("Área: " .. areaRectangulo(base, altura) .. " m²")
+escribir("Perímetro: " .. perimetroRectangulo(base, altura) .. " m")
+escribir("¿Es cuadrado? " .. esCuadrado(base, altura))
+escribir("")
+
+# Triángulo
+escribir("--- Triángulo (base=3, altura=4) ---")
+escribir("Área: " .. areaTriangulo(3, 4) .. " m²")
+escribir("")
+
+# Esfera
+escribir("--- Esfera (radio = 3) ---")
+escribir("Volumen: " .. volumenEsfera(3) .. " m³")
+escribir("")
+
+# Cilindro
+escribir("--- Cilindro (radio=2, altura=5) ---")
+escribir("Volumen: " .. volumenCilindro(2, 5) .. " m³")
+escribir("")
+
+# --- 3. COMBINAR CON FUNCIONES GLOBALES ---
+# Algunas funciones como mate.*, cadena.*, lista.* están siempre
+# disponibles sin necesidad de incluir ningún módulo.
+# Son parte de la "librería estándar" de Latino.NET.
+
+escribir("--- Usando funciones globales (mate) ---")
+escribir("Pi: " .. mate.pi)
+escribir("Raíz de 16: " .. mate.raiz(16))
+escribir("")
+
+# --- 4. RESUMEN ---
+escribir("=========================================")
+escribir("  ¿CÓMO CREAR TU PROPIO MÓDULO?")
+escribir("=========================================")
+escribir("")
+escribir("1. Crea un archivo .lat con tus funciones")
+escribir("   Ejemplo: mis_funciones.lat")
+escribir("")
+escribir("2. Define tus funciones normalmente:")
+escribir("   funcion miFuncion(param)")
+escribir("       retornar param * 2")
+escribir("   fin")
+escribir("")
+escribir("3. En tu script principal, inclúyelo:")
+escribir("   incluir('mis_funciones.lat')")
+escribir("")
+escribir("4. Usa las funciones directamente:")
+escribir("   resultado = miFuncion(10)")
+escribir("")
+escribir("¡Y eso es todo!")

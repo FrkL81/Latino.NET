@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.vonMises(${1:sigma_x_Pa}, ${2:sigma_y_Pa}, ${3:tau_xy_Pa})
+]]></content>
+	<tabTrigger>estructuras.vonMises</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Criterio de falla de Von Mises para materiales dúctiles (estado plano de tens...</description>
+</snippet>

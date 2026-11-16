@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[hashtags]]></content>
+    <tabTrigger>str:regex:hashtags</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Regex: Extraer hashtags (#...)</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+finanzas.valorFuturo(${1:valor_presente}, ${2:tasa_anual}, ${3:tiempo_anios})
+]]></content>
+	<tabTrigger>finanzas.valorFuturo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Valor Futuro de un capital a interés compuesto anual.\n\nFórmula: VF = VP · (...</description>
+</snippet>

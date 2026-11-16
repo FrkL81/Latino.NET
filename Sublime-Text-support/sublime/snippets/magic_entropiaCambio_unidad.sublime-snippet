@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:entropiaCambio:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de entropiaCambio: unidad</description>
+</snippet>

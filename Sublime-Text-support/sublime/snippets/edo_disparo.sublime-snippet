@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.disparo(${1:funcion_sistema}, ${2:a}, ${3:b}, ${4:ya}, ${5:yb}, ${6:tolerancia}, ${7:max_iter})
+]]></content>
+	<tabTrigger>edo.disparo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve un PVF de segundo orden no lineal por el Método de Disparo.\n</description>
+</snippet>

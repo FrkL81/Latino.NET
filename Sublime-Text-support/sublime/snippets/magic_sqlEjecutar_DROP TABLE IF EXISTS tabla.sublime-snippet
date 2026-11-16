@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[DROP TABLE IF EXISTS tabla]]></content>
+    <tabTrigger>str:sqlEjecutar:DROP TABLE IF EXISTS tabla</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Eliminar tabla si existe</description>
+</snippet>

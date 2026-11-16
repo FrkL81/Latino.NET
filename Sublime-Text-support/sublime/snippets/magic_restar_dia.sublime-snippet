@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[dia]]></content>
+    <tabTrigger>str:restar:dia</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de restar: dia</description>
+</snippet>

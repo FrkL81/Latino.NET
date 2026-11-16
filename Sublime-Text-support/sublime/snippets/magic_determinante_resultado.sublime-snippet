@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:determinante:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de determinante: resultado</description>
+</snippet>

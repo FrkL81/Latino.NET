@@ -1,0 +1,60 @@
+# Ejemplo: Plugin Tabla Periódica
+# Requiere: incluir("tabla")
+
+incluir("tabla")
+
+escribir("=== PLUGIN TABLA PERIÓDICA ===")
+escribir("")
+
+# --- Buscar elemento por símbolo ---
+escribir("--- Buscando elementos ---")
+
+oro = tabla.datos("Au")
+escribir("Oro (Au):")
+escribir("  Nombre: " .. oro["nombre"])
+escribir("  Número atómico: " .. oro["numero"])
+escribir("  Masa: " .. oro["masa"])
+escribir("  Categoría: " .. oro["categoria"])
+
+escribir("")
+
+hidrogeno = tabla.datos("H")
+escribir("Hidrógeno (H):")
+escribir("  Nombre: " .. hidrogeno["nombre"])
+escribir("  Masa: " .. hidrogeno["masa"])
+
+escribir("")
+
+# --- Masa Molar ---
+escribir("--- Masa Molar ---")
+masaAgua = tabla.masaMolar("H2O")
+escribir("Masa molar del agua (H2O): " .. masaAgua["masa_molar_g_mol"] .. " g/mol")
+
+masaSal = tabla.masaMolar("NaCl")
+escribir("Masa molar de la sal (NaCl): " .. masaSal["masa_molar_g_mol"] .. " g/mol")
+
+escribir("")
+
+# --- Estado de un elemento ---
+escribir("--- Estado de elementos ---")
+estadoO = tabla.estado("O", 25)
+escribir("Estado del Oxígeno a 25°C: " .. estadoO["estado"])
+
+estadoFe = tabla.estado("Fe", 25)
+escribir("Estado del Hierro a 25°C: " .. estadoFe["estado"])
+
+estadoHg = tabla.estado("Hg", 25)
+escribir("Estado del Mercurio a 25°C: " .. estadoHg["estado"])
+
+escribir("")
+
+# --- Filtrar elementos ---
+escribir("--- Filtrar metales ---")
+metales = tabla.filtrar("categoria", "Metal de transición")
+escribir("Metales encontrados: " .. lista.longitud(metales))
+para metal en metales
+    escribir("  " .. metal["simbolo"] .. " - " .. metal["nombre"])
+fin
+
+escribir("")
+escribir("✅ Ejemplo de tabla periódica completado")

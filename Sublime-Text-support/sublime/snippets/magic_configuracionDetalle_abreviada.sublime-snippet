@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[abreviada]]></content>
+    <tabTrigger>str:configuracionDetalle:abreviada</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de configuracionDetalle: abreviada</description>
+</snippet>

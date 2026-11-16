@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.traza(${1:matriz_A})
+]]></content>
+	<tabTrigger>algebraLineal.traza</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la traza (suma de la diagonal) de una matriz cuadrada.\n</description>
+</snippet>

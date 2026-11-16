@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.balancear(${1:ecuacion})
+]]></content>
+	<tabTrigger>tabla.balancear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Balancea una ecuación química simple (ej: 'H2 + O2 = H2O').\nRetorna: {entrad...</description>
+</snippet>

@@ -1,0 +1,88 @@
+/*
+   13 - El Alcance (Scope)
+   Controlar dónde viven y mueren las variables es vital para evitar errores.
+   
+   Latino.NET ofrece tres formas de declarar variables:
+   1. Implícita (x = 1): Busca arriba o crea local.
+   2. Local (local x = 1): Crea SIEMPRE una nueva aquí.
+   3. Global (global x = 1): Crea o modifica en la raíz del programa.
+*/
+
+escribir("--- 1. Comportamiento Implícito (Closure) ---")
+// Comportamiento por defecto: "Si existe afuera, úsala".
+
+mensaje = "Original"
+
+funcion ModificarImplícito()
+    // Como 'mensaje' existe afuera, Latino la encuentra y la cambia.
+    mensaje = "Modificado"
+    escribir("   (Adentro): " .. mensaje)
+fin
+
+ModificarImplícito()
+escribir("   (Afuera):  " .. mensaje) 
+
+si mensaje == "Modificado"
+    escribir("ℹ️  Nota: Sin 'local', las funciones pueden cambiar variables externas.")
+fin
+
+
+escribir("\n--- 2. Protección con 'local' (Shadowing) ---")
+// BUENA PRÁCTICA: Usa 'local' dentro de funciones para no romper cosas afuera.
+
+saldo = 1000
+
+funcion OperacionSegura()
+    // 'local' crea una variable NUEVA que solo existe aquí.
+    // Aunque se llame igual que la de afuera, son distintas.
+    local saldo = 0
+    escribir("   (Adentro): " .. saldo)
+fin
+
+OperacionSegura()
+escribir("   (Afuera):  " .. saldo)
+
+si saldo == 1000
+    escribir("✅ ÉXITO: La variable externa está intacta.")
+fin
+
+
+escribir("\n--- 3. Vida y Muerte (Alcance de Bloque) ---")
+// Las variables 'local' mueren cuando termina su bloque (si, mientras, funcion).
+
+intentar
+    si verdadero
+        local secreto = "1234"
+        escribir("   Secreto creado dentro del bloque.")
+    fin
+    
+    // Aquí el bloque ya cerró. 'secreto' ya no existe.
+    escribir("   Intentando leer secreto: " .. secreto)
+
+atrapar (e)
+    escribir("✅ SEGURIDAD: " .. e)
+    escribir("   (La variable murió al salir del bloque 'si')")
+fin
+
+
+escribir("\n--- 4. El Teletransportador ('global') ---")
+// MALA PRÁCTICA: Úsalo solo para configuración o casos muy específicos.
+// Permite crear una variable visible para todos desde un lugar oculto.
+
+funcion ConfigurarSistema()
+    // Creamos una variable en la RAÍZ del programa
+    global VERSION_APP = "1.0.0"
+fin
+
+ConfigurarSistema()
+escribir("Versión Global: " .. VERSION_APP)
+
+
+/*
+   RESUMEN DE BUENAS PRÁCTICAS:
+   
+   1. Usa `local` en tus funciones para evitar "efectos secundarios" accidentales.
+   2. Usa la asignación normal `x = 1` cuando quieras leer/escribir variables
+      del contexto superior a propósito.
+   3. Evita `global` a menos que sea estrictamente necesario.
+*/

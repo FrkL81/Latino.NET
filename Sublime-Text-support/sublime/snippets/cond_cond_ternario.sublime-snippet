@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:condicion} ? ${2:si_verdadero} : ${3:si_falso}
+]]></content>
+	<tabTrigger>cond:ternario</tabTrigger>
+	<scope>source.latino</scope>
+	<description>❓ Operador ternario</description>
+</snippet>

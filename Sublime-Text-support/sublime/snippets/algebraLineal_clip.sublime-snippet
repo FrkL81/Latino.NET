@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.clip(${1:coleccion}, ${2:minimo}, ${3:maximo})
+]]></content>
+	<tabTrigger>algebraLineal.clip</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Limita (clamp) cada elemento del vector o matriz al rango</description>
+</snippet>

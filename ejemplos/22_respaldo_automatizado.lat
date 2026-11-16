@@ -1,0 +1,57 @@
+# ==================================================================
+# Ejemplo: Automatización de Respaldos (SysAdmin / DevOps)
+# Combina 'lapsos' para fechas, 'archivo' para I/O y 'zip' para compresión
+# ==================================================================
+
+incluir("lapsos")
+incluir("zip")
+
+carpeta_origen = "datos_produccion"
+
+# ── 1. Crear entorno simulado de archivos ─────────────────────────
+si no archivo.existe(carpeta_origen)
+    archivo.crearCarpeta(carpeta_origen)
+fin
+
+archivo.escribir(carpeta_origen .. "/usuarios.txt", "1,Admin\n2,Operador")
+archivo.escribir(carpeta_origen .. "/metricas.log", "[INFO] Servidor operando al 100%")
+
+# ── 2. Generar nombre de archivo con estampa de tiempo ────────────
+ahora = lapsos.ahora()
+# Formato compacto: yyyyMMdd_HHmmss
+marca_tiempo = lapsos.formato(ahora, "yyyyMMdd_HHmmss")
+archivo_backup = "backup_" .. marca_tiempo .. ".zip"
+
+escribir("📦 INICIANDO RESPALDO AUTOMÁTICO...")
+escribir(ç("Carpeta origen:  |carpeta_origen|"))
+escribir(ç("Archivo destino: |archivo_backup|"))
+
+# ── 3. Comprimir directorio completo ──────────────────────────────
+# Salida variable (depende del momento de ejecución y hardware):
+inicio_ms = sis.milisegundos()
+
+zip.comprimir(carpeta_origen, archivo_backup)
+
+# Salida variable (depende del momento de ejecución y hardware):
+fin_ms = sis.milisegundos()
+duracion = fin_ms - inicio_ms
+
+# ── 4. Inspeccionar el contenido del archivo generado ─────────────
+tamano_bytes = archivo.tamaño(archivo_backup)
+entradas = zip.listar(archivo_backup)
+total_archivos = lista.longitud(entradas)
+
+escribir("\n✅ Respaldo generado con éxito:")
+escribir(ç("  ⏱️ Tiempo:    |duracion| ms"))
+escribir(ç("  💾 Tamaño:    |tamano_bytes| bytes"))
+escribir(ç("  📄 Archivos:  |total_archivos|"))
+
+escribir("\nContenido del ZIP:")
+para item en entradas
+    escribir(ç("  -> |item|"))
+fin
+
+# ── 5. Limpieza del ejemplo ───────────────────────────────────────
+archivo.eliminar(carpeta_origen)
+archivo.eliminar(archivo_backup)
+escribir("\n🧹 Limpieza completada.")

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.potenciaEscalar(${1:coleccion}, ${2:exp})
+]]></content>
+	<tabTrigger>algebraLineal.potenciaEscalar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Eleva cada elemento del vector o matriz al exponente dado.\n</description>
+</snippet>

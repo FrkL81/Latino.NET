@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[error_frontera]]></content>
+    <tabTrigger>str:disparo:error_frontera</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de disparo: error_frontera</description>
+</snippet>

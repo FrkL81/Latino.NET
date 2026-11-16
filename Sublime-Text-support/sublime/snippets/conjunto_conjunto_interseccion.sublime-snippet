@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.interseccion(${1:conjunto1}, ${2:conjunto2})
+]]></content>
+	<tabTrigger>conjunto.interseccion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Intersección de conjuntos</description>
+</snippet>
+

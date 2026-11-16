@@ -1,0 +1,228 @@
+﻿# ==================================================================
+# main.lat
+# Batalla Polar - Punto de Entrada
+# Desarrollado en Latino.NET v1.0.81
+# ==================================================================
+
+incluir("env")
+incluir("hilos")
+incluir("lapsos")
+incluir("log")
+
+# ==================================================================
+# CONFIGURACIÓN DE LOG
+# ==================================================================
+ruta_log = "batalla_ia.log"
+log.configurar(ruta_log, "depurar")
+log.info("--- NUEVA PARTIDA INICIADA --")
+
+intentar
+    env.leerArchivo(".env")
+atrapar(e)
+fin
+
+incluir("utils/matematicas.lat")
+incluir("utils/input.lat")
+incluir("core/unidad.lat")
+incluir("core/jugador.lat")
+incluir("core/tablero.lat")
+incluir("modulos/ia.lat") 
+incluir("core/juego.lat")
+
+limpiar("todo")
+escribir("==============================================")
+escribir(" ❄️  BATALLA POLAR - TEATRO DE OPERACIONES ❄️  ")
+escribir("==============================================\n")
+
+# Entrada simulada: nombre del Comandante 1
+nombre1 = pedir("Nombre del Comandante 1 (Ej. Azul): ")
+nombre1 = nombre1 == "" ? "Comandante Azul" : nombre1
+
+# Entrada simulada: decisión de IA para el jugador 2
+jugar_ia = pedir("¿Deseas que el Jugador 2 sea una IA controlada por un LLM? (s/n): ")
+es_ia = cadena.minusculas(jugar_ia) == "s"
+
+nombre2 = ""
+dificultad = 0
+modelo_elegido = "qwen/qwen3.6-27b"
+proveedor_elegido = ""
+var_env_key = ""
+url_obtener = ""
+api_key = ""
+
+si es_ia
+    nombre2 = "Comandante Rojo (IA)"
+    
+    # Seleccionar proveedor de IA
+    escribir("\n🤖 Proveedores de IA disponibles:")
+    escribir(" 1: Groq (Gratis, ultra-rápido, console.groq.com)")
+    escribir(" 2: OpenRouter (Gratis, múltiples modelos, openrouter.ai)")
+    
+    # Entrada simulada: selección de proveedor de IA (1 o 2)
+    opc_proveedor = leer_entero_seguro("Selecciona el proveedor (1-2): ", 1, 2)
+    
+    si opc_proveedor == 1
+        proveedor_elegido = "groq"
+        var_env_key = "GROQ_API_KEY"
+        url_obtener = "console.groq.com"
+    sino
+        proveedor_elegido = "openrouter"
+        var_env_key = "OPENROUTER_API_KEY"
+        url_obtener = "openrouter.ai"
+    fin
+    
+    api_key = env.leer(var_env_key)
+    tiene_archivo_env = archivo.existe(".env")
+
+    # Asistir si falta la clave O si el archivo .env no existe en disco
+    si api_key == nulo ó cadena.recortar(api_key) == "" ó no tiene_archivo_env
+        escribir(ç("\n🤖 Configuración de IA (|proveedor_elegido|):"))
+        si no tiene_archivo_env
+            escribir("   ℹ️  No se detectó el archivo '.env'. Se creará automáticamente.")
+        fin
+        escribir(ç("   Obtén tu clave gratis en: |url_obtener|"))
+        
+        # Si ya había una en el sistema operativo pero no en .env, permitir reutilizarla con Enter
+        sugerencia = ""
+        si api_key != nulo ý cadena.recortar(api_key) != ""
+            sugerencia = " [Detectada en sistema, Enter para guardarla en .env]"
+        fin
+        
+        # Entrada simulada: pegar clave API o 'cancelar'
+        entrada_key = pedir(ç("Pega tu |var_env_key||sugerencia| (o 'cancelar'): "))
+        entrada_key = cadena.recortar(entrada_key)
+        
+        si entrada_key != ""
+            api_key = entrada_key
+        fin
+
+        si api_key != nulo ý cadena.recortar(api_key) != "" ý cadena.minusculas(entrada_key) != "cancelar"
+            linea_env = var_env_key .. "=" .. api_key .. "\n"
+            si archivo.existe(".env")
+                archivo.anexar(".env", linea_env)
+            sino
+                archivo.escribir(".env", linea_env)
+            fin
+            env.escribir(var_env_key, api_key)
+            escribir("✅ Clave guardada correctamente en '.env'.")
+        sino
+            escribir("Cancelando IA. Volviendo a modo multijugador local.")
+            es_ia = falso
+        fin
+    fin
+    
+    si es_ia
+        # Seleccionar modelo según proveedor
+        si proveedor_elegido == "groq"
+            escribir("\n🤖 Modelos Groq disponibles:")
+            escribir(" 1: Qwen-3.6 27B (Razonamiento, excelente en español)")
+            escribir(" 2: Qwen-3.8 27B (Más reciente, soporta imagen)")
+            escribir(" 3: OpenAI GPT-OSS 120B (Gran capacidad)")
+            escribir(" 4: OpenAI GPT-OSS 20B (Razonamiento eficiente)")
+            
+            # Entrada simulada: selección de modelo Groq (1-4)
+            opc_mod = leer_entero_seguro("Selecciona el modelo (1-4): ", 1, 4)
+            
+            si opc_mod == 1 
+                modelo_elegido = "qwen/qwen3.6-27b"
+            osi opc_mod == 2 
+                modelo_elegido = "qwen/qwen3.8-27b"
+            osi opc_mod == 3 
+                modelo_elegido = "openai/gpt-oss-120b"
+            osi opc_mod == 4 
+                modelo_elegido = "openai/gpt-oss-20b"
+            fin
+        sino
+            escribir("\n🤖 Modelos OpenRouter disponibles:")
+            escribir(" 1: openrouter/free (Router automático a modelos gratuitos)")
+            escribir(" 2: nvidia/nemotron-3-nano-30b-a3b:free")
+            escribir(" 3: meta-llama/llama-3.2-3b-instruct:free")
+            
+            # Entrada simulada: selección de modelo OpenRouter (1-3)
+            opc_mod = leer_entero_seguro("Selecciona el modelo (1-3): ", 1, 3)
+            
+            si opc_mod == 1
+                modelo_elegido = "openrouter/free"
+            osi opc_mod == 2
+                modelo_elegido = "nvidia/nemotron-3-nano-30b-a3b:free"
+            osi opc_mod == 3
+                modelo_elegido = "meta-llama/llama-3.2-3b-instruct:free"
+            fin
+        fin
+        
+        escribir("\n⚙️  Niveles de Fallo de Sensores (Desventaja de IA):")
+        escribir(" 0: Sin fallos (Precisión perfecta de cálculo)")
+        escribir(" 1: Nivel Bajo (Desvío de distancia de 0 a 1)")
+        escribir(" 2: Nivel Medio (Desvío de distancia de -1 a 1)")
+        escribir(" 3: Nivel Alto (Desvío dist -1 a 1, Ángulo -10° a 10°)")
+        # Entrada simulada: selección del nivel de falla de sensores (0-3)
+        dificultad = leer_entero_seguro("Selecciona el nivel de falla (0-3): ", 0, 3)
+    fin
+fin
+
+si no es_ia
+    # Entrada simulada: nombre del Comandante 2
+    nombre2 = pedir("Nombre del Comandante 2 (Ej. Rojo): ")
+    nombre2 = nombre2 == "" ? "Comandante Rojo" : nombre2
+fin
+
+# Entrada simulada: cantidad de soldados por bando (2-9)
+n_tropas = leer_entero_seguro("\nCantidad de soldados por bando (2-9): ", 2, 9)
+
+# Entrada simulada: mostrar puntos de cuadrícula (s/n)
+resp_cuadricula = pedir("¿Mostrar puntos de cuadrícula? (s/n): ")
+mostrar_puntos = cadena.minusculas(resp_cuadricula) != "n"
+
+j1 = nueva Jugador(nombre1, "🟦", "[B]")
+j2 = nueva Jugador(nombre2, "🟥", "[R]")
+
+si es_ia
+    j2.es_ia = cierto
+    j2.dificultad = dificultad
+    j2.modelo_ia = modelo_elegido
+    j2.proveedor = proveedor_elegido
+    j2.api_key = api_key
+fin
+
+# ==================================================================
+# DESPLIEGUE ALEATORIO
+# ==================================================================
+funcion generar_posicion_unica(x_min, x_max, y_min, y_max, usadas)
+    intentos = 0
+    mientras cierto
+        # Salida variable (depende del momento de ejecución y hardware):
+        x = mate.aleatorio(x_min, x_max)
+        # Salida variable (depende del momento de ejecución y hardware):
+        y = mate.aleatorio(y_min, y_max)
+        clave = acadena(x) .. "," .. acadena(y)
+        si no lista.contiene(usadas, clave)
+            lista.agregar(usadas, clave)
+            retornar {"x": x, "y": y}
+        fin
+        intentos = intentos + 1
+        si intentos > 50
+            x = x_min + intentos
+            clave = acadena(x) .. "," .. acadena(y)
+            lista.agregar(usadas, clave)
+            retornar {"x": x, "y": y}
+        fin
+    fin
+fin
+
+posiciones_usadas = []
+
+desde (k = 0; k < n_tropas; k++)
+    pos = generar_posicion_unica(-10, -1, -9, 9, posiciones_usadas)
+    j1.agregar_unidad(pos["x"], pos["y"])
+fin
+
+desde (k = 0; k < n_tropas; k++)
+    pos = generar_posicion_unica(1, 10, -9, 9, posiciones_usadas)
+    j2.agregar_unidad(pos["x"], pos["y"])
+fin
+
+tablero = nueva Tablero(10, mostrar_puntos)
+tablero.registrar_jugadores(j1, j2)
+
+partida = nueva Partida(j1, j2, tablero)
+partida.iniciar_bucle()

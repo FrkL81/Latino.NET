@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:resonanciaLC:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de resonanciaLC: formula</description>
+</snippet>

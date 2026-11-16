@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[media]]></content>
+    <tabTrigger>str:varianzaDesviacion:media</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de varianzaDesviacion: media</description>
+</snippet>

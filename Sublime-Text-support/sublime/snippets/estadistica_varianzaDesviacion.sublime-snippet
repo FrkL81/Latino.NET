@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estadistica.varianzaDesviacion(${1:lista_valores}, ${2:es_muestra})
+]]></content>
+	<tabTrigger>estadistica.varianzaDesviacion</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Varianza y desviación estándar. es_muestra=verdadero usa N-1 (Bessel).\n\nFór...</description>
+</snippet>

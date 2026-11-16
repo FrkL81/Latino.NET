@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:entalpiaReaccion:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de entalpiaReaccion: formula</description>
+</snippet>

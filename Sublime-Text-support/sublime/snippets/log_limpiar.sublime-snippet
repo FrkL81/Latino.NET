@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+log.limpiar()
+]]></content>
+	<tabTrigger>log.limpiar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cierra el archivo de log y libera su handle.</description>
+</snippet>

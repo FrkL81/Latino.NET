@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+electricidad.leyCoulomb(${1:carga1}, ${2:carga2}, ${3:distancia})
+]]></content>
+	<tabTrigger>electricidad.leyCoulomb</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Fuerza electrostática entre dos cargas.\n\nFórmula: F = k·q₁·q₂ / r²</description>
+</snippet>

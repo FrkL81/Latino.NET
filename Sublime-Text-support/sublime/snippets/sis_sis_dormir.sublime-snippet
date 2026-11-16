@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.dormir(${1:segundos})
+]]></content>
+	<tabTrigger>sis.dormir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Pausar ejecución (segundos)</description>
+</snippet>
+

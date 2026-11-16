@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[json]]></content>
+    <tabTrigger>str:enviar:json</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de enviar: json</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ruta]]></content>
+    <tabTrigger>str:descargar:ruta</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de descargar: ruta</description>
+</snippet>

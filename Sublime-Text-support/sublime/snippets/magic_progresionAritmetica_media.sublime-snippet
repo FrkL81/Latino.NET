@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[media]]></content>
+    <tabTrigger>str:progresionAritmetica:media</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Matemáticas: Retorno de progresionAritmetica: media</description>
+</snippet>

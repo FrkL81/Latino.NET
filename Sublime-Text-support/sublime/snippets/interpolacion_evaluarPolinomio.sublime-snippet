@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.evaluarPolinomio(${1:lista_coeficientes}, ${2:x})
+]]></content>
+	<tabTrigger>interpolacion.evaluarPolinomio</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Evalúa un polinomio en x usando el Esquema de Horner (O(n), numéricamente est...</description>
+</snippet>

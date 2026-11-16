@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.renombrar(${1:"origen"}, ${2:"destino"})
+]]></content>
+	<tabTrigger>archivo.renombrar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Mover o renombrar</description>
+</snippet>
+

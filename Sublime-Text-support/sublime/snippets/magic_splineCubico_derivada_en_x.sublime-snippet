@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[derivada_en_x]]></content>
+    <tabTrigger>str:splineCubico:derivada_en_x</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de splineCubico: derivada_en_x</description>
+</snippet>

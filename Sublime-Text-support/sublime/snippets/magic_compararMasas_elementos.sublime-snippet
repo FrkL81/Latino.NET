@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[elementos]]></content>
+    <tabTrigger>str:compararMasas:elementos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de compararMasas: elementos</description>
+</snippet>

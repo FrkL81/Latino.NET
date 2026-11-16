@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+optimizacion.bfgs(${1:funcion}, ${2:listaX0}, ${3:tolerancia}, ${4:maxIter})
+]]></content>
+	<tabTrigger>optimizacion.bfgs</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Minimiza f(X) con el método cuasi-Newton BFGS.\n</description>
+</snippet>

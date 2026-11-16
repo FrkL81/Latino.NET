@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[CREATE INDEX IF NOT EXISTS idx_columna ON tabla(columna)]]></content>
+    <tabTrigger>str:sqlEjecutar:CREATE INDEX IF NOT EXISTS idx_columna ON tabla(columna)</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Crear índice para optimizar búsquedas</description>
+</snippet>

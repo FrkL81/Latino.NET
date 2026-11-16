@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.resolver(${1:matriz_A}, ${2:vector_b})
+]]></content>
+	<tabTrigger>algebraLineal.resolver</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve el sistema lineal A·x = b por eliminación gaussiana con pivoteo parc...</description>
+</snippet>

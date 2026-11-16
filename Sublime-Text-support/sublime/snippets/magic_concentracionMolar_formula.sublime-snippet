@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:concentracionMolar:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de concentracionMolar: formula</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[codigo]]></content>
+    <tabTrigger>str:ejecutar:codigo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de ejecutar: codigo</description>
+</snippet>

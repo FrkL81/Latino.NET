@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+env.escribir(${1:nombre}, ${2:valor})
+]]></content>
+	<tabTrigger>env.escribir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Define una variable de entorno para el proceso actual. Si el valor es 'nulo',...</description>
+</snippet>

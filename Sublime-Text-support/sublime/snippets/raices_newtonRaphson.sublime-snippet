@@ -1,0 +1,8 @@
+﻿<snippet>
+	<content><![CDATA[
+raices.newtonRaphson(${1:x_inicial}, ${2:f_x}, ${3:f_prima_x}, ${4:max_iteraciones}, ${5:tolerancia})
+]]></content>
+	<tabTrigger>raices.newtonRaphson</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Raíz de una función por el método de Newton-Raphson.\nf_x y f_prima_x son los...</description>
+</snippet>

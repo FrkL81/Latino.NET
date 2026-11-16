@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[f_en_raiz]]></content>
+    <tabTrigger>str:brent:f_en_raiz</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de brent: f_en_raiz</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[archivo.escribirCsv("${1:archivo.csv}", ${2:lista_diccs}, "${3:,}")]]></content>
+    <tabTrigger>file:escribirCsv</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📁 Escribir lista de diccionarios a formato CSV</description>
+</snippet>

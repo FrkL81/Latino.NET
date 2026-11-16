@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.calorEspecifico(${1:masa}, ${2:calorEspecifico}, ${3:deltaTemperatura})
+]]></content>
+	<tabTrigger>termodinamica.calorEspecifico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calor absorbido o cedido por una sustancia.\n\nFórmula: Q = m·c·ΔT</description>
+</snippet>

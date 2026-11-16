@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+zip.agregar(${1:archivo_zip}, ${2:archivo_origen}, ${3:ruta_interna})
+]]></content>
+	<tabTrigger>zip.agregar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Añade o reemplaza un archivo dentro de un zip existente (o lo crea si no exis...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[masa_perdida]]></content>
+    <tabTrigger>str:rendimientoReaccion:masa_perdida</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de rendimientoReaccion: masa_perdida</description>
+</snippet>

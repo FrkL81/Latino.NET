@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[h]]></content>
+    <tabTrigger>str:rk4:h</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de rk4: h</description>
+</snippet>

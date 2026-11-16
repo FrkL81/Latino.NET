@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:calorEspecifico:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de calorEspecifico: unidad</description>
+</snippet>

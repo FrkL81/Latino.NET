@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:energiaMasa:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Física Cuántica: Retorno de energiaMasa: unidad</description>
+</snippet>

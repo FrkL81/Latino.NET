@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+tabla.datos(${1:elemento})
+]]></content>
+	<tabTrigger>tabla.datos</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Devuelve los datos de un elemento por su nombre o símbolo (ej: 'Oro' o 'Au').</description>
+</snippet>

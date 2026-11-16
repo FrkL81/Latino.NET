@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.multiplicarEscalar(${1:coleccion}, ${2:n})
+]]></content>
+	<tabTrigger>algebraLineal.multiplicarEscalar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Multiplica cada elemento de un vector o matriz por un escalar n.\n</description>
+</snippet>

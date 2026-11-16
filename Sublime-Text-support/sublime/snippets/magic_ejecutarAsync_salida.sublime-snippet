@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[salida]]></content>
+    <tabTrigger>str:ejecutarAsync:salida</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de proceso.ejecutarAsync(): salida </description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[h]]></content>
+    <tabTrigger>str:pvf:h</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de pvf: h</description>
+</snippet>

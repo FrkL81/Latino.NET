@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:efectoDoppler:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de efectoDoppler: unidad</description>
+</snippet>

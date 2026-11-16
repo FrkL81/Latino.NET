@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[clonar(${1:objeto})]]></content>
+    <tabTrigger>util:clonar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>🔧 Realizar copia profunda (Deep Copy) de lista, dic o tupla</description>
+</snippet>

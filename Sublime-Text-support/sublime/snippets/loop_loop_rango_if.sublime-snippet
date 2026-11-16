@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+para ${1:i} en rango(${2:inicio}, ${3:fin})
+	$0
+fin
+]]></content>
+	<tabTrigger>loop:rango_if</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔁 Bucle para-rango con inicio y fin</description>
+</snippet>

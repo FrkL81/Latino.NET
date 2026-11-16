@@ -1,0 +1,57 @@
+# Ejemplo: Plugin Hilos (Concurrencia Nativa)
+# Requiere: incluir("hilos")
+
+incluir("hilos")
+
+escribir("=== PLUGIN HILOS ===")
+escribir("")
+
+# --- Hilos básicos ---
+escribir("--- Lanzando hilos ---")
+
+funcion tarea(args)
+    id = args[0]
+    retornar "resultado_" .. id
+fin
+
+id1 = hilos.lanzar(tarea, ["A"])
+id2 = hilos.lanzar(tarea, ["B"])
+
+escribir("Hilo A ID: " .. id1)
+escribir("Hilo B ID: " .. id2)
+
+# Esperar resultados con timeout de 5 segundos
+r1 = hilos.esperar(id1, 5000)
+r2 = hilos.esperar(id2, 5000)
+escribir("Resultados: " .. r1 .. ", " .. r2)
+
+escribir("")
+
+# --- Mutex (sincronización) ---
+escribir("--- Mutex (protección de datos compartidos) ---")
+
+contador = {"valor": 0}
+mtx = mutex.crear()
+
+funcion incrementar(args)
+    mtxHilo = args[0]
+    cont = args[1]
+    desde (i = 0; i < 50; i = i + 1)
+        mutex.bloquear(mtxHilo)
+        cont["valor"] = cont["valor"] + 1
+        mutex.liberar(mtxHilo)
+    fin
+fin
+
+id1 = hilos.lanzar(incrementar, [mtx, contador])
+id2 = hilos.lanzar(incrementar, [mtx, contador])
+
+r1 = hilos.esperar(id1, 5000)
+r2 = hilos.esperar(id2, 5000)
+
+escribir("Contador con mutex: " .. contador["valor"] .. " (esperado: 100)")
+
+mutex.eliminar(mtx)
+
+escribir("")
+escribir("✅ Ejemplo de hilos completado")

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:valorPresente:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Finanzas: Retorno de valorPresente: resultado</description>
+</snippet>

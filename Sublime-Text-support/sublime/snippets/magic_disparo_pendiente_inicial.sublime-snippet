@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pendiente_inicial]]></content>
+    <tabTrigger>str:disparo:pendiente_inicial</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de disparo: pendiente_inicial</description>
+</snippet>

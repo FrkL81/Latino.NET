@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[area]]></content>
+    <tabTrigger>str:elipse:area</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de elipse: area</description>
+</snippet>

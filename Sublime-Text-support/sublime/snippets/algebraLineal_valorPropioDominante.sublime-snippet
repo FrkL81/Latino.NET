@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.valorPropioDominante(${1:matriz_A}, ${2:tolerancia}, ${3:max_iter})
+]]></content>
+	<tabTrigger>algebraLineal.valorPropioDominante</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Encuentra el valor propio dominante (mayor en módulo) y su vector propio\n</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[configuracion]]></content>
+    <tabTrigger>str:datos:configuracion</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de datos: configuracion</description>
+</snippet>

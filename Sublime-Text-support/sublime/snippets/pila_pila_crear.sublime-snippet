@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:miPila} = pila.crear()
+]]></content>
+	<tabTrigger>pila.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📚 Crear pila vacía</description>
+</snippet>
+

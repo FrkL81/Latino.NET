@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.estilo(${1:texto}, ${2:"camello"})
+]]></content>
+	<tabTrigger>cadena.estilo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Transformar estilo (camello, pascal, etc)</description>
+</snippet>
+

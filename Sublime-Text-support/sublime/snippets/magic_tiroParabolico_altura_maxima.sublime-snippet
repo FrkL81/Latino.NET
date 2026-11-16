@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[altura_maxima]]></content>
+    <tabTrigger>str:tiroParabolico:altura_maxima</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cinemática: Retorno de tiroParabolico: altura_maxima</description>
+</snippet>

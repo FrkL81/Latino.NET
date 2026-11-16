@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nSubintervalos]]></content>
+    <tabTrigger>str:trapecio:nSubintervalos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de trapecio: nSubintervalos</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.dilatacionLineal(${1:longitudInicial}, ${2:coefDilatacion}, ${3:deltaTemperatura})
+]]></content>
+	<tabTrigger>termodinamica.dilatacionLineal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Dilatación lineal de un sólido por cambio de temperatura.\n\nFórmula: ΔL = L₀...</description>
+</snippet>

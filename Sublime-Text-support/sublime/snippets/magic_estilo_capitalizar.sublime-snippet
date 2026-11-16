@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[capitalizar]]></content>
+    <tabTrigger>str:estilo:capitalizar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estilo: Primera letra en mayúscula</description>
+</snippet>

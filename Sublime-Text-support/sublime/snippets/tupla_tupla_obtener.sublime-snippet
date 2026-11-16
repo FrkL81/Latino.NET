@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+tupla.obtener(${1:tupla}, ${2:indice})
+]]></content>
+	<tabTrigger>tupla.obtener</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💎 Obtener elemento por índice</description>
+</snippet>
+

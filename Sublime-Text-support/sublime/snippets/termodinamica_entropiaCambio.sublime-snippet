@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.entropiaCambio(${1:calorJ}, ${2:temperaturaK})
+]]></content>
+	<tabTrigger>termodinamica.entropiaCambio</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cambio de entropía en un proceso reversible isotérmico.\n\nFórmula: ΔS = Q / T</description>
+</snippet>

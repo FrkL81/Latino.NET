@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+interpolacion.regresionPolinomial(${1:lista_xs}, ${2:lista_ys}, ${3:grado})
+]]></content>
+	<tabTrigger>interpolacion.regresionPolinomial</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ajuste de un polinomio de grado k: y = c₀ + c₁x + c₂x² + ... + cₖxᵏ.\n</description>
+</snippet>

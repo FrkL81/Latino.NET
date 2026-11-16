@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[gb]]></content>
+    <tabTrigger>str:dig:gb</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Digital: Digital: Gigabyte</description>
+</snippet>

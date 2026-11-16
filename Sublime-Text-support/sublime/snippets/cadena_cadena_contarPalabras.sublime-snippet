@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[cadena.contarPalabras(${1:texto})]]></content>
+    <tabTrigger>str:palabras</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📝 Retorna el número de palabras en el texto</description>
+</snippet>

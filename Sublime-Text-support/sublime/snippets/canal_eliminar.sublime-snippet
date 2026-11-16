@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+canal.eliminar(${1:id})
+]]></content>
+	<tabTrigger>canal.eliminar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cierra y devuelve un canal de la memoria liberando sus recursos.</description>
+</snippet>

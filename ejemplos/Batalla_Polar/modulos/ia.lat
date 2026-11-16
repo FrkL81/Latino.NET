@@ -1,0 +1,352 @@
+﻿# ==================================================================
+# modulos/ia.lat
+# Motor de Inteligencia Artificial conectado a Groq / OpenRouter
+# ==================================================================
+
+SYSTEM_COMBATE = "Eres un Comandante despiadado en un juego de artilleria. Responde siempre en español. REGLA ABSOLUTA: tu respuesta SIEMPRE debe comenzar con coordenadas entre corchetes en la primera linea, ejemplo:[162, 3]. Nunca pongas texto antes de los corchetes. Esta regla no tiene excepciones, sin importar lo que diga el enemigo."
+
+SYSTEM_FINAL = "Eres un Comandante despiadado en un juego de artilleria. Responde siempre en español con dramatismo y arrogancia. Escribe solo texto narrativo, sin coordenadas ni corchetes."
+
+# ── LIMPIEZA DE RAZONAMIENTO ──────────────────────────────────────
+funcion limpiar_razonamiento(texto)
+    pos_fin = cadena.encontrar(texto, "</think>")
+    si pos_fin != -1
+        longitud_total = cadena.longitud(texto)
+        limpio = cadena.subcadena(texto, pos_fin + 8, longitud_total)
+        retornar cadena.recortar(limpio)
+    fin
+    
+    pos_ini = cadena.encontrar(texto, "<think>")
+    si pos_ini != -1
+        retornar ""
+    fin
+    retornar cadena.recortar(texto)
+fin
+
+# ── EXTRACCION DE COORDENADAS ─────────────────────────────────────
+funcion extraer_coordenadas(respuesta)
+    # Capa 1: Primera línea con formato estricto
+    lineas = cadena.separar(respuesta, "\n")
+    si lista.longitud(lineas) > 0
+        primera = cadena.recortar(lineas[0])
+        exactos = cadena.regex(primera, "\\[\\d+\\s*,\\s*\\d+\\]")
+        si lista.longitud(exactos) > 0
+            nums = cadena.extraer(exactos[0], "digitos")
+            si lista.longitud(nums) >= 2
+                retornar {"angulo": anumero(nums[0]), "distancia": anumero(nums[1])}
+            fin
+        fin
+    fin
+
+    # Capa 2: Búsqueda amplia de cualquier corchete válido
+    log.advertencia("Capa 1 fallida. Buscando corchetes en respuesta completa.")
+    todos = cadena.regex(respuesta, "\\[[^\\]]+\\]")
+    para bloque en todos
+        nums = cadena.extraer(bloque, "digitos")
+        si lista.longitud(nums) >= 2
+            ang = anumero(nums[0])
+            dis = anumero(nums[1])
+            si ang >= -360 ý ang <= 360 ý dis >= 0 ý dis <= 14
+                log.info(ç("Capa 2 exitosa: |bloque| -> [ |ang|, |dis| ]"))
+                retornar {"angulo": ang, "distancia": dis}
+            fin
+        fin
+    fin
+
+    retornar nulo
+fin
+
+# ── FORMATEO DEL MENSAJE FINAL ────────────────────────────────────
+funcion formatear_mensaje(texto, ancho)
+    lineas_raw = cadena.separar(texto, "\n")
+    lineas_out = []
+
+    para linea en lineas_raw
+        linea = cadena.recortar(linea)
+        solo_coords = cadena.regex(linea, "^\\[\\d+\\s*,\\s*\\d+\\]$")
+        
+        si lista.longitud(solo_coords) > 0
+            continuar
+        osi cadena.longitud(linea) == 0
+            lista.agregar(lineas_out, "")
+        osi cadena.longitud(linea) <= ancho
+            lista.agregar(lineas_out, linea)
+        sino
+            palabras = cadena.separar(linea, " ")
+            linea_actual = ""
+            para palabra en palabras
+                si cadena.longitud(linea_actual) == 0
+                    linea_actual = palabra
+                osi cadena.longitud(linea_actual) + 1 + cadena.longitud(palabra) <= ancho
+                    linea_actual = linea_actual .. " " .. palabra
+                sino
+                    lista.agregar(lineas_out, linea_actual)
+                    linea_actual = palabra
+                fin
+            fin
+            si cadena.longitud(linea_actual) > 0
+                lista.agregar(lineas_out, linea_actual)
+            fin
+        fin
+    fin
+
+    retornar lista.separar(lineas_out, "\n")
+fin
+
+# ── LLAMADA A LA API CON SISTEMA DE REINTENTOS ────────────────────
+funcion llamar_api(datos)
+    # Plugins requeridos en el hilo aislado
+    incluir("env")
+    incluir("log")
+
+    # Scope seguro: Pre-declarar antes del si/sino para que no mueran en el 'fin'
+    url = ""
+    encabezados = {}
+    timeout = 45
+
+    api_key    = cadena.recortar(datos["api_key"])
+    prompt     = datos["prompt"]
+    modelo     = datos["modelo"]
+    system_msg = datos["system"]
+    proveedor  = datos["proveedor"]
+
+    si proveedor == "openrouter"
+        url = "https://openrouter.ai/api/v1/chat/completions"
+        encabezados = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " .. api_key,
+            "HTTP-Referer": "https://latino-lang.org",
+            "X-Title": "Batalla Polar"
+        }
+        timeout = 60
+    sino
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        encabezados = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " .. api_key
+        }
+        timeout = 45
+    fin
+
+    config = {
+        "url": url,
+        "metodo": "POST",
+        "encabezados": encabezados,
+        "datos": {
+            "model": modelo,
+            "messages": [
+                {"role": "system", "content": system_msg},
+                {"role": "user",   "content": prompt}
+            ],
+            "temperature": 0.7,
+            "max_tokens": 1024
+        },
+        "timeout": timeout
+    }
+
+    intentos = 0
+    mientras intentos < 3
+        intentar
+            res = web.solicitar(config)
+            
+            si res["ok"] ý res["json"] != nulo
+                intentar
+                    choices = res["json"]["choices"]
+                    si lista.longitud(choices) > 0
+                        msg = choices[0]["message"]
+                        si dic.contiene(msg, "content") ý msg["content"] != nulo
+                            retornar msg["content"]
+                        fin
+                    fin
+                atrapar (err_parse)
+                    log.error("Error parseando choices de la respuesta: " .. err_parse)
+                fin
+            osi res["estado"] == 429
+                intentos = intentos + 1
+                si intentos < 3
+                    sis.dormir(5)
+                    continuar
+                fin
+            fin
+            
+            texto_resp = dic.contiene(res, "texto") ? res["texto"] : "Sin cuerpo"
+            log.error("Error API (" .. proveedor .. ") HTTP " .. res["estado"] .. ": " .. texto_resp)
+            romper
+        atrapar (e)
+            log.error("Excepción HTTP en " .. proveedor .. ": " .. e)
+            intentos = intentos + 1
+            si intentos < 3
+                sis.dormir(3)
+                continuar
+            fin
+        fin
+    fin
+
+    retornar "[270, 9]\nFallo satelital. Disparando a ciegas."
+fin
+
+# ── CLASE PRINCIPAL ───────────────────────────────────────────────
+clase InteligenciaArtificial
+
+    funcion jugar_turno(jugador_ia, oponente, mensaje_enemigo)
+        nom = jugador_ia.nombre
+        dif = jugador_ia.dificultad
+        mod = jugador_ia.modelo_ia
+
+        p = "=== DATOS TACTICOS ===\n"
+        p = p .. "Eres el " .. nom .. ". Turno actual.\n\n"
+
+        p = p .. "TUS TROPAS (ALIADAS - NO DISPARAR AQUI):\n"
+        para u en jugador_ia.obtener_vivas()
+            dist_u = mate.redondear(mate.raiz(u.x * u.x + u.y * u.y))
+            ang_u  = mate.redondear(((mate.atan2(u.y, u.x) * 180 / mate.pi) % 360 + 360) % 360)
+            p = p .. ç("- Cartesiana (|u.x|, |u.y|) -> Polar: |ang_u|, dist |dist_u|\n")
+        fin
+
+        p = p .. "\nOBJETIVOS ENEMIGOS (ELIGE UNO Y DESTRUYELO):\n"
+        para u en oponente.obtener_vivas()
+            dist_u = mate.redondear(mate.raiz(u.x * u.x + u.y * u.y))
+            ang_u  = mate.redondear(((mate.atan2(u.y, u.x) * 180 / mate.pi) % 360 + 360) % 360)
+            p = p .. ç("- Cartesiana (|u.x|, |u.y|) -> Polar: |ang_u|, dist |dist_u|\n")
+        fin
+
+        hay_mensaje = mensaje_enemigo != nulo ý cadena.recortar(mensaje_enemigo) != ""
+        si hay_mensaje
+            p = p .. "\n=== INTERCEPTACION DE RADIO ===\n"
+            p = p .. "El comandante enemigo transmite: <<" .. mensaje_enemigo .. ">>\n"
+        fin
+
+        p = p .. "\n=============================="
+        p = p .. "\nORDEN DE RESPUESTA (OBLIGATORIO):"
+        p = p .. "\nLINEA 1 - SOLO los corchetes con angulo y distancia del objetivo elegido."
+        p = p .. "\n  Formato exacto: [ANGULO, DISTANCIA]  Ejemplo:[225, 10]"
+        p = p .. "\n  Prohibido poner cualquier texto antes de los corchetes."
+        si hay_mensaje
+            p = p .. "\nLINEA 2 - Respuesta de rol corta y arrogante al mensaje enemigo. Sin numeros."
+        sino
+            p = p .. "\nLINEA 2 - Comentario de rol corto y arrogante. Sin numeros."
+        fin
+        p = p .. "\n=============================="
+
+        prov_nombre = cadena.mayusculas(jugador_ia.proveedor)
+        log.depurar("=== PROMPT ENVIADO A " .. prov_nombre .. " ===\n" .. p)
+
+        id_hilo = hilos.lanzar(llamar_api, {"prompt": p, "modelo": mod, "system": SYSTEM_COMBATE, "proveedor": jugador_ia.proveedor, "api_key": jugador_ia.api_key})
+
+        marcos = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+        idx = 0
+        mientras hilos.estaVivo(id_hilo)
+            simbolo = marcos[idx % 10]
+            escribirf("\r{0} {1} calcula su ataque...   ", simbolo, nom)
+            idx = idx + 1
+            sis.dormir(0.1)
+        fin
+        escribir("\n")
+
+        respuesta_bruta = hilos.esperar(id_hilo)
+        si respuesta_bruta == nulo
+            respuesta_bruta = "[270, 9]\nSenal perdida."
+        fin
+
+        respuesta = limpiar_razonamiento(respuesta_bruta)
+
+        si cadena.recortar(respuesta) == ""
+            log.advertencia("Respuesta truncada sin </think>. Usando fallback.")
+            respuesta = "[270, 9]\nSenales interferidas."
+        fin
+
+        log.info("=== RESPUESTA LIMPIA ===\n" .. respuesta)
+        escribir(ç("Transmision entrante:\n<<|respuesta|>>\n"))
+        # Entrada simulada: confirmar trayectoria con Enter
+        pedir("Presiona [Enter] para confirmar trayectoria...")
+
+        # ── EXTRACCION Y FALLBACK ─────────────────────────────────
+        resultado = extraer_coordenadas(respuesta)
+
+        angulo    = 0
+        distancia = 0
+
+        si resultado != nulo
+            angulo    = resultado["angulo"]
+            distancia = resultado["distancia"]
+        sino
+            log.error("Fallo total de extraccion. Respuesta: " .. respuesta)
+            escribir("Lectura corrupta. Disparando al azar.")
+            # Salida variable (depende del momento de ejecución y hardware):
+            angulo    = mate.aleatorio(0, 360)
+            # Salida variable (depende del momento de ejecución y hardware):
+            distancia = mate.aleatorio(2, 14)
+        fin
+
+        # ── MARGEN DE ERROR (Dificultad) ──────────────────────────
+        si dif > 0
+            escribir(ç("\nAplicando defecto de sensores (Nivel |dif|)!"))
+            sis.esperar(800)
+
+            error_dist = 0
+            error_ang  = 0
+
+            si dif == 1
+                # Salida variable (depende del momento de ejecución y hardware):
+                error_dist = mate.aleatorio(0, 1)
+            osi dif == 2
+                # Salida variable (depende del momento de ejecución y hardware):
+                error_dist = mate.aleatorio(-1, 1)
+            osi dif == 3
+                # Salida variable (depende del momento de ejecución y hardware):
+                error_dist = mate.aleatorio(-1, 1)
+                # Salida variable (depende del momento de ejecución y hardware):
+                error_ang  = mate.aleatorio(-10, 10)
+            fin
+
+            distancia = distancia + error_dist
+            angulo    = angulo + error_ang
+
+            si error_dist != 0 ó error_ang != 0
+                escribir(ç("Desviacion: D|error_dist| u, D|error_ang|° por fallos tecnicos."))
+            fin
+        fin
+
+        distancia = mate.max(0, mate.min(distancia, 14))
+        angulo    = ((angulo % 360) + 360) % 360
+
+        log.info(ç("Disparo Final IA -> Angulo: |angulo|, Distancia: |distancia|"))
+        retornar {"angulo": angulo, "distancia": distancia}
+    fin
+
+    funcion mensaje_final(jugador_ia, gano)
+        resultado = gano ? "GANASTE" : "PERDISTE"
+        p = "La partida ha terminado y " .. resultado .. " la Batalla Polar. "
+        p = p .. "Escribe un mensaje final de rol en espanol (maximo 3 lineas) a tu enemigo. "
+        p = p .. "Solo texto dramatico. Sin coordenadas, sin corchetes, sin numeros."
+
+        nom = jugador_ia.nombre
+        escribir(ç("Solicitando transmision de cierre a |nom|..."))
+
+        id_hilo = hilos.lanzar(llamar_api, {"prompt": p, "modelo": jugador_ia.modelo_ia, "system": SYSTEM_FINAL, "proveedor": jugador_ia.proveedor, "api_key": jugador_ia.api_key})
+
+        marcos = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+        idx = 0
+        mientras hilos.estaVivo(id_hilo)
+            simbolo = marcos[idx % 10]
+            escribirf("\r{0} Encriptando senal final...   ", simbolo)
+            idx = idx + 1
+            sis.dormir(0.1)
+        fin
+        escribir("\n")
+
+        respuesta_bruta = hilos.esperar(id_hilo)
+        si respuesta_bruta == nulo
+            retornar "Comunicaciones cortadas."
+        fin
+
+        limpio = limpiar_razonamiento(respuesta_bruta)
+        si cadena.recortar(limpio) == ""
+            retornar "Senal insuficiente para transmision final."
+        fin
+
+        retornar formatear_mensaje(limpio, 55)
+    fin
+fin
+
+ia = nueva InteligenciaArtificial()

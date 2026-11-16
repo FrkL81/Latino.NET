@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[convergio]]></content>
+    <tabTrigger>str:seccionAurea:convergio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de seccionAurea: convergio</description>
+</snippet>

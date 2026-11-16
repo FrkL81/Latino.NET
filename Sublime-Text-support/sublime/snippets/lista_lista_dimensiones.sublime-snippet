@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[lista.dimensiones(${1:matriz})]]></content>
+	<tabTrigger>lista.dimensiones</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna (filas, columnas) de una matriz</description>
+</snippet>

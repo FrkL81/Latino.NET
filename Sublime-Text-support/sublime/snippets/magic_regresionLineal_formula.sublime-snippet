@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:regresionLineal:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionLineal: formula</description>
+</snippet>

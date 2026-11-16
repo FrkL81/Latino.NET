@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[coeficientes]]></content>
+    <tabTrigger>str:regresionPolinomial:coeficientes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionPolinomial: coeficientes</description>
+</snippet>

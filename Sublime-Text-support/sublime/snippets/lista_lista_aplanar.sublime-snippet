@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[lista.aplanar(${1:lista})]]></content>
+    <tabTrigger>data:aplanar</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📦 Aplana recursivamente listas anidadas</description>
+</snippet>

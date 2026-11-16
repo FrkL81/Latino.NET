@@ -1,0 +1,116 @@
+/*
+    Simulación: Pelota Rebotando
+    Adaptación para Latino.NET v1.0
+*/
+
+// --- CONFIGURACIÓN ---
+ANCHO = 10
+ALTO = 10
+FPS = 100 // Milisegundos de espera
+
+// Estado inicial
+posX = 3.0
+posY = 4.0
+velX = 1.0 // Velocidad ajustada para consola
+velY = 1.0
+
+// Inicializamos la matriz (pantalla) dinámicamente
+pantalla = []
+desde (i = 0; i < ALTO; i++)
+    fila = []
+    desde (j = 0; j < ANCHO; j++)
+        lista.agregar(fila, 0)
+    fin
+    lista.agregar(pantalla, fila)
+fin
+
+// --- FUNCIONES ---
+
+funcion LimpiarMapa()
+    desde (i = 0; i < ALTO; i++)
+        desde (j = 0; j < ANCHO; j++)
+            // Reseteamos la celda
+            pantalla[i][j] = 0
+        fin
+    fin
+fin
+
+funcion ActualizarFisica()
+    // Aplicar velocidad
+    posX += velX
+    posY += velY
+
+    // Detectar rebotes (Límites 0 y 9)
+    // Usamos 9.0 para evitar irnos fuera de rango antes de rebotar
+    
+    // Rebote en X (Filas)
+    si posX >= (ALTO - 1) || posX <= 0
+        velX *= -1
+        // Corrección de posición para no quedarse pegado en la pared
+        si posX > (ALTO - 1) posX = ALTO - 1 fin
+        si posX < 0          posX = 0 fin
+    fin
+
+    // Rebote en Y (Columnas)
+    si posY >= (ANCHO - 1) || posY <= 0
+        velY *= -1
+        // Corrección de posición
+        si posY > (ANCHO - 1) posY = ANCHO - 1 fin
+        si posY < 0          posY = 0 fin
+    fin
+fin
+
+funcion Renderizar()
+    // Borrar consola anterior
+    sis.limpiar()
+    
+    // Dibujar la pelota en la posición actual
+    // Convertimos float a int truncando decimales
+    ix = mate.trunc(posX)
+    iy = mate.trunc(posY)
+    
+    // Validación extra de seguridad
+    intentar
+        pantalla[ix][iy] = 1
+    atrapar(e)
+        // Si por redondeo sale mal, corregimos silenciosamente
+        ix = 5; iy = 5
+        pantalla[ix][iy] = 1
+    fin
+
+    // Imprimir la matriz
+    desde (i = 0; i < ALTO; i++)
+        linea = ""
+        desde (j = 0; j < ANCHO; j++)
+            celda = pantalla[i][j]
+            // Usamos operador ternario para dibujar
+            char = (celda == 1) ? "●" : "·"
+            linea ..= char .. "  "
+        fin
+        escribir(linea)
+    fin
+    
+    escribir("\nPosición: (" .. ix .. ", " .. iy .. ")")
+    escribir("Presiona Ctrl+C para salir.")
+fin
+
+// --- BUCLE PRINCIPAL ---
+
+escribir("Iniciando simulación...")
+sis.esperar(1000)
+
+// Limitamos a 50 iteraciones para demostración automática
+max_iter = 50
+iter = 0
+
+mientras iter < max_iter
+    LimpiarMapa()
+    ActualizarFisica()
+    Renderizar()
+    
+    // Control de velocidad de animación
+    sis.esperar(FPS)
+    iter++
+fin
+
+escribir("\nSimulación completada.")

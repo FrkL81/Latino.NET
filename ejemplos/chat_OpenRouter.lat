@@ -1,0 +1,209 @@
+/*
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  EJEMPLO: Chat con IA usando OpenRouter                          ║
+    ║  Acceso a múltiples modelos de IA (Anthropic, OpenAI, etc.)      ║
+    ╚══════════════════════════════════════════════════════════════════╝
+    
+    CONFIGURACIÓN:
+    
+    Opción 1 - Variable de Entorno (RECOMENDADO - Más Seguro):
+    ───────────────────────────────────────────────────────────────────
+    1. Obtén tu clave API gratis en: https://openrouter.ai/
+    2. Configura la variable de entorno:
+       
+       Windows (PowerShell):
+         $env:OpenRouterAPIKey = "sk-or-v1-tu-clave-aqui"
+       
+       Windows (CMD):
+         set OpenRouterAPIKey=sk-or-v1-tu-clave-aqui
+       
+       Linux/macOS (Bash/Zsh):
+         export OpenRouterAPIKey='sk-or-v1-tu-clave-aqui'
+       
+       Para hacerlo permanente, agrégalo a tu .bashrc o .zshrc
+    
+    3. Ejecuta este script: latino chat_OpenRouter.lat
+    
+    
+    Opción 2 - Clave Directa en el Código (Para pruebas rápidas):
+    ───────────────────────────────────────────────────────────────────
+    Si prefieres no usar variables de entorno (menos seguro), puedes
+    descomentar la línea abajo y poner tu clave directamente:
+    
+    // miApiKey = "sk-or-v1-tu-clave-aqui"
+    
+    ⚠️ ADVERTENCIA: No subas código con tu API key a repositorios públicos
+    
+    
+    MODELOS DISPONIBLES GRATIS:
+    ───────────────────────────────────────────────────────────────────
+    - nvidia/nemotron-3-nano-30b-a3b:free
+    - meta-llama/llama-3.2-3b-instruct:free
+    - openrouter/free (router automático, recomienda modelo óptimo)
+    
+    Encuentra más en: https://openrouter.ai/models?order=newest&supported_parameters=tools
+    
+    Los modelos pueden estar desactualizados, verifica directamente en OpenRouter
+    qué modelos están disponibles de forma gratuita.
+*/
+
+// ═══════════════════════════════════════════════════════════════════
+// CONFIGURACIÓN
+// ═══════════════════════════════════════════════════════════════════
+
+// Opción 1: Leer desde variable de entorno (recomendado)
+miApiKey = sis.entorno("OpenRouterAPIKey")
+
+// Opción 2: Descomentar para usar clave directa (solo para pruebas)
+// miApiKey = "sk-or-v1-tu-clave-aqui"
+
+// Validar que tenemos una clave API
+si miApiKey == nulo o cadena.recortar(miApiKey) == ""
+    escribir("╔════════════════════════════════════════════════════════╗")
+    escribir("║  ⚠️  NO SE ENCONTRÓ LA CLAVE API DE OPENROUTER         ║")
+    escribir("╚════════════════════════════════════════════════════════╝")
+    escribir("")
+    escribir("Por favor configura tu clave API usando una de estas opciones:")
+    escribir("")
+    escribir("1️⃣  Variable de Entorno (Recomendado):")
+    escribir("   Windows: $env:OpenRouterAPIKey = 'tu-clave'")
+    escribir("   Linux/macOS: export OpenRouterAPIKey='tu-clave'")
+    escribir("")
+    escribir("2️⃣  Directamente en el código (línea 40):")
+    escribir("   Descomenta: miApiKey = \"sk-or-v1-tu-clave-aqui\"")
+    escribir("")
+    escribir("Obtén tu clave gratis en: https://openrouter.ai/")
+    escribir("")
+    sis.salir()
+fin
+
+// ═══════════════════════════════════════════════════════════════════
+// FUNCIÓN PRINCIPAL: CHATEAR CON IA
+// ═══════════════════════════════════════════════════════════════════
+
+funcion chatearConIA(pregunta, apiKey, modelo)
+    /*
+        Envía una pregunta a un modelo de IA via OpenRouter.
+        
+        Parámetros:
+            pregunta - String con la consulta para la IA
+            apiKey   - Clave API de OpenRouter
+            modelo   - ID del modelo a usar (opcional, default: gemini-2.0)
+        
+        Retorna:
+            String con la respuesta de la IA, o mensaje de error
+    */
+    
+    // Modelo por defecto si no se especifica
+    si modelo == nulo ó modelo == ""
+        modelo = "openrouter/free"
+    fin
+    
+    escribir("🤖 Consultando OpenRouter (" .. modelo .. ")...")
+    
+    // Configuración de la petición HTTP
+    config = {
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "metodo": "POST",
+        "encabezados": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " .. apiKey,
+            "HTTP-Referer": "https://latino-lang.org",
+            "X-Title": "Latino.NET Chat Example"
+        },
+        "datos": {
+            "model": modelo,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": pregunta
+                }
+            ]
+        },
+        "timeout": 60  // Timeout de 60 segundos para respuestas largas
+    }
+    
+    // Realizar la petición
+    intentar
+        respuesta = web.solicitar(config)
+        
+        // Verificar si la petición fue exitosa
+        si respuesta["ok"]
+            // Extraer el contenido de la respuesta
+            contenido = respuesta["json"]["choices"][0]["message"]["content"]
+            retornar contenido
+        sino
+            // Manejar errores HTTP
+            estado = respuesta["estado"]
+            mensaje_error = "Error HTTP " .. estado
+            
+            // Mensajes de error más descriptivos
+            si estado == 401
+                mensaje_error = mensaje_error .. ": Clave API inválida o expirada"
+            sino_si estado == 402
+                mensaje_error = mensaje_error .. ": Sin créditos. Recarga en openrouter.ai/credits"
+            sino_si estado == 429
+                mensaje_error = mensaje_error .. ": Límite de peticiones excedido. Espera unos minutos"
+            sino_si estado == 503
+                mensaje_error = mensaje_error .. ": Servicio temporalmente no disponible"
+            sino
+                mensaje_error = mensaje_error .. ": " .. respuesta["texto"]
+            fin
+            
+            retornar mensaje_error
+        fin
+    atrapar (error)
+        retornar "❌ Error de conexión: " .. error
+    fin
+fin
+
+// ═══════════════════════════════════════════════════════════════════
+// EJECUCIÓN
+// ═══════════════════════════════════════════════════════════════════
+
+escribir("╔══════════════════════════════════════════════════════════╗")
+escribir("║           Latino.NET + OpenRouter AI Chat                ║")
+escribir("╚══════════════════════════════════════════════════════════╝")
+escribir("")
+
+// Pregunta de ejemplo
+pregunta = "¿Qué es la programación funcional en términos sencillos?"
+escribir("👤 Pregunta: " .. pregunta)
+escribir("")
+
+// Llamar a la IA
+respuesta = chatearConIA(pregunta, miApiKey, nulo)
+
+// Mostrar respuesta
+escribir("🤖 Respuesta:")
+escribir("────────────────────────────────────────────────────────────")
+escribir(respuesta)
+escribir("────────────────────────────────────────────────────────────")
+escribir("")
+
+// ═══════════════════════════════════════════════════════════════════
+// EJEMPLO ADICIONAL: PROBAR MÚLTIPLES MODELOS
+// ═══════════════════════════════════════════════════════════════════
+
+/*
+// Descomentar para comparar respuestas de diferentes modelos:
+
+modelos = [
+    "openrouter/free",
+    "nvidia/nemotron-3-nano-30b-a3b:free",
+    "meta-llama/llama-3.2-3b-instruct:free"
+]
+
+pregunta_comparacion = "Explica recursión en una frase"
+
+escribir("\n╔══════════════════════════════════════════════════════════╗")
+escribir("║            COMPARACIÓN DE MODELOS                        ║")
+escribir("╚══════════════════════════════════════════════════════════╝\n")
+
+para cada modelo en modelos
+    escribir("📊 Modelo: " .. modelo)
+    respuesta = chatearConIA(pregunta_comparacion, miApiKey, modelo)
+    escribir("   → " .. respuesta)
+    escribir("")
+fin
+*/

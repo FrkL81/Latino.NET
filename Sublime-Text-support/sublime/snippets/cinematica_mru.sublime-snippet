@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.mru(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>cinematica.mru</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Movimiento Rectilíneo Uniforme. Pasa 2 de: 'v', 'd', 't'.\n\nFórmula: v = d / t</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:keplerTercera:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Astronomía: Retorno de keplerTercera: resultado</description>
+</snippet>

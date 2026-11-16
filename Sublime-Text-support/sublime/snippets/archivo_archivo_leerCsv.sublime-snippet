@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[archivo.leerCsv("${1:archivo.csv}", "${2:,}")]]></content>
+    <tabTrigger>file:leerCsv</tabTrigger>
+    <scope>source.latino</scope>
+    <description>📁 Leer archivo CSV como lista de diccionarios</description>
+</snippet>

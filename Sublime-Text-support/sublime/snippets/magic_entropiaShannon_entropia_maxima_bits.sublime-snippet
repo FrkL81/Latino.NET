@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[entropia_maxima_bits]]></content>
+    <tabTrigger>str:entropiaShannon:entropia_maxima_bits</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de entropiaShannon: entropia_maxima_bits</description>
+</snippet>

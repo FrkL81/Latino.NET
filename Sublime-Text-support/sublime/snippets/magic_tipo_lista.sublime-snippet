@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[lista]]></content>
+    <tabTrigger>str:tipo:lista</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tipo: Retorno de tipo: lista</description>
+</snippet>

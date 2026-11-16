@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+calculo.trapecio(${1:funcion}, ${2:a}, ${3:b}, ${4:n})
+]]></content>
+	<tabTrigger>calculo.trapecio</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Integración numérica por la Regla del Trapecio Compuesta.\n</description>
+</snippet>

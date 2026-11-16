@@ -1,0 +1,33 @@
+/*
+   03 - Comentarios
+   Los comentarios son notas para ti y otros programadores.
+   El programa los ignora completamente.
+*/
+
+escribir("--- Inicio del Programa ---")
+
+// 1. Comentarios de una línea (Estilo C)
+// Todo lo que escribas después de las barras es invisible.
+escribir("Esta línea se ejecuta.") // Aquí explico que esto imprime texto.
+
+# 2. Comentarios de una línea (Estilo Shell/Python)
+# También puedes usar el símbolo numeral.
+escribir("Esta también se ejecuta.")
+
+/*
+   3. Comentarios de Bloque
+   Sirven para escribir explicaciones largas
+   que ocupan varias líneas.
+   
+   También sirven para "apagar" código temporalmente.
+*/
+
+// A continuación, una prueba de que el código comentado NO funciona:
+/*
+    escribir("❌ ERROR: Si ves esto, los comentarios no funcionan.")
+    sis.salir()
+*/
+
+escribir("✅ Si lees esto, el código comentado fue ignorado correctamente.")
+
+escribir("--- Fin del Programa ---")

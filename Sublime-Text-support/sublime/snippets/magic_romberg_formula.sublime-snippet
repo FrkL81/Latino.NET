@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:romberg:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de romberg: formula</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+archivo.buscar(${1:directorio}, ${2:patron})
+]]></content>
+	<tabTrigger>archivo.buscar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Busca archivos recursivamente usando patrón glob</description>
+</snippet>

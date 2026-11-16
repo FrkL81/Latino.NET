@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:entalpiaReaccion:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Química: Retorno de entalpiaReaccion: unidad</description>
+</snippet>

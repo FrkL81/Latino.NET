@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+mutex.liberar(${1:id})
+]]></content>
+	<tabTrigger>mutex.liberar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Libera el bloqueo de un mutex.</description>
+</snippet>

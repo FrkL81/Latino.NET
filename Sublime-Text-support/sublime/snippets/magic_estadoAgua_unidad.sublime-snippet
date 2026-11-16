@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:estadoAgua:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de estadoAgua: unidad</description>
+</snippet>

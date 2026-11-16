@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[zip]]></content>
+    <tabTrigger>str:plugin:zip</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: zip</description>
+</snippet>

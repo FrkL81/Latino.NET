@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.varianza(${1:lista_o_numeros})]]></content>
+    <tabTrigger>math:varianza</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Calcular varianza muestral</description>
+</snippet>

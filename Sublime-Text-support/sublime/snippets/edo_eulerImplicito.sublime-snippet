@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+edo.eulerImplicito(${1:funcionF}, ${2:funcionDfDy}, ${3:t0}, ${4:y0}, ${5:tf}, ${6:n})
+]]></content>
+	<tabTrigger>edo.eulerImplicito</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Resuelve dy/dt = f(t, y) con el Método de Euler Implícito (hacia atrás).\n</description>
+</snippet>

@@ -1,0 +1,26 @@
+﻿# ==================================================================
+# core/unidad.lat
+# Representa un soldado individual en el campo de batalla
+# ==================================================================
+
+clase Unidad
+    constructor(x = 0, y = 0, simbolo = "[B]")
+        mi.x = x
+        mi.y = y
+        # Símbolo de exactamente 3 chars ASCII — garantiza alineación
+        # [B] = Blue vivo  |  [R] = Red vivo  |  {X} = destruido
+        mi.simbolo = simbolo
+        mi.viva = cierto
+    fin
+
+    funcion esta_viva()
+        retornar mi.viva
+    fin
+
+    funcion destruir()
+        mi.viva = falso
+        # {X} — llaves en lugar de corchetes para distinguir visualmente
+        # de las unidades vivas [B]/[R] de un vistazo
+        mi.simbolo = "{X}"
+    fin
+fin

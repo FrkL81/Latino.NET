@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[residuos]]></content>
+    <tabTrigger>str:regresionLineal:residuos</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionLineal: residuos</description>
+</snippet>

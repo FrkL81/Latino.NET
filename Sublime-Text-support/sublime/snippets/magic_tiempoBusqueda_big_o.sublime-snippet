@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[big_o]]></content>
+    <tabTrigger>str:tiempoBusqueda:big_o</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de tiempoBusqueda: big_o</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[diagnostico]]></content>
+    <tabTrigger>str:factorSeguridad:diagnostico</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de factorSeguridad: diagnostico</description>
+</snippet>

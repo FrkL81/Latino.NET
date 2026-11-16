@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+archivo.tamaño(${1:"ruta"})
+]]></content>
+	<tabTrigger>archivo.tamaño</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📂 Obtener tamaño en bytes</description>
+</snippet>
+

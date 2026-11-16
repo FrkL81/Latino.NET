@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%M]]></content>
+    <tabTrigger>str:fmt:%M</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato Tiempo: Tiempo: Minuto (00-59)</description>
+</snippet>

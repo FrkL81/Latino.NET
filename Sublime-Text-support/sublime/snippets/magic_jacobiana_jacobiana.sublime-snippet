@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[jacobiana]]></content>
+    <tabTrigger>str:jacobiana:jacobiana</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de jacobiana: jacobiana</description>
+</snippet>

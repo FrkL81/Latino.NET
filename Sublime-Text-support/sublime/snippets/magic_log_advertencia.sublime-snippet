@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[advertencia]]></content>
+    <tabTrigger>str:log:advertencia</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Log: Retorno de log: advertencia</description>
+</snippet>

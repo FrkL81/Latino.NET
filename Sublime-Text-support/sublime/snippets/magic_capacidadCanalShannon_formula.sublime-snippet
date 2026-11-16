@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:capacidadCanalShannon:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de capacidadCanalShannon: formula</description>
+</snippet>

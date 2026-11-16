@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[grados]]></content>
+    <tabTrigger>str:ang:grados</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ángulo: Ángulo: Grados sexagesimales</description>
+</snippet>

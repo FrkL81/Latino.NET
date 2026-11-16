@@ -1,0 +1,32 @@
+/*
+   02 - Aritmética Básica
+   Latino.NET funciona como una calculadora directa.
+   Aquí no necesitamos variables, solo valores y operadores.
+*/
+
+escribir("--- Calculadora Básica ---")
+
+// Suma y Resta
+escribir("10 + 5 = " .. (10 + 5))
+escribir("50 - 2 = " .. (50 - 2))
+
+// Multiplicación y División
+escribir("8 * 8  = " .. (8 * 8))
+escribir("20 / 4 = " .. (20 / 4))
+
+escribir("\n--- Operaciones Avanzadas ---")
+
+// Potencia (El símbolo ^)
+escribir("2 elevado al cubo (2^3) = " .. (2 ^ 3))
+
+// Módulo (El resto de una división)
+// 10 dividido entre 3 es 3, y sobra 1.
+escribir("Residuo de 10 / 3 = " .. (10 % 3))
+
+escribir("\n--- El Orden Importa (Precedencia) ---")
+
+// Sin paréntesis: La multiplicación (*) gana a la suma (+)
+escribir("2 + 3 * 4   = " .. (2 + 3 * 4))    // Es 14
+
+// Con paréntesis: Forzamos que la suma se haga primero
+escribir("(2 + 3) * 4 = " .. ((2 + 3) * 4))  // Es 20

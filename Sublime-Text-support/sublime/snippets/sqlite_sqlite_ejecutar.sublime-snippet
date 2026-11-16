@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sqlite.ejecutar(${1:id_db}, "${2:query}")
+]]></content>
+	<tabTrigger>sqlite.ejecutar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🗄️ Ejecutar comando SQL (INSERT, UPDATE, DELETE)</description>
+</snippet>

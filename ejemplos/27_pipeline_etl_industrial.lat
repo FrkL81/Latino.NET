@@ -1,0 +1,131 @@
+# ==================================================================
+# 27_pipeline_etl_industrial.lat
+# Caso Maestro de Ingeniería: Pipeline ETL Completo
+# Extract (CSV) -> Transform (Validar/Hash) -> Load (SQLite) -> Audit (JSON)
+# ==================================================================
+
+incluir("sqlite")
+incluir("lapsos")
+
+limpiar("pantalla")
+escribir("=== PIPELINE ETL INDUSTRIAL: AUDITORÍA Y CARGA DE DATOS ===")
+escribir("")
+
+# Salida variable (depende del momento de ejecución y hardware):
+tiempoInicio = sis.milisegundos()
+
+# Rutas de trabajo temporales
+ruta_csv = "ventas_crudo.csv"
+ruta_db  = "data_warehouse.db"
+ruta_auditoria = "reporte_etl.json"
+
+# ── 1. EXTRACT: Ingesta de datos planos ───────────────────────────
+contenido_crudo = "folio,email,monto,divisa\n" ..
+                  "FAC-101,carlos.mendoza@empresa.com,1250.50,USD\n" ..
+                  "FAC-102,correo_invalido_sin_arroba,300.00,USD\n" ..
+                  "FAC-103,lucia.ramos@banco.org,4800.00,USD\n" ..
+                  "FAC-104,marcos.vega@tienda.com,-50.00,USD\n" ..
+                  "FAC-105,elena.santos@consultoria.net,890.00,USD"
+
+archivo.escribir(ruta_csv, contenido_crudo)
+escribir("1. [EXTRACT] Archivo CSV recibido e ingresado a memoria.")
+
+registros_crudos = archivo.leerCsv(ruta_csv, ",")
+escribir("   Total de filas extraídas: " .. lista.longitud(registros_crudos))
+
+# ── 2. TRANSFORM: Validación en frontera y enriquecimiento ────────
+escribir("\n2. [TRANSFORM] Iniciando saneamiento de datos...")
+
+registros_validos   = [ ]
+registros_anomalos  = [ ]
+volumen_total = 0
+marca_tiempo = lapsos.ahora()["texto"]
+
+para fila en registros_crudos
+    es_valido = cierto
+    motivo = ""
+
+    si no validar.email(fila["email"])
+        es_valido = falso
+        motivo = "Formato de correo electrónico inválido"
+    osi fila["monto"] <= 0
+        es_valido = falso
+        motivo = "Monto de transacción menor o igual a cero"
+    fin
+
+    si es_valido
+        # Huella de integridad SHA-256 por cada registro
+        datos_cadena = ç("|fila['folio']|;|fila['email']|;|fila['monto']|")
+        fila["hash_integridad"] = cadena.hash(datos_cadena, "SHA256")
+        fila["procesado_en"] = marca_tiempo
+        volumen_total = volumen_total + fila["monto"]
+        lista.agregar(registros_validos, fila)
+    sino
+        fila["motivo_rechazo"] = motivo
+        fila["fecha_rechazo"] = marca_tiempo
+        lista.agregar(registros_anomalos, fila)
+    fin
+fin
+
+escribirf("   Registros saneados listos para carga: {0}\n", lista.longitud(registros_validos))
+escribirf("   Registros anómalos aislados:          {0}\n", lista.longitud(registros_anomalos))
+
+# ── 3. LOAD: Inserción atómica masiva en SQLite ────────────────────
+escribir("\n3. [LOAD] Conectando a SQLite e iniciando carga transaccional...")
+
+si archivo.existe(ruta_db) archivo.borrar(ruta_db) fin
+db = sqlite.conectar(ruta_db)
+
+sqlite.ejecutar(db, "CREATE TABLE ventas_consolidadas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    folio TEXT UNIQUE NOT NULL,
+    email TEXT NOT NULL,
+    monto REAL NOT NULL,
+    divisa TEXT NOT NULL,
+    hash_integridad TEXT NOT NULL,
+    procesado_en TEXT NOT NULL
+);")
+
+sql_insert = "INSERT INTO ventas_consolidadas (folio, email, monto, divisa, hash_integridad, procesado_en)
+              VALUES (@folio, @email, @monto, @divisa, @hash_integridad, @procesado_en)"
+
+# Transacción atómica ACID
+sqlite.transaccion(db, fun(id_tx)
+    para r en registros_validos
+        sqlite.ejecutar(id_tx, sql_insert, r)
+    fin
+fin)
+
+conteo_db = sqlite.consultar(db, "SELECT COUNT(*) as total FROM ventas_consolidadas")[0]["total"]
+sqlite.cerrar(db)
+escribirf("   ✅ Carga completada. Filas consolidadas en base de datos: {0}\n", conteo_db)
+
+# ── 4. AUDIT: Exportación de métricas en JSON ──────────────────────
+escribir("\n4. [AUDIT] Generando reporte ejecutivo en JSON...")
+
+# Salida variable (depende del momento de ejecución y hardware):
+tiempo_total = sis.milisegundos() - tiempoInicio
+
+reporte = {
+    "pipeline": "ETL_VENTAS_DIARIAS",
+    "fecha_proceso": marca_tiempo,
+    "duracion_ms": tiempo_total,
+    "metricas": {
+        "extraidos": lista.longitud(registros_crudos),
+        "cargados": conteo_db,
+        "rechazados": lista.longitud(registros_anomalos),
+        "volumen_usd": volumen_total
+    },
+    "anomalias": registros_anomalos
+}
+
+archivo.escribirJson(ruta_auditoria, reporte, cierto)
+escribir("   Reporte persistido en: " .. ruta_auditoria)
+
+# ── 5. Higiene y Limpieza Final de Recursos ────────────────────────
+archivo.borrar(ruta_csv)
+archivo.borrar(ruta_db)
+archivo.borrar(ruta_auditoria)
+
+escribir("\n🧹 Recursos liberados y archivos temporales eliminados.")
+escribir("✔ Pipeline ETL ejecutado exitosamente.")

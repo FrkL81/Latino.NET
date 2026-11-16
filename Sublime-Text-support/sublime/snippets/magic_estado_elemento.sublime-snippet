@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[elemento]]></content>
+    <tabTrigger>str:estado:elemento</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de estado: elemento</description>
+</snippet>

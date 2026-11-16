@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[pantalla]]></content>
+    <tabTrigger>str:sis:pantalla</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Sistema: Modo limpiar: Solo lo visible</description>
+</snippet>

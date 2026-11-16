@@ -1,0 +1,59 @@
+# ==================================================================
+# Ejemplo: Manejo Robusto de Errores y Validaciones
+# Demostración de lanzar() y captura de fallos de runtime
+# ==================================================================
+
+# Función de negocio que valida invariantes y dispara excepciones
+funcion transferir_fondos(cuenta_origen, cuenta_destino, monto)
+    si monto <= 0
+        lanzar("El monto a transferir debe ser estrictamente positivo.")
+    fin
+
+    si cuenta_origen["saldo"] < monto
+        saldo_disp = cuenta_origen["saldo"]
+        lanzar(ç("Fondos insuficientes. Saldo actual: $|saldo_disp|."))
+    fin
+
+    cuenta_origen["saldo"] = cuenta_origen["saldo"] - monto
+    cuenta_destino["saldo"] = cuenta_destino["saldo"] + monto
+    retornar cierto
+fin
+
+# ── 1. Captura de errores de lógica de negocio (lanzar) ───────────
+origen  = { "usuario": "Carlos", "saldo": 100 }
+destino = { "usuario": "Ana",    "saldo": 50  }
+
+escribir("💳 Intentando transferir $150 (con saldo de $100)...")
+
+intentar
+    transferir_fondos(origen, destino, 150)
+    escribir("Transferencia exitosa.")
+atrapar (error_msg)
+    escribir(ç("🛑 Transacción denegada: |error_msg|"))
+fin
+
+# ── 2. Captura de fallos de E/S y limpieza idiomática ──────────────
+# (Sin 'finally': aseguramos el estado antes o dentro de la captura)
+archivo_temp = "recurso_bloqueado.tmp"
+
+intentar
+    archivo.escribir(archivo_temp, "Datos transaccionales")
+    escribir("📄 Archivo temporal creado.")
+    
+    # Forzar un error lógico de runtime (división por cero)
+    divisor = 0
+    invalido = 10 / divisor
+atrapar (e)
+    escribir(ç("⚠️ Ocurrió una falla durante el proceso: |e|"))
+    escribir("🧹 Ejecutando limpieza segura de recursos...")
+    si archivo.existe(archivo_temp)
+        archivo.eliminar(archivo_temp)
+    fin
+fin
+
+# Verificar limpieza
+si archivo.existe(archivo_temp)
+    escribir("❌ El archivo temporal sigue existiendo")
+sino
+    escribir("✅ Archivo temporal limpiado correctamente")
+fin

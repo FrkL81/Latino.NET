@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.limpiar(${1:id})
+]]></content>
+	<tabTrigger>texto.limpiar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Vacía el contenido del buffer sin destruir el objeto ni liberar la memoria</description>
+</snippet>

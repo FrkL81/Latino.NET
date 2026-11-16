@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nombre]]></content>
+    <tabTrigger>str:descargar:nombre</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de descargar: nombre</description>
+</snippet>

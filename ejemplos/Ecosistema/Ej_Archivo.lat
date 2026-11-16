@@ -1,0 +1,158 @@
+/*
+==============================================================
+LIBRERÍA: archivo
+DESCRIPCIÓN: Funciones para interactuar con el sistema de archivos.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+ruta = "prueba_ecosistema.txt"
+
+/*
+FUNCIÓN: archivo.escribir
+DESCRIPCIÓN: Escribe texto en un archivo (sobrescribe si existe).
+PARÁMETROS:
+  - ruta (cadena): Ubicación del archivo.
+  - contenido (cadena): Texto a escribir.
+RETORNA: nulo
+*/
+archivo.escribir(ruta, "Línea 1
+")
+escribir("Archivo escrito.")
+
+/*
+FUNCIÓN: archivo.anexar
+DESCRIPCIÓN: Añade texto al final del archivo.
+PARÁMETROS:
+  - ruta (cadena): Ubicación del archivo.
+  - contenido (cadena): Texto a añadir.
+RETORNA: nulo
+*/
+archivo.anexar(ruta, "Línea 2")
+escribir("Contenido anexado.")
+
+/*
+FUNCIÓN: archivo.leer
+DESCRIPCIÓN: Lee el contenido completo de un archivo de texto.
+PARÁMETROS:
+  - ruta (cadena): Ubicación del archivo.
+RETORNA: cadena - Contenido del archivo.
+*/
+# Entrada simulada: archivo de texto 'prueba_ecosistema.txt' escrito previamente por archivo.escribir/anexar
+contenido = archivo.leer(ruta)
+escribir("Contenido leído: " .. contenido)
+
+/*
+FUNCIÓN: archivo.existe
+DESCRIPCIÓN: Verifica si existe un archivo o directorio.
+PARÁMETROS:
+  - ruta (cadena): Ubicación a verificar.
+RETORNA: logico - verdadero si existe.
+*/
+escribir("¿Existe?: " .. archivo.existe(ruta))
+
+/*
+FUNCIÓN: archivo.lineas
+DESCRIPCIÓN: Lee un archivo y retorna una lista de líneas.
+PARÁMETROS:
+  - ruta (cadena): Ubicación del archivo.
+RETORNA: lista - Lista de cadenas.
+*/
+listaLineas = archivo.lineas(ruta)
+escribir("Líneas: " .. listaLineas)
+
+/*
+FUNCIÓN: archivo.nombre
+DESCRIPCIÓN: Obtiene el nombre del archivo o directorio.
+PARÁMETROS:
+  - ruta (cadena): Ubicación completa.
+RETORNA: cadena - Nombre base.
+*/
+escribir("Nombre: " .. archivo.nombre(ruta))
+
+/*
+FUNCIÓN: archivo.extension
+DESCRIPCIÓN: Obtiene la extensión del archivo.
+PARÁMETROS:
+  - ruta (cadena): Ubicación completa.
+RETORNA: cadena - Extensión (ej: .txt).
+*/
+escribir("Extensión: " .. archivo.extension(ruta))
+
+/*
+FUNCIÓN: archivo.borrar
+DESCRIPCIÓN: Elimina un archivo o directorio.
+PARÁMETROS:
+  - ruta (cadena): Ubicación a eliminar.
+RETORNA: nulo
+*/
+archivo.borrar(ruta)
+escribir("Archivo borrado.")
+
+/*
+FUNCIÓN: archivo.crearCarpeta
+DESCRIPCIÓN: Crea un directorio (y directorios padres si faltan).
+PARÁMETROS:
+  - ruta (cadena): Ruta de la carpeta.
+RETORNA: nulo
+*/
+archivo.crearCarpeta("temp_ecosistema")
+escribir("Carpeta creada.")
+archivo.borrar("temp_ecosistema")
+escribir("Carpeta borrada.")
+
+/*
+FUNCIÓN: archivo.escribirJson
+DESCRIPCIÓN: Escribe un diccionario o lista como archivo JSON.
+PARÁMETROS:
+  - ruta (cadena): Ruta del archivo.
+  - datos (cualquiera): Diccionario o lista.
+  - identado (logico): Activa sangría (opcional, default verdadero).
+RETORNA: nulo
+*/
+archivo.escribirJson("test.json", { "version": 1.0, "lenguaje": "Latino" })
+escribir("JSON escrito.")
+
+/*
+FUNCIÓN: archivo.leerJson
+DESCRIPCIÓN: Lee un archivo JSON y retorna un diccionario o lista.
+PARÁMETROS:
+  - ruta (cadena): Ruta del archivo.
+RETORNA: cualquiera - Objeto Latino parseado.
+*/
+datos = archivo.leerJson("test.json")
+escribir("Leído de JSON: " .. datos.lenguaje)
+archivo.borrar("test.json")
+
+/*
+FUNCIÓN: archivo.escribirCsv
+DESCRIPCIÓN: Escribe una lista de diccionarios en formato CSV.
+PARÁMETROS:
+  - ruta (cadena): Ruta de destino.
+  - lista (lista): Lista de diccionarios a guardar.
+  - separador (cadena): Delimitador (opcional, default ",").
+RETORNA: nulo
+*/
+datosCsv = [ { "id": 1, "nombre": "Edison" }, { "id": 2, "nombre": "Franklin" } ]
+archivo.escribirCsv("test.csv", datosCsv)
+escribir("CSV escrito.")
+
+/*
+FUNCIÓN: archivo.leerCsv
+DESCRIPCIÓN: Lee un archivo CSV y retorna una lista de diccionarios.
+PARÁMETROS:
+  - ruta (cadena): Ruta al archivo.
+  - separador (cadena): Delimitador (opcional, default ",").
+RETORNA: lista - Lista de diccionarios.
+*/
+datosCsvLeidos = archivo.leerCsv("test.csv")
+escribir("Leído de CSV: " .. datosCsvLeidos[0].nombre)
+archivo.borrar("test.csv")
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Archivo.lat
+==============================================================
+*/

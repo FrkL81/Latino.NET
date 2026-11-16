@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.separar(${1:texto}, ${2:","})
+]]></content>
+	<tabTrigger>cadena.separar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Dividir cadena en lista</description>
+</snippet>
+

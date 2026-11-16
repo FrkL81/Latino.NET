@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.alfanumerico(${1:texto})
+]]></content>
+	<tabTrigger>validar.alfanumerico</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Verifica si contiene solo letras y números</description>
+</snippet>

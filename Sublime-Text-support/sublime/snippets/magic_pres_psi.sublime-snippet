@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[psi]]></content>
+    <tabTrigger>str:pres:psi</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Presión: Presión: Libras por pulgada²</description>
+</snippet>

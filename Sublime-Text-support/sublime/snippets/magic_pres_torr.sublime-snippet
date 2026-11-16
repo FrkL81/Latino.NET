@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[torr]]></content>
+    <tabTrigger>str:pres:torr</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Presión: Presión: Torr</description>
+</snippet>

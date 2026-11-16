@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[todo]]></content>
+    <tabTrigger>str:sis:todo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Sistema: Modo limpiar: Todo el buffer</description>
+</snippet>

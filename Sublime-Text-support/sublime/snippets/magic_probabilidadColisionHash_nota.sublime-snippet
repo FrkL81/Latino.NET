@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:probabilidadColisionHash:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Computación: Retorno de probabilidadColisionHash: nota</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:areaCirculo:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de areaCirculo: resultado</description>
+</snippet>

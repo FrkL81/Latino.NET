@@ -1,0 +1,80 @@
+/*
+==============================================================
+LIBRERÍA: validar
+DESCRIPCIÓN: Funciones para validación de formatos y tipos.
+FECHA: 2026-02-15
+==============================================================
+*/
+
+/*
+FUNCIÓN: validar.email
+DESCRIPCIÓN: Valida formato de correo electrónico.
+PARÁMETROS:
+  - texto (cadena): Email a validar.
+RETORNA: logico - verdadero si es válido.
+*/
+escribir("¿Email válido?: " .. validar.email("test@latino.org"))
+
+/*
+FUNCIÓN: validar.url
+DESCRIPCIÓN: Valida formato de URL.
+PARÁMETROS:
+  - texto (cadena): URL a validar.
+RETORNA: logico - verdadero si es válido.
+*/
+escribir("¿URL válida?: " .. validar.url("https://www.latino.org"))
+
+/*
+FUNCIÓN: validar.ipv4
+DESCRIPCIÓN: Valida dirección IPv4.
+PARÁMETROS:
+  - texto (cadena): IP a validar.
+RETORNA: logico - verdadero si es válido.
+*/
+escribir("¿IP válida?: " .. validar.ipv4("127.0.0.1"))
+
+/*
+FUNCIÓN: validar.numero
+DESCRIPCIÓN: Verifica si el texto representa un número válido.
+PARÁMETROS:
+  - texto (cadena): Texto a validar.
+RETORNA: logico - verdadero si es número.
+*/
+escribir("¿Es número?: " .. validar.numero("123.45"))
+
+/*
+FUNCIÓN: validar.esPalindromo
+DESCRIPCIÓN: Verifica si el valor se lee igual al derecho y al revés.
+PARÁMETROS:
+  - valor (cualquiera): Texto o número.
+RETORNA: logico - verdadero si es palíndromo.
+*/
+escribir("¿Es palíndromo?: " .. validar.esPalindromo("Anita lava la tina"))
+
+/*
+FUNCIÓN: validar.longitud
+DESCRIPCIÓN: Verifica si la longitud del texto está en el rango.
+PARÁMETROS:
+  - texto (cadena): Texto a medir.
+  - min (numerico): Mínimo.
+  - max (numerico): Máximo.
+RETORNA: logico - verdadero si está en rango.
+*/
+escribir("¿Longitud OK?: " .. validar.longitud("latino", 3, 10))
+
+/*
+FUNCIÓN: validar.contrasenaSegura
+DESCRIPCIÓN: Verifica complejidad mínima de contraseña.
+PARÁMETROS:
+  - texto (cadena): Password a validar.
+RETORNA: logico - verdadero si es segura.
+*/
+escribir("¿Segura?: " .. validar.contrasenaSegura("Latino.2026!"))
+
+/*
+==============================================================
+VALIDACIÓN: ✓ EJECUTADO SIN ERRORES
+FECHA: 2026-02-15
+COMANDO: dotnet run --project src/Latino.App/Latino.App.csproj ejemplos/Ecosistema/Ej_Validar.lat
+==============================================================
+*/

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cola.alista(${1:cola})
+]]></content>
+	<tabTrigger>cola.alista</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Convertir a lista</description>
+</snippet>
+

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[nota]]></content>
+    <tabTrigger>str:hazenWilliams:nota</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Hidráulica: Retorno de hazenWilliams: nota</description>
+</snippet>

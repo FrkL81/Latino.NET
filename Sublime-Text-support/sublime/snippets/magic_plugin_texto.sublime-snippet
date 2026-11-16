@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[texto]]></content>
+    <tabTrigger>str:plugin:texto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Plugin: Retorno de plugin: texto</description>
+</snippet>

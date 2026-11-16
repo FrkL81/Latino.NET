@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+si ${1:condicion1}
+	$2
+osi ${3:condicion2}
+	$4
+sino
+	$0
+fin
+]]></content>
+	<tabTrigger>cond:osi</tabTrigger>
+	<scope>source.latino</scope>
+	<description>❓ Bloque si-osi-sino completo</description>
+</snippet>

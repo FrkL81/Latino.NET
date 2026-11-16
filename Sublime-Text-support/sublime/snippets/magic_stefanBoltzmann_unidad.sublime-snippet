@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:stefanBoltzmann:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de stefanBoltzmann: unidad</description>
+</snippet>

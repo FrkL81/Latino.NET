@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:velocidadEscape:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Astronomía: Retorno de velocidadEscape: resultado</description>
+</snippet>

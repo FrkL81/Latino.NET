@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:transformador:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de transformador: unidad</description>
+</snippet>

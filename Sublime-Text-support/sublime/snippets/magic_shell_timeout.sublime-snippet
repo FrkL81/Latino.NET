@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[timeout]]></content>
+    <tabTrigger>str:shell:timeout</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Proceso: Retorno de shell: timeout</description>
+</snippet>

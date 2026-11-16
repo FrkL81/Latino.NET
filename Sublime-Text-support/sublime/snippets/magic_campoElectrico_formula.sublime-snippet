@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:campoElectrico:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de campoElectrico: formula</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:leyCoulomb:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de leyCoulomb: unidad</description>
+</snippet>

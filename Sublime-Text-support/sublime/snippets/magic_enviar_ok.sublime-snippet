@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ok]]></content>
+    <tabTrigger>str:enviar:ok</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Web: Retorno de enviar: ok</description>
+</snippet>

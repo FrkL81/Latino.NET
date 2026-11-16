@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:combinaciones:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estadística: Retorno de combinaciones: formula</description>
+</snippet>

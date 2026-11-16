@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+senales.decibelesVoltaje(${1:voltaje_salida}, ${2:voltaje_entrada})
+]]></content>
+	<tabTrigger>senales.decibelesVoltaje</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Nivel en decibeles para relación de voltajes (o amplitudes).\n\nFórmula: dBV ...</description>
+</snippet>

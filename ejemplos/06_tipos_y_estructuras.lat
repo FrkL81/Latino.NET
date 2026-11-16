@@ -1,0 +1,73 @@
+/*
+   06 - Tipos de Datos y Estructuras
+   Latino.NET es rico en formas de organizar la información.
+   Aquí veremos desde los datos simples hasta las colecciones avanzadas.
+*/
+
+escribir("--- 1. Tipos Primitivos (La Materia Prima) ---")
+
+// Usamos la función 'tipo()' para preguntar qué es cada cosa
+escribir("10      es: " .. tipo(10))
+escribir("'Hola'  es: " .. tipo("Hola"))
+escribir("verdadero es: " .. tipo(verdadero))
+escribir("nulo    es: " .. tipo(nulo))
+
+
+escribir("\n--- 2. Listas (Ordenadas y Mutables) ---")
+// Se usan corchetes []. El orden importa.
+listaCompras = ["Leche", "Pan", "Huevos"]
+
+escribir("Lista completa: " .. listaCompras)
+// Accedemos por posición (empezando en 0)
+escribir("El primer elemento es: " .. listaCompras[0])
+
+
+escribir("\n--- 3. Diccionarios (Clave-Valor) ---")
+// Se usan llaves {}. Ideales para guardar datos de un objeto.
+usuario = {
+    "nombre": "Ada",
+    "nivel": 5,
+    "activo": verdadero
+}
+
+escribir("Datos del usuario: " .. usuario)
+// Accedemos por el nombre de la clave
+escribir("Nombre: " .. usuario["nombre"])
+
+
+escribir("\n--- 4. Tuplas (Fijas e Inmutables) ---")
+// Se usan paréntesis (). Son como listas pero no se pueden cambiar.
+// Ideales para coordenadas o datos fijos.
+coordenadas = (10, 20)
+
+escribir("Punto X,Y: " .. coordenadas)
+
+
+escribir("\n--- 5. Conjuntos (Únicos) ---")
+// No permiten duplicados. Útil para listas de asistencia.
+invitados = conjunto.crear()
+
+conjunto.agregar(invitados, "Juan")
+conjunto.agregar(invitados, "Ana")
+conjunto.agregar(invitados, "Juan") // ¡Este se ignora!
+
+escribir("Invitados únicos: " .. invitados)
+
+
+escribir("\n--- 6. Pilas y Colas (Organización) ---")
+
+// Pila (LIFO): El último en entrar es el primero en salir (como platos)
+miPila = pila.crear()
+pila.apilar(miPila, "Plato 1")
+pila.apilar(miPila, "Plato 2")
+escribir("Pila:            " .. miPila)
+escribir("Pila como lista: " .. pila.alista(miPila))  // ["Plato 1", "Plato 2"]
+escribir("Cima de la pila: " .. pila.cima(miPila))    // Plato 2
+
+// Cola (FIFO): El primero en entrar es el primero en salir (como fila del banco)
+miCola = cola.crear()
+cola.encolar(miCola, "Cliente A")
+cola.encolar(miCola, "Cliente B")
+escribir("Cola:            " .. miCola)
+escribir("Cola como lista: " .. cola.alista(miCola))  // ["Cliente A", "Cliente B"]
+escribir("Primero en cola: " .. cola.siguiente(miCola)) // Cliente A

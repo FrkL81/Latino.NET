@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+estructuras.vigaFlechaMax(${1:carga_distribuida_N_m}, ${2:longitud_m}, ${3:modulo_young_Pa}, ${4:inercia_m4})
+]]></content>
+	<tabTrigger>estructuras.vigaFlechaMax</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Flecha máxima de una viga simplemente apoyada con carga distribuida uniforme....</description>
+</snippet>

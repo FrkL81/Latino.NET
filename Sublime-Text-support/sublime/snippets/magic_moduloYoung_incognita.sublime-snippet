@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[incognita]]></content>
+    <tabTrigger>str:moduloYoung:incognita</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Estructuras: Retorno de moduloYoung: incognita</description>
+</snippet>

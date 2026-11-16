@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.salir()
+]]></content>
+	<tabTrigger>sis.salir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Terminar programa</description>
+</snippet>
+

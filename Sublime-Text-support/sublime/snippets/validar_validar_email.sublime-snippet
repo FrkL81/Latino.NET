@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.email(${1:texto})
+]]></content>
+	<tabTrigger>validar.email</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Valida formato de correo electrónico</description>
+</snippet>

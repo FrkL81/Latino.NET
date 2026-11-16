@@ -1,0 +1,8 @@
+﻿<snippet>
+<content><![CDATA[
+lapsos.esPasado(${1:fecha})
+]]></content>
+<tabTrigger>lapsos.esPasado</tabTrigger>
+<scope>source.latino</scope>
+<description>🕰️ ¿Es pasado?</description>
+</snippet>

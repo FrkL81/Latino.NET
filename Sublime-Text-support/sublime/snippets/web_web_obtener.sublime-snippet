@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+web.obtener(${1:url}${2:, ${3:encabezados}})
+]]></content>
+	<tabTrigger>web.obtener</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🌐 Realiza una petición GET simple</description>
+</snippet>

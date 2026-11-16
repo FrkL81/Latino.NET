@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[minuto]]></content>
+    <tabTrigger>str:ahora:minuto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de ahora: minuto</description>
+</snippet>

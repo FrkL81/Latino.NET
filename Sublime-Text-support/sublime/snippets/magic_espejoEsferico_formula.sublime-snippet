@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:espejoEsferico:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Óptica: Retorno de espejoEsferico: formula</description>
+</snippet>

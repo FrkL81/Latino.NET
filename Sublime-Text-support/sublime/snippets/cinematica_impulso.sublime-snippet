@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+cinematica.impulso(${1:fuerza}, ${2:tiempo})
+]]></content>
+	<tabTrigger>cinematica.impulso</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Impulso de una fuerza (variación de momento lineal).\n\nFórmula: J = F·Δt</description>
+</snippet>

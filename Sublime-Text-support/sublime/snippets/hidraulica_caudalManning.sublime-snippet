@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+hidraulica.caudalManning(${1:coef_manning}, ${2:area_hidraulica_m2}, ${3:radio_hidraulico_m}, ${4:pendiente})
+]]></content>
+	<tabTrigger>hidraulica.caudalManning</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Caudal en canal abierto por la fórmula de Manning.\n\nFórmula: Q = (1/n)·A·R^...</description>
+</snippet>

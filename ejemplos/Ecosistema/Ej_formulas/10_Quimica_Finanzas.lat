@@ -1,0 +1,94 @@
+# Ejemplo: Plugin Formulas - Química y Finanzas
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: QUÍMICA Y FINANZAS ===")
+escribir("")
+
+# --- 1. QUÍMICA ---
+escribir("--- Química ---")
+escribir("Estudia la composición, estructura y propiedades de la materia.")
+escribir("")
+
+# Masa molar del agua (H2O)
+escribir("Masa Molar del Agua (H2O):")
+escribir("  Hidrógeno: 1.008 g/mol × 2 = 2.016")
+escribir("  Oxígeno: 16.00 g/mol × 1 = 16.00")
+masaH = 1.008
+masaO = 16.00
+masaAgua = 2 * masaH + masaO
+escribir("  Masa molar H2O: " .. masaAgua .. " g/mol")
+escribir("")
+
+# Composición porcentual
+escribir("Composición Porcentual del Agua:")
+porcentajeH = (2 * masaH / masaAgua) * 100
+porcentajeO = (masaO / masaAgua) * 100
+escribir("  Hidrógeno: " .. mate.redondear(porcentajeH, 2) .. "%")
+escribir("  Oxígeno: " .. mate.redondear(porcentajeO, 2) .. "%")
+escribir("")
+
+# Molaridad: M = n/V
+escribir("Molaridad de una Disolución:")
+escribir("  0.5 moles de NaCl en 250 mL de agua.")
+n = 0.5    # moles
+V = 0.25   # litros
+M = n / V
+escribir("  Molaridad: " .. M .. " mol/L")
+escribir("")
+
+# pH = -log[H+]
+escribir("pH de una Disolución:")
+escribir("  Concentración de H+ = 1×10⁻⁵ mol/L.")
+concentracionH = 1e-5
+pH = -mate.log10(concentracionH)
+escribir("  pH: " .. pH)
+escribir("")
+
+# --- 2. FINANZAS ---
+escribir("--- Finanzas ---")
+escribir("Estudia la gestión del dinero y las inversiones.")
+escribir("")
+
+# Interés compuesto: A = P(1 + r/n)^(nt)
+escribir("Interés Compuesto:")
+escribir("  Inversión de $1000 al 5% anual durante 10 años.")
+pInicial = 1000   # capital inicial
+r = 0.05   # tasa de interés anual
+n = 12     # capitalización mensual
+t = 10     # años
+A = pInicial * (1 + r/n)^(n*t)
+escribir("  Capital inicial: $" .. pInicial)
+escribir("  Tasa anual: " .. (r*100) .. "%")
+escribir("  Tiempo: " .. t .. " años")
+escribir("  Monto final: $" .. mate.redondear(A, 2))
+escribir("  Ganancia: $" .. mate.redondear(A - pInicial, 2))
+escribir("")
+
+# Valor Presente: PV = FV / (1 + r)^n
+escribir("Valor Presente:")
+escribir("  ¿Cuánto vale hoy $5000 que recibiré en 5 años con inflación del 3%?")
+F = 5000   # valor futuro
+r = 0.03    # tasa de descuento
+n = 5       # años
+PV = F / (1 + r)^n
+escribir("  Valor futuro: $" .. F)
+escribir("  Tasa descuento: " .. (r*100) .. "%")
+escribir("  Valor presente: $" .. mate.redondear(PV, 2))
+escribir("")
+
+# Pago de préstamo: PMT = P[r(1+r)^n]/[(1+r)^n-1]
+escribir("Pago Mensual de Préstamo:")
+escribir("  Préstamo de $10000 al 6% anual por 5 años.")
+P = 10000
+r = 0.06/12  # tasa mensual
+n = 5*12     # número de pagos
+PMT = P * (r*(1+r)^n) / ((1+r)^n - 1)
+escribir("  Préstamo: $" .. P)
+escribir("  Tasa anual: " .. (r*12*100) .. "%")
+escribir("  Pagos: " .. n .. " meses")
+escribir("  Pago mensual: $" .. mate.redondear(PMT, 2))
+
+escribir("")
+escribir("✅ Ejemplo de química y finanzas completado")

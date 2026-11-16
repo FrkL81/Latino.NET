@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[fusion_c]]></content>
+    <tabTrigger>str:estado:fusion_c</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de estado: fusion_c</description>
+</snippet>

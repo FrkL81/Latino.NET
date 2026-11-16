@@ -1,0 +1,67 @@
+/*
+   07 - Toma de Decisiones
+   Para que un programa sea inteligente, debe saber elegir qué camino tomar.
+   Aquí veremos las estructuras condicionales de Latino.NET.
+*/
+
+escribir("--- 1. La decisión simple (si / sino) ---")
+clima = "lluvioso"
+
+si clima == "lluvioso"
+    escribir("Lleva paraguas.")
+sino
+    escribir("Disfruta el día.")
+fin
+
+
+escribir("\n--- 2. Múltiples opciones (si / osi / sino) ---")
+// 'osi' es la abreviatura de 'o si' (else if)
+velocidad = 85
+
+si velocidad > 100
+    escribir("¡Vas muy rápido! Frena.")
+osi velocidad > 60
+    escribir("Velocidad de crucero normal.")
+osi velocidad > 20
+    escribir("Zona escolar o lenta.")
+sino
+    escribir("El vehículo está detenido.")
+fin
+
+
+escribir("\n--- 3. El Operador Ternario (Decisión en una línea) ---")
+// Estructura: (condición) ? valor_si_verdadero : valor_si_falso
+bateria = 15
+estado = (bateria < 20) ? "Batería Baja" : "Batería Normal"
+
+escribir("Estado del móvil: " .. estado)
+
+
+escribir("\n--- 4. Selección Múltiple (elegir) ---")
+// Ideal para menús. En Latino.NET no necesitas poner 'romper' (break).
+// El sistema sale automáticamente al terminar el caso.
+
+opcion = 2
+escribir("Usuario seleccionó opción: " .. opcion)
+
+elegir opcion
+    caso 1:
+        escribir("   > Iniciando juego...")
+    caso 2:
+        escribir("   > Abriendo configuración...")
+    caso 3:
+        escribir("   > Saliendo.")
+    otro:
+        escribir("   > Opción no válida.")
+fin
+
+
+escribir("\n--- 5. Condiciones Avanzadas (Regex) ---")
+// Podemos usar el operador '~=' para validar formatos dentro de un 'si'
+email = "usuario@latino.net"
+
+si email ~= "@"
+    escribir("El correo parece válido.")
+sino
+    escribir("Error: Falta el @.")
+fin

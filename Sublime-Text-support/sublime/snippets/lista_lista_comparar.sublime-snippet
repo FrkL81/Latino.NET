@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.comparar(${1:lista1}, ${2:lista2})
+]]></content>
+	<tabTrigger>lista.comparar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Comparar dos listas</description>
+</snippet>
+

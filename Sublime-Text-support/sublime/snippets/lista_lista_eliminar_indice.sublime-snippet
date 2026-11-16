@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+lista.eliminar_indice(${1:lista}, ${2:indice})
+]]></content>
+	<tabTrigger>lista.eliminar_indice</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Eliminar por índice</description>
+</snippet>
+

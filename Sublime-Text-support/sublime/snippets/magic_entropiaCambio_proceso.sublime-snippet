@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[proceso]]></content>
+    <tabTrigger>str:entropiaCambio:proceso</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de entropiaCambio: proceso</description>
+</snippet>

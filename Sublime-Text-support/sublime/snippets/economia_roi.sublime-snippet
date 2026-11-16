@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+economia.roi(${1:gananciaNeta}, ${2:costoInversion})
+]]></content>
+	<tabTrigger>economia.roi</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el Retorno de Inversión (ROI).\n\nFórmula: ROI = (Ganancia / Costo) ·...</description>
+</snippet>

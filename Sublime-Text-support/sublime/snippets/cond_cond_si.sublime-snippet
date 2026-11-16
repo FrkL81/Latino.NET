@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+si ${1:condicion}
+	$0
+fin
+]]></content>
+	<tabTrigger>cond:si</tabTrigger>
+	<scope>source.latino</scope>
+	<description>❓ Bloque si simple</description>
+</snippet>

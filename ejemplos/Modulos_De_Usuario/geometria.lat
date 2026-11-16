@@ -1,0 +1,52 @@
+# ==================================================================
+# Módulo: geometria.lat
+# Descripción: Funciones reutilizables para cálculos geométricos
+# ==================================================================
+# ¿Qué es un módulo?
+# -------------------
+# Un módulo es un archivo .lat que contiene funciones, clases o
+# variables que puedes reutilizar en otros scripts. En lugar de
+# copiar y pegar código, lo escribes una vez en un módulo y lo
+# "incluyes" donde lo necesites con: incluir("nombre_modulo")
+#
+# Ventajas:
+# - Código reutilizable
+# - Organización (un archivo por tema)
+# - Mantenimiento (cambias una vez, afecta todas las partes)
+# ==================================================================
+
+# --- Áreas ---
+funcion areaCirculo(radio)
+    retornar mate.pi * radio^2
+fin
+
+funcion areaRectangulo(base, altura)
+    retornar base * altura
+fin
+
+funcion areaTriangulo(base, altura)
+    retornar (base * altura) / 2
+fin
+
+# --- Volúmenes ---
+funcion volumenEsfera(radio)
+    retornar (4/3) * mate.pi * radio^3
+fin
+
+funcion volumenCilindro(radio, altura)
+    retornar mate.pi * radio^2 * altura
+fin
+
+# --- Perímetros ---
+funcion perimetroCirculo(radio)
+    retornar 2 * mate.pi * radio
+fin
+
+funcion perimetroRectangulo(base, altura)
+    retornar 2 * (base + altura)
+fin
+
+# --- Utilidades ---
+funcion esCuadrado(lado1, lado2)
+    retornar lado1 == lado2
+fin

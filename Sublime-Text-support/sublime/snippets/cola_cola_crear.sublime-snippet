@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:miCola} = cola.crear()
+]]></content>
+	<tabTrigger>cola.crear</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Crear cola vacía</description>
+</snippet>
+

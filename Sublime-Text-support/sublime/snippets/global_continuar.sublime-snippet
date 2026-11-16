@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+continuar
+]]></content>
+	<tabTrigger>continuar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>⏭️ Continuar bucle (continue)</description>
+</snippet>

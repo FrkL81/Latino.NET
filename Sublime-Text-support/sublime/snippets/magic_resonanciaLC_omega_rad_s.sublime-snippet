@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[omega_rad_s]]></content>
+    <tabTrigger>str:resonanciaLC:omega_rad_s</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de resonanciaLC: omega_rad_s</description>
+</snippet>

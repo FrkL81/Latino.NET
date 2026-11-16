@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mas_pesado]]></content>
+    <tabTrigger>str:compararMasas:mas_pesado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de compararMasas: mas_pesado</description>
+</snippet>

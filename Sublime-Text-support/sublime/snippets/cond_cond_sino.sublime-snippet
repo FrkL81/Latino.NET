@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+si ${1:condicion}
+	$2
+sino
+	$0
+fin
+]]></content>
+	<tabTrigger>cond:sino</tabTrigger>
+	<scope>source.latino</scope>
+	<description>❓ Bloque si-sino</description>
+</snippet>

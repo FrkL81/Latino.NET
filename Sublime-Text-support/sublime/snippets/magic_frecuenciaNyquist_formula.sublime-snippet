@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:frecuenciaNyquist:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Señales: Retorno de frecuenciaNyquist: formula</description>
+</snippet>

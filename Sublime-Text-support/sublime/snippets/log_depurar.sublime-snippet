@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+log.depurar(${1:mensaje})
+]]></content>
+	<tabTrigger>log.depurar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Registra un mensaje de depuración (máxima verbosidad).</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[ua]]></content>
+    <tabTrigger>str:long:ua</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Astro: Unidad Astronómica</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[texto]]></content>
+    <tabTrigger>str:sumar:texto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de sumar: texto</description>
+</snippet>

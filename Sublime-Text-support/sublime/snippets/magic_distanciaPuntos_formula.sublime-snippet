@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:distanciaPuntos:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de distanciaPuntos: formula</description>
+</snippet>

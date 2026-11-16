@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+dinamica.peso(${1:masa})
+]]></content>
+	<tabTrigger>dinamica.peso</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Peso de un objeto en la superficie terrestre (g = 9.80665 m/s²).\n\nFórmula: ...</description>
+</snippet>

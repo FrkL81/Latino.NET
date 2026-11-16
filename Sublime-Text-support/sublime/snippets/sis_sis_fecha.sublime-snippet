@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+sis.fecha(${1:"componente"})
+]]></content>
+	<tabTrigger>sis.fecha</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💻 Componente de fecha</description>
+</snippet>
+

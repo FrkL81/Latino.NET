@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+trocar(${1:coleccion}, ${2:a}, ${3:b})
+]]></content>
+	<tabTrigger>trocar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔄 Intercambia dos posiciones en una lista o diccionario</description>
+</snippet>

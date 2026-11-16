@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[verificado]]></content>
+    <tabTrigger>str:balancear:verificado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Tabla: Retorno de balancear: verificado</description>
+</snippet>

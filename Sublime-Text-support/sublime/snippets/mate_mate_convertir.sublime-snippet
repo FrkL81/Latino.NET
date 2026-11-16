@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.convertir(${1:valor}, "${2:desde}", "${3:hacia}")]]></content>
+    <tabTrigger>math:convertir</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Convertir unidades (temp, long, masa, ang)</description>
+</snippet>

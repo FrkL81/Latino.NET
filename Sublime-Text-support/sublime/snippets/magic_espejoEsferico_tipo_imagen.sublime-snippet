@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[tipo_imagen]]></content>
+    <tabTrigger>str:espejoEsferico:tipo_imagen</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Óptica: Retorno de espejoEsferico: tipo_imagen</description>
+</snippet>

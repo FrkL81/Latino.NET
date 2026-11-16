@@ -1,0 +1,77 @@
+# ==================================================================
+# 25_metaprogramacion_evaluar.lat
+# Metaprogramación, Síntesis de Código y Evaluación Dinámica
+# Demuestra evaluar(), ç() como motor de plantillas y manejo seguro
+# ==================================================================
+
+limpiar("pantalla")
+escribir("=== METAPROGRAMACIÓN Y EVALUACIÓN DINÁMICA ===")
+escribir("")
+
+# ── 1. Evaluación Aritmética Simple ──────────────────────────────
+expresion = "15 * 4 + mate.pot(2, 3)"
+resultado = evaluar(expresion)
+escribirf("Expresión evaluada: '{0}' -> Resultado: {1}\n", expresion, resultado)
+
+# ── 2. Motor de Reglas de Negocio en Caliente ─────────────────────
+# Las reglas comerciales pueden venir de bases de datos o archivos de texto
+solicitud = {
+    "cliente": "Roberto Méndez",
+    "score": 720,
+    "ingreso": 3500,
+    "antiguedad_meses": 24
+}
+
+reglas_credito = [
+    {
+        "nombre": "Regla Preferencial",
+        "condicion": "solicitud['score'] >= 750 ý solicitud['ingreso'] >= 4000",
+        "tasa": 0.085
+    },
+    {
+        "nombre": "Regla Estándar",
+        "condicion": "solicitud['score'] >= 700 ý solicitud['antiguedad_meses'] >= 12",
+        "tasa": 0.125
+    }
+]
+
+escribir("Evaluando reglas de crédito dinámicas para: " .. solicitud["cliente"])
+credito_aprobado = falso
+
+para r en reglas_credito
+    # evaluar() compila y ejecuta la condición sobre el ámbito activo
+    si evaluar(r["condicion"])
+        escribir("  ✅ APROBADO bajo: " .. r["nombre"])
+        escribirf("     Tasa de interés asignada: {0:P2}\n", r["tasa"])
+        credito_aprobado = cierto
+        romper
+    fin
+fin
+
+si no credito_aprobado
+    escribir("  ❌ RECHAZADO: No cumple políticas vigentes.")
+fin
+escribir("")
+
+# ── 3. Síntesis Dinámica con el Compositor ç() ────────────────────
+campo = "score"
+operador = ">="
+umbral = 700
+
+# ç() ensambla la plantilla; evaluar() resuelve la lógica
+codigo_generado = ç("solicitud['|campo|'] |operador| |umbral|")
+escribir("Código ensamblado con ç(): " .. codigo_generado)
+escribir("Resultado de evaluación:    " .. evaluar(codigo_generado))
+escribir("")
+
+# ── 4. Evaluación Defensiva (Control de Errores) ──────────────────
+expresion_riesgosa = "100 / 0"
+
+intentar
+    valor = evaluar(expresion_riesgosa)
+    escribir("Resultado: " .. valor)
+atrapar (err)
+    escribir("🛡️ Error de ejecución capturado defensivamente: " .. err)
+fin
+
+escribir("\n✔ Demostración de metaprogramación completada con éxito.")

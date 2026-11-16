@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[kcal]]></content>
+    <tabTrigger>str:en:kcal</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Energía: Energía: Kilocaloría</description>
+</snippet>

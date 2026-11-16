@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.piso(${1:numero})
+]]></content>
+	<tabTrigger>mate.piso</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Redondear hacia abajo</description>
+</snippet>
+

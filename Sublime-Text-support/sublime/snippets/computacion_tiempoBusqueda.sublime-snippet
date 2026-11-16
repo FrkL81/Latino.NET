@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+computacion.tiempoBusqueda(${1:n_elementos}, ${2:tipo_algoritmo})
+]]></content>
+	<tabTrigger>computacion.tiempoBusqueda</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Operaciones estimadas para buscar en n elementos. Tipos: 'lineal', 'binaria',...</description>
+</snippet>

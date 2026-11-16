@@ -1,0 +1,84 @@
+# Ejemplo: Plugin Formulas - Electricidad, Magnetismo y Óptica
+# Requiere: incluir("formulas")
+
+incluir("formulas")
+
+escribir("=== FORMULAS: ELECTRICIDAD, MAGNETISMO Y ÓPTICA ===")
+escribir("")
+
+# --- 1. ELECTRICIDAD ---
+escribir("--- Electricidad ---")
+escribir("Estudia los fenómenos relacionados con cargas eléctricas.")
+escribir("")
+
+# Ley de Ohm: V = IR
+escribir("Ley de Ohm (V = IR):")
+escribir("  Una resistencia de 100 ohmios con una corriente de 0.5 A.")
+R = 100  # ohmios
+I = 0.5  # amperios
+V = I * R
+escribir("  Voltaje: " .. V .. " V")
+escribir("")
+
+# Potencia eléctrica: P = VI
+escribir("Potencia Eléctrica (P = VI):")
+P = V * I
+escribir("  Potencia: " .. P .. " W")
+escribir("")
+
+# Resistividad: R = ρL/A
+escribir("Resistencia de un Cable:")
+escribir("  Cable de cobre (ρ=1.68×10⁻⁸ Ω·m), 10m de largo, 2mm² de sección.")
+rho = 1.68e-8  # ohmio·m
+L = 10         # m
+A = 2e-6       # m² (2 mm²)
+rCable = rho * L / A
+escribir("  Resistencia: " .. rCable .. " Ω")
+escribir("")
+
+# --- 2. MAGNETISMO ---
+escribir("--- Magnetismo ---")
+escribir("Estudia los fenómenos magnéticos.")
+escribir("")
+
+# Fuerza de Lorentz: F = qvB
+escribir("Fuerza de Lorentz (F = qvB):")
+escribir("  Una carga de 1.6×10⁻¹⁹ C se mueve a 10⁶ m/s perpendicular a un campo de 0.5 T.")
+q = 1.6e-19  # C
+v = 1e6      # m/s
+B = 0.5      # T
+F = q * v * B
+escribir("  Fuerza: " .. F .. " N")
+escribir("")
+
+# --- 3. ÓPTICA ---
+escribir("--- Óptica ---")
+escribir("Estudia el comportamiento de la luz.")
+escribir("")
+
+# Ley de Snell: n1·sen(θ1) = n2·sen(θ2)
+escribir("Ley de Snell (Refracción):")
+escribir("  Luz pasando del aire (n=1) al agua (n=1.33) con ángulo de 30°.")
+n1 = 1.0   # aire
+n2 = 1.33  # agua
+theta1 = 30  # grados
+# sen(θ2) = (n1/n2) · sen(θ1)
+senTheta2 = (n1 / n2) * mate.sen(30 * mate.pi / 180)
+theta2 = mate.asen(senTheta2) * 180 / mate.pi
+escribir("  Ángulo de incidencia: " .. theta1 .. "°")
+escribir("  Ángulo de refracción: " .. mate.redondear(theta2, 2) .. "°")
+escribir("")
+
+# Distancia focal: 1/f = 1/do + 1/di
+escribir("Ecuación de la Lente Delgada (1/f = 1/do + 1/di):")
+escribir("  Un objeto a 30 cm de una lente con distancia focal de 10 cm.")
+f = 10   # cm
+do = 30  # cm
+# 1/di = 1/f - 1/do
+di = 1 / (1/f - 1/do)
+escribir("  Distancia focal: " .. f .. " cm")
+escribir("  Distancia objeto: " .. do .. " cm")
+escribir("  Distancia imagen: " .. mate.redondear(di, 2) .. " cm")
+
+escribir("")
+escribir("✅ Ejemplo de electricidad, magnetismo y óptica completado")

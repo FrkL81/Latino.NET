@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+env.leer(${1:nombre}, ${2:defecto})
+]]></content>
+	<tabTrigger>env.leer</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Lee una variable de entorno del proceso actual.</description>
+</snippet>

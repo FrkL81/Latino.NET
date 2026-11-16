@@ -1,0 +1,54 @@
+# --- C# / .NET ---
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.pdb
+*.suo
+*.log
+
+# --- VS Code Extension (NodeJS) ---
+extension/node_modules/
+extension/out/
+# extension/dist/ = salida de tsc; se recompila con `npm run compile`
+extension/dist/
+.vscode-test/
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
+
+# --- Archivos Temporales de Prueba ---
+*.tmp
+temp_*
+.codeblast-cache.json
+
+# Respaldos: una sola carpeta en la raiz del proyecto, de uso interno exclusivo
+_Respaldos/
+*.bak
+*.bak_*
+
+# Herramienta interna de referencia (CLI + base de datos), no versionada
+docs/Referencia_CLI/
+# Volcados de codigo generados por herramientas de supervision o revision
+*_GuiaYcs_*.txt
+TestResults/
+*.trx
+
+# Volcados internos de documentacion (prompts e informes de indexacion), no publicables
+docs/docs_*.txt
+# Volcados de arbol/codigo generados por herramientas, con marca de fecha
+*_????????_??????.txt
+
+# --- Archivos de Distribución ---
+*.vsix
+*.zip
+
+# --- Carpetas de trabajo ---
+_Temporal/
+KNOWN_ISSUES/
+dist/temp/
+
+# --- QA Quality Assurance (solo para el equipo de calidad) ---
+pruebas/

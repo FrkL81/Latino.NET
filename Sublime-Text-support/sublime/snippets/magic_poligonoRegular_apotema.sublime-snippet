@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[apotema]]></content>
+    <tabTrigger>str:poligonoRegular:apotema</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de poligonoRegular: apotema</description>
+</snippet>

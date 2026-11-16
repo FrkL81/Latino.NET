@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[formula]]></content>
+    <tabTrigger>str:descensoGradiente:formula</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Optimización: Retorno de descensoGradiente: formula</description>
+</snippet>

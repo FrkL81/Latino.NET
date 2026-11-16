@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[minuto]]></content>
+    <tabTrigger>str:fecha:minuto</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de lapsos.fecha(): minuto </description>
+</snippet>

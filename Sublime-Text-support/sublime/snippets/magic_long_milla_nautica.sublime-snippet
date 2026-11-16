@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[milla_nautica]]></content>
+    <tabTrigger>str:long:milla_nautica</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Longitud: Long: Milla náutica (1852m)</description>
+</snippet>

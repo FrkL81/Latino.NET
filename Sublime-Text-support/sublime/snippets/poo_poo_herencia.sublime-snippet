@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+clase ${1:Hija} hereda ${2:Padre}
+	constructor(${3:params})
+		$0
+	fin
+fin
+]]></content>
+	<tabTrigger>poo:herencia</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🎯 Clase con herencia</description>
+</snippet>

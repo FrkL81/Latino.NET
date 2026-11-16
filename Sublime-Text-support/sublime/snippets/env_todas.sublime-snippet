@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+env.todas()
+]]></content>
+	<tabTrigger>env.todas</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Retorna un diccionario con todas las variables de entorno del proceso actual.</description>
+</snippet>

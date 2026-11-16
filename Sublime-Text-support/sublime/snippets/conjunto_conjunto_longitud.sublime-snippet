@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+conjunto.longitud(${1:conjunto})
+]]></content>
+	<tabTrigger>conjunto.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📐 Cantidad de elementos</description>
+</snippet>
+

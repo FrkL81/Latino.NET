@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[hUsado]]></content>
+    <tabTrigger>str:derivada:hUsado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de derivada: hUsado</description>
+</snippet>

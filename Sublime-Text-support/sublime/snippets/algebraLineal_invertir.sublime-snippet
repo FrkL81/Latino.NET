@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+algebraLineal.invertir(${1:matriz_A})
+]]></content>
+	<tabTrigger>algebraLineal.invertir</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula la matriz inversa A⁻¹ usando LU con pivoteo parcial.\n</description>
+</snippet>

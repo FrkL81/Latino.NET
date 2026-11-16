@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+para ${1:elemento} en ${2:lista}
+	$0
+fin
+]]></content>
+	<tabTrigger>loop:para</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔁 Bucle para-en (foreach)</description>
+</snippet>

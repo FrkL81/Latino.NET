@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[mg]]></content>
+    <tabTrigger>str:masa:mg</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Masa: Masa: Miligramos</description>
+</snippet>

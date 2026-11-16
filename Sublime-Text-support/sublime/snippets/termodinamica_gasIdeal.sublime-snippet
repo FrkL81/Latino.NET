@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+termodinamica.gasIdeal(${1:diccionarioVariables})
+]]></content>
+	<tabTrigger>termodinamica.gasIdeal</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Ley de gases ideales. Pasa 3 de: 'P', 'V', 'n', 'T'.\n\nFórmula: P · V = n · ...</description>
+</snippet>

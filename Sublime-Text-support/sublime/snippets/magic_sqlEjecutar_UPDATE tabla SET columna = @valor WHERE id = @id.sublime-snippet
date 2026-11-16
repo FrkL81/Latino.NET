@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[UPDATE tabla SET columna = @valor WHERE id = @id]]></content>
+    <tabTrigger>str:sqlEjecutar:UPDATE tabla SET columna = @valor WHERE id = @id</tabTrigger>
+    <scope>source.latino</scope>
+    <description>SQL Ejecutar: SQL: Actualizar registro por id</description>
+</snippet>

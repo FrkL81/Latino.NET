@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+proceso.resultado(${1:id})
+]]></content>
+	<tabTrigger>proceso.resultado</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Recupera el resultado de un proceso asíncrono terminado.</description>
+</snippet>

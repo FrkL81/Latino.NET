@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[angulo_interior]]></content>
+    <tabTrigger>str:poligonoRegular:angulo_interior</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Geometría: Retorno de poligonoRegular: angulo_interior</description>
+</snippet>

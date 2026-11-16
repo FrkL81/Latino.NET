@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[calidad]]></content>
+    <tabTrigger>str:regresionLineal:calidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de regresionLineal: calidad</description>
+</snippet>

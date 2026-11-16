@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+dic.longitud(${1:diccionario})
+]]></content>
+	<tabTrigger>dic.longitud</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📖 Cantidad de elementos</description>
+</snippet>
+

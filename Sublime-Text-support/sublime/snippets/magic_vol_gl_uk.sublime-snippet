@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[gl_uk]]></content>
+    <tabTrigger>str:vol:gl_uk</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Volumen: Volumen: Galón Imperial UK</description>
+</snippet>

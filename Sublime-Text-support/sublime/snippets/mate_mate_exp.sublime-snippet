@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.exp(${1:numero})
+]]></content>
+	<tabTrigger>mate.exp</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Exponencial (e^x)</description>
+</snippet>
+

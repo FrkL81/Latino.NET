@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:numero} = anumero(leer("${2:Ingrese número: }"))
+]]></content>
+	<tabTrigger>io:leer_num</tabTrigger>
+	<scope>source.latino</scope>
+	<description>💬 Leer y convertir a número</description>
+</snippet>

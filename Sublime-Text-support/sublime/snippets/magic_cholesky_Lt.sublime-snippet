@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[Lt]]></content>
+    <tabTrigger>str:cholesky:Lt</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Álgebra Lineal: Retorno de cholesky: Lt</description>
+</snippet>

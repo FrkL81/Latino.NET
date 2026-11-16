@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+senales.frecuenciaNyquist(${1:frecuencia_maxima_senal})
+]]></content>
+	<tabTrigger>senales.frecuenciaNyquist</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Frecuencia mínima de muestreo para evitar aliasing (Teorema de Nyquist-Shanno...</description>
+</snippet>

@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:resonanciaLC:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de resonanciaLC: unidad</description>
+</snippet>

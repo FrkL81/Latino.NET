@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+texto.obtener(${1:id})
+]]></content>
+	<tabTrigger>texto.obtener</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Materializa y retorna como cadena inmutable todo el texto construido.</description>
+</snippet>

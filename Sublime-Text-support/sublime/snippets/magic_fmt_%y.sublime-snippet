@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%y]]></content>
+    <tabTrigger>str:fmt:%y</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato Tiempo: Tiempo: Año 2 dígitos</description>
+</snippet>

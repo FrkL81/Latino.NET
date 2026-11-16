@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[coeficientes_dd]]></content>
+    <tabTrigger>str:newtonDivididas:coeficientes_dd</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Interpolación: Retorno de newtonDivididas: coeficientes_dd</description>
+</snippet>

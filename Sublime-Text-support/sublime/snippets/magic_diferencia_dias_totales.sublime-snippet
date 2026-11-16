@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[dias_totales]]></content>
+    <tabTrigger>str:diferencia:dias_totales</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de diferencia: dias_totales</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mate.mcm(${1:a}, ${2:b})]]></content>
+    <tabTrigger>math:mcm</tabTrigger>
+    <scope>source.latino</scope>
+    <description>➗ Mínimo Común Múltiplo</description>
+</snippet>

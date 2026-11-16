@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[%X]]></content>
+    <tabTrigger>str:fmt:%X</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Formato C: C-Style: Hexadecimal MAYÚSCULAS</description>
+</snippet>

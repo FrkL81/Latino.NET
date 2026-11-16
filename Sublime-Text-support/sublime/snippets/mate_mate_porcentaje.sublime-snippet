@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+mate.porcentaje(${1:parte}, ${2:total})
+]]></content>
+	<tabTrigger>mate.porcentaje</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🧮 Alias de porc</description>
+</snippet>
+

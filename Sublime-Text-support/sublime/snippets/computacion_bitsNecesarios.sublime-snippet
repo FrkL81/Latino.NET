@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+computacion.bitsNecesarios(${1:num_valores_posibles})
+]]></content>
+	<tabTrigger>computacion.bitsNecesarios</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Cantidad mínima de bits necesarios para representar n valores distintos.\n\nF...</description>
+</snippet>

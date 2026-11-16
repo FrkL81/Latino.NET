@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[seg]]></content>
+    <tabTrigger>str:fecha:seg</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Fecha: Componente: Segundo</description>
+</snippet>

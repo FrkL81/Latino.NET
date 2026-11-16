@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[rango]]></content>
+    <tabTrigger>str:filtroRC:rango</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de filtroRC: rango</description>
+</snippet>

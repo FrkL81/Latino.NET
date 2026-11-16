@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:transformador:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Electricidad: Retorno de transformador: resultado</description>
+</snippet>

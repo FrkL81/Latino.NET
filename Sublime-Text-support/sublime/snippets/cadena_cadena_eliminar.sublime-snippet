@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.eliminar(${1:texto}, ${2:"eliminar"})
+]]></content>
+	<tabTrigger>cadena.eliminar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Eliminar primera ocurrencia</description>
+</snippet>
+

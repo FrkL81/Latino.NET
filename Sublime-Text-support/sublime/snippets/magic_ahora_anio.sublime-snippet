@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[anio]]></content>
+    <tabTrigger>str:ahora:anio</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Lapsos: Retorno de ahora: anio</description>
+</snippet>

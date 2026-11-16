@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+geometria.areaCirculo(${1:radio})
+]]></content>
+	<tabTrigger>geometria.areaCirculo</tabTrigger>
+	<scope>source.latino</scope>
+	<description>Calcula el área de un círculo.\n\nFórmula: A = π · r²</description>
+</snippet>

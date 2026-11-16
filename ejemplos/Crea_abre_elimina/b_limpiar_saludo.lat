@@ -1,0 +1,26 @@
+escribir("--- Iniciando Protocolo de Limpieza ---")
+
+archivo_objetivo = "saludo_latino.txt"
+
+// 1. Verificamos si el archivo existe
+si archivo.existe(archivo_objetivo)
+    
+    escribir("El archivo '" .. archivo_objetivo .. "' fue encontrado.")
+    
+    intentar
+        // 2. Intentamos borrarlo
+        archivo.eliminar(archivo_objetivo)
+        escribir("✅ ÉXITO: Archivo eliminado correctamente.")
+        
+    atrapar (err)
+        // 3. Capturamos errores (ej: si el archivo está abierto en otro programa)
+        escribir("❌ ERROR: No se pudo eliminar el archivo.")
+        escribir("   Causa: " .. err)
+        escribir("   (Consejo: Asegúrate de cerrar el Bloc de Notas antes de borrarlo).")
+    fin
+
+sino
+    escribir("ℹ️ AVISO: El archivo '" .. archivo_objetivo .. "' no existe, no hay nada que borrar.")
+fin
+
+escribir("--- Fin del Programa ---")

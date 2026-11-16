@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[completo]]></content>
+    <tabTrigger>str:sistemaRkf45:completo</tabTrigger>
+    <scope>source.latino</scope>
+    <description>EDOs: Retorno de sistemaRkf45: completo</description>
+</snippet>

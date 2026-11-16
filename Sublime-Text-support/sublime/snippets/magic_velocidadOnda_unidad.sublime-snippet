@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:velocidadOnda:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ondas: Retorno de velocidadOnda: unidad</description>
+</snippet>

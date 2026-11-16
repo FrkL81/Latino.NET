@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[estado_fisico]]></content>
+    <tabTrigger>str:estadoAgua:estado_fisico</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Termodinámica: Retorno de estadoAgua: estado_fisico</description>
+</snippet>

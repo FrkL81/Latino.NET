@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cadena.indice(${1:texto}, ${2:"buscar"})
+]]></content>
+	<tabTrigger>cadena.indice</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔤 Encontrar posición de subcadena</description>
+</snippet>
+

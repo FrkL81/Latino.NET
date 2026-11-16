@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+web.descargar(${1:url}, ${2:ruta_destino})
+]]></content>
+	<tabTrigger>web.descargar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🌐 Descarga un archivo binario desde la URL</description>
+</snippet>

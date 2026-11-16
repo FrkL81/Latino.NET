@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[radianes]]></content>
+    <tabTrigger>str:ang:radianes</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Ángulo: Ángulo: Radianes</description>
+</snippet>

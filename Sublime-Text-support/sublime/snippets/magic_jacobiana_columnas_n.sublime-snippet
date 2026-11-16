@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[columnas_n]]></content>
+    <tabTrigger>str:jacobiana:columnas_n</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Cálculo: Retorno de jacobiana: columnas_n</description>
+</snippet>

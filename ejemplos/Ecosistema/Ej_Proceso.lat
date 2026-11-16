@@ -1,0 +1,50 @@
+# ==================================================================
+# Ejemplo: Plugin Proceso (Ejecución de Procesos del SO)
+# Requiere: incluir("proceso")
+# ==================================================================
+
+incluir("proceso")
+
+escribir("=== PLUGIN PROCESO ===")
+escribir("")
+
+esWindows = sis.operativo("WINDOWS")
+
+# ── 1. Ejecución Sincrónica con Shell ─────────────────────────────
+escribir("--- 1. Ejecutando comandos de consola ---")
+cmdEcho = esWindows ? "echo Hola desde proceso" : "echo 'Hola desde proceso'"
+resEcho = proceso.shell(cmdEcho)
+
+escribir("Salida:           " .. cadena.recortar(resEcho["salida"]))
+escribir("Código de salida: " .. resEcho["codigo"])
+escribir("")
+
+# ── 2. Listado de Directorio según el SO ──────────────────────────
+escribir("--- 2. Listando archivos con comando del sistema ---")
+cmdListar = esWindows ? "dir /b" : "ls -1"
+resListar = proceso.shell(cmdListar)
+
+escribir("Archivos encontrados:")
+lineas = cadena.separar(resListar["salida"], "\n")
+para linea en lineas
+    limpia = cadena.recortar(linea)
+    si cadena.longitud(limpia) > 0
+        escribir("  📄 " .. limpia)
+    fin
+fin
+escribir("")
+
+# ── 3. Procesos Asíncronos en Segundo Plano ───────────────────────
+escribir("--- 3. Tarea asíncrona en segundo plano ---")
+cmdAsync = esWindows ? "ping" : "sleep"
+argsAsync = esWindows ? ["-n", "2", "127.0.0.1"] : ["1"]
+
+idAsync = proceso.ejecutarAsync(cmdAsync, argsAsync)
+escribir("Proceso lanzado en segundo plano con ID: " .. idAsync)
+
+# Esperamos a que termine (con timeout defensivo de 5000 ms)
+resAsync = proceso.esperar(idAsync, 5000)
+escribir("Proceso finalizado con código de salida: " .. resAsync["codigo"])
+escribir("")
+
+escribir("✅ Ejemplo de proceso completado con éxito.")

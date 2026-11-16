@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+mientras ${1:condicion}
+	$0
+fin
+]]></content>
+	<tabTrigger>loop:mientras</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🔁 Bucle mientras (while)</description>
+</snippet>

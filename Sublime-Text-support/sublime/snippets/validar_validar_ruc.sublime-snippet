@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+validar.ruc(${1:texto})
+]]></content>
+	<tabTrigger>validar.ruc</tabTrigger>
+	<scope>source.latino</scope>
+	<description>✔️ Valida formato básico de RUC panameño</description>
+</snippet>

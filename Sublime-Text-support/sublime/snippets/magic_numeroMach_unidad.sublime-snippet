@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[unidad]]></content>
+    <tabTrigger>str:numeroMach:unidad</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Aerodinámica: Retorno de numeroMach: unidad</description>
+</snippet>

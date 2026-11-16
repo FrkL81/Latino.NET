@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+lista.transformar(${1:lista}, funcion(${2:x})
+	${3:retornar x * 2}
+fin)
+]]></content>
+	<tabTrigger>lista.transformar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>📜 Transformar cada elemento (map)</description>
+</snippet>
+

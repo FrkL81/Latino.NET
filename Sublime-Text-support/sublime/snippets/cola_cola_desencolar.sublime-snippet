@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+${1:elemento} = cola.desencolar(${2:cola})
+]]></content>
+	<tabTrigger>cola.desencolar</tabTrigger>
+	<scope>source.latino</scope>
+	<description>🚶 Extraer del inicio</description>
+</snippet>
+

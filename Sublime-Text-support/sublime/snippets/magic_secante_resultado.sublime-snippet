@@ -1,0 +1,6 @@
+﻿<snippet>
+    <content><![CDATA[resultado]]></content>
+    <tabTrigger>str:secante:resultado</tabTrigger>
+    <scope>source.latino</scope>
+    <description>Raíces: Retorno de secante: resultado</description>
+</snippet>

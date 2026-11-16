@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+lapsos.fecha(${1:anio}, ${2:mes}, ${3:dia})
+]]></content>
+<tabTrigger>lapsos.fecha</tabTrigger>
+<scope>source.latino</scope>
+<description>📅 Crear fecha</description>
+</snippet>
