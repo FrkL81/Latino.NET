@@ -48,7 +48,8 @@ docs/docs_*.txt
 # --- Carpetas de trabajo ---
 _Temporal/
 KNOWN_ISSUES/
-dist/temp/
+# dist/ entero: salidas del build (dist/temp y dist/final con los entregables)
+dist/
 
 # --- QA Quality Assurance (solo para el equipo de calidad) ---
 pruebas/
