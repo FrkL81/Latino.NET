@@ -707,7 +707,7 @@ archivo.borrar("almacen_datos.db")
 
 > 💡 **Nota de Ergonomía:** En el diccionario de parámetros, el prefijo `@` es **opcional**: si defines `{"cod": "LAP-01"}`, el motor lo normaliza a `@cod` automáticamente antes de enviarlo a SQLite. Puedes mezclar ambos estilos en la misma llamada.
 >
-> Aun así, **recomendamos escribir el `@` explícito**: hace visible de un vistazo qué claves del diccionario se enlazan con marcadores del SQL, y evita confusiones al leer el código. La regla completa está en [9.17 Librería `sqlite`](09_Más_Sintaxis_Errores_Lib/9.17_plugin_sqlite.md).
+> Aun así, **recomendamos escribir el `@` explícito**: hace visible de un vistazo qué claves del diccionario se enlazan con marcadores del SQL, y evita confusiones al leer el código. La regla completa está en [9.17 Librería `sqlite`](09_Más_Sintaxis_Errores_Lib/09.17_plugin_sqlite.md).
 
 ### 12.4.3 Consultas Analíticas y Extracción Directa (`sqlite.consultar`)
 

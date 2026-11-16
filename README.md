@@ -319,7 +319,7 @@ El repositorio incluye el **Manual Oficial**, organizado modularmente. Todo lo e
   - [Programación Funcional](docs/06_Programacion_Funcional.md)
   - [Herramientas del Lenguaje](docs/07_Herramientas.md)
   - [Modularidad y Extensibilidad](docs/08_Modulos_Extensibilidad.md)
-  - [Más Sintaxis, Errores y Ecosistema](docs/09_Más_Sintaxis_Errores_Lib/9.0_Sintaxis_Errores_Ecosistema.md)
+  - [Más Sintaxis, Errores y Ecosistema](docs/09_Más_Sintaxis_Errores_Lib/09.00_Sintaxis_Errores_Ecosistema.md)
   - [Programación Concurrente](docs/11_Programación_Concurrente.md)
   - [DOP y Persistencia](docs/12_DOP_y_Persistencia.md)
   - [Metaprogramación y Código Dinámico](docs/10_Metaprogramación.md)
