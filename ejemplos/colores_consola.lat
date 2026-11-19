@@ -1,0 +1,74 @@
+# ==============================================================================
+# EJEMPLO OFICIAL: COLOR Y TIPOGRAFÍA ANSI EN CONSOLA
+# Latino.NET v1.0.81 (.NET 10)
+# ==============================================================================
+# Demuestra cómo crear interfaces de consola ricas y estilizadas
+# utilizando secuencias de escape ANSI estándar y TrueColor de 24 bits (RGB),
+# combinadas con el compositor de cadenas ç() y el operador Pipeline (|>).
+# ==============================================================================
+
+# 1. Colores Básicos de 3 bits (Paleta adaptativa del tema de la terminal)
+escribir("=== 1. COLORES ANSI BÁSICOS ===")
+escribir("\x1b[31mRojo\x1b[0m | \x1b[32mVerde\x1b[0m | \x1b[33mAmarillo\x1b[0m | \x1b[34mAzul\x1b[0m | \x1b[35mMagenta\x1b[0m | \x1b[36mCian\x1b[0m")
+
+# 2. Estilos de Formato Tipográfico
+escribir("\n=== 2. ESTILOS TIPOGRÁFICOS ===")
+escribir("\x1b[1mTexto en Negrita\x1b[0m")
+escribir("\x1b[3mTexto en Cursiva (si la fuente lo soporta)\x1b[0m")
+escribir("\x1b[4mTexto Subrayado\x1b[0m")
+escribir("\x1b[9mTexto Tachado\x1b[0m")
+escribir("\x1b[7mTexto Invertido (Fondo <-> Frente)\x1b[0m")
+
+# 3. TrueColor de 24 bits (RGB exacto independiente del tema)
+escribir("\n=== 3. TRUECOLOR RGB (24 BITS) ===")
+escribir("\x1b[38;2;255;0;0mRojo Puro\x1b[0m")
+escribir("\x1b[38;2;255;165;0mNaranja Exacto\x1b[0m")
+escribir("\x1b[38;2;0;255;128mVerde Primavera\x1b[0m")
+escribir("\x1b[48;2;30;58;138m\x1b[38;2;255;255;255m Fondo Azul Profundo con Texto Blanco \x1b[0m")
+
+# 4. Generación Dinámica de Gradiente (Bucle 'para' con 'rango')
+escribir("\n=== 4. GENERACIÓN DE GRADIENTE DINÁMICO ===")
+# 'poner()' es alias de 'escribir()' y agrega salto de línea: para una barra
+# continua acumulamos el gradiente en una cadena y lo imprimimos una sola vez.
+gradiente = ""
+para i en rango(30)
+    r = 255 - (i * 8)
+    g = i * 8
+    b = 180
+    gradiente = gradiente .. ç("\x1b[38;2;|r|;|g|;|b|m█")
+fin
+escribir(gradiente .. "\x1b[0m")
+
+# 5. Estilizado Semántico Elegante con el Compositor ç()
+# Separa los códigos técnicos de la redacción del texto
+c = {
+    "titulo": "\x1b[1;38;2;0;191;255m",
+    "exito":  "\x1b[38;2;35;151;74m",
+    "aviso":  "\x1b[38;2;255;143;58m",
+    "error":  "\x1b[1;38;2;241;29;80m",
+    "fin":    "\x1b[0m"
+}
+
+escribir("\n=== 5. TEMAS SEMÁNTICOS CON COMPOSITOR ç() ===")
+escribir(ç("|c.titulo|[LATINO.NET]|c.fin| Motor inicializado con éxito."))
+escribir(ç("|c.exito|✔ Conexión establecida a la base de datos.|c.fin|"))
+escribir(ç("|c.aviso|▲ Advertencia: El disco está al 85% de capacidad.|c.fin|"))
+escribir(ç("|c.error|✖ Error crítico: No se pudo abrir el archivo.|c.fin|"))
+
+# 6. Funciones de Estilo y Composición con Pipeline (|>)
+# Las funciones son valores de primera clase en Latino.NET
+estilo = {
+    "negrita":   fun(t) ret "\x1b[1m" .. t .. "\x1b[0m" fin,
+    "subrayado": fun(t) ret "\x1b[4m" .. t .. "\x1b[0m" fin,
+    "rojo":      fun(t) ret "\x1b[38;2;241;29;80m" .. t .. "\x1b[0m" fin,
+    "verde":     fun(t) ret "\x1b[38;2;35;151;74m" .. t .. "\x1b[0m" fin
+}
+
+escribir("\n=== 6. COMPOSICIÓN FUNCIONAL PIPELINE (|>) ===")
+# Encadenamiento natural de transformaciones de texto:
+mensaje = "ALERTA DEL SISTEMA"
+    |> estilo.rojo
+    |> estilo.subrayado
+    |> estilo.negrita
+
+escribir(mensaje)

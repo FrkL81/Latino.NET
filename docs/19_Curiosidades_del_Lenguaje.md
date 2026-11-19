@@ -456,7 +456,38 @@ Latino.NET trata cada secuencia de grafemas indivisibles como una unidad atómic
 * `texto[1]` es la familia completa `"👨‍👩‍👧"`.
 * `texto[2]` es `"B"`.
 
-## 19.10 Referencias Cruzadas del Manual
+## 19.10 El Arte del Color en la Consola: Secuencias ANSI y TrueColor de 24 Bits
+
+Latino.NET cuenta con soporte nativo para secuencias de escape ANSI estándar, lo que permite transformar consolas monocromáticas en interfaces gráficas interactivas sin necesidad de instalar librerías externas.
+
+### 1. La Diferencia entre Colores Básicos y TrueColor (RGB)
+
+* **Colores ANSI Semánticos (`\x1b[30m` a `\x1b[37m`):**  
+  Son colores de 3 bits adaptables. No representan un valor hexadecimal rígido, sino que delegan en la paleta del tema de la terminal (por ejemplo, en VS Code el código `\x1b[31m` puede visualizarse con un tono coral o anaranjado según el tema oscuro configurado).
+* **TrueColor de 24 Bits (`\x1b[38;2;R;G;Bm` para texto y `\x1b[48;2;R;G;Bm` para fondo):**  
+  Permiten especificar el valor RGB exacto (0 a 255 por canal), garantizando que el color se renderice exactamente igual en Windows Terminal, iTerm2 o Linux nativo.
+
+### 2. El Sello Latino.NET: Combinando Colores con el Compositor `ç()`
+
+En lugar de ensuciar los mensajes de consola con concatenaciones complejas de texto (`..`), la forma idiomática en Latino.NET es encapsular los códigos de escape dentro de diccionarios de temas semánticos y navegar mediante el compositor estructural:
+
+🎯 **Ejemplo: Temas semánticos de consola con el compositor ç()**
+
+```latino
+tema = {
+    "ok":    "\x1b[38;2;35;151;74m",
+    "error": "\x1b[38;2;241;29;80m",
+    "fin":   "\x1b[0m"
+}
+
+# La lectura del código permanece impecable
+escribir(ç("|tema.ok|Operación exitosa|tema.fin|"))
+escribir(ç("|tema.error|Fallo en la conexión|tema.fin|"))
+```
+
+*(Puedes consultar el script interactivo completo en `ejemplos/colores_consola.lat`)*.
+
+## 19.11 Referencias Cruzadas del Manual
 
 Para profundizar en los fundamentos arquitectónicos que dan origen a estas curiosidades, consulta los capítulos especializados correspondientes:
 
