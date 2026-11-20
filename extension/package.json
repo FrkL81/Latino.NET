@@ -7,7 +7,8 @@
     "publisher": "LatinoLang",
     "repository": {
         "type": "git",
-        "url": "https://github.com/FrkL81/Latino.NET.git"
+        "url": "https://github.com/FrkL81/Latino.NET.git",
+        "directory": "extension"
     },
     "engines": {
         "vscode": "^1.80.0"

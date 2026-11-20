@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9+-blue.svg)](https://www.typescriptlang.org/) [![.NET](https://img.shields.io/badge/.NET-10-purple.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
 
-![Demo HolaMundo](images/demo_hola_mundo.gif)
+![Demo HolaMundo](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_hola_mundo.gif)
 
 Soporte oficial para el lenguaje de programación **Latino.NET**.
 Proporciona resaltado de sintaxis, detección de errores, autocompletado inteligente y ejecución integrada.
@@ -28,7 +28,7 @@ Además, el LSP incluye características de grado industrial:
 - **Escaneo de Plugins:** Si usas `incluir("sqlite")` o `incluir("formulas")`, el editor inyectará dinámicamente las funciones del plugin en el autocompletado global.
 - **Renderizado Matemático:** Las descripciones del plugin científico (`formulas`) se renderizan usando Unicode matemático hermoso y universal directamente en los tooltips.
 
-![Demo IntelliSense](images/demo_intellisense.gif)
+![Demo IntelliSense](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_intellisense.gif)
 
 ### ✨ Magic Strings (Autocompletado en Cadenas)
 
@@ -66,19 +66,19 @@ Los snippets usan prefijos jerárquicos para agruparse por funcionalidad:
 
 Escribe código más rápido usando atajos. Prueba escribir `syntax:` o `poo:`, selecciona un fragmento y presiona **Tab**.
 
-![Demo Snippets](images/demo_snippets.gif)
+![Demo Snippets](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_snippets.gif)
 
 ### 🎨 Sintaxis Dentro De Cadenas Para `ç()` y `evaluar()`
 
 Coloreado completo de sintaxis, incluyendo soporte visual para el **Compositor de Cadenas**: `ç("Hola |variable|")` y la **Función evaluar**: `evaluar("2 * mate.sen(mate.pi / 2)")`
 
-![Demo CompEval](images/demo_compeval.gif)
+![Demo CompEval](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_compeval.gif)
 
 ### ▶️ Ejecución y Diagnóstico
 
 Detecta errores de sintaxis (subrayado rojo) mientras escribes. Ejecuta tu código con un solo clic usando el botón **Play** en la barra de título.
 
-![Demo Ejecución](images/demo_run.gif)
+![Demo Ejecución](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_run.gif)
 
 ## 🏗️ Generador de Proyectos y Archivos (Scaffolding)
 
@@ -116,7 +116,7 @@ La extensión incluye **dos temas profesionales** diseñados específicamente pa
 - **Sintaxis:** Alto contraste optimizado para lectura
 - **Ideal para:** Trabajo diurno, presentaciones, documentación
 
-![Demo Temas](images/demo_temas.gif)
+![Demo Temas](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_temas.gif)
 
 **Activar tema:**
 
@@ -132,7 +132,7 @@ Desde la versión 1.0.81+, **todos los bloques** se pueden plegar:
 
 ### Bloques Soportados Para Plegado
 
-![Demo Plegado](images/demo_plegado.gif)
+![Demo Plegado](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_plegado.gif)
 
 **Atajos de teclado:**
 
@@ -173,7 +173,7 @@ Si el comando `latino` no está en tu PATH global (o si usas una instalación po
 
 >*Verificación:* Mira la barra inferior derecha de VS Code. Si dice "Windows-1252" o "ISO-8859-1", haz clic ahí y selecciona **"Save with Encoding" -> "UTF-8"**.
 
-![Demo UTF-8](images/demo_utf8.gif)
+![Demo UTF-8](https://raw.githubusercontent.com/FrkL81/Latino.NET/main/extension/images/demo_utf8.gif)
 
 - ⚠️ ADVERTENCIA: Esta extensión no es compatible con Latino Clásico.
 
