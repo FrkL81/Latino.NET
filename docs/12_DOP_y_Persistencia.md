@@ -97,7 +97,7 @@ En lugar de inventar decenas de clases específicas, modelamos el universo con t
 
 #### Principio 3: Datos como Valores Reproducibles
 
-Al operar sobre datos, preferimos generar nuevos resultados o proyectar vistas antes que mutar destructivamente el registro original. Cuando una copia defensiva es necesaria, nos apoyamos en `clonar()` o en el paradigma de cero copias con `tramo()`.
+Al operar sobre datos, preferimos generar nuevos resultados o proyectar vistas antes que mutar destructivamente el registro original. Cuando una copia defensiva es necesaria, nos apoyamos en `clonar()`. El paradigma de cero copias con `tramo()` es una especificación de arquitectura aceptada para la **Fase 4 (futuro, v1.1.0+) según ADR-015**: en v1.0.81 `tramo()` aún no está disponible y no debe invocarse.
 
 #### Principio 4: Esquemas Desacoplados (Validación en Fronteras)
 

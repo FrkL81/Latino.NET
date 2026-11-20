@@ -733,6 +733,18 @@ No es lo mismo que:
 
 `nulo` significa: *"Aquí debería haber algo, pero no hay nada"*.
 
+**Coerción aritmética (v1.0.81):** en operaciones matemáticas permisivas (`+`, `-`, `*`, `/`), el intérprete promueve `nulo` a `0.0` por diseño: `nulo + 1` devuelve `1` y `nulo * 5` devuelve `0`, sin error ni aviso. Es una coerción silenciosa, no una igualdad: `nulo == 0` sigue siendo `falso`. La buena práctica idiomática (Regla 5 del Mantra) es no apoyarse en esa coerción, sino gobernar la nulidad con el operador de fusión nula (`??`) para valores por defecto explícitos:
+
+```latino
+# Coerción silenciosa: nulo se promueve a 0 en aritmética
+escribir(nulo + 1)   # 1
+escribir(nulo * 5)   # 0
+
+# Buena práctica (Regla 5 del Mantra): valor por defecto explícito con ??
+entrada = nulo
+escribir((entrada ?? 0) + 1)   # 1, decidido por ti y visible en el código
+```
+
 **Casos de Uso:**
 
 ```latino

@@ -65,7 +65,9 @@ fin
 
 ### 5.1.1 Convención de Nombres en Objetos
 
-Latino.NET **no impone ninguna convención**: el motor distingue mayúsculas de minúsculas, y tanto las clases como los métodos funcionan con la caja que quieras. Lo único que falla es *mezclar* la caja al llamar, porque `Ladrar` y `ladrar` son identificadores distintos.
+Latino.NET distingue mayúsculas de minúsculas: `Ladrar` y `ladrar` son identificadores distintos, y mezclar la caja al llamar falla. La convención canónica para clases es **PascalCase** (`clase MiClase`).
+
+> **⚠️ Excepción — mayúsculas sostenidas:** nombrar una clase en MAYÚSCULAS sostenidas (`clase API`, `clase DB`) está bloqueado intencionalmente por colisión con la regla de inmutabilidad de constantes (ADR-003): al declarar la clase, el motor lanza `No se puede reasignar la constante 'API'`. Usa PascalCase (`clase Api`, `clase Db`). Ver la sección «📌 Constantes: Valores Inmutables» en [01_Fundamentos.md](01_Fundamentos.md).
 
 | Elemento | Convención | Ejemplo |
 | :--- | :--- | :--- |

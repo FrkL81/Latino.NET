@@ -1676,6 +1676,8 @@ escribirf("Promedio: {0:F2}\n", resultado)
 2. 🔤 **Listas de caracteres** desde cadenas (soporta emojis)
 3. 🔄 **Control de bucles** (retrocompatibilidad con Latino)
 
+> **⚠️ Memoria (v1.0.81):** «generador» aquí no significa perezoso: `rango()` **materializa una `LatinoList` completa en memoria RAM** en el momento de la llamada, con un objeto numérico por elemento. Costo medido en el equipo de desarrollo: **~100-130 MB por cada 3 millones de elementos** (`rango(3000000)` alcanzó un pico de 129 MB). En bucles masivos, considera este factor antes de generar rangos de millones de elementos.
+
 ### Modo 1: Generación de Números
 
 El límite superior (`fin`) es siempre **exclusivo**.

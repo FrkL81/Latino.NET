@@ -440,7 +440,7 @@ Toda nueva propuesta de funcionalidad debe someterse al **Test de los 4 Filtros 
 
 2. **Filtro de Cohesión Semántica:**  
    ¿El analizador sintáctico, el Garbage Collector o el sistema de tipos de Latino.NET dependen de esta estructura para su propia existencia?
-   * ✅ **Al Core:** Funciones de introspección (`tipo()`, `longitud()`), gestión de memoria (`tramo()`) y operadores de conversión (`alogico()`, `anumero()`).
+   * ✅ **Al Core:** Funciones de introspección (`tipo()`, `longitud()`), gestión de memoria (`tramo()`, especificación aceptada para la Fase 4 / v1.1.0+ según ADR-015, aún no disponible en v1.0.81) y operadores de conversión (`alogico()`, `anumero()`).
    * ❌ **A Plugin:** Motores de bases de datos relacionales o formatos específicos de terceros (XML, YAML).
 
 3. **Filtro de Dependencias y Huella Binaria:**  
