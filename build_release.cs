@@ -47,6 +47,9 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 
 // ============================================================================
@@ -541,6 +544,23 @@ void GenerarDocumentacionSiCorresponde()
     RunCommand($"dotnet script {PATH_TOOLS_DOCGEN}/generar_referencias.csx");
 }
 
+void GenerarChecksums()
+{
+    Console.WriteLine("🔐 Generando SHA256SUMS.txt...");
+    var sb = new StringBuilder();
+
+    foreach (string file in Directory.GetFiles(FINAL_DIR)
+                 .Where(f => !Path.GetFileName(f).Equals("SHA256SUMS.txt", StringComparison.OrdinalIgnoreCase))
+                 .OrderBy(f => Path.GetFileName(f), StringComparer.Ordinal))
+    {
+        using var fs = File.OpenRead(file);
+        string hash = Convert.ToHexString(SHA256.HashData(fs)).ToLowerInvariant();
+        sb.Append(hash).Append("  ").Append(Path.GetFileName(file)).Append('\n'); // LF estricto
+    }
+
+    File.WriteAllText(Path.Combine(FINAL_DIR, "SHA256SUMS.txt"), sb.ToString(), new UTF8Encoding(false));
+}
+
 // ============================================================================
 // EJECUCIÓN PRINCIPAL
 // ============================================================================
@@ -557,6 +577,7 @@ AssemblePackages(VERSION);
 CreateSublimeZip();
 BuildVsix(VERSION);
 CreateZips(VERSION);
+GenerarChecksums();
 
 Console.WriteLine($"\n✅ PROCESO COMPLETADO. Archivos listos en: {FINAL_DIR}");
 return 0;

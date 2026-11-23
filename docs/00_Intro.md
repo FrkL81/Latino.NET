@@ -569,10 +569,9 @@ wget https://github.com/FrkL81/Latino.NET/releases/download/v1.0.81/latino-linux
 ### Paso 2: Descomprimir (linux)
 
 ```bash
-# Descomprimir el archivo
-unzip latino-linux-v1.0.81.zip
-
-# Esto creará una carpeta 'dist/linux' con el ejecutable
+# Crear una carpeta dedicada y extraer allí el paquete
+mkdir -p ~/latino
+unzip ~/Descargas/latino-linux-v1.0.81.zip -d ~/latino
 ```
 
 ### Paso 3: Instalar Globalmente
@@ -582,11 +581,8 @@ unzip latino-linux-v1.0.81.zip
 Esta es la forma recomendada para que todos los usuarios del sistema puedan usar Latino.NET:
 
 ```bash
-# Mover el binario a una ruta global
-sudo mv dist/linux/latino /usr/local/bin/
-
-# Dar permisos de ejecución
-sudo chmod +x /usr/local/bin/latino
+# Crear un enlace simbólico al binario (NO moverlo)
+sudo ln -sf ~/latino/latino /usr/local/bin/latino
 ```
 
 * **Opción B: Instalación de Usuario (sin sudo)**
@@ -597,16 +593,19 @@ Si no tienes permisos de administrador o prefieres instalarlo solo para tu usuar
 # Crear carpeta local de binarios (si no existe)
 mkdir -p ~/.local/bin
 
-# Mover el binario
-mv dist/linux/latino ~/.local/bin/
-
-# Dar permisos de ejecución
-chmod +x ~/.local/bin/latino
+# Crear el enlace en tu PATH personal
+ln -sf ~/latino/latino ~/.local/bin/latino
 
 # Agregar al PATH (solo si no está ya)
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+> **¿Por qué un enlace simbólico?** El motor resuelve sus plugins en la carpeta `lib/`
+> que acompaña al binario. Si se mueve solo el ejecutable
+> (`sudo mv dist/linux/latino /usr/local/bin/`), `lib/` se queda atrás y los plugins
+> dejan de cargar. El enlace simbólico mantiene el binario y su carpeta `lib/` juntos,
+> de modo que el motor siempre resuelve sus dependencias.
 
 ### Paso 4: Verificar la Instalación
 

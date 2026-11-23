@@ -86,7 +86,7 @@ Latino.NET/
 | :--- | :--- | :--- |
 | `src/Latino.Core` | Fuente de verdad del lenguaje | ✅ Sí |
 | `src/Latino.LanguageServer` | Código fuente del LSP | ✅ Sí |
-| `extension/server/` | Binarios compilados (.dll) | ❌ No (generados) |
+| `extension/server/` | Binarios compilados (.dll) | ✅ Sí (precompilados) |
 | `extension/syntaxes/` | Gramática de colores | ✅ Sí |
 
 ## 🔄 Ciclo de Vida Completo de una Actualización
@@ -311,15 +311,13 @@ dotnet publish src/Latino.LanguageServer/Latino.LanguageServer.csproj \
 # 2. Reiniciar VS Code (no solo reload window)
 ```
 
-### P: ¿Por qué `extension/server/` no está en Git?
+### P: ¿Por qué `extension/server/` está versionado en Git?
 
-**Razón:** Contiene binarios compilados (`.dll`, `.exe`). Estos se generan desde código fuente y varían entre compilaciones. Incluirlos en Git ensuciaría el historial con diffs binarios sin valor.
+**Razón:** la extensión resuelve el servidor en `server/Latino.LanguageServer.dll` y lo lanza como `dotnet <ese dll>`. Esa carpeta es lo que el VSIX empaqueta en runtime, de modo que versionarla permite **empaquetar y probar la extensión sin compilar previamente C#**.
 
-**Consecuencia:** Al clonar el repo por primera vez, esa carpeta estará vacía. Debes ejecutar:
+**Consecuencia:** al clonar el repo, la carpeta ya contiene los binarios; no hace falta compilar para probar la extensión en desarrollo.
 
-```bash
-dotnet publish src/Latino.LanguageServer/Latino.LanguageServer.csproj -o extension/server
-```
+Es una decisión deliberada: es «ruido esperado» menor que no rompe nada. La solución de raíz —empaquetado del VSIX por plataforma, con el LSP autocontenido— está prevista para la **v1.0.82**, momento en el que se revisará.
 
 ### P: Cambié `latino.tmLanguage.json` pero los colores no cambian
 

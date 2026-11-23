@@ -1,5 +1,7 @@
 {
     "name": "Latino.NET en la Nube",
+    // La imagen debe incluir el runtime que exige el LSP (TargetFramework net10.0).
+    // Si el LSP sube de versión en el futuro, actualizar este tag.
     "image": "mcr.microsoft.com/devcontainers/dotnet:10.0-noble",
     "hostRequirements": { "cpus": 2 },
     "containerEnv": {

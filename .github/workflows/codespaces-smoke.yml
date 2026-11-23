@@ -1,0 +1,40 @@
+name: Codespaces smoke test
+
+on:
+  release:
+    types: [published]
+  schedule:
+    - cron: "0 12 * * 1"   # Lunes a las 12:00 UTC
+  workflow_dispatch:
+  pull_request:
+    paths: [".devcontainer/**", ".github/workflows/codespaces-smoke.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar integridad de la última release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/rel" && cd "$RUNNER_TEMP/rel"
+          gh release download --repo "$GITHUB_REPOSITORY" --pattern '*'
+          sha256sum -c SHA256SUMS.txt
+
+      - name: Ejecutar setup.sh (Simulación Codespaces)
+        run: bash .devcontainer/setup.sh
+
+      - name: Pruebas de humo del motor y plugins
+        run: |
+          set -e
+          latino -v
+          test -d /opt/latino/lib
+          latino ejemplos/01_hola_mundo.lat
+          latino ejemplos/Ecosistema/Ej_Sqlite.lat

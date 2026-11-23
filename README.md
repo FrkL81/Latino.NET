@@ -4,6 +4,8 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/FrkL81/Latino.NET)
 
+> *Requiere una cuenta gratuita de GitHub. Utiliza la cuota mensual de 60 horas gratuitas de Codespaces.*
+
 ![Logo](assets/social_preview.png)
 
 **Latino.NET** es una reimplementación moderna y robusta del lenguaje **Latino**, construida desde cero sobre la solidez del ecosistema **.NET 10**.
@@ -106,23 +108,25 @@ Con el PATH configurado solo escribes:
 2. **Instalación:** Abre tu terminal y ejecuta los siguientes comandos:
 
    ```bash
-      # Navega a la carpeta de descargas (ajusta según tu sistema)
-      cd ~/Descargas
-      
-      # Descomprime el archivo
-      unzip latino-linux-v1.0.81.zip
-      
-      # Mueve el binario a una ruta global
-      sudo mv dist/linux/latino /usr/local/bin/
-      sudo chmod +x /usr/local/bin/latino
+   # 1. Crear carpeta dedicada y extraer el paquete
+   mkdir -p ~/latino
+   unzip ~/Descargas/latino-linux-v1.0.81.zip -d ~/latino
+   chmod +x ~/latino/latino
+
+   # 2. Crear enlace global (preserva la carpeta lib/ junto al binario)
+   sudo ln -sf ~/latino/latino /usr/local/bin/latino
    ```
 
-   > **💡 Alternativa sin sudo:** Si prefieres no usar `sudo`, puedes mover el binario a `~/.local/bin/` (asegúrate de que esta carpeta esté en tu PATH):
+   > **💡 Por qué un enlace simbólico:** el motor resuelve sus plugins en la carpeta
+   > `lib/` que acompaña al binario. Mover solo el ejecutable (`sudo mv .../latino
+   > /usr/local/bin/`) deja `lib/` atrás y los plugins dejan de cargar; el enlace
+   > los mantiene juntos.
+
+   > **💡 Alternativa sin sudo:** crea el enlace en tu propio `PATH`:
    >
    > ```bash
    > mkdir -p ~/.local/bin
-   > mv dist/linux/latino ~/.local/bin/
-   > chmod +x ~/.local/bin/latino
+   > ln -sf ~/latino/latino ~/.local/bin/latino
    > ```
 
 3. **Verificación:** Abre una **nueva terminal** y escribe `latino -v`.
