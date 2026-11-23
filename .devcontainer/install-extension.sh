@@ -4,11 +4,13 @@
 VSIX="/opt/latino-ext/latino-net.vsix"
 FLAG="$HOME/.latino_ext_installed"
 
-[ -f "$VSIX" ] && [ ! -f "$FLAG" ] || exit 0
-
-if code --install-extension "$VSIX" --force; then
-    touch "$FLAG"
-else
-    echo "⚠️ No se pudo instalar la extensión automáticamente. Instálala manualmente desde $VSIX"
+if [ -f "$VSIX" ] && [ ! -f "$FLAG" ]; then
+    echo "📦 Instalando extensión Latino.NET..."
+    if code --install-extension "$VSIX" --force; then
+        touch "$FLAG"
+        echo "✅ Extensión instalada con éxito."
+    else
+        echo "⚠️ No se pudo instalar la extensión automáticamente. Instálala manualmente desde $VSIX"
+    fi
 fi
 exit 0

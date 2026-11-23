@@ -25,21 +25,13 @@ VSIX_URL="$(grep -oE 'https://[^"]+/latino-net-vscode[^"/]*\.vsix' <<<"$RELEASE_
 
 # 2. Descargar y descomprimir.
 #    El zip de Linux se genera en Windows y guarda las rutas con '\' como
-#    separador; infozip/unzip interpreta '\' como carácter de escape y falla.
-#    Por eso se descomprime con Python (stdlib), que respeta el campo de nombre.
+#    separador. Infozip/unzip la interpreta como separador y crea las
+#    subcarpetas bien, pero emite un aviso y devuelve codigo 1; se tolera ese
+#    1 concretamente. Un 2+ (o 127, unzip ausente) sigue abortando.
+#    Python NO es via fiable aqui: en la imagen devcontainers/dotnet python3
+#    esta recortado, 'import shutil' falla y zipfile lo necesita en su linea 10.
 curl -fsSL "$ZIP_URL" -o "$TMP_DIR/latino.zip"
-if command -v python3 >/dev/null 2>&1; then
-    PY=python3
-elif command -v python >/dev/null 2>&1; then
-    PY=python
-else
-    echo "❌ Se necesita python3 o python para descomprimir el zip de Linux"; exit 1
-fi
-"$PY" - "$TMP_DIR/latino.zip" "$TMP_DIR/x" <<'PYEOF'
-import sys, zipfile
-with zipfile.ZipFile(sys.argv[1]) as z:
-    z.extractall(sys.argv[2])
-PYEOF
+unzip -q -o "$TMP_DIR/latino.zip" -d "$TMP_DIR/x" || [ $? -le 1 ]
 
 # 3. Localizar el binario (la estructura interna puede variar, p. ej. dist/linux/latino)
 BIN="$(find "$TMP_DIR/x" -type f -name latino | head -1)"
