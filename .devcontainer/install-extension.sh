@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
-# Instala la extensión de VS Code en el Codespace (postAttachCommand).
+# Instala la extension de VS Code en el Codespace (postAttachCommand).
 # Idempotente y NO fatal: nunca debe romper el arranque del Codespace.
-VSIX="/opt/latino-ext/latino-net.vsix"
+# Es una red de seguridad: el camino normal es el mecanismo nativo
+# (customizations.vscode.extensions), que la instala antes de abrir el editor.
+VSIX="${containerWorkspaceFolder:-$PWD}/.devcontainer/latino-net.vsix"
 FLAG="$HOME/.latino_ext_installed"
+
+# Si ya esta instalada, no reinstalar: el mecanismo nativo de devcontainer
+# (customizations.vscode.extensions) suele haberla instalado antes de arrancar.
+if code --list-extensions 2>/dev/null | grep -qi 'latino-net-vscode'; then
+    touch "$FLAG"
+    exit 0
+fi
 
 if [ -f "$VSIX" ] && [ ! -f "$FLAG" ]; then
     echo "📦 Instalando extensión Latino.NET..."

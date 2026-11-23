@@ -47,10 +47,14 @@ sudo ln -sf /opt/latino/latino /usr/local/bin/latino
 # Salvaguarda: el LSP busca los plugins en /opt/latino/lib
 [ -d /opt/latino/lib ] || echo "⚠️ No existe /opt/latino/lib: los plugins podrían no cargarse (revisar estructura del zip)"
 
-# 5. Dejar el VSIX listo; se instala en postAttachCommand
+# 5. Dejar el VSIX dentro del workspace. El mecanismo nativo de devcontainer
+#    (customizations.vscode.extensions) lo instala al crear el entorno, antes de
+#    arrancar el editor: así el tema y el boton Play estan disponibles desde el
+#    primer arranque y no hace falta recargar la ventana. La carpeta ya ignora
+#    *.vsix en .gitignore, de modo que el binario no ensucia el repo.
+VSIX_PATH="${containerWorkspaceFolder:-$PWD}/.devcontainer/latino-net.vsix"
 if [ -n "$VSIX_URL" ]; then
-    sudo mkdir -p /opt/latino-ext
-    sudo curl -fsSL "$VSIX_URL" -o /opt/latino-ext/latino-net.vsix
+    curl -fsSL "$VSIX_URL" -o "$VSIX_PATH"
 fi
 
 echo "✅ Instalado: $(latino -v)"
