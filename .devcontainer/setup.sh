@@ -41,6 +41,12 @@ BIN="$(find "$TMP_DIR/x" -type f -name latino | head -1)"
 sudo rm -rf /opt/latino
 sudo mkdir -p /opt/latino
 sudo cp -r "$(dirname "$BIN")/." /opt/latino/
+# El zip de Linux no guarda modos Unix (atributos externos en 0) y la extraccion
+# puede dejar directorios sin permiso de traverse para otros (p. ej. lib/ con
+# 754). Sin la 'x' de otros, File.Exists no puede resolver los plugins dentro y
+# incluir() falla con "no se encontro el modulo" aunque la ruta sea absoluta.
+# Se normalizan: lectura para todos y 'x' solo donde ya era un directorio.
+sudo chmod -R a+rX /opt/latino
 sudo chmod +x /opt/latino/latino
 sudo ln -sf /opt/latino/latino /usr/local/bin/latino
 
