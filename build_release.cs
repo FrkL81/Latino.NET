@@ -333,6 +333,16 @@ void AssemblePackages(string version)
         {
             File.Copy(nativeSource, nativeDest, overwrite: true);
             Console.WriteLine($"   ⚙️ Dependencia nativa SQLite copiada a la raíz de {osName}");
+
+            // En Linux, SQLitePCLRaw resuelve 'e_sqlite3' junto al plugin
+            // (lib/), no junto al ejecutable: sin el .so en lib/ la conexion
+            // falla con "Unable to load shared library 'e_sqlite3'".
+            if (osName == "linux")
+            {
+                string libNative = Path.Combine(libPath, Path.GetFileName(nativeDest));
+                File.Copy(nativeSource, libNative, overwrite: true);
+                Console.WriteLine("   ⚙️ Dependencia nativa SQLite copiada también a lib/ (Linux)");
+            }
         }
 
         // 3. Copiar Carpeta de Ejemplos
@@ -423,6 +433,17 @@ void CreateZips(string version)
 
         using (var archive = ZipFile.Open(zipPath, ZipArchiveMode.Create))
         {
+            // Entradas de directorio explicitas: sin ellas, el descompresor las
+            // crea con el modo que quiera y pueden quedar sin 'x' de otros
+            // (p. ej. lib/ con 754), lo que impide atravesarlas y resolver los
+            // plugins. Se fijan a 0755 + bit de directorio.
+            foreach (string dir in Directory.GetDirectories(folderToZip, "*", SearchOption.AllDirectories))
+            {
+                string rel = Path.GetRelativePath(folderToZip, dir).Replace(Path.DirectorySeparatorChar, '/') + "/";
+                var dirEntry = archive.CreateEntry(rel);
+                dirEntry.ExternalAttributes = (int)((0x41EDU << 16) | 0x10);
+            }
+
             foreach (string file in Directory.GetFiles(folderToZip, "*", SearchOption.AllDirectories))
             {
                 // Excluir archivos no deseados
@@ -432,11 +453,31 @@ void CreateZips(string version)
 
                 string entryName = Path.GetRelativePath(folderToZip, file);
                 // Normalizar el separador: en Windows Path.GetRelativePath devuelve
-                // '\' y el cliente zip lo graba literal. Infozip/unzip de Linux lo trata
-                // como carácter de escape y aborta la extracción ("appears to use
-                // backslashes as path separators"). El estándar ZIP exige '/'.
-                entryName = entryName.Replace('\\', '/');
-                archive.CreateEntryFromFile(file, entryName, CompressionLevel.Optimal);
+                // la barra invertida y el cliente zip la graba literal. Infozip/unzip
+                // de Linux la trata como caracter de escape y aborta la extraccion
+                // ("appears to use backslashes as path separators"). El estandar ZIP
+                // exige '/'.
+                entryName = entryName.Replace(Path.DirectorySeparatorChar, '/');
+
+                // Modos Unix: el build corre en Windows y ZipArchive no preserva
+                // permisos; con atributos en 0, al extraer en Linux los directorios
+                // pueden quedar sin traverse o el binario sin 'x'. Se fijan 0755
+                // para el binario y los nativos, 0644 para el resto.
+                // (S_IFREG = 0x8000; 0x81ED = 0755, 0x81A4 = 0644)
+                string fileName = Path.GetFileName(file);
+                bool ejecutable = osTarget == "win"
+                    ? fileName.Equals("latino.exe", StringComparison.OrdinalIgnoreCase)
+                    : fileName.Equals("latino", StringComparison.OrdinalIgnoreCase)
+                      || fileName.EndsWith(".so", StringComparison.OrdinalIgnoreCase);
+                uint modo = ejecutable ? 0x81EDU : 0x81A4U;
+
+                var entry = archive.CreateEntry(entryName);
+                entry.ExternalAttributes = (int)(modo << 16);
+                using (var src = File.OpenRead(file))
+                using (var dst = entry.Open())
+                {
+                    src.CopyTo(dst);
+                }
             }
         }
 

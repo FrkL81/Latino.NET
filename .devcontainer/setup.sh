@@ -50,6 +50,13 @@ sudo chmod -R a+rX /opt/latino
 sudo chmod +x /opt/latino/latino
 sudo ln -sf /opt/latino/latino /usr/local/bin/latino
 
+# SQLitePCLRaw resuelve 'e_sqlite3' junto al plugin (lib/), no junto al
+# ejecutable: el build coloca el nativo en la raiz y en Linux dlopen no lo
+# encuentra desde lib/sqlite.dll. Se enlaza para que la conexion cargue.
+if [ -f /opt/latino/libe_sqlite3.so ]; then
+    sudo ln -sf /opt/latino/libe_sqlite3.so /opt/latino/lib/libe_sqlite3.so
+fi
+
 # Salvaguarda: el LSP busca los plugins en /opt/latino/lib
 [ -d /opt/latino/lib ] || echo "⚠️ No existe /opt/latino/lib: los plugins podrían no cargarse (revisar estructura del zip)"
 
