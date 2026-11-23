@@ -431,6 +431,11 @@ void CreateZips(string version)
                     continue;
 
                 string entryName = Path.GetRelativePath(folderToZip, file);
+                // Normalizar el separador: en Windows Path.GetRelativePath devuelve
+                // '\' y el cliente zip lo graba literal. Infozip/unzip de Linux lo trata
+                // como carácter de escape y aborta la extracción ("appears to use
+                // backslashes as path separators"). El estándar ZIP exige '/'.
+                entryName = entryName.Replace('\\', '/');
                 archive.CreateEntryFromFile(file, entryName, CompressionLevel.Optimal);
             }
         }
