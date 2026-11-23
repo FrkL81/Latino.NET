@@ -1,6 +1,6 @@
 {
     "name": "Latino.NET en la Nube",
-    "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+    "image": "mcr.microsoft.com/devcontainers/dotnet:10.0-noble",
     "hostRequirements": { "cpus": 2 },
     "containerEnv": {
         "LATINO_HOME": "/opt/latino"
