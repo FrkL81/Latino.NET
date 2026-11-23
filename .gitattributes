@@ -28,3 +28,4 @@
 *.slnx text eol=lf
 *.code-snippets text eol=lf
 *.sublime-syntax text eol=lf
+*.sh text eol=lf

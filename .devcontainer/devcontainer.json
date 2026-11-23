@@ -1,0 +1,21 @@
+{
+    "name": "Latino.NET en la Nube",
+    "image": "mcr.microsoft.com/devcontainers/dotnet:1-10.0",
+    "hostRequirements": { "cpus": 2 },
+    "containerEnv": {
+        "LATINO_HOME": "/opt/latino"
+    },
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "postAttachCommand": "bash .devcontainer/install-extension.sh",
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["ejemplos/01_hola_mundo.lat"]
+        },
+        "vscode": {
+            "settings": {
+                "workbench.colorTheme": "Latino.NET Dark",
+                "latino.binaryPath": "/opt/latino/latino"
+            }
+        }
+    }
+}

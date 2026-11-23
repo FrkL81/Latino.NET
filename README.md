@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET](https://img.shields.io/badge/.NET-10-purple.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/FrkL81/Latino.NET)
+
 ![Logo](assets/social_preview.png)
 
 **Latino.NET** es una reimplementación moderna y robusta del lenguaje **Latino**, construida desde cero sobre la solidez del ecosistema **.NET 10**.
